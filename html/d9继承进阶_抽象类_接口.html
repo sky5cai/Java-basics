@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="-_-_-">继承进阶<em>抽象类</em>接口</h1>
+<h2 id="-">导语：</h2>
+<blockquote>
+<p>想到在写</p>
+</blockquote>
+<p><a name="top"/></p>
+<ol>
+<li><a href="#ExtendsDemo">子父类中成员变量的特点</a></li><li><a href="#ExtendsDemo2">子父类中成员函数的特点。★★★★★</a></li><li><a href="#ExtendsDemo3">子父类中构造函数的特点。★★★★★</a></li><li><a href="#FinalDemo">final关键字的使用，重点在于常量的定义</a></li><li><a href="#AbstractDemo">抽象类的由来，犬科示例，抽象类的特点，细节问题(四问，必须懂)。</a></li><li><a href="#AbstractTest">抽象类练习，员工数据建模。★★★★★</a></li><li><a href="#InterfaceDemo">接口的由来，定义，实现，多实现，继承并实现，接口的特点，接口的多继承。★★★★★</a></li></ol>
+<h2 id="1-top-a-name-extendsdemo-">1. <a href="#top">子父类中成员变量的特点</a><a name="ExtendsDemo"/></h2>
+<pre><code>
+/*
+继承出现后，在代码中的体现
+
+重点在在于成员的体现：
+1，成员变量。重点明确原理。
+    特殊情况：
+        子父类中定义了一模一样的成员变量。
+        都存在于子类对象中。
+        如何在子类中直接访问同名的父类中的变量呢？
+        通过关键字 super来完成。
+
+        super和this的用法很相似。
+        this：代表的是本类的对象的引用。
+        super：代表的是父类的内存空间。
+
+        注意：这种情况开发见不到，因为父类一旦描述完了属性，子类直接使用就可以了。
+
+2，成员函数。
+3，构造函数。
+*/
+
+//父类。
+class Fu
+{
+    /*private int num1 = 3;*///父类中私有的内容子类不可以直接访问。
+    int num = 3;
+}
+
+class Zi extends Fu
+{
+    /*int num2 = 4;*/
+    int num = 4;
+    void show()
+    {
+//        System.out.println(&quot;num1=&quot;+num1);
+//        System.out.println(&quot;num2=&quot;+num2);
+
+        System.out.println(&quot;zi num=&quot;+this.num);
+        System.out.println(&quot;fu num=&quot;+super.num);
+
+    }
+}
+
+class ExtendsDemo 
+{
+    public static void main(String[] args) 
+    {
+        Zi z = new Zi();
+        z.show();
+    }
+}
+</code></pre><h2 id="2-top-a-name-extendsdemo2-">2. <a href="#top">子父类中成员函数的特点。★★★★★</a><a name="ExtendsDemo2"/></h2>
+<pre><code>
+/*
+【子父类中成员函数的特点】
+特殊情况：
+子父类中的定义了一模一样的函数。
+运行的结果:子类的函数在运行。
+这种情况在子父类中，是函数的另一个特性：override(重写，覆盖，复写)
+
+【重写什么时候用？】
+举例：
+//描述手机。
+class Phone
+{
+    int number;
+    //打电话。
+    void call(){}
+    //来电显示。
+    void show()
+    {
+        sop(&quot;电话号码..&quot;+number);
+    }
+}
+Phone p = new Phone();
+p.show();
+
+随着电话的升级，只显示号码不爽，希望显示姓名，大头贴。
+修改源码，虽然费劲但是可以解决，不利于后期的维护和扩展。
+为了扩展方便。新功能是不是新的电话具备呢？
+单独描述单独封装。新电话也是电话中的一种。继承。直接获取父类中的功能。
+但是新电话的来显功能已经变化了。需要重新定义。
+那么定义一个新功能合适吗？比如newShow，不合适，因为父类已经将来显功能定义完了，
+子类完全不需要重新定义新功能。直接用就可以了。如果子类的来显功能内容不同。
+直需要保留来显功能，定义子类的内容即可：这就是重写的应用！
+
+class NewPhone extends Phone
+{
+    String name;
+    String picPath;//图片路径。
+    void show()
+    {
+        //sop(&quot;电话号码&quot;);
+        super.show();//如果还需要父类中原有的部分功能，可以通过super调用。
+        sop(&quot;姓名&quot;+name);
+        sop(&quot;大头贴&quot;+picPath);
+    }
+}
+
+
+【重写(覆盖)的注意事项】
+
+1，子类覆盖父类，必须保证全要大于或者等于父类的权限。
+Fu:
+private void show(){}
+
+Zi:
+public void show(){}
+2，静态覆盖静态。
+
+
+写法上稍微注意:必须一模一样:函数的返回值类型 函数名 参数列表都要一样。
+
+
+
+【总结】
+当一个类是另一个类中的一种时，可以通过继承，来扩展功能。
+如果从父类具备的功能内容需要子类特殊定义时，使用重写。
+
+*/
+
+class Fu
+{
+    int show()
+    {
+        System.out.println(&quot;fu show run&quot;);
+        return 0;
+    }
+}
+class Zi extends Fu
+{
+    void show()
+    {
+        System.out.println(&quot;zi show run&quot;);
+    }
+}
+class ExtendsDemo2 
+{
+    public static void main(String[] args) 
+    {
+        Zi z = new Zi();
+        z.show();
+    }
+}
+</code></pre><h2 id="3-top-a-name-extendsdemo3-">3. <a href="#top">子父类中构造函数的特点。★★★★★</a><a name="ExtendsDemo3"/></h2>
+<pre><code>
+/*
+【子父类中成员函数的特点】
+特殊情况：
+子父类中的定义了一模一样的函数。
+运行的结果:子类的函数在运行。
+这种情况在子父类中，是函数的另一个特性：override(重写，覆盖，复写)
+
+【重写什么时候用？】
+举例：
+//描述手机。
+class Phone
+{
+    int number;
+    //打电话。
+    void call(){}
+    //来电显示。
+    void show()
+    {
+        sop(&quot;电话号码..&quot;+number);
+    }
+}
+Phone p = new Phone();
+p.show();
+
+随着电话的升级，只显示号码不爽，希望显示姓名，大头贴。
+修改源码，虽然费劲但是可以解决，不利于后期的维护和扩展。
+为了扩展方便。新功能是不是新的电话具备呢？
+单独描述单独封装。新电话也是电话中的一种。继承。直接获取父类中的功能。
+但是新电话的来显功能已经变化了。需要重新定义。
+那么定义一个新功能合适吗？比如newShow，不合适，因为父类已经将来显功能定义完了，
+子类完全不需要重新定义新功能。直接用就可以了。如果子类的来显功能内容不同。
+直需要保留来显功能，定义子类的内容即可：这就是重写的应用！
+
+class NewPhone extends Phone
+{
+    String name;
+    String picPath;//图片路径。
+    void show()
+    {
+        //sop(&quot;电话号码&quot;);
+        super.show();//如果还需要父类中原有的部分功能，可以通过super调用。
+        sop(&quot;姓名&quot;+name);
+        sop(&quot;大头贴&quot;+picPath);
+    }
+}
+
+
+【重写(覆盖)的注意事项】
+
+1，子类覆盖父类，必须保证全要大于或者等于父类的权限。
+Fu:
+private void show(){}
+
+Zi:
+public void show(){}
+2，静态覆盖静态。
+
+
+写法上稍微注意:必须一模一样:函数的返回值类型 函数名 参数列表都要一样。
+
+
+
+【总结】
+当一个类是另一个类中的一种时，可以通过继承，来扩展功能。
+如果从父类具备的功能内容需要子类特殊定义时，使用重写。
+
+*/
+
+class Fu
+{
+    int show()
+    {
+        System.out.println(&quot;fu show run&quot;);
+        return 0;
+    }
+}
+class Zi extends Fu
+{
+    void show()
+    {
+        System.out.println(&quot;zi show run&quot;);
+    }
+}
+class ExtendsDemo2 
+{
+    public static void main(String[] args) 
+    {
+        Zi z = new Zi();
+        z.show();
+    }
+}
+</code></pre><h2 id="4-final-top-a-name-finaldemo-">4. <a href="#top">final关键字的使用，重点在于常量的定义</a><a name="FinalDemo"/></h2>
+<pre><code>
+/*
+继承的弊端：打破封装性。
+不让其他类继承该类，就不会有重写。
+怎么能实现呢？通过Java中的一个关键字来实现，final(最终化)。
+
+【final关键字】
+是一个修饰符，可以修饰类，方法，变量(成员变量，局部变量，静态变量)。
+【特点】
+1，final修饰的类是一个最终类，不能在派生子类。
+如果类中从出现部分可以重写，部分不可以？怎么办？只要让指定的方法最终化就可以了。
+2，final修饰的方法是最终方法，不可以给重写。
+3，final修饰的变量是一个常量，只能被赋值一次。
+【什么时候会在程序中定义final常量呢？】
+当程序中一个数据使用时是固定不变的，这时为了增加阅读性，可以该该数据起个名字。
+这就是变量，为了保证这个变量的值不被修改，加上final修饰，这就一个阅读性很强的常量。
+书写规范，被final修饰的常量名所有的字母都是大写的。如果由多个单词组成单词间通过 _ 连接。
+
+
+*/
+/*final*/class Fu
+{
+    /*final*/ void show()
+    {
+        //调用到一些系统的功能。
+        //功能的内容是不可以改变的。
+    }
+}
+
+class Zi extends Fu
+{
+    static final int number = 9;//最终化的是显示初始化值。
+    static final double PI = 3.14;
+    //重写
+    void show()
+    {
+        final int count = 21;
+//        count = 2;
+        System.out.println(count);
+    }
+}
+
+
+class FinalDemo 
+{
+    public static void main(String[] args) 
+    {
+        System.out.println(&quot;Hello World!&quot;);
+    }
+}
+</code></pre><h2 id="5-top-a-name-abstractdemo-">5. <a href="#top">抽象类的由来，犬科示例，抽象类的特点，细节问题(四问，必须懂&quot;/&gt;。</a><a name="AbstractDemo"/></h2>
+<pre><code>
+
+/*
+描述狗,行为：吼叫。
+描述狼，行为：吼叫。
+发现他们之间有共性，可以进行向上抽取。
+当然是抽取它们的所属共性类型：犬科。
+犬科这类事物：都具备吼叫行为,但是具体怎么叫，是不确定的，是由具体的子类来明确的。
+这时在描述犬科时，发现了有些功能不具体，这些不具体的功能，需要在类中标识出来，通过java中的关键字abstract(抽象)。
+定义了抽象函数的类也必须被abstract关键字修饰，被abstract关键字修饰的类是抽象类。
+*/
+//抽象类：在描述事物时，没有足够的信息描述一个事物，这时该事物就是抽象事物。
+
+/*
+【抽象类的特点】
+1，抽象类和抽象方法都需要被abstract修饰。
+抽象方法一定要定义在抽象类中。
+2，抽象类不可以创建实例，原因：调用抽象方法没有意义。
+3，只有覆盖了抽象类中所有的抽象方法后，其子类才可以实例化。
+否则该子类还是一个抽象类。
+
+
+之所以继承，更多的是在思想，是面对共性类型操作会更简单。
+
+
+【细节问题】
+1，抽象类一定是个父类？    
+    是的，因为不断抽取而来的。
+
+2，抽象类是否有构造函数？
+    有，虽然不能给自己的对象初始化，但是可以给自己的子类对象初始化。
+    抽象类和一般类的异同点：
+    相同：
+        1，它们都是用来描述事物的。
+        2，它们之中都可以定义属性和行为。
+
+    不同：
+        1，一般类可以具体的描述事物。
+            抽象类描述事物的信息不具体
+        2，抽象类中可以多定义一个成员：抽象函数。
+        3，一般类可以创建对象，而抽象类不能创建对象。
+
+3，抽象类中是否可以不定义抽象方法。
+    是可以的，那这个抽象类的存在到底有什么意义呢？仅仅是不让该类创建对象。
+
+
+4，抽象关键字abstract不可以和哪些关键字共存？    
+    1，final：
+    2，private：
+    3，static：
+
+
+*/
+
+
+abstract class 犬科 //extends Object
+{
+    static abstract void 吼叫();//抽象函数。需要abstract修饰，并分号;结束
+}
+
+
+//代码体现。
+class Dog extends 犬科
+{
+    void 吼叫()
+    {
+        System.out.println(&quot;汪汪汪汪&quot;);
+    }
+}
+
+class Wolf extends 犬科
+{
+    void 吼叫()
+    {
+        System.out.println(&quot;嗷嗷嗷嗷&quot;);
+    }
+}
+
+
+
+class  AbstractDemo
+{
+    public static void main(String[] args) 
+    {
+        System.out.println(&quot;Hello World!&quot;);
+    }
+}
+</code></pre><h2 id="6-top-a-name-abstracttest-">6. <a href="#top">抽象类练习，员工数据建模。★★★★★</a><a name="AbstractTest"/></h2>
+<pre><code>/*
+需求：公司中程序员有姓名，工号，薪水，工作内容。
+项目经理除了有姓名，工号，薪水，还有奖金，工作内容。
+对给出需求进行数据建模。
+
+在问题领域中先找寻其中涉及的对象。
+程序员
+    属性：姓名，工号，薪水
+    行为：工作
+
+项目经理
+    属性：姓名，工号，薪水，奖金
+    行为：工作
+
+这些对象是否有关系呢？因为发现了他们之间的共性，应该存在着关系。
+可以将他们的共性向上抽取到共性类型：员工。
+员工：
+    属性：姓名，工号，薪水
+    行为：工作
+发现员工的工作内容本身就不具体。应该是抽象的，由具体的子类来体现的。
+
+一定要动手!
+
+
+*/
+
+abstract class Employee
+{
+    private String name;
+    private String id;
+    private double pay;
+    /**
+    构造一个员工对象，一初始化就具备着三个属性。
+    */
+    public Employee(String name,String id,double pay)
+    {
+        this.name = name;
+        this.id = id;
+        this.pay = pay;
+    }
+    /**
+    工作行为。
+    */
+    public abstract void work();
+}
+
+//具体的子类：程序员。
+class Programmer extends Employee
+{
+    public Programmer(String name,String id,double pay)
+    {
+        super(name,id,pay);
+    }
+    public void work()
+    {
+        System.out.println(&quot;code....&quot;);
+    }
+}
+
+//具体的子类：经理。
+class Manager extends Employee
+{
+    //特有属性。
+    private double bonus;
+    public Manager(String name,String id,double pay,double bonus)
+    {
+        super(name,id,pay);
+        this.bonus = bonus;
+    }
+    public void work()
+    {
+        System.out.println(&quot;manage&quot;);
+    }
+}
+
+class AbstractTest 
+{
+    public static void main(String[] args) 
+    {
+        System.out.println(&quot;Hello World!&quot;);
+    }
+}
+</code></pre><h2 id="7-top-a-name-interfacedemo-">7. <a href="#top">接口的由来，定义，实现，多实现，继承并实现，接口的特点，接口的多继承。★★★★★</a><a name="InterfaceDemo"/></h2>
+<pre><code>
+/*
+抽象类中可以定义抽象方法的 。
+当一个抽象类中的方法全是抽象的。
+这时，可以通过另一种特殊的形式来体现。
+
+用接口来表示。
+
+接口该如何定义呢？
+interface
+
+
+abstract class Demo
+{
+    abstract void show1();
+    abstract void show2();
+}
+*/
+/*
+接口中的成员已经被限定为固定的几种。
+【接口的定义格式先介绍两种：】
+1，定义变量，但是变量必须有固定的修饰符修饰，public static final 所以接口中的变量也称之为常量。
+2，定义方法，方法也有固定的修饰符，public abstract
+接口中的成员都是公共的。
+
+【接口的特点】
+1，接口不可以创建对象。
+2，子类必须覆盖掉接口中所有的抽象方法后，子类才可以实例化。
+    否则子类是一个抽象类。
+
+*/
+interface Demo//定义一个名称为Demo的接口。
+{
+    public static final int NUM = 3;
+    public abstract void show1();
+    public abstract void show2();
+}
+//定义子类去覆盖接口中的方法。子类必须和接口产生关系，类与类的关系是继承，类与接口之间的关系是 实现。通过 关键字 implements
+class DemoImpl implements Demo//子类实现Demo接口。
+{
+    //重写接口中的方法。
+    public void show1(){}
+    public void show2(){}
+}
+
+
+
+/*
+【接口最重要的体现】
+解决多继承的弊端。将多继承这种机制在java中通过多实现完成了。
+
+
+*/
+/*
+interface A
+{
+    void show1();
+}
+interface B
+{
+    void show2();
+}
+class C implements A,B// 多实现。同时实现多个接口。
+{
+    public void show1(){}
+    public void show2(){}
+}
+*/
+/*
+【怎么解决多继承的弊端呢？】
+弊端：多继承时，当多个父类中有相同功能时，子类调用会产生不确定性。
+其实核心原因就是在于多继承父类中功能有主体，而导致调用运行时，不确定运行哪个主体内容。
+为什么多实现就解决了呢？
+因为接口中的功能都没有方法体，由子类来明确。
+
+interface A
+{
+    void show();
+}
+interface B
+{
+    void show();
+}
+class C implements A,B// 多实现。同时实现多个接口。
+{
+    public void show();
+}
+
+C c = new C();
+c.show();
+
+
+*/
+
+/*
+【基于接口的扩展。】
+
+class Fu
+{
+    public void show(){}
+}
+//子类通过继承父类扩展功能，通过继承扩展的功能都是子类应该具备的基础功能。
+//如果子类想要继续扩展其他类中的功能呢？这时通过实现接口来完成。
+interface Inter
+{
+    pulbic void show1();
+}
+class Zi extends Fu implements Inter
+{
+    public void show1()
+    {
+
+    }
+}
+
+接口的出现避免了单继承的局限性。
+父类中定义的事物的基本功能。
+接口中定义的事物的扩展功能。
+
+
+
+*/
+
+/*
+【接口出现后的一些小细节】
+1，类与类之间是继承(is a)关系，类与接口之间是实现(like a)关系，
+    接口与接口之间是继承关系，而且可以多继承。
+*/
+interface InterA
+{
+    void show1();
+}
+interface InterAA
+{
+    void show11();
+}
+interface InterB extends InterA,InterAA//接口的多继承。
+{
+    void show2();
+}
+
+class Test implements InterB
+{
+    public void show1(){}
+    public void show2(){}
+    public void show11(){}
+}
+
+
+class InterfaceDemo 
+{
+    public static void main(String[] args) 
+    {
+        DemoImpl d = new DemoImpl();
+        d.show1();
+        d.show2();
+
+    }
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

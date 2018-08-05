@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="io-">IO输入（下）</h1>
+<h2 id="-">引言</h2>
+<blockquote>
+<p>经过昨天的没收获的表现，今天的收获还好，起码有点入手了，希望再接再厉。</p>
+</blockquote>
+<ol>
+<li><a href="#GetAllFileByQueue">遍历子目录中的内容，通过队列的方式</a></li><li><a href="#GetAllFiles">遍历子目录中的内容，通过递归的方式</a></li><li><a href="#DiGuiDemo">讲解递归的使用和注意事项</a></li><li><a href="#FileInputStreamDemo">读取一个文件，通过read()方法</a></li><li><a href="#FileInputStreamDemo2">读取一个文件，通过read(byte[])方法</a></li><li><a href="#CopyFileByBufferTest">通过自定义缓冲区数组复制文件</a></li><li><a href="#CopyFileTest">通过读写一个字节方式复制文件</a></li><li><a href="#FileOutputStreamDemo">写入数据到一个文件</a></li><li><a href="#FileOutputStreamDemo2">续写和换行</a></li><li><a href="#FileOutputStreamDemo3">IO异常的处理</a></li><li><a href="#ByteStreamDemo">了解available()方法</a></li><li><a href="#ByteStreamBufferCopyFileTest">通过字节流缓冲区对象复制文件</a></li></ol>
+<h2 id="8-a-name-getallfilebyqueue-">8.遍历子目录中的内容，通过队列的方式<a name="GetAllFileByQueue"/></h2>
+<pre><code>package cn.itcast.io.a.file;
+
+import java.io.File;
+import java.util.LinkedList;
+
+public class GetAllFileByQueue {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * 遍历文件夹，不用递归咋办？ 
+         * 思路：
+         * 1，可以通过对每一个目录进行for循环，但是目录层级很多，for会死掉。
+         * 2，每遍历到一个目录，不对其进行遍历，而是先临时存储起来。 相当于把所有目录（无论同级不同级）都存储起来。
+         * 3，遍历容器时取到就是目录，然后对目录遍历即可。 4，从容器中取到目录遍历时发现内部还有目录，一样将这些目录存储到容器中。
+         * 5，只要不断的遍历这个容器就哦了。
+         * 
+         * 通过图解：发现这个容器只要是一个简单的队列就可以解决这个问题。
+         */
+
+        File dir = new File(&quot;E:\\test&quot;);
+        System.out.println(dir.getName());
+        Queue&lt;File&gt; queue = new Queue&lt;File&gt;();
+
+        // 1,对dir进行当前目录的遍历。
+        File[] files = dir.listFiles();
+        for (File file : files) {
+            // 2, 如果有子目录，存储到队列中。
+            if (file.isDirectory()) {
+                queue.myAdd(file);
+            } else {
+                System.out.println(file.getName());
+            }
+        }
+        System.out.println(&quot;---------------------&quot;);
+        //3,遍历队列容器。因为子目录都在队列中。
+        while(!queue.isNull()){
+
+            File subDir = queue.myGet();//从队列中取出子目录。
+            System.out.println(subDir.getName());
+            //4,遍历子目录。
+            File[] subFiles = subDir.listFiles();
+            for(File subFile : subFiles){
+                if(subFile.isDirectory()){//如果子目录中还有子目录，继续存储到队列中。
+                    queue.myAdd(subFile);
+                }else{
+                    System.out.println(subFile.getName());
+                }
+            }
+
+
+        }
+    }
+
+}
+
+/**
+ * 队列结构。先进先出。
+ */
+class Queue&lt;E&gt; {
+
+    private LinkedList&lt;E&gt; link;
+
+    /**
+     * 提供了构造队列对象的构造器。
+     */
+    public Queue() {
+        link = new LinkedList&lt;E&gt;();
+    }
+
+    /**
+     * 添加元素的方法。
+     */
+    public void myAdd(E obj) {
+        link.addFirst(obj);
+    }
+
+    /**
+     * 获取的方法。
+     */
+    public E myGet() {
+        return link.removeLast();
+    }
+
+    /**
+     * 判断队列是否有元素。
+     */
+    public boolean isNull() {
+        return link.isEmpty();
+    }
+}
+</code></pre><h2 id="9-a-name-getallfiles-">9.遍历子目录中的内容，通过递归的方式<a name="GetAllFiles"/></h2>
+<pre><code>package cn.itcast.io.a.file;
+
+import java.io.File;
+
+public class GetAllFiles {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        /*
+         * File类的listFiles()列出当前目录下文件以及文件夹。
+         * 
+         * 需求：能不能列出当前目录下的子目录中的所有内容。 思路： 1，在遍历当前目录时，会获取到当前的所有的文件以及文件夹，
+         * 2，要遍历子目录需要对获取到的当前的file对象进行判断，只有是目录才可以作为子目录进行继续遍历。
+         */
+
+        File dir = new File(&quot;E:\\test&quot;);
+
+        listAll(dir);
+
+    }
+
+    public static void listAll(File dir) {// dir:接收目录以及子目录。
+
+        System.out.println(&quot;dir:&quot; + dir.getName());
+        File[] files = dir.listFiles();
+        for (File file : files) {
+
+            if (file.isDirectory()) {// 如果遍历到当前的file对象是个目录，继续遍历。
+                listAll(file);
+            } else {
+                System.out.println(&quot;file:&quot;+file.getName());
+            }
+        }
+
+    }
+
+}
+</code></pre><h2 id="10-a-name-diguidemo-">10.讲解递归的使用和注意事项<a name="DiGuiDemo"/></h2>
+<pre><code>package cn.itcast.io.b.digui;
+
+import java.util.Iterator;
+
+public class DiGuiDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        /*
+         * 递归：其实就是功能的重复使用，但是每次该功能被调用参数都变化(使用了上一次运算的结果)。
+         * 1，函数自身调用自身。
+         * 2，一定要定义条件，否则.StackOverflowError。栈溢出。
+         * 3，注意：递归次数过来容易溢出。
+         * 
+         */
+        int sum = getSum(8000);// 4 3 2 1
+        System.out.println(&quot;sum=&quot;+sum);
+    }
+    public static int getSum(int num){
+        if(num == 1){
+            return 1;
+        }
+        return num + getSum(num - 1);
+    }
+}
+</code></pre><h2 id="11-read-a-name-fileinputstreamdemo-">11.读取一个文件，通过read()方法<a name="FileInputStreamDemo"/></h2>
+<pre><code>package cn.itcast.io.c.bytestream.read;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class FileInputStreamDemo {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+//        2,需求：读取文件中的数据，显示在屏幕上。
+
+        File file = new File(&quot;tempfile\\file.txt&quot;);
+
+        //创建一个字节输入流对象,必须明确数据源，其实就是创建字节读取流和数据源相关联。
+        FileInputStream fis = new FileInputStream(file);
+
+        //读取数据。使用 read();一次读一个字节。
+        int ch = 0;
+        while((ch=fis.read())!=-1){
+            System.out.println(&quot;ch=&quot;+(char)ch);
+        }
+        /*
+        int ch1 = fis.read();
+        System.out.println(&quot;ch1=&quot;+(char)ch1);
+        int ch2 = fis.read();
+        System.out.println(&quot;ch2=&quot;+(char)ch2);
+        int ch3 = fis.read();
+        System.out.println(&quot;ch3=&quot;+(char)ch3);
+        int ch4 = fis.read();
+        System.out.println(&quot;ch4=&quot;+(char)ch4);
+        int ch5 = fis.read();
+        System.out.println(&quot;ch5=&quot;+(char)ch5);
+        int ch6 = fis.read();
+        System.out.println(&quot;ch6=&quot;+ch6);
+        int ch7 = fis.read();
+        System.out.println(&quot;ch7=&quot;+ch7);
+        */
+
+        // 关闭资源。
+        fis.close();
+
+
+
+    }
+
+}
+</code></pre><h2 id="12-read-byte-a-name-fileinputstreamdemo2-">12.读取一个文件，通过read(byte[])方<a name="FileInputStreamDemo2"/></h2>
+<pre><code>package cn.itcast.io.c.bytestream.read;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class FileInputStreamDemo2 {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+        /*
+         * 演示第二个读取方法， read(byte[]);
+         */
+
+        File file = new File(&quot;tempfile\\file.txt&quot;);
+
+        // 创建一个字节输入流对象,必须明确数据源，其实就是创建字节读取流和数据源相关联。
+        FileInputStream fis = new FileInputStream(file);
+
+        //创建一个字节数组。
+        byte[] buf = new byte[1024];//长度可以定义成1024的整数倍。
+
+        int len = 0;
+        while((len=fis.read(buf))!=-1){
+            System.out.println(new String(buf,0,len));
+        }
+
+        /*int len1 = fis.read(buf);
+        System.out.println(len1+&quot;:&quot;+new String(buf,0,len1));
+        int len2 = fis.read(buf);
+        System.out.println(len2+&quot;:&quot;+new String(buf,0,len2));
+        int len3 = fis.read(buf);
+        System.out.println(len3+&quot;:&quot;+new String(buf,0,len3));
+        int len4 = fis.read(buf);
+        System.out.println(len4);
+        */
+
+        fis.close();
+    }
+
+}
+</code></pre><h2 id="13-a-name-copyfilebybuffertest-">13.通过自定义缓冲区数组复制文件<a name="CopyFileByBufferTest"/></h2>
+<pre><code>package cn.itcast.io.c.bytestream.test;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class CopyFileByBufferTest {
+
+    /**
+     * @param args
+     * @throws IOException
+     */
+    public static void main(String[] args) throws IOException {
+
+        File srcFile = new File(&quot;E:\\1.mp3&quot;);
+        File destFile = new File(&quot;E:\\copy_1.mp3&quot;);
+
+        // 2,明确字节流 输入流和源相关联，输出流和目的关联。
+        FileInputStream fis = new FileInputStream(srcFile);
+        FileOutputStream fos = new FileOutputStream(destFile);
+
+        // 3,定义一个缓冲区。
+        byte[] buf = new byte[1024];
+
+        int len = 0;
+        while ((len = fis.read(buf)) != -1) {
+            fos.write(buf, 0, len);// 将数组中的指定长度的数据写入到输出流中。
+        }
+
+        // 4,关闭资源。
+        fos.close();
+        fis.close();
+    }
+
+}
+</code></pre><h2 id="14-a-name-copyfiletest-">14.通过读写一个字节方式复制文件<a name="CopyFileTest"/></h2>
+<pre><code>package cn.itcast.io.c.bytestream.test;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class CopyFileTest {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+
+        /*
+         * 练习：复制文件。
+         * 原理；读取一个已有的数据，并将这些读到的数据写入到另一个文件中。
+         */
+        //1,明确源和目的。
+        File srcFile = new File(&quot;E:\\1.mp3&quot;);
+        File destFile = new File(&quot;E:\\copy_2.mp3&quot;);
+
+        //2,明确字节流 输入流和源相关联，输出流和目的关联。
+        FileInputStream fis = new FileInputStream(srcFile);
+        FileOutputStream fos = new FileOutputStream(destFile);
+
+        //3, 使用输入流的读取方法读取字节，并将字节写入到目的中。
+        int ch = 0;
+        while((ch=fis.read())!=-1){
+            fos.write(ch);
+        }
+
+
+        //4,关闭资源。
+        fos.close();
+        fis.close();
+
+    }
+
+}
+</code></pre><h2 id="15-a-name-fileoutputstreamdemo-">15.写入数据到一个文件<a name="FileOutputStreamDemo"/></h2>
+<pre><code>package cn.itcast.io.c.bytestream.write;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class FileOutputStreamDemo {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+        //需求：将数据写入到文件中。
+        //创建临时目录，
+        File dir = new File(&quot;tempfile&quot;);
+        if(!dir.exists()){
+            dir.mkdir();
+        }
+
+        //创建存储数据的文件。
+        File file = new File(dir,&quot;file.txt&quot;);
+
+        //创建一个用于操作文件的字节输出流对象。一创建就必须明确数据存储目的地。
+        //输出流目的是文件，会自动创建。如果文件存在，则覆盖。
+        FileOutputStream fos = new FileOutputStream(file);
+
+        //调用父类中的write方法。
+        byte[] data = &quot;abcde&quot;.getBytes();
+        fos.write(data);
+
+        //关闭流资源。
+        fos.close();
+
+    }
+}
+</code></pre><h2 id="16-a-name-fileoutputstreamdemo2-">16.续写和换行]<a name="FileOutputStreamDemo2"/></h2>
+<pre><code>package cn.itcast.io.c.bytestream.write;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+public class FileOutputStreamDemo2 {
+
+    private static final String LINE_SEPARATOR = System.getProperty(&quot;line.separator&quot;);
+
+    /**
+     * @param args
+     * @throws FileNotFoundException 
+     */
+    public static void main(String[] args) throws Exception {
+
+        //需求：将数据续写到已有文件中。
+        //FileOutputStream(File file, boolean append) 续写。
+        //在下一行写入新的数据。
+
+        File file = new File(&quot;tempfile\\file.txt&quot;);
+
+        FileOutputStream fos = new FileOutputStream(file, true);
+
+        String str = LINE_SEPARATOR+&quot;itcast&quot;;
+        fos.write(str.getBytes());
+
+        fos.close();
+
+    }
+
+}
+</code></pre><h2 id="17-io-a-name-fileoutputstreamdemo3-">17.IO异常的处理]<a name="FileOutputStreamDemo3"/></h2>
+<pre><code>package cn.itcast.io.c.bytestream.write;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class FileOutputStreamDemo3 {
+
+    /**
+     * @param args
+     * @throws FileNotFoundException
+     */
+    public static void main(String[] args) {
+
+        File file = new File(&quot;k:\\file.txt&quot;);
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(file);
+            fos.write(&quot;abcde&quot;.getBytes());
+
+        } catch (IOException e) {
+            System.out.println(e.toString() + &quot;----&quot;);
+        } finally {
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(&quot;&quot;);
+                }
+            }
+
+        }
+
+    }
+
+}
+</code></pre><h2 id="18-available-a-name-bytestreamdemo-">18.了解available()方法<a name="ByteStreamDemo"></h2>
+<pre><code>package cn.itcast.io.d.bytestream;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class ByteStreamDemo {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+
+        /*
+         * 字节输入流。
+         * available();
+         */
+
+        FileInputStream fis = new FileInputStream(&quot;tempfile\\file.txt&quot;);
+
+//        System.out.println(fis.available());
+        byte[] buf = new byte[fis.available()];//定义了一个刚刚好的数组。 注意：如果文件过大，容易溢出。
+                                        //建议缓冲区的长度最好还是1024的整数倍。
+
+        fis.read(buf);
+        String str = new String(buf);
+        System.out.println(str);
+
+
+        fis.close();
+    }
+
+}
+</code></pre><h2 id="19-a-name-bytestreambuffercopyfiletest-">19.通过字节流缓冲区对象复制文件<a name="ByteStreamBufferCopyFileTest"></h2>
+<pre><code>package cn.itcast.io.e.bytestreambuffer;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class ByteStreamBufferCopyFileTest {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+
+        //复制文件，通过字节流已有的缓冲区对象。
+
+        File srcFile = new File(&quot;tempfile\\file.txt&quot;);
+        File destFile = new File(&quot;tempfile\\bufcopy_file.txt&quot;);
+
+        //1,创建好流对象。
+        FileInputStream fis = new FileInputStream(srcFile);
+        FileOutputStream fos = new FileOutputStream(destFile);
+        //2,创建缓冲区对象并和指定的流相关联
+        BufferedInputStream bufis = new BufferedInputStream(fis);
+        BufferedOutputStream bufos = new BufferedOutputStream(fos);
+
+        byte[] buf = new byte[1024];
+//        int ch = 0;
+        int len = 0;
+        while((len=bufis.read(buf))!=-1){//缓冲区的read方法从缓冲区中读取一个字节。
+            bufos.write(buf,0,len);//将一个字节写入到缓冲区中。
+            bufos.flush();//刷新缓冲区，将数据刷到目的地。
+        }
+
+
+        bufos.close();//缓冲区的关闭方法内部其实调用的是流的关闭方法。
+        bufis.close();
+    }
+
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

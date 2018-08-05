@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="d19-list_set-">d19 List_Set集合</h1>
+<h2 id="-">导语：</h2>
+<blockquote>
+<p>想到在写</p>
+</blockquote>
+<p><a name="top"/></p>
+<pre><code>Collection:
+        |--List:有序的，带索引的，通过索引就可以精确的操作集合中的元素，元素是可以重复的。
+                List提供了增删改查动作   
+                增加add(element) add(index,element)  ;
+                删除remove(element) remove(index);
+                修改set(index,element);
+                查询get(index);
+            |--Vector：可以增长的数组结构。同步的。效率非常低。已被ArrayList替代。
+            |--ArrayList：是数组结构，长度是可变的（原理是创建新数组+复制数组），查询速度很快，增删较慢，不同步的。
+            |--LinkedList：是链表结构，不同步的，增删速度很快，查询速度较慢。
+                    可用于实现堆栈，队列。
+                    堆栈：先进后出  First in Last Out  FILO 手枪弹夹。
+                    队列：先进先出  First in First Out FIFO 排队买票。
+            List可以存储重复元素的，如果需求中要求容器中的元素必须保证唯一性。
+
+        |--Set:不包含重复元素的集合，不保证顺序。而且方法和Collection一致。Set集合取出元素的方式只有一种：迭代器。
+            |--HashSet:哈希表结构，不同步，保证元素唯一性的方式依赖于：hashCode(),equals()方法。查询速度快。
+            |--TreeSet:可以对Set集合中的元素进行排序。使用的是二叉树结构。如何保证元素唯一性的呢？
+                        使用的对象比较方法的结果是否为0，是0，视为相同元素不存。
+                        元素的排序比较有两种方式：
+                        1，元素自身具备自然排序，其实就是实现了Comparable接口重写了compareTo方法。
+                        如果元素自身不具备自然排序，或者具备的自然排序不是所需要的，这时只能用第二种方式。
+                        2，比较器排序，其实就是在创建TreeSet集合时，在构造函数中指定具体的比较方式。
+                            需要定义一个类实现Comparator接口，重写compare方法。
+</code></pre><pre><code>List：新出的子类都是以List结尾的，通常都是非同步的。
+        |--ArrayList ：看到array，就知道数组，查询速度快。
+        |--LinkedList：看到link，就知道链表，增删速度快。
+
+    Set:
+        |--HashSet:看到hash，就知道哈希表，查询速度更快，并想到元素唯一，通过hashCode(),equals方法保证唯一性。
+        |--TreeSet:看到tree，就知道二叉树，可以排序，排序想到Comparable-compareTo Comparator--compare方法。
+</code></pre><ol>
+<li><a href="#ListIteratorDemo">ListIteratorDemo</a></li><li><a href="#ArrayListTest">ArrayListTest</a></li><li><a href="#LinkedListDemo">LinkedListDemo</a></li><li><a href="#LinkedListTest">LinkedListTest</a></li><li><a href="#HashSetTest">HashSetTest</a></li><li><a href="#LinkedHashSetDemo">LinkedHashSetDemo</a></li><li><a href="#SetDemo">SetDemo</a></li><li><a href="#TreeSetDemo">TreeSetDemo</a></li><li><a href="#TreeSetDemo2">TreeSetDemo2</a></li><li><a href="#TreeSetTest">TreeSetTest</a></li><li><a href="#ComparatorByLength">ComparatorByLength</a></li><li><a href="#ComparatorByName">ComparatorByName</a></li><li><a href="#ForeachDemo">ForeachDemo</a></li><li><a href="#EnumerationDemo">EnumerationDemo</a></li><li><a href="#Student">Student</a></li></ol>
+<h2 id="-listiteratordemo-top-a-name-listiteratordemo-"><a href="#top">ListIteratorDemo</a><a name="ListIteratorDemo"/></h2>
+<pre><code>package cn.itcast.api.a.ListIterator;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+
+public class ListIteratorDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+
+        List list = new ArrayList();
+
+        list.add(&quot;itcast1&quot;);
+        list.add(&quot;itcast2&quot;);
+        list.add(&quot;itcast3&quot;);
+        list.add(&quot;itcast4&quot;);
+
+        /*
+         *  获取集合中的元素。
+         *  如果集合中有元素等于 itcast2.那么就插入一个新的元素，java。
+         *  
+         *  引发了java.util.ConcurrentModificationException
+         *  在迭代过程中，使用了集合的方法对元素进行操作。导致迭代器并不知道集合中的变化，容易引发数据的不确定性。
+         *  
+         *  解决:在迭代时，不要使用集合的方法操作元素。
+         *  那么想要在迭代时对元素操作咋办？可以使用迭代器的方法操作。
+         *  可是很遗憾：迭代器的方式只有 hasNext() ,next(),remove();
+         *  Iterator有一个子接口ListIterator可以完成该问题的解决。如何获取该子接口对象呢？
+         *  通过List接口中的listIterator()就可以获取，
+         *  记住：该列表迭代器只有List接口有。而且这个迭代器可以完成在迭代过程中的增删改查动作。
+         *  
+         *  
+         */
+//        Iterator it = list.iterator();
+//        获取列表迭代其对象
+        ListIterator it = list.listIterator();
+
+        while(it.hasNext()){
+
+            Object obj = it.next();
+            if(&quot;itcast2&quot;.equals(obj)){
+//                list.add(&quot;java&quot;);
+//                it.add(&quot;java&quot;);
+                it.set(&quot;java&quot;);
+            }
+        }
+
+        System.out.println(list);
+
+    }
+
+}
+</code></pre><h2 id="-arraylisttest-top-a-name-arraylisttest-"><a href="#top">ArrayListTest</a><a name="ArrayListTest"/></h2>
+<pre><code>package cn.itcast.api.b.list.subclass;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import cn.itcast.domain.Student;
+
+public class ArrayListTest {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        List list = new ArrayList();
+//        list.add(&quot;abc1&quot;);
+//        list.add(&quot;abc2&quot;);
+//        list.add(&quot;abc1&quot;);
+//        list.add(&quot;abc2&quot;);
+//        list.add(&quot;abc1&quot;);
+//        list.add(&quot;abc2&quot;);
+
+        list.add(new Student(&quot;lisi1&quot;,21));
+        list.add(new Student(&quot;lisi2&quot;,22));
+        list.add(new Student(&quot;lisi1&quot;,21));
+        list.add(new Student(&quot;lisi2&quot;,22));
+        list.add(new Student(&quot;lisi1&quot;,21));
+
+        getSingleElement(list);//去除重复元素。
+
+        System.out.println(list);
+
+    }
+
+    /*
+     * 案例：去除List集合中的重复元素。
+     * 
+     * 思路：
+     * 1，先创建一个临时容器。用于存储唯一性的元素。
+     * 2，遍历原容器，将遍历到的元素到临时容器中去判断，是否存在。
+     * 3，如果存在，不存储到临时容器，如果不存在，存储到临时容器中。
+     * 4，遍历结束后，临时容器中存储的就是唯一性的元素。
+     * 5，如果需要将这些唯一性的元素保留到原容器中，只要将原容器清空，将临时容器中的元素添加到原容器中即可。
+     * 
+     */
+    public static void getSingleElement(List list){
+
+        //1,创建一个临时容器。
+        List temp = new ArrayList();
+
+        //2,遍历原容器。
+        for (Iterator it = list.iterator(); it.hasNext();) {
+            Object obj = it.next();
+
+            //对遍历到的每一个元素都到临时容器中去判断是否包含。
+            if(!temp.contains(obj)){//如果不存在，
+                temp.add(obj);//添加到临时容器。
+            }
+        }
+        //唯一性的元素已经被记录到临时容器中。
+        //清空原容器中的元素。
+        list.clear();
+
+        //把临时容器中的元素添加到原容器中。
+        list.addAll(temp);
+
+    }
+
+}
+</code></pre><h2 id="-linkedlistdemo-top-a-name-linkedlistdemo-"><a href="#top">LinkedListDemo</a><a name="LinkedListDemo"/></h2>
+<pre><code>package cn.itcast.api.b.list.subclass;
+
+import java.util.LinkedList;
+
+public class LinkedListDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * LinkedList做个了解。
+         * 特有：围绕头和尾展开定义的。First Last。
+         * addFirst();
+         * addLast();
+         * 
+         * getFirst();：获取头部元素。
+         * getLast();
+         * 
+         * removeFirst();获取头部元素，并删除头部元素。
+         * removeLast();
+         */
+
+        LinkedList link = new LinkedList();
+
+        link.addFirst(&quot;abc1&quot;);
+        link.addFirst(&quot;abc2&quot;);
+        link.addFirst(&quot;abc3&quot;);
+
+//        System.out.println(link.getFirst());
+//        System.out.println(link.getFirst());
+
+//        System.out.println(link.removeFirst());
+//        System.out.println(link.removeFirst());
+//        System.out.println(link.removeFirst());
+//        System.out.println(link.removeFirst());
+
+        while(!link.isEmpty()){
+
+            System.out.println(link.removeLast());
+        }
+
+
+    }
+
+}
+</code></pre><h2 id="-linkedlisttest-top-a-name-linkedlisttest-"><a href="#top">LinkedListTest</a><a name="LinkedListTest"/></h2>
+<pre><code>package cn.itcast.api.b.list.subclass;
+
+import java.util.LinkedList;
+
+public class LinkedListTest {
+
+    /**
+     * @param args 
+     */
+    public static void main(String[] args) {
+        /*
+         * 面试题：用LinkedList模拟一个堆栈或者队列数据结构。
+         * 创建一个堆栈或者队列数据结构对象，该对象中使用LinkedList来完成的。
+         * 
+         * 自定义堆栈结构。作业。
+         */
+        //创建一个队列对象。
+        Queue queue = new Queue();
+        //往队列中添加元素。
+        queue.myAdd(&quot;itcast1&quot;);
+        queue.myAdd(&quot;itcast2&quot;);
+        queue.myAdd(&quot;itcast3&quot;);
+        queue.myAdd(&quot;itcast4&quot;);
+
+        while(!queue.isNull()){
+            System.out.println(queue.myGet());
+        }
+    }
+}
+/**
+ * 定义一个队列数据结构。Queue
+ */
+class Queue{
+    //封装了一个链表数据结构。
+    private LinkedList link;
+    /*
+     * 队列初始化时，对链表对象初始化。
+     */
+    Queue(){
+        link = new LinkedList();
+    }
+
+    /**
+     * 队列的添加元素功能。
+     */
+    public void myAdd(Object obj){
+        //内部使用的就是链表的方法。
+        link.addFirst(obj);
+    }
+
+    /**
+     * 队列的获取方法。
+     */
+    public Object myGet(){
+        return link.removeLast();
+    }
+
+    /**
+     * 判断队列中元素是否空，没有元素就为true。
+     */
+    public boolean isNull(){
+        return link.isEmpty();
+    }
+}
+</code></pre><h2 id="-hashsettest-top-a-name-hashsettest-"><a href="#top">HashSetTest</a><a name="HashSetTest"/></h2>
+<pre><code>package cn.itcast.api.c.set;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+import cn.itcast.api.d.comparator.ComparatorByLength;
+
+public class HashSetTest {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        Set set = new HashSet();
+
+        set.add(&quot;abcde&quot;);
+        set.add(&quot;haha&quot;);
+        set.add(&quot;z&quot;);
+        set.add(&quot;java&quot;);
+
+//        Object max = Collections.max(set);
+//        System.out.println(&quot;max=&quot;+max);
+
+        Object obj1 = getMax(set);
+        System.out.println(obj1);
+//        Object obj2 = getMax(set,new ComparatorByLength());
+//        System.out.println(obj2);
+
+    }
+
+    /**
+     * 获取Set集合的最大值，通过自然排序。
+     * @param set
+     * @return
+     */
+    public static Object getMax(Set set) {
+
+        /*
+         * 最值思路： 1，需要比较，并记录每次比较后较大的值。不断的重复这个动作(循环)
+         */
+
+        // 1，定义变量，记录较大的值，初始化为元素中的任意一个。
+        // 取出set集合中一个元素，通过迭代器。
+        // 先获取迭代器。
+        Iterator it = set.iterator();
+        // 获取其中一个元素。
+        Object max = it.next();
+
+        // 2，遍历集合，获取集合的每一个元素，
+        while (it.hasNext()) {
+
+            Object o = it.next();
+
+            Comparable temp = (Comparable) o;
+
+            // 3，在遍历中，和变量中记录的元素进行比较。让变量记录住比较后较大值。
+            if (temp.compareTo(max) &gt; 0) {
+                max = temp;
+            }
+        }
+
+        // 4，返回最大值。
+        return max;
+    }
+
+    /**
+     * 获取Set集合最大值，通过给定的比较器。
+     * @param set
+     * @param comp
+     * @return
+     */
+    public static Object getMax(Set set, Comparator comp) {
+
+        if (comp == null) {
+            throw new NullPointerException();
+        }
+        /*
+         * 最值思路： 1，需要比较，并记录每次比较后较大的值。不断的重复这个动作(循环)
+         */
+
+        // 1，定义变量，记录较大的值，初始化为元素中的任意一个。
+        // 取出set集合中一个元素，通过迭代器。
+        // 先获取迭代器。
+        Iterator it = set.iterator();
+        // 获取其中一个元素。
+        Object max = it.next();
+
+        // 2，遍历集合，获取集合的每一个元素，
+        while (it.hasNext()) {
+            Object o = it.next();
+            // 3，在遍历中，和变量中记录的元素进行比较。让变量记录住比较后较大值。
+            if (comp.compare(o, max) &gt; 0) {
+                max = o;
+            }
+        }
+
+        // 4，返回最大值。
+        return max;
+    }
+
+}
+</code></pre><h2 id="-linkedhashsetdemo-top-a-name-linkedhashsetdemo-"><a href="#top">LinkedHashSetDemo</a><a name="LinkedHashSetDemo"/></h2>
+<pre><code>package cn.itcast.api.c.set;
+
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class LinkedHashSetDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+
+        /*
+         * 提高唯一性元素的查询效率，还想有序，可使用HashSet的子类LinkedHashSet.
+         */
+        Set set = new LinkedHashSet();
+
+        set.add(&quot;abcd&quot;);
+        set.add(&quot;hahahah&quot;);
+        set.add(&quot;java&quot;);
+        set.add(&quot;itcast&quot;);
+
+        for (Iterator it = set.iterator(); it.hasNext();) {
+            System.out.println(it.next());
+        }
+
+    }
+
+}
+</code></pre><h2 id="-setdemo-top-a-name-setdemo-"><a href="#top">SetDemo</a><a name="SetDemo"/></h2>
+<pre><code>package cn.itcast.api.c.set;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+import cn.itcast.domain.Student;
+
+public class SetDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        Set set = new HashSet();
+
+        /*
+//        去除了字符串中的重复元素。
+        set.add(&quot;nba&quot;);
+        set.add(&quot;java&quot;);
+        set.add(&quot;haha&quot;);
+        set.add(&quot;itcast&quot;);
+        set.add(&quot;haha&quot;);
+        set.add(&quot;java&quot;);
+        set.add(&quot;java&quot;);
+        set.add(&quot;java&quot;);
+        set.add(&quot;itcast&quot;);*/
+
+        /*
+         * 
+         * 为什么学生对象没有保证唯一性呢？
+         * 通过对哈希表的分析。
+         * 存储元素时，先调用了元素对象的hashCode()方法，而每个学生对象都是新建立的对象，
+         * 所以hashCode值都不相同，也就不需要判断equals了。
+         * 想要按照需求同姓名同年龄来保证学生对象的唯一性咋办？
+         * 不能使用Object中hashCode方法，需要重新定义hashCode的算法内容。
+         * 简单说：重写hashCode方法。
+         */
+        set.add(new Student(&quot;lisi1&quot;,21));
+        set.add(new Student(&quot;lisi2&quot;,22));
+        set.add(new Student(&quot;lisi1&quot;,21));
+        set.add(new Student(&quot;lisi2&quot;,22));
+        set.add(new Student(&quot;lisi1&quot;,21));
+
+        &quot;abc1&quot;.hashCode();
+
+        for (Iterator it = set.iterator(); it.hasNext();) {
+            System.out.println(it.next());
+        }
+
+    }
+
+}
+</code></pre><h2 id="-treesetdemo-top-a-name-treesetdemo-"><a href="#top">TreeSetDemo</a><a name="TreeSetDemo"/></h2>
+<pre><code>package cn.itcast.api.c.set;
+
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeSet;
+
+import cn.itcast.domain.Student;
+
+public class TreeSetDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        //演示TreeSet,
+        Set set = new TreeSet();
+        /*
+        set.add(&quot;nba&quot;);
+        set.add(&quot;abc&quot;);
+        set.add(&quot;java&quot;);
+        set.add(&quot;aaa&quot;);
+        */
+        /*
+         * TreeSet的add方法内部最终实现：
+         * 需要将元素转成Comparable类型，为什么？因为这个类型具备排序的能力。
+         * 这个类型中有一个专门为排序提供了一个compareTo方法。
+         * 如果要让学生具备比较排序的功能，需要让学生扩展功能，实现Comparable接口。
+         */
+        set.add(new Student(&quot;lisi6&quot;,21));
+        set.add(new Student(&quot;lisi8&quot;,22));
+        set.add(new Student(&quot;lisi5&quot;,25));
+        set.add(new Student(&quot;lisi3&quot;,23));
+        set.add(new Student(&quot;lisi7&quot;,20));
+
+
+
+        for (Iterator it = set.iterator(); it.hasNext();) {
+            System.out.println(it.next());
+        }
+    }
+}
+</code></pre><h2 id="-treesetdemo2-top-a-name-treesetdemo2-"><a href="#top">TreeSetDemo2</a><a name="TreeSetDemo2"/></h2>
+<pre><code>package cn.itcast.api.c.set;
+
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeSet;
+
+import cn.itcast.api.d.comparator.ComparatorByName;
+import cn.itcast.domain.Student;
+
+public class TreeSetDemo2 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        //在创建TreeSet集合对象时明确比较器。
+        Set set = new TreeSet(new ComparatorByName());
+        /*
+         * 想要按照学生的姓名排序，说明学生中的自然排序不是所需要的。
+         * 这时只能使用比较器。ComparatorByName。
+         */  
+        set.add(new Student(&quot;lisi6&quot;,21));
+        set.add(new Student(&quot;lisi8&quot;,22));
+        set.add(new Student(&quot;lisi5&quot;,25));
+        set.add(new Student(&quot;lisi3&quot;,23));
+        set.add(new Student(&quot;lisi7&quot;,20));
+
+        for (Iterator it = set.iterator(); it.hasNext();) {
+            System.out.println(it.next());
+        }
+
+    }
+
+}
+</code></pre><h2 id="-treesettest-top-a-name-treesettest-"><a href="#top">TreeSetTest</a><a name="TreeSetTest"/></h2>
+<pre><code>package cn.itcast.api.c.set;
+
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeSet;
+
+import cn.itcast.api.d.comparator.ComparatorByLength;
+
+public class TreeSetTest {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * 练习：要对字符串进行长度(由短到长)排序。
+         * 思路：
+         * 1，字符串之所以可以排序，因为是已经实现Comparable接口重写compareTo方法。
+         * 建立了字符串的自然排序。
+         * 2，但是自然排序不是需求中所需要的。咋办？
+         * 只能使用比较器。需要自定义一个比较器。
+         * 
+         */
+        Set set = new TreeSet(Collections.reverseOrder(new ComparatorByLength()));
+
+        set.add(&quot;abc&quot;);
+        set.add(&quot;haha&quot;);
+        set.add(&quot;xixi&quot;);
+        set.add(&quot;z&quot;);
+        set.add(&quot;hiahia&quot;);
+
+        for (Iterator it = set.iterator(); it.hasNext();) {
+            System.out.println(it.next());
+        }
+
+    }
+
+}
+</code></pre><h2 id="-comparatorbylength-top-a-name-comparatorbylength-"><a href="#top">ComparatorByLength</a><a name="ComparatorByLength"/></h2>
+<pre><code>package cn.itcast.api.d.comparator;
+
+import java.util.Comparator;
+
+public class ComparatorByLength implements Comparator {
+
+    @Override
+    public int compare(Object o1, Object o2) {
+
+        String s1 = (String)o1;
+        String s2 = (String)o2;
+
+        int temp = s2.length()-s1.length() ;
+
+        return temp==0?s1.compareTo(s2):temp;
+    }
+
+}
+</code></pre><h2 id="-comparatorbyname-top-a-name-comparatorbyname-"><a href="#top">ComparatorByName</a><a name="ComparatorByName"/></h2>
+<pre><code>package cn.itcast.api.d.comparator;
+
+import java.util.Comparator;
+import java.util.TreeMap;
+
+import cn.itcast.domain.Student;
+
+public class ComparatorByName extends Object implements Comparator {
+
+    @Override
+    public int compare(Object o1, Object o2) {
+        //1,因为要比较的是学生对象的姓名。所以向下转型成Student对象。
+        Student s1 = (Student)o1;
+        Student s2 = (Student)o2;
+
+        //先比较姓名。
+        int temp = s1.getName().compareTo(s2.getName());
+        //如果姓名相同，再比较年龄。
+        return temp==0? s1.getAge()-s2.getAge():temp;
+    }
+
+}
+</code></pre><h2 id="-foreachdemo-top-a-name-foreachdemo-"><a href="#top">ForeachDemo</a><a name="ForeachDemo"/></h2>
+<pre><code>package cn.itcast.api.e.foreach;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ForeachDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * foreach：其实就是增强for循环。
+         * 格式：
+         * for(元素的数据类型  变量   : Collection集合or数组){}
+         * 用于遍历Collection和数组。通常只能遍历元素，不要在遍历的过程中做对集合元素的操作。
+         * 
+         * 和老式的for循环有什么区别？
+         * 注意：新for循环必须有被遍历的目标。目标只能是Collection或者是数组。
+         * 建议：遍历数组时，如果仅为遍历，可以使用增强for如果要对数组的元素进行 操作，使用老式for循环可以通过角标操作。
+         * 
+         */
+
+        List list = new ArrayList();
+        list.add(&quot;itcast1&quot;);
+        list.add(&quot;itcast2&quot;);
+        list.add(&quot;itcast3&quot;);
+        list.add(&quot;itcast4&quot;);
+
+//        for (Iterator it = list.iterator(); it.hasNext();) {
+//            Object obj = it.next();
+//            System.out.println(obj);
+//        }
+
+        for(Object obj : list){//简化。
+            System.out.println(obj);
+        }
+
+    }
+
+}
+</code></pre><h2 id="-enumerationdemo-top-a-name-enumerationdemo-"><a href="#top">EnumerationDemo</a><a name="EnumerationDemo"/></h2>
+<pre><code>package cn.itcast.api.f.enumeration;
+
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.Vector;
+
+public class EnumerationDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        Vector v = new Vector();
+
+        v.addElement(&quot;haha1&quot;);
+        v.addElement(&quot;haha2&quot;);
+        v.addElement(&quot;haha3&quot;);
+        v.addElement(&quot;haha4&quot;);
+
+//        枚举，名称太长，郁郁而终。
+        for(Enumeration en = v.elements(); en.hasMoreElements(); ){
+            System.out.println(&quot;enumeration:&quot;+en.nextElement());
+        }
+
+        for (Iterator it = v.iterator(); it.hasNext();) {
+            System.out.println(&quot;iterator:&quot;+it.next());
+        }
+
+        for(Object obj : v){
+            System.out.println(obj);
+        }
+    }
+
+}
+</code></pre><h2 id="-student-top-a-name-student-"><a href="#top">Student</a><a name="Student"/></h2>
+<pre><code>package cn.itcast.domain;
+
+public class Student implements Comparable {
+
+    private String name;
+    private int age;
+
+    public Student() {
+        super();
+    }
+
+    public Student(String name, int age) {
+        super();
+        this.name = name;
+        this.age = age;
+    }
+
+
+    /**
+     * 重写hashCode方法，建立Student对象的hash值算法内容。 通过学生对象特有数据姓名和年龄值来算出hash值。
+     */
+
+    @Override
+    public int hashCode() {
+
+        final int NUMBER = 24;
+
+        return name.hashCode() + age * NUMBER;// 乘以24(随意)为了尽量保证hash值不同
+        // return 1;
+    }
+
+
+    /**
+     * 重写了equals方法，建立Student对象判断相同的依据。
+     */
+    @Override
+    public boolean equals(Object obj) {
+
+        System.out.println(&quot;equals&quot;);
+        if (this == obj)
+            return true;
+
+        if (!(obj instanceof Student)) {
+            throw new ClassCastException();
+        }
+
+        Student stu = (Student) obj;
+        return this.name.equals(stu.name) &amp;&amp; this.age == stu.age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;Student [name=&quot; + name + &quot;, age=&quot; + age + &quot;]&quot;;
+    }
+
+    /**
+     * 重写compareTo方法，建立学生的自然排序(对象的默认排序方式)。
+     * 按照学生年龄排序。
+     */
+    @Override
+    public int compareTo(Object o) {
+
+
+        if(!(o instanceof Student)){
+            throw new ClassCastException();
+        }
+        Student stu = (Student)o;
+
+//        if(this.age&gt;stu.age)
+//            return 1;
+//        if(this.age&lt;stu.age)
+//            return -1;
+
+        /*
+         * 注意：在比较时，必须明确主次。主要条件相同，继续比较次要条件。
+         */
+        int temp = this.age - stu.age;
+
+        return temp==0?this.name.compareTo(stu.name):temp;
+    }
+
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

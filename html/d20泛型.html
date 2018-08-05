@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="d20-">d20泛型</h1>
+<h2 id="-">导语：</h2>
+<blockquote>
+<p>到时补充</p>
+</blockquote>
+<p><a name="top"/></p>
+<ol>
+<li><a href="#GenericDemo2">泛型类的使用</a></li><li><a href="#GenericDemo3">泛型方法的使用</a></li><li><a href="#GenericDemo4">泛型接口的使用</a></li><li><a href="#GenericDemo5">泛型通配符的使用</a></li><li><a href="#GenericDemo6">泛型的限定的使用</a></li><li><a href="#GenericDemo7">通配符在api中的体现和使用</a></li><li><a href="#GenericDemo8">泛型上限在api中的体现和使用</a></li><li><a href="#GenericDemo9">泛型下限在api中的体现和使用</a></li><li><a href="#GenericDemo10">泛型细节：保证两边泛型值一致</a></li><li><a href="#GenericTest">对字符串按照长度排序，比较器用匿名内部类完成。想要逆序，只要将o1和o2比，改成o2和o1比。</a></li><li><a href="#GenericTest2">获取集合元素最大值，1，指定类型  2，Object类型，3，泛型限定。★★★★★</a></li><li><a href="#ArraysDemo">Arrays:用于操作数组的工具类</a></li><li><a href="#CollectionsDemo">Collections: 集合框架中的用于操作集合对象 工具类</a></li><li><a href="#ComparatorByLength">ComparatorByLength</a></li><li><a href="#Person">Person</a></li><li><a href="#Student">Student</a></li><li><a href="#Worker">Worker</a></li><li><a href="#Test2">Test2</a></li><li><a href="#Test3">Test3</a></li><li><a href="#Test5">Test5</a></li></ol>
+<h2 id="-top-a-name-genericdemo2-"><a href="#top">泛型类的使用</a><a name="GenericDemo2"/></h2>
+<pre><code>package cn.itcast.api.a.generic;
+
+import java.util.LinkedList;
+
+public class GenericDemo2 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+//        Tool t = new Tool();
+//        t.setObject(6);
+//        String s = (String)t.getObject();
+//        System.out.println(s);
+
+        Tool&lt;String&gt; t = new Tool&lt;String&gt;();
+//        t.setObject(6);//只要类型错误，编译失败。避免了运行时的类型转换异常。
+        String s = t.getObject();//省去了强转的麻烦。
+        System.out.println(s);
+
+
+
+        Queue&lt;String&gt; queue = new Queue&lt;String&gt;();
+        queue.myAdd(&quot;abcd1&quot;);
+        queue.myAdd(&quot;abcd2&quot;);
+        queue.myAdd(&quot;abcd3&quot;);
+        while(!queue.isNull()){
+            String string = queue.myGet();
+            System.out.println(string);
+        }
+    }
+
+}
+//jdk1.5有了新技术，泛型，改成如下这样。
+//类中操作的对象确定不？不确定，用Object，需要转型，运行容易出异常。不爽。
+//在定义时，就将不确定的对象的类型，定义成参数。由使用该类的调用者来传递对象类型。
+class Tool&lt;Q&gt;{//将泛型定义在类上，泛型类。
+    private Q object;
+
+    public Q getObject() {
+        return object;
+    }
+
+    public void setObject(Q object) {
+        this.object = object;
+    }
+
+}
+
+class Queue&lt;E&gt;{
+    //封装了一个链表数据结构。
+    private LinkedList&lt;E&gt; link;
+    /*
+     * 队列初始化时，对链表对象初始化。
+     */
+    Queue(){
+        link = new LinkedList&lt;E&gt;();
+    }
+
+    /**
+     * 队列的添加元素功能。
+     */
+    public void myAdd(E obj){
+        //内部使用的就是链表的方法。
+        link.addFirst(obj);
+    }
+
+    /**
+     * 队列的获取方法。
+     */
+    public E myGet(){
+        return link.removeLast();
+    }
+
+    /**
+     * 判断队列中元素是否空，没有元素就为true。
+     */
+    public boolean isNull(){
+        return link.isEmpty();
+    }
+}
+
+
+
+/*
+//定义一个工具对对象进行操作，比如设置和获取。可以对任意对象进行操作。对共性类型Object操作。
+//定义Object就哦了。但用的时候，因为提升为了Object，想要使用特有内容，需要向下转型。容易引发ClassCastException:
+class Tool{
+
+    private Object object;
+
+    public Object getObject() {
+        return object;
+    }
+
+    public void setObject(Object object) {
+        this.object = object;
+    }
+
+
+}
+*/
+</code></pre><h2 id="-top-a-name-genericdemo3-"><a href="#top">泛型方法的使用</a><a name="GenericDemo3"/></h2>
+<pre><code>package cn.itcast.api.a.generic;
+
+public class GenericDemo3 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+
+        Util&lt;String&gt; util = new Util&lt;String&gt;();
+        util.show(&quot;hehe&quot;);
+//        util.print(5);
+        Util&lt;Integer&gt; util2 = new Util&lt;Integer&gt;();
+        Util.print(5);
+        util2.show(&quot;hehe&quot;);
+
+    }
+}
+
+class Util&lt;W&gt;{
+    //当方法要操作的类型不确定和类上的泛型不一定一样。这时可以将泛型定义在方法上。
+    public  &lt;Q&gt; void show(Q q){//泛型方法
+        System.out.println(&quot;show:&quot;+q);
+    }
+    public static&lt;E&gt; void print(E e){//记住：如果方法是静态，还需要使用泛型，那么泛型必须定义在方法上。
+        System.out.println(&quot;print:&quot;+e);
+    }
+    public void method(W w){
+
+    }
+}
+</code></pre><h2 id="-top-a-name-genericdemo4-"><a href="#top">泛型接口的使用</a><a name="GenericDemo4"/></h2>
+<pre><code>package cn.itcast.api.a.generic;
+
+public class GenericDemo4 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        new InterImpl&lt;String&gt;().show(&quot;hehe&quot;);
+    }
+
+}
+
+
+//泛型接口。
+interface Inter&lt;E&gt;{
+    void show(E e);
+}
+/*
+class InterImpl implements Inter&lt;String&gt;{
+    public void show(String e){}
+}
+*/
+
+class InterImpl&lt;T&gt; implements Inter&lt;T&gt;{
+
+    @Override
+    public void show(T e) {
+
+
+    }
+
+}
+</code></pre><h2 id="-top-a-name-genericdemo5-"><a href="#top">泛型通配符的使用</a><a name="GenericDemo5"/></h2>
+<pre><code>package cn.itcast.api.a.generic;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import cn.itcast.domain.Student;
+
+public class GenericDemo5 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        Set&lt;Student&gt; list = new HashSet&lt;Student&gt;();
+
+        list.add(new Student(&quot;lisi1&quot;,21));
+        list.add(new Student(&quot;lisi2&quot;,22));
+        list.add(new Student(&quot;lisi3&quot;,23));
+
+        printList(list);
+
+        List&lt;String&gt; list2 = new ArrayList&lt;String&gt;();
+
+        list2.add(&quot;lisi11&quot;);
+        list2.add(&quot;lisi22&quot;);
+        list2.add(&quot;lisi33&quot;);
+
+        printList(list2);
+
+
+    }
+
+    /*
+     *  打印集合中的元素。
+     *  
+     *  当使用泛型类或者接口时，传递的具体的类型不确定，可以通过通配符(?)表示。
+     *  
+     */
+    private static void printList(Collection&lt;?&gt; list2) {
+        for (Iterator&lt;?&gt; it = list2.iterator(); it.hasNext();) {
+            System.out.println(it.next().toString());
+        }
+    }
+
+
+
+}
+</code></pre><h2 id="-top-a-name-genericdemo6-"><a href="#top">泛型的限定的使用</a><a name="GenericDemo6"/></h2>
+<pre><code>package cn.itcast.api.a.generic;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import cn.itcast.domain.Person;
+import cn.itcast.domain.Student;
+import cn.itcast.domain.Worker;
+
+public class GenericDemo6 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        Set&lt;Student&gt; list = new HashSet&lt;Student&gt;();
+
+        list.add(new Student(&quot;lisi1&quot;,21));
+        list.add(new Student(&quot;lisi2&quot;,22));
+        list.add(new Student(&quot;lisi3&quot;,23));
+
+        printList(list);
+
+        List&lt;Worker&gt; list2 = new ArrayList&lt;Worker&gt;();
+
+        list2.add(new Worker(&quot;lisi11&quot;,21));
+        list2.add(new Worker(&quot;lisi22&quot;,22));
+        list2.add(new Worker(&quot;lisi33&quot;,23));
+
+        printList(list2);
+
+
+    }
+
+    /*
+     *  打印集合中的元素。
+     *  当使用泛型类或者接口时，传递的具体的类型不确定，可以通过通配符(?)表示。
+     *  如果想要对被打印的集合中的元素类型进行限制，只在指定的一些类型，进行打印。
+     *  使用泛型的限定。
+     *  
+     *  只需要打印学生和工人的集合。找到学生和工人的共性类型Person。
+     *  ? extends Person : 接收Person类型或者Person的子类型。
+     *  
+     *  总结：
+     *  ? super E:接收E类型或者E的父类型。下限。
+     *  ? extends E:接收E类型或者E的子类型。上限。
+     */
+    private static void printList(Collection&lt;? extends Person&gt; list2) {
+        for (Iterator&lt;? extends Person&gt; it = list2.iterator(); it.hasNext();) {
+
+            Person p = it.next();
+            System.out.println(p.getName());
+        }
+    }
+
+
+}
+</code></pre><h2 id="-api-top-a-name-genericdemo7-"><a href="#top">通配符在api中的体现和使用</a><a name="GenericDemo7"/></h2>
+<pre><code>package cn.itcast.api.a.generic;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class GenericDemo7 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * 通配符? 在api中的体现。
+         * 
+         * Collection接口： boolean containsAll(Collection&lt;?&gt; c) 
+         */
+
+        Collection&lt;String&gt; c1 = new ArrayList&lt;String&gt;();
+        c1.add(&quot;haha&quot;);
+        c1.add(&quot;hehe&quot;);
+
+        Collection&lt;Integer&gt; c2 = new ArrayList&lt;Integer&gt;();
+        c2.add(4);
+        c2.add(5);
+
+        boolean b = c1.containsAll(c2);//了解 containAll源码内判断是否包含的依据。依据是equals方法。
+                                        //public  boolean equals(Object obj) &quot;abc&quot;.equals(5);
+        System.out.println(&quot;b=&quot;+b);
+    }
+}
+
+/*
+ * class Collection&lt;E&gt;
+ * {
+ *         public boolean containsAll(Collection&lt;?&gt; c){
+ *         }
+ * }
+ */
+</code></pre><h2 id="-api-top-a-name-genericdemo8-"><a href="#top">泛型上限在api中的体现和使用</a><a name="GenericDemo8"/></h2>
+<pre><code>package cn.itcast.api.a.generic;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.TreeSet;
+
+import cn.itcast.domain.Person;
+import cn.itcast.domain.Student;
+
+public class GenericDemo8 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        /*
+         *  泛型的限定在api中的使用。上限的体现。
+         *  TreeSet(Collection&lt;? extends E&gt; c) 
+         *  
+         *  
+         */
+        //创建一个Collection.
+        Collection&lt;Student&gt; c = new ArrayList&lt;Student&gt;();
+        c.add(new Student(&quot;wangcai1&quot;,26));
+        c.add(new Student(&quot;wangcai2&quot;,29));
+
+        //TreeSet集合在创建时，就将c中的存储到Treeset集合。
+        TreeSet&lt;Person&gt; ts = new TreeSet&lt;Person&gt;(c);
+
+        ts.add(new Person(&quot;lisi&quot;,20));
+
+        for (Iterator&lt;Person&gt; it = ts.iterator(); it.hasNext();) {
+            Person person =  it.next();
+            System.out.println(person);
+
+        }
+
+
+    }
+
+}
+
+/*
+ * class TreeSet&lt;E&gt;{
+ *         TreeSet(Collection&lt;? extends E&gt; c){}
+ */
+</code></pre><h2 id="-api-top-a-name-genericdemo9-"><a href="#top">泛型下限在api中的体现和使用</a><a name="GenericDemo9"/></h2>
+<pre><code>package cn.itcast.api.a.generic;
+
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.TreeSet;
+
+import cn.itcast.domain.Person;
+import cn.itcast.domain.Student;
+import cn.itcast.domain.Worker;
+
+public class GenericDemo9 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        /*
+         *  泛型的限定在api中的使用。下限的体现。
+         *  TreeSet(Comparator&lt;? super E&gt; comparator) 
+         *  
+         *  
+         */
+        //创建一个集合存储的是学生对象。想要按照姓名排序。
+        TreeSet&lt;Student&gt; ts = new TreeSet&lt;Student&gt;(new ComparatorByName());
+        ts.add(new Student(&quot;abc&quot;,26));
+        ts.add(new Student(&quot;aaa&quot;,29));
+        ts.add(new Student(&quot;lisi&quot;,20));
+
+
+        for (Iterator&lt;Student&gt; it = ts.iterator(); it.hasNext();) {
+            Student student =  it.next();
+            System.out.println(student);
+
+        }
+
+        //让工人按照姓名排序。
+        TreeSet&lt;Worker&gt; ts2 = new TreeSet&lt;Worker&gt;(new ComparatorByName());
+        ts2.add(new Worker(&quot;abc&quot;,26));
+        ts2.add(new Worker(&quot;aaa&quot;,29));
+        ts2.add(new Worker(&quot;lisi&quot;,20));
+
+
+        for (Iterator&lt;Worker&gt; it = ts2.iterator(); it.hasNext();) {
+            Worker worker =  it.next();
+            System.out.println(worker);
+
+        }
+    }
+}
+
+
+class ComparatorByName implements Comparator&lt;Person&gt;{
+
+    @Override
+    public int compare(Person o1, Person o2) {
+        int temp = o1.getName().compareTo(o2.getName());
+
+        return temp==0? o1.getAge() - o2.getAge() : temp;
+    }
+
+}
+/*
+ * 以下两个比较器，都是通过姓名排序，就是类型不同，一个是student，一个是worker
+ * 既然使用的都是Person的内容，为什么不定义一个Person的比较器。
+ */
+/*
+//定义一个比较器。
+class ComparatorByName implements Comparator&lt;Student&gt;{
+
+    @Override
+    public int compare(Student o1, Student o2) {
+        int temp = o1.getName().compareTo(o2.getName());
+
+        return temp==0? o1.getAge() - o2.getAge() : temp;
+    }
+
+}
+//定义一个工人的姓名比较器。
+class ComparatorByWorkerName implements Comparator&lt;Worker&gt;{
+
+    @Override
+    public int compare(Worker o1, Worker o2) {
+        int temp = o1.getName().compareTo(o2.getName());
+
+        return temp==0? o1.getAge() - o2.getAge() : temp;
+    }
+
+}
+*/
+/*
+ * class TreeSet&lt;E&gt;{
+ *         TreeSet(Comparator&lt;? super E&gt;  c){}
+ */
+</code></pre><h2 id="-top-a-name-genericdemo10-"><a href="#top">泛型细节：保证两边泛型值一致</a><a name="GenericDemo10"/></h2>
+<pre><code>package cn.itcast.api.a.generic;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class GenericDemo10 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+//        ArrayList&lt;Dog&gt; al = new ArrayList&lt;Animal&gt;();//使用泛型，要保证左右类型一致。
+//        ArrayList&lt;String&gt; al = new ArrayList&lt;Object&gt;();
+
+        List&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();
+//        show(list);
+    }
+    public static void show(List&lt;String&gt; list){
+
+    }
+}
+</code></pre><h2 id="-o1-o2-o2-o1-top-a-name-generictest-"><a href="#top">对字符串按照长度排序，比较器用匿名内部类完成。想要逆序，只要将o1和o2比，改成o2和o1比。</a><a name="GenericTest"/></h2>
+<pre><code>package cn.itcast.api.a.generic;
+
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class GenericTest {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        //创建一个唯一性元素的集合要求排序。set -- treeset//按照长度排序，需要比较器。匿名内部类完成
+        Set&lt;String&gt; set = new TreeSet&lt;String&gt;(new Comparator&lt;String&gt;(){
+
+            @Override
+            public int compare(String o1, String o2) {
+
+                int temp = o1.length() - o2.length();
+                return temp==0?o1.compareTo(o2):temp;
+            }
+        });
+
+        //添加元素。
+        set.add(&quot;abcde&quot;);
+        set.add(&quot;java&quot;);
+        set.add(&quot;hello&quot;);
+
+        for (Iterator&lt;String&gt; it = set.iterator(); it.hasNext();) {
+            String string =  it.next();
+            System.out.println(string);
+        }
+    }
+}
+</code></pre><h2 id="-1-2-object-3-top-a-name-generictest2-"><a href="#top">获取集合元素最大值，1，指定类型  2，Object类型，3，泛型限定。★★★★★</a><a name="GenericTest2"/></h2>
+<pre><code>package cn.itcast.api.a.generic;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.Iterator;
+
+import cn.itcast.domain.Student;
+
+public class GenericTest2 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * 案例：获取集合中元素的最大值。
+         * 
+         * 思路： 1，定义变量记录每次比较后较大的值，初始化元素中任意一个。 2，遍历容器
+         * 3，在遍历中和变量中记录的元素进行比较。并将较大的值记录到变量中。 4，遍历结束，变量中记录的就是最大值。
+         */
+
+        Collection&lt;Student&gt; c1 = new ArrayList&lt;Student&gt;();
+        c1.add(new Student(&quot;xiaoming1&quot;, 30));
+        c1.add(new Student(&quot;xiaoming2&quot;, 36));
+        c1.add(new Student(&quot;xiaoming3&quot;, 22));
+//        c1.add(new Dog());
+
+        Student stu = getMax(c1);
+        System.out.println(stu);
+
+        Collection&lt;String&gt; c2 = new ArrayList&lt;String&gt;();
+        c2.add(&quot;abcd&quot;);
+        c2.add(&quot;java&quot;);
+        c2.add(&quot;z&quot;);
+        c2.add(&quot;nba&quot;);
+        String s = getMax(c2);
+        System.out.println(&quot;s=&quot;+s);
+
+        Collection&lt;Dog&gt; c3 = new ArrayList&lt;Dog&gt;();
+//        getMax(c3);//已经做了限定，说明传递的集合中的元素类型必须是Comparable的子类。否则编译失败。
+    }
+
+public static &lt;T extends Comparable&lt;? super T&gt;&gt; T getMax(Collection&lt;? extends T&gt; c,Comparator&lt;? super T&gt; comp){
+
+        if(comp==null){
+            return getMax(c);
+        }
+
+        Iterator&lt;? extends T&gt; it = c.iterator();
+
+        T max = it.next();
+
+        while(it.hasNext()){
+
+            T temp = it.next();
+
+            if(comp.compare(temp, max)&gt;0){
+                max = temp;
+            }
+        }
+
+        return max;
+    }
+
+    // 升级版。要操作的元素的类型确定不？不确定。使用泛型限定。getMax方法接收的集合中的元素无论时什么类型，必须具备自然排序，必须是Comparable的子类。
+    public static &lt;T extends Comparable&lt;? super T&gt;&gt; T getMax(Collection&lt;? extends T&gt; c){
+
+        Iterator&lt;? extends T&gt; it = c.iterator();
+
+        T max = it.next();
+
+        while(it.hasNext()){
+
+            T temp = it.next();
+
+            if(temp.compareTo(max)&gt;0){
+                max = temp;
+            }
+        }
+
+        return max;
+    }
+
+    /*
+    //不加泛型时，无法明确集合中的元素时什么类型，为了便于操作用Object
+    public static Object getMax(Collection c1) {
+
+        // 1,定义变量，记录集合中任意一个元素，Collection集合取出元素的方式只有迭代器。
+        Iterator it = c1.iterator();
+        Object max = it.next();
+
+        // 2,遍历容器。
+        while (it.hasNext()) {
+            Object o = it.next();
+            Comparable temp = (Comparable)o;
+
+            if (temp.compareTo(max) &gt; 0) {
+                max = temp;
+            }
+        }
+        return max;
+    }
+*/
+    /*
+     * //这个功能虽然实现，但是有局限性，因为这个功能只能对存储了Student对象的集合进行最大值的获取。 public static Student
+     * getMax(Collection&lt;Student&gt; c1) {
+     * 
+     * //1,定义变量，记录集合中任意一个元素，Collection集合取出元素的方式只有迭代器。 Iterator&lt;Student&gt; it =
+     * c1.iterator(); Student max = it.next();
+     * 
+     * //2,遍历容器。 while(it.hasNext()){ Student temp = it.next();
+     * 
+     * if(temp.compareTo(max) &gt; 0){ max = temp; } } return max; }
+     */
+
+}
+class Dog{}
+</code></pre><h2 id="-arrays-top-a-name-arraysdemo-"><a href="#top">Arrays:用于操作数组的工具类</a><a name="ArraysDemo"/></h2>
+<pre><code>package cn.itcast.api.b.tools;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
+public class ArraysDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * Arrays:用于操作数组的工具类。
+         * 类中定义的都是静态工具方法
+         * 1，对数组排序。
+         * 2，二分查找。
+         * 3，数组复制。
+         * 4，对两个数组进行元素的比较，判断两个数组是否相同。
+         * 5，将数组转成字符串。
+         */
+
+        int[] arr = {34,21,67};
+        System.out.println(Arrays.toString(arr));
+
+        //将arr转成list集合。？如果数组中存储的是基本数据类型，那么转成集合，数组对象会作为集合中的元素存在。
+        //数组中元素时引用数据类型时，转成，数组元素会作为集合元素存在。
+         List&lt;int[]&gt; list1 = Arrays.asList(arr);
+         System.out.println(list1);
+
+
+
+
+        String[] strs = {&quot;hah&quot;,&quot;hehe&quot;,&quot;xixi&quot;};
+        boolean b = contains(strs,&quot;hehe&quot;);
+        System.out.println(b);
+        //将数组转成list集合。asList
+        /*
+         * 数组转成集合：就为了使用集合的方法操作数组中的元素。
+         * 但是不要使用增删等改变长度的方法。add remove  发生UnsupportedOperationException
+         */
+        List&lt;String&gt; list = Arrays.asList(strs);
+        System.out.println(list.contains(&quot;hehe&quot;));
+        System.out.println(list.get(2));
+        System.out.println(list.indexOf(&quot;hehe&quot;));
+//        list.add(&quot;java&quot;);//UnsupportedOperationException  数组长度的固定的，转成List集合长度也是固定的。
+
+
+
+
+        //-------------------集合转成数组---------------------
+        /*
+         * 为什么集合转成数组呢？
+         * 为了限制对元素的增删操作。
+         */
+        Collection&lt;String&gt; c = new ArrayList&lt;String&gt;();
+        c.add(&quot;haha1&quot;);
+        c.add(&quot;haha2&quot;);
+        c.add(&quot;haha3&quot;);
+        c.add(&quot;haha4&quot;);
+        /*
+         *  如果传递的数组的长度小于集合的长度，会创建一个同类型的数组长度为集合的长度。
+         *  如果传递的数组的长度大于了集合的长度，就会使用这个数组，没有存储元素的位置为null。
+         *  长度最好直接定义为和集合长度一致。
+         */
+        String[] str_arr = c.toArray(new String[c.size()]);
+        System.out.println(Arrays.toString(str_arr));
+
+    }
+
+    public static boolean contains(String[] strs,String key) {
+
+        for (int i = 0; i &lt; strs.length; i++) {
+            if(strs[i].equals(key)){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+}
+</code></pre><h2 id="-collections-top-a-name-collectionsdemo-"><a href="#top">Collections: 集合框架中的用于操作集合对象 工具类</a><a name="CollectionsDemo"/></h2>
+<pre><code>package cn.itcast.api.b.tools;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+import cn.itcast.api.c.comparator.ComparatorByLength;
+
+public class CollectionsDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * Collections: 集合框架中的用于操作集合对象 工具类。
+         * 都是静态的工具方法。
+         * 1，获取Collection最值。
+         *
+         * 
+         * 2，对List集合排序，也可以二分查找。
+         * 3，对排序逆序。
+         * 4，可以将非同步的集合转成同步的集合。
+         * Xxx synchronizedXxx(Xxx)  List synchronizedList(List) 
+         */
+
+
+        System.out.println(&quot;---------获取最值---------------&quot;);
+        Collection&lt;String&gt; c = new ArrayList&lt;String&gt;();
+        c.add(&quot;haha&quot;);
+        c.add(&quot;zz&quot;);
+        c.add(&quot;xixii&quot;);
+        c.add(&quot;abc&quot;);
+        String max = Collections.max(c,new ComparatorByLength());
+
+        System.out.println(&quot;max=&quot;+max);
+        System.out.println(&quot;-----------排序-------------&quot;);
+        List&lt;String&gt; list  = new ArrayList&lt;String&gt;();
+        list.add(&quot;hahaha&quot;);
+        list.add(&quot;abc&quot;);
+        list.add(&quot;xiix&quot;);
+        list.add(&quot;z&quot;);
+        list.add(&quot;java&quot;);
+        Collections.sort(list,Collections.reverseOrder());
+        System.out.println(list);
+
+
+        System.out.println(&quot;------------------------&quot;);
+        System.out.println(&quot;------------------------&quot;);
+
+
+
+    }
+
+}
+</code></pre><h2 id="-comparatorbylength-top-a-name-comparatorbylength-"><a href="#top">ComparatorByLength</a><a name="ComparatorByLength"/></h2>
+<pre><code>package cn.itcast.api.c.comparator;
+
+import java.util.Comparator;
+
+public class ComparatorByLength implements Comparator&lt;String&gt; {
+
+    @Override
+    public int compare(String o1, String o2) {
+        int temp = o1.length() - o2.length();
+
+        return temp == 0 ? o1.compareTo(o2) : temp;
+    }
+}
+</code></pre><h2 id="-person-top-a-name-person-"><a href="#top">Person</a><a name="Person"/></h2>
+<pre><code>package cn.itcast.domain;
+
+public class Person implements Comparable&lt;Person&gt; {
+
+    private String name;
+    private int age;
+
+
+    public Person() {
+        super();
+    }
+
+    public Person(String name, int age) {
+        super();
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;Person [name=&quot; + name + &quot;, age=&quot; + age + &quot;]&quot;;
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        int temp = this.age - o.age;
+        return temp==0? this.name.compareTo(o.name): temp;
+    }
+
+
+}
+</code></pre><h2 id="-student-top-a-name-student-"><a href="#top">Student</a><a name="Student"/></h2>
+<pre><code>package cn.itcast.domain;
+
+public class Student extends Person {
+
+    public Student() {
+        super();
+    }
+
+    public Student(String name, int age) {
+        super(name, age);
+    }
+
+    @Override
+    public String toString() {
+        return &quot;Student [name =&quot; + getName() + &quot;, age =&quot; + getAge()
+                + &quot;]&quot;;
+    }
+
+
+}
+</code></pre><h2 id="-worker-top-a-name-worker-"><a href="#top">Worker</a><a name="Worker"/></h2>
+<pre><code>package cn.itcast.domain;
+
+public class Worker extends Person {
+
+    public Worker() {
+        super();
+    }
+
+    public Worker(String name, int age) {
+        super(name, age);
+    }
+
+    @Override
+    public String toString() {
+        return &quot;Worker [name =&quot; + getName() + &quot;, age =&quot; + getAge()
+                + &quot;]&quot;;
+    }
+
+
+
+}
+</code></pre><h2 id="-test2-top-a-name-test2-"><a href="#top">Test2</a><a name="Test2"/></h2>
+<pre><code>package cn.itcast.test;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class Test2 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        //作业2：List集合中存储的重复字符串元素，按照长度进行排序。
+
+        List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+        list.add(&quot;nba&quot;);
+        list.add(&quot;abcde&quot;);
+        list.add(&quot;nba&quot;);
+        list.add(&quot;cctv&quot;);
+        list.add(&quot;zz&quot;);
+        list.add(&quot;cctv&quot;);
+        list.add(&quot;itcast&quot;);
+
+        Collections.sort(list,new Comparator&lt;String&gt;() {
+
+            @Override
+            public int compare(String o1, String o2) {
+                int temp = o1.length() - o2.length();
+                return temp==0?o1.compareTo(o2):temp;
+            }
+
+        });
+
+        for(String str : list){
+            System.out.println(str);
+        }
+
+    }
+
+}
+</code></pre><h2 id="-test3-top-a-name-test3-"><a href="#top">Test3</a><a name="Test3"/></h2>
+<pre><code>package cn.itcast.test;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class Test3 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+//        3，在一个已排序的List集合中插入一个字符串，继续保证这个集合原有排序，问如何获取这个位置。
+        List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+        list.add(&quot;nba&quot;);
+        list.add(&quot;abcde&quot;);
+        list.add(&quot;nba&quot;);
+        list.add(&quot;cctv&quot;);
+        list.add(&quot;zz&quot;);
+        list.add(&quot;cctv&quot;);
+        list.add(&quot;itcast&quot;);
+
+        Collections.sort(list);
+        String key =  &quot;haha&quot;;
+        //找一个元素在集合中出现的位置。
+        int index = Collections.binarySearch(list, key);
+        System.out.println(&quot;index=&quot;+index);
+
+        if(index&lt;0){
+            index = -(index+1);
+        }
+
+        System.out.println(&quot;index=&quot;+index);
+        System.out.println(list);
+        list.add(index, key);
+
+
+        System.out.println(list);
+    }
+
+}
+
+
+/*
+,new Comparator&lt;String&gt;() {
+
+            @Override
+            public int compare(String o1, String o2) {
+                int temp = o1.length() - o2.length();
+                return temp==0?o1.compareTo(o2):temp;
+            }
+
+        }
+
+*/
+</code></pre><h2 id="-test5-top-a-name-test5-"><a href="#top">Test5</a><a name="Test5"/></h2>
+<pre><code>package cn.itcast.test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Test5 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+//        5，一个ArrayList对象alist中存有若干个字符串元素，现欲遍历该ArrayList对象，
+//        删除其中所有值为&quot;abc&quot;的字符串元素，请问下面的实现正确么？如有问题，
+//        会出现什么问题？如何更正？
+
+        //1,移除成功会导致集合长度改变， 必须要重新获取size。导致了IndexOutOfBoundsException。
+        //解决方案：在for循环的条件上，调用size方法。
+        //2,出现了有些abc没有被删除。那么是因为删除后，角标自增，原角标上的后替换过来的元素没有被判断。
+        //解决方案：在删除后，要让角标自减，重新判断替换过来的元素。
+
+        List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+        list.add(&quot;nba&quot;);
+        list.add(&quot;abc&quot;);
+        list.add(&quot;abc&quot;);
+        list.add(&quot;abc&quot;);
+        list.add(&quot;abc&quot;);
+        list.add(&quot;cctv&quot;);
+
+        System.out.println(list);
+//        int size = list.size();
+        for(int i = 0; i &lt; list.size(); i++) {
+          if(&quot;abc&quot;.equals(list.get(i))) {
+            list.remove(i);//会改变集合的长度。应该重新获取size。
+            i--;
+          }
+        }
+
+        System.out.println(list);
+    }
+
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

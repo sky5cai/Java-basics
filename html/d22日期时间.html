@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="day22-">day22日期时间</h1>
+<h2 id="-">导语：</h2>
+<blockquote>
+<p>现在开始把所有的代码以markdown的形式记录下来，然后转成html记录放在电纸书里，顺便清一下电纸书。</p>
+</blockquote>
+<p><a name="top"/></p>
+<ol>
+<li><a href="#DateDemo">将毫秒值转成本地格式。Date DateFormat</a></li><li><a href="#DateDemo2">获取日期中的指定日期信息比如获取年，月，日Calendar。</a></li><li><a href="#DateTest">练习2 ：&quot;2012-3-17&quot;转成日期对象</a></li><li><a href="#DateTest2">练习3：&quot;2013-4-25&quot;到&quot;2013年7月29日&quot;到底有多少天</a></li><li><a href="#DateTest2">DateTest3练习4：获取给定年份的2月有多少天？【面试题】</a></li></ol>
+<h2 id="-date-dateformat-top-a-name-datedemo-"><a href="#top">将毫秒值转成本地格式。Date DateFormat</a><a name="DateDemo"/></h2>
+<pre><code>package cn.itcast.api.a.date;
+
+import java.text.DateFormat;
+import java.util.Date;
+
+public class DateDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        long time = System.currentTimeMillis();
+//        System.out.println(time);//1382837734218
+        //【怎么能将这个时间转成我们所熟悉的时间呢？】
+        //通过另请参阅找到Date类。发现日期对象一初始化可以传递一个毫秒值。
+
+
+        time = 1382837734218l;
+        //创建了一个日期对象,将已有的毫秒值进行封装。通过日期对象的方法获取其中的相关信息。比如年月日。
+        Date date = new Date(time);
+        System.out.println(date.toString());//Sun Oct 27 09:35:34 CST 2013
+
+        //对象的方法已过时。通过toString获取了国际化的信息。如何让信息本土化。
+        //toLocaleString() 已过时，通过查阅信息发现替代从 JDK 1.1 开始，由 DateFormat.format(Date date) 取代。
+        //要格式化一个当前语言环境下的日期，可使用某个静态工厂方法：myString = DateFormat.getDateInstance().format(myDate);
+
+        //在获取格式器对象时可以明确风格。 FULL、LONG、MEDIUM(默认风格)和 SHORT
+        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.FULL);
+        dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG);
+
+        //调用format方法对日期对象进行格式化。用默认风格。
+        String str_date = dateFormat.format(date);
+        System.out.println(str_date);
+
+
+
+
+    }
+
+}
+</code></pre><h2 id="-calendar-top-a-name-datedemo2-"><a href="#top">获取日期中的指定日期信息比如获取年，月，日Calendar。</a><a name="DateDemo2"/></h2>
+<pre><code>package cn.itcast.api.a.date;
+
+import java.util.Calendar;
+
+public class DateDemo2 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        //需求2：基于需求1，获取到了日期和时间的字符串信息(本地)。
+        //如何获取字符串中指定的日期信息呢？比如获取年，并判断。
+        //1,获取日期对象。Date
+//        Date date = new Date();
+
+        //jdk1.1开始 Calendar。//获取日历对象。
+        Calendar c = Calendar.getInstance();//
+
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH)+1;
+        int day = c.get(Calendar.DAY_OF_MONTH);
+        String week = getCnWeek(c.get(Calendar.DAY_OF_WEEK));
+
+        //打印信息中年月日等相关信息都在这里。获取指定字段的值就哦了。
+        System.out.println(year+&quot;年&quot;+month+&quot;月&quot;+day+&quot;日  &quot;+week);
+
+    }
+    //让星期字段对应的中文的星期。查表。数组。
+
+    public static String getCnWeek(int i) {
+        if(i&lt;0 || i&gt;7){
+            throw new RuntimeException(i+&quot;没有对应的星期&quot;);
+        }
+        //定义表。
+        String[] weeks = {&quot;&quot;,&quot;星期日&quot;,&quot;星期一&quot;,&quot;星期二&quot;,&quot;星期三&quot;,&quot;星期四&quot;,&quot;星期五&quot;,&quot;星期六&quot;};
+
+        return weeks[i];
+    }
+
+
+
+
+
+
+
+}
+/*
+java.util.GregorianCalendar[time=1382840743546
+,areFieldsSet=true,areAllFieldsSet=true,lenient=true
+,zone=sun.util.calendar.ZoneInfo[id=&quot;Asia/Shanghai&quot;
+,offset=28800000,dstSavings=0,useDaylight=false,transitions=19
+,lastRule=null],firstDayOfWeek=1,minimalDaysInFirstWeek=1
+,ERA=1,YEAR=2013,MONTH=9,WEEK_OF_YEAR=44,WEEK_OF_MONTH=5
+,DAY_OF_MONTH=27,DAY_OF_YEAR=300,DAY_OF_WEEK=1,DAY_OF_WEEK_IN_MONTH=4
+,AM_PM=0,HOUR=10,HOUR_OF_DAY=10,MINUTE=25,SECOND=43,MILLISECOND=546
+,ZONE_OFFSET=28800000,DST_OFFSET=0]
+*/
+</code></pre><h2 id="-2-2012-3-17-top-a-name-datetest-"><a href="#top">练习2 ：&quot;2012-3-17&quot;转成日期对象</a><a name="DateTest"/></h2>
+<pre><code>package cn.itcast.api.a.date;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateTest {
+
+    /**
+     * @param args
+     * @throws ParseException 
+     */
+    public static void main(String[] args) throws ParseException {
+//        练习2 ：&quot;2012-3-17&quot;转成日期对象。
+        /*
+         * 之前有做过，将一个日期对象转成日期文本字符串这个称之为格式化。
+         * 现在要做的是文本---&gt;日期对象：解析。
+         * 这些都是DateFormat中的功能。
+         * 
+         * 不同日期风格的文本对应不同的格式器。
+         */
+
+        String str_date = &quot;2012年3月17日&quot;;
+
+
+
+        //日期格式器。DateFormat
+        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.LONG);
+
+        Date date = dateFormat.parse(str_date);
+
+        System.out.println(date);
+
+
+        //这种格式在给定的四种风格中不存在。怎么解析呢？只能使用子类SimpleDateFormat的方法，
+        //1，构造函数明确特定风格，2，applyPattern 方法来修改格式模式
+        str_date = &quot;2013/3/17 17--13--45&quot;;
+        DateFormat dateFormat2 = new SimpleDateFormat(&quot;yyyy/MM/dd hh--mm--ss&quot;);
+        Date date2 = dateFormat2.parse(str_date);
+        System.out.println(date2);
+
+    }
+
+}
+</code></pre><h2 id="-3-2013-4-25-2013-7-29-top-a-name-datetest2-"><a href="#top">练习3：&quot;2013-4-25&quot;到&quot;2013年7月29日&quot;到底有多少天</a><a name="DateTest2"/></h2>
+<pre><code>package cn.itcast.api.a.date;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.util.Date;
+
+public class DateTest2 {
+
+    /**
+     * @param args
+     * @throws ParseException 
+     */
+    public static void main(String[] args) throws ParseException {
+//        练习3,&quot;2013-4-25&quot;到&quot;2013年7月29日&quot;到底有多少天？
+        /*
+         * 思路：
+         * 1，到底有多少天？相减的过程。
+         * 2，字符串也不能相减啊，毫秒值可以相减。
+         * 3，怎么获取毫秒值呢？毫秒值--&gt;日期对象， 日期对象--&gt;毫秒值。
+         * 4，怎么获取日期对象呢？需要将字符串文本--解析--&gt;日期对象。
+         */
+
+        String str_date1 = &quot;2013-4-25&quot;;
+        String str_date2 = &quot;2013年7月29日&quot;;
+        //需要定义两个模式。一个解析str_date1,一个解析str_date2。
+        int style_1 = DateFormat.MEDIUM;//默认风格。
+        int style_2 = DateFormat.LONG;//默认风格。
+
+        int days = getDays(str_date1,str_date2,    style_1,style_2);
+        System.out.println(&quot;days=&quot;+days);
+
+    }
+
+    private static int getDays(String str_date1, String str_date2,
+            int style_1, int style_2) throws ParseException {
+
+        //1，根据给定风格创建格式器对象。
+        DateFormat format_1 = DateFormat.getDateInstance(style_1);
+        DateFormat format_2 = DateFormat.getDateInstance(style_2);
+
+        //2,对文本进行解析。
+        Date date_1 = format_1.parse(str_date1);
+        Date date_2 = format_2.parse(str_date2);
+
+        //3,获取日期对象毫秒值。
+        long time_1 = date_1.getTime();
+        long time_2 = date_2.getTime();
+
+        //4,相减。
+        long time = Math.abs(time_1 - time_2);
+//        System.out.println(time);
+        int day = (int)(time/1000/60/60/24);
+        return day;
+    }
+
+
+
+}
+</code></pre><h2 id="-datetest3-4-2-top-a-name-datetest2-"><a href="#top">DateTest3练习4：获取给定年份的2月有多少天？【面试题】</a><a name="DateTest2"/></h2>
+<pre><code>package cn.itcast.api.a.date;
+
+import java.util.Calendar;
+
+public class DateTest3 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        // 4,获取给定年份的2月有多少天？【面试题】
+
+        for (int year = 2000; year &lt;= 2020; year++) {
+            show(year);
+        }
+
+    }
+
+    public static void show(int year) {
+        Calendar c = Calendar.getInstance();//
+
+        // 有获取有设置 set
+        // c.set(Calendar.YEAR, 2011);
+        c.set(year, 2, 1);
+        // 时间是连续的，3月1日的前一天就2月的最后一天，知道2月份的天数。
+
+        c.add(Calendar.DAY_OF_MONTH, -1);
+
+        int year1 = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH) + 1;
+        int day = c.get(Calendar.DAY_OF_MONTH);
+        String week = getCnWeek(c.get(Calendar.DAY_OF_WEEK));
+
+        // 打印信息中年月日等相关信息都在这里。获取指定字段的值就哦了。
+        System.out.println(year1 + &quot;年&quot; + month + &quot;月&quot; + day + &quot;日  &quot; + week);
+    }
+
+    public static String getCnWeek(int i) {
+        if (i &lt; 0 || i &gt; 7) {
+            throw new RuntimeException(i + &quot;没有对应的星期&quot;);
+        }
+        // 定义表。
+        String[] weeks = { &quot;&quot;, &quot;星期日&quot;, &quot;星期一&quot;, &quot;星期二&quot;, &quot;星期三&quot;, &quot;星期四&quot;, &quot;星期五&quot;, &quot;星期六&quot; };
+
+        return weeks[i];
+    }
+
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

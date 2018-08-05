@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="-">内部类揭秘</h1>
+<h2 id="-">导语</h2>
+<blockquote>
+<p>想到在写</p>
+</blockquote>
+<p><a name="top"/></p>
+<ol>
+<li><a href="#InnerClassDemo">内部类的由来，以及内部类的访问特点。内部类在成员位置的修饰以及访问格式</a></li><li><a href="#InnerClassDemo2">非静态内部类为什么直接访问外部类中的成员，因为持有外部类的this引用</a></li><li><a href="#InnerClassDemo3">局部内部类，仅可以访问被final修饰的局部变量</a></li><li><a href="#InnerClassDemo4">内部类的延伸，内部类可以继承其他类或者实现外部接口。★★★★★</a></li><li><a href="#InnerClassDemo5">匿名内部类，格式，原理</a></li><li><a href="#InnerClassDemo6">匿名内部类和内部类的转换练习。如果调用匿名内部类中的多个方法</a></li><li><a href="#InnerClassDemo7">匿名内部类的练习，以及面试题。要动手写为什么 ★★★★★</a></li><li><a href="#ExceptionDemo">了解异常的出现，以及异常和错误的区别</a></li><li><a href="#ExceptionDemo2">异常发生的底层过程</a></li></ol>
+<h2 id="1-top-a-name-innerclassdemo-">1. <a href="#top">内部类的由来，以及内部类的访问特点。内部类在成员位置的修饰以及访问格式</a><a name="InnerClassDemo"/></h2>
+<pre><code>
+/*
+当A类中的内容要被B类直接访问，而A类还需要创建B的对象，访问B的内容时，
+这时，可以将B类定义到A类的内部。这样访问更为便捷。
+
+将B称之为内部类(内置类，嵌套类)。
+
+
+访问方式：
+内部类可以直接访问外部类中的所有成员，包含私有的。
+而外部类要想访问内部类中的成员，必须创建内部类的对象。
+
+当描述事物时，事物的内部还有事物，这个内部的事物还在访问外部事物中的内容。
+这时就将这个事物通过内部类来描述。
+
+
+【内部类被访问的方式】
+情况一：内部类在成员位置上的被访问方式。
+    成员是可以被指定的修饰符所修饰的。
+    public:不多见：因为更多的时候，内部类已经被封装到了外部类中，不直接对外提供。
+    static: 
+
+
+
+*/
+class Outer//外部类。
+{
+    private static int num = 4;
+    public class Inner//内部类。
+    {
+        void show()
+        {
+            System.out.println(&quot;num=&quot;+num);
+        }
+//        static void show1(){}//非静态内部类中不允许定义静态成员。仅允许在非静态内部类中定义 静态常量 static final。
+//        如果想要在内部类中定义静态成员，必须内部类也要被静态修饰。
+    }
+
+    /*
+    内部类被静态修饰后，随着Outer的加载而加载。可以把一个静态内部类理解为就是一个外部类。
+
+    */
+    static class Inner2
+    {
+        void show2()
+        {
+            System.out.println(&quot;Inner2 show2 run...&quot;+num);
+        }
+        static void staticShow()
+        {
+            System.out.println(&quot;Inner2 staticShow run&quot;);
+        }
+    }
+    void method()
+    {
+        /*Outer.*/Inner in = new /*Outer.*/Inner();
+        in.show();
+    }
+}
+
+
+
+
+class InnerClassDemo
+{
+    public static void main(String[] args)
+    {
+//        Outer out = new Outer();
+//        out.method();
+
+        //测试情况一：直接访问Outer中的Inner内部类的非静态成员。
+        //创建内部类的对象就哦了。内部类作为成员，应该先有外部类对象，再有内部类对象。
+//        Outer.Inner in = new Outer().new Inner();
+//        in.show();
+
+        //测试情况二：对静态内部类中的非静态成员进行调用。
+        //因为内部类是静态，所以不需要创建Outer的对象。直接创建内部类对象就哦了。
+//        Outer.Inner2 in = new Outer.Inner2();
+//        in.show2();
+//        如果静态内部类有静态成员，该如何访问呢？既然静态内部类已随外部类加载，而且静态成员随着类的加载而加载，
+//        就不需要对象，直接用类名调用即可。
+//        Outer.Inner2.staticShow();
+
+
+    }
+}
+</code></pre><h2 id="2-this-top-a-name-innerclassdemo2-">2. <a href="#top">非静态内部类为什么直接访问外部类中的成员，因为持有外部类的this引用</a><a name="InnerClassDemo2"/></h2>
+<pre><code>
+
+/*
+为什么内部类就能直接访问外部类中的成员呢？
+那是因为内部类其实持有了外部类的引用  外部类.this 
+对于静态内部类不持有 外部类.this  而是直接使用 外部类名。
+*/
+class Outer
+{
+    int num = 3;
+    class Inner
+    {
+        int num = 4;
+
+        void show()
+        {
+            int num = 5;
+            System.out.println(&quot;num=&quot;+num);
+            System.out.println(&quot;num=&quot;+this.num);
+            System.out.println(&quot;num=&quot;+Outer.this.num);
+        }
+    }
+
+    void method()
+    {
+//        System.out.println(num);
+        new Inner().show();
+    }
+}
+
+
+class InnerClassDemo2 
+{
+    public static void main(String[] args) 
+    {
+        Outer out = new Outer();
+        out.method();
+    }
+}
+</code></pre><h2 id="3-final-top-a-name-innerclassdemo3-">3. <a href="#top">局部内部类，仅可以访问被final修饰的局部变量</a><a name="InnerClassDemo3"/></h2>
+<pre><code>
+/*
+内部类其实也可以定义在外部类的局部位置上。
+
+内部类定义在局部时，只能访问被final修饰的局部变量。
+为啥呢？因为编译生产的class中直接操作那个最终数值了。
+
+为什么不能访问非最终的局部变量呢？
+
+*/
+
+class Outer
+{
+    int  num = 3;
+    void method()
+    {
+        final int  x = 10;
+//        final int x = 5;//局部变量。
+        int y = 2;
+        class Inner//局部内部类。不能被成员修饰符修饰。
+        {
+            void show()
+            {
+//                System.out.println(&quot;y=&quot;+y);//访问失败。y的生命周期太短了。
+                System.out.println(&quot;x=&quot;+x);
+                System.out.println(&quot;inner show run........&quot;+num);
+            }
+        }
+        new Inner().show();
+    }
+}
+
+/*
+class Outer2
+{
+    Object obj;
+    public void method()
+    {
+        int y = 9;
+        class Inner //extends Object
+        {
+            //覆盖了toString方法。
+            public String toString()
+            {
+                return &quot;tostring:&quot;+y;//假设可以访问y。
+            }
+        }
+        obj = new Inner();//给obj复制一个Inner对象。
+    }
+
+    public void function()
+    {
+        System.out.println(obj.toString());
+    }
+}
+*/
+class InnerClassDemo3 
+{
+    public static void main(String[] args) 
+    {
+        Outer out = new Outer();
+        out.method();
+    }
+}
+</code></pre><h2 id="4-top-a-name-innerclassdemo4-">4. <a href="#top">内部类的延伸，内部类可以继承其他类或者实现外部接口。★★★★★</a><a name="InnerClassDemo4"/></h2>
+<pre><code>
+/*
+内部类其实也可以定义在外部类的局部位置上。
+
+内部类定义在局部时，只能访问被final修饰的局部变量。
+为啥呢？因为编译生产的class中直接操作那个最终数值了。
+
+为什么不能访问非最终的局部变量呢？
+
+*/
+
+class Outer
+{
+    int  num = 3;
+    void method()
+    {
+        final int  x = 10;
+//        final int x = 5;//局部变量。
+        int y = 2;
+        class Inner//局部内部类。不能被成员修饰符修饰。
+        {
+            void show()
+            {
+//                System.out.println(&quot;y=&quot;+y);//访问失败。y的生命周期太短了。
+                System.out.println(&quot;x=&quot;+x);
+                System.out.println(&quot;inner show run........&quot;+num);
+            }
+        }
+        new Inner().show();
+    }
+}
+
+/*
+class Outer2
+{
+    Object obj;
+    public void method()
+    {
+        int y = 9;
+        class Inner //extends Object
+        {
+            //覆盖了toString方法。
+            public String toString()
+            {
+                return &quot;tostring:&quot;+y;//假设可以访问y。
+            }
+        }
+        obj = new Inner();//给obj复制一个Inner对象。
+    }
+
+    public void function()
+    {
+        System.out.println(obj.toString());
+    }
+}
+*/
+class InnerClassDemo3 
+{
+    public static void main(String[] args) 
+    {
+        Outer out = new Outer();
+        out.method();
+    }
+}
+</code></pre><h2 id="5-top-a-name-innerclassdemo5-">5. <a href="#top">匿名内部类，格式，原理</a><a name="InnerClassDemo5"/></h2>
+<pre><code>
+/*
+内部类其实也可以定义在外部类的局部位置上。
+
+内部类定义在局部时，只能访问被final修饰的局部变量。
+为啥呢？因为编译生产的class中直接操作那个最终数值了。
+
+为什么不能访问非最终的局部变量呢？
+
+*/
+
+class Outer
+{
+    int  num = 3;
+    void method()
+    {
+        final int  x = 10;
+//        final int x = 5;//局部变量。
+        int y = 2;
+        class Inner//局部内部类。不能被成员修饰符修饰。
+        {
+            void show()
+            {
+//                System.out.println(&quot;y=&quot;+y);//访问失败。y的生命周期太短了。
+                System.out.println(&quot;x=&quot;+x);
+                System.out.println(&quot;inner show run........&quot;+num);
+            }
+        }
+        new Inner().show();
+    }
+}
+
+/*
+class Outer2
+{
+    Object obj;
+    public void method()
+    {
+        int y = 9;
+        class Inner //extends Object
+        {
+            //覆盖了toString方法。
+            public String toString()
+            {
+                return &quot;tostring:&quot;+y;//假设可以访问y。
+            }
+        }
+        obj = new Inner();//给obj复制一个Inner对象。
+    }
+
+    public void function()
+    {
+        System.out.println(obj.toString());
+    }
+}
+*/
+class InnerClassDemo3 
+{
+    public static void main(String[] args) 
+    {
+        Outer out = new Outer();
+        out.method();
+    }
+}
+</code></pre><h2 id="6-top-a-name-innerclassdemo6-">6. <a href="#top">匿名内部类和内部类的转换练习。如果调用匿名内部类中的多个方法</a><a name="InnerClassDemo6"/></h2>
+<pre><code>
+/*
+内部类其实也可以定义在外部类的局部位置上。
+
+内部类定义在局部时，只能访问被final修饰的局部变量。
+为啥呢？因为编译生产的class中直接操作那个最终数值了。
+
+为什么不能访问非最终的局部变量呢？
+
+*/
+
+class Outer
+{
+    int  num = 3;
+    void method()
+    {
+        final int  x = 10;
+//        final int x = 5;//局部变量。
+        int y = 2;
+        class Inner//局部内部类。不能被成员修饰符修饰。
+        {
+            void show()
+            {
+//                System.out.println(&quot;y=&quot;+y);//访问失败。y的生命周期太短了。
+                System.out.println(&quot;x=&quot;+x);
+                System.out.println(&quot;inner show run........&quot;+num);
+            }
+        }
+        new Inner().show();
+    }
+}
+
+/*
+class Outer2
+{
+    Object obj;
+    public void method()
+    {
+        int y = 9;
+        class Inner //extends Object
+        {
+            //覆盖了toString方法。
+            public String toString()
+            {
+                return &quot;tostring:&quot;+y;//假设可以访问y。
+            }
+        }
+        obj = new Inner();//给obj复制一个Inner对象。
+    }
+
+    public void function()
+    {
+        System.out.println(obj.toString());
+    }
+}
+*/
+class InnerClassDemo3 
+{
+    public static void main(String[] args) 
+    {
+        Outer out = new Outer();
+        out.method();
+    }
+}
+</code></pre><h2 id="7-top-a-name-innerclassdemo7-">7. <a href="#top">匿名内部类的练习，以及面试题。要动手写为什么 ★★★★★</a><a name="InnerClassDemo7"/></h2>
+<pre><code>
+//匿名内部类练习。
+interface Inter
+{
+    public void show();
+}
+class Outer
+{
+    //代码补足。要求使用匿名内部类。
+    public static Inter method()
+    {
+        //既然在Oute类中使用到了Inter的对象。可以使用内部类来完成。
+        //需要子类型，只要简化格式即可，因为接口中就只有一个方法。
+        return new Inter()
+        {
+            public void show()
+            {
+                //code..;
+            }
+        };
+//        return new Inner();
+    } 
+
+    /*
+//    还原成内部类。  当静态方法访问内部类时，内部类必须是静态的。
+    static class Inner implements Inter
+    {
+        public void show(){}
+    }
+    */
+}
+//Outer$Inner.class 成员内部类Inner
+//Outer$1Inner.class 局部内部类名称为Inner
+//Outer$2.class//匿名内部类。
+
+
+
+//面试题。
+class Outer2
+{
+    public void method()
+    {
+        //以下两个对象有区别吗？
+        new Object()
+        {
+            public void show(){}
+        }.show();//这个可以编译通过。
+
+        Object obj = new Object()
+        {
+            public void show(){}
+        };
+//        obj.show();//编译失败。为啥呢？因为匿名内部类是子类对象，当Object obj指向时，就被提升了Object。而Object类中没有定义show方法，编译失败。
+
+    }
+
+//    class Inner extends Object
+//    {
+//        public void show(){}
+//    }
+}
+
+
+class InnerClassDemo7 
+{
+    public static void main(String[] args) 
+    {
+        Outer.method().show();
+        /*
+        Outer.method():Outer类中有一个method的方法。这个方式静态的。
+        Outer.method.show():能调用show()的必然是对象，说明method方法运算完应该返回一个对象。而且能调用Inter中的show方法，说明这个对象的类型是Inter。
+
+        */
+
+        Inter in = Outer.method();new InterImpl();
+        in.show();
+    }
+}
+</code></pre><h2 id="8-top-a-name-exceptiondemo-">8. <a href="#top">了解异常的出现，以及异常和错误的区别</a><a name="ExceptionDemo"/></h2>
+<pre><code>
+/*
+异常。
+Java运行时期发生的问题就是异常。
+
+Java中运行时发生的除了异常Exception还有错误Error。
+
+异常：通常发生可以有针对性的处理方式的。
+错误：通常发生后不会有针对性的处理方式。
+    Error的发生往往都是系统级别的问题，都是jvm所在系统发生的并反馈给jvm的。
+    无法针对处理，只能修正代码。
+
+
+
+
+*/
+
+
+class ExceptionDemo 
+{
+    public static void main(String[] args) 
+    {
+        int[] arr = new int[1024*1024*100];//OutOfMemoryError 
+
+        System.out.println(arr[0]);
+        System.out.println(arr[3]);//该句运行时发生了ArrayIndexOutOfBoundsException，导致程序无法继续执行。程序结束。
+        System.out.println(&quot;over&quot;);
+    }
+}
+</code></pre><h2 id="9-top-a-name-exceptiondemo2-">9. <a href="#top">异常发生的底层过程</a><a name="ExceptionDemo2"/></h2>
+<pre><code>
+
+/*
+异常的发生细节。
+*/
+
+class Demo
+{
+    /*
+    对给定的数组通过给定的角标获取元素。
+    */
+    int getElement(int[] arr,int index)
+    {
+
+        /*
+        1,没有找到4个角标。运行时发生了问题，这个问题JVM认识。
+        这个问题java本身有描述：描述内容有：问题的名称，问题的内容，问题的发生位置。
+        既然有这么多的信息。java就将这些信息直接封装到对象中。ArrayIndexOutOfBoundsException
+        */
+        int element = arr[index];//throw new ArrayIndexOutOfBoundsException(index);
+        return element;
+    }
+}
+
+
+class ExceptionDemo2 
+{
+    public static void main(String[] args) 
+    {
+        Demo d = new Demo();
+        int[] arr = {34,12,67};
+        int num = d.getElement(arr,4);//收到 new ArrayIndexOutOfBoundsException(index); 抛出jvm。jvm进行最终处理。将问题的名称，信息，位置都显示屏幕上。
+        System.out.println(&quot;num=&quot;+num);
+        System.out.println(&quot;over&quot;);
+    }
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

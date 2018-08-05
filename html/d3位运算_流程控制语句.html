@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="d3-_-">d3位运算_流程控制语句</h1>
+<h2 id="-">导语：</h2>
+<blockquote>
+<p>想写在写</p>
+</blockquote>
+<p><a name="top"/></p>
+<ol>
+<li><a href="#BreakDemo">BreakDemo</a></li><li><a href="#ContinueDemo">ContinueDemo</a></li><li><a href="#DoWhileDemo">DoWhileDemo</a></li><li><a href="#ForDemo">ForDemo</a></li><li><a href="#ForForDemo">ForForDemo</a></li><li><a href="#ForForTest">ForForTest</a></li><li><a href="#ForTest">ForTest</a></li><li><a href="#HexTest">HexTest</a></li><li><a href="#IfDemo">IfDemo</a></li><li><a href="#IfTest">IfTest</a></li><li><a href="#OperateDemo4">OperateDemo4</a></li><li><a href="#OperateDemo5">OperateDemo5</a></li><li><a href="#OperateTest">OperateTest</a></li><li><a href="#SwitchDemo">SwitchDemo</a></li><li><a href="#SwitchTest">SwitchTest</a></li><li><a href="#WhileDemo">WhileDemo</a></li><li><a href="#WhileTest">WhileTest</a></li><li><a href="#Test">Test</a></li></ol>
+<h2 id="1-breakdemo-top-a-name-breakdemo-">1. <a href="#top">BreakDemo</a><a name="BreakDemo"/></h2>
+<pre><code>class BreakDemo 
+{
+    public static void main(String[] args) 
+    {
+        /*
+        break:使用范围：switch 循环语句。
+        */
+        /*
+        for (int x=0; x&lt;3 ;x++ )
+        {
+            if(x==1)
+                break;
+            System.out.println(&quot;x=&quot;+x);            
+        }
+        */
+        outer:for (int x=0; x&lt;3 ;x++ )
+        {
+            inner:for (int y=0; y&lt;4 ;y++ )
+            {
+                System.out.println(&quot;x=&quot;+x);
+                break outer;
+            }
+        }
+    }
+}
+</code></pre><h2 id="2-continuedemo-top-a-name-continuedemo-">2. <a href="#top">ContinueDemo</a><a name="ContinueDemo"/></h2>
+<pre><code>class ContinueDemo 
+{
+    public static void main(String[] args) 
+    {
+        /*
+        continue:只作用于循环结构。
+
+        结束本次循环，继续下次循环。
+        */
+        for (int x=0; x&lt;10 ;x++ )
+        {
+            if(x%2==0)
+                continue;
+            System.out.println(&quot;x=&quot;+x);
+
+        }
+
+        outer:for (int x=0; x&lt;3 ;x++ )
+        {
+            inner:for (int y=0; y&lt;4 ;y++ )
+            {
+                System.out.println(&quot;x=&quot;+x);
+                continue outer;
+            }
+        }
+
+    }
+}
+</code></pre><h2 id="3-dowhiledemo-top-a-name-dowhiledemo-">3. <a href="#top">DoWhileDemo</a><a name="DoWhileDemo"/></h2>
+<pre><code>class DoWhileDemo 
+{
+    public static void main(String[] args) 
+    {
+
+        /*
+        do
+        {
+            执行语句；
+        }while(条件表达式);
+
+        */
+        int x = 3; 
+        while(x&lt;3)
+        {
+            System.out.println(&quot;x=&quot;+x);
+            x++;
+        }
+
+
+        //do while 无论条件是否满足，循环体至少执行一次。
+        int y = 3;
+        do
+        {
+            System.out.println(&quot;y=&quot;+y);
+            y++;
+        }
+        while (y&lt;3);
+
+
+    }
+}
+</code></pre><h2 id="4-fordemo-top-a-name-fordemo-">4. <a href="#top">ForDemo</a><a name="ForDemo"/></h2>
+<pre><code>class ForDemo 
+{
+    public static void main(String[] args) 
+    {
+
+        /*
+        for(初始化表达式；循环条件表达式；循环后的操作表达式)
+        {
+            执行语句；(循环体)
+        }
+
+        */
+        for(int x = 1; x&lt;3; x++)
+        {
+            System.out.println(&quot;x=&quot;+x);
+        }
+        //System.out.println(&quot;x......&quot;+x);
+
+        //和while的区别。
+        int y = 1;
+        while(y&lt;3)
+        {
+            System.out.println(&quot;y=&quot;+y);
+            y++;
+        }
+        System.out.println(&quot;y.....&quot;+y);
+
+
+        //最简单的无限循环，
+        //while(true){}   for(; ;){}
+
+
+    }
+}
+</code></pre><h2 id="5-forfordemo-top-a-name-forfordemo-">5. <a href="#top">ForForDemo</a><a name="ForForDemo"/></h2>
+<pre><code>class ForForDemo 
+{
+    public static void main(String[] args) 
+    {
+
+        for (int x=0; x&lt;3; x++)//行
+        {
+            for(int y=0; y&lt;4; y++)//每一行的个数。
+            {
+                System.out.print(&quot;*&quot;);
+            }
+            System.out.println();//换行。
+        }
+
+
+
+
+    }
+}
+</code></pre><h2 id="6-forfortest-top-a-name-forfortest-">6. <a href="#top">ForForTest</a><a name="ForForTest"/></h2>
+<pre><code>class ForForTest 
+{
+    public static void main(String[] args) 
+    {
+        /*
+        需求：在屏幕上显示以下图形。
+        *****
+        ****
+        ***
+        **
+        *
+        思路：
+        1，看起图形，发现是由5行的组成。
+        2，每一行都有多个星。
+        3，有点意思，多行，循环就可以搞定。每到一行，里面有多个星。
+        循环内，还需要循环负责每一行的星的个数。
+        4，外循环控制行数，内循环控制每一个行的个数。
+
+        步骤：
+        1，for的嵌套循环。
+        */
+        /*
+        int z = 5;
+        for ( int x=1; x&lt;=5 ; x++ )
+        {
+            for ( int y=1 ; y&lt;=z ; y++) 
+            {
+                System.out.print(&quot;*&quot;);
+            }
+            z--;
+            System.out.println();
+        }
+        */
+
+        //int z = 1;
+        for ( int x=1; x&lt;=5 ; x++ )
+        {
+            for ( int y=x ; y&lt;=5 ; y++)  
+            {
+                System.out.print(&quot;&amp;&quot;);
+            }
+            //z++;
+            System.out.println();
+        }
+
+        System.out.println(&quot;-----------------------&quot;);
+
+        /*
+
+        *
+        **
+        ***
+        ****
+        *****
+
+        */
+
+        for (int x=1; x&lt;=5 ; x++)
+        {
+            for (int y=1 ;y&lt;=x ;y++ )
+            {
+                System.out.print(&quot;*&quot;);
+            }
+            System.out.println();
+        }
+
+
+
+        /*
+        需求：要求在屏幕上显示下列内容。
+        54321
+        5432
+        543
+        54
+        5
+
+
+        1*1=1 
+        1*2=2 2*2=4
+        1*3=3 2*3=6 3*3=9
+
+
+        */
+    }
+}
+</code></pre><h2 id="7-fortest-top-a-name-fortest-">7. <a href="#top">ForTest</a><a name="ForTest"/></h2>
+<pre><code>class ForTest 
+{
+    public static void main(String[] args) 
+    {
+
+        /*
+        需求：获取1-100之间6的倍数的个数。
+
+        思路：
+        1，个数是未知的，所以定义变量。
+        2，6的倍数咋表示？只要是对6能整除，也就是没有余数。
+        3，需要对1-100之间所以的数都要进行判断是不是6的倍数。如果是，需要对个数变量进行自增。
+        4，怎么完成1-100之间呢？使用循环。
+
+
+        步骤：
+        1，定义变量，记录个数。记录1-100变化的数。
+        2，定义循环，遍历1-100.
+        3，在循环中对1-100的数字进行判断。
+        4，满足条件，个数变量自增。
+        */
+
+        //1，定义变量，记录个数。
+        int count = 0;
+        for (int x = 1; x&lt;=100 ; x++ )
+        {
+            //对数值进行判断，是否是6的倍数。
+            if(x % 6 == 0)
+                count++;
+        }
+
+        System.out.println(&quot;count=&quot;+count);
+    }
+}
+</code></pre><h2 id="8-hextest-top-a-name-hextest-">8. <a href="#top">HexTest</a><a name="HexTest"/></h2>
+<pre><code>class HexTest 
+{
+    public static void main(String[] args) 
+    {
+        /*
+        //需求3：对给定的整数26，获取其十六进制的表现形式。★★★★
+        思路；
+        1，啥是十六进制，数据的一种表现形式，好处在于可以表现形式更短。
+            原理：将二进制中4位为一个十六进制位。
+        2，哦，原理就是对给定的整数进行二进制的每4位的获取。
+        3，咋获取每4位呢？其实就是获取四位中的1，可以通过&amp;位运算的方式完成。
+        4，而且想要获取下四位，可以通过对原数据进行无符号右移的方式。
+
+
+
+        步骤：
+        1，定义变量记录该整数。
+        2，对改变量进行&amp;运算 既然是获取四位，就&amp;四个1，二进制四个1就是十进制的15.
+        3，对原数据进行无符号右移四位。
+        */
+        /*
+        int num = 26;
+        //&amp;15.获取最低四位。
+        int n1 = num &amp; 15;
+        System.out.println(&quot;n1=&quot;+(char)(n1-10+&#39;a&#39;));
+        //对num进行右移。
+        num = num &gt;&gt;&gt; 4;
+        //在进行&amp;15.
+        int n2 = num &amp; 15;
+        System.out.println(&quot;n2=&quot;+n2);
+      //          97  98   99   100  101  102 
+      //&#39;0&#39;-&#39;9&#39; &#39;a&#39; &#39;b&#39; &#39;c&#39;  &#39;d&#39;  &#39;e&#39;   &#39;f&#39;
+      //0 -  9  10  11  12   13   14    15    
+        */
+
+        /*
+        以上的动作不合适。
+        运算很重复。到底&amp;15的结果是否需要做这个字母转换，无法确定。
+        所以通过学习的语句来完成。
+        1，通过循环，完成重复的运算。
+        2，通过if完成是否需要转成字母的判断。
+        */
+
+        int num = 3567;//26=0x1A
+
+        for(int x=0; x&lt;8; x++)
+        {
+            int n = num &amp; 15;
+            if(n&gt;9)
+                System.out.println((char)(n-10+&#39;A&#39;));
+            else
+                System.out.println(n);
+            num = num &gt;&gt;&gt; 4;
+        }
+        //后记：两个问题未解决，1，反了。2，多零。烦！需要对多数据进行存储。期待中。。。
+
+    }
+}
+</code></pre><h2 id="9-ifdemo-top-a-name-ifdemo-">9. <a href="#top">IfDemo</a><a name="IfDemo"/></h2>
+<pre><code>class IfDemo
+{
+    public static void main(String[] args) 
+    {
+        //1,if格式一。
+        int x = 1;
+        if(x &gt; 1)
+        {
+            System.out.println(&quot;yes&quot;);
+        }
+        System.out.println(&quot;over&quot;);
+
+        //2,if格式二：
+        /*
+        if(条件表达式)
+        {
+            执行语句；
+        }
+        else//否则。
+        {
+            执行语句；
+        }
+
+        */
+
+        int a = 3;
+        if(a&gt;1)
+        {
+            System.out.println(&quot;yes&quot;);
+        }
+        else
+        {
+            System.out.println(&quot;no&quot;);
+        }
+
+        int b = 1,c;
+        if(b&gt;1)
+        {
+            c = 100;
+        }
+        else
+        {
+            c = 200;
+        }
+        //和三元运算符很像。  理解为三元运算符是if else 的简写格式。
+        //区别？不是所有的if else都能简化的。为什么呢？因为三元运算符运算完必须有结果！
+
+
+
+        /*
+        格式三：
+        if(条件表达式)
+        {
+            执行语句；
+        }
+        else if (条件表达式)
+        {
+            执行语句；
+        }
+        ……
+        else
+        {
+            执行语句；
+        }
+
+        */
+
+        int i = 3;
+
+        if(i &gt; 1){
+            System.out.println(&quot;a&quot;);
+        }
+        else if(i &gt; 2)
+        {
+            System.out.println(&quot;b&quot;);
+        }
+        else if(i &gt; 3)
+        {
+            System.out.println(&quot;c&quot;);
+        }
+        else
+        {
+            System.out.println(&quot;d&quot;);
+        }
+    }
+}
+</code></pre><h2 id="10-iftest-top-a-name-iftest-">10. <a href="#top">IfTest</a><a name="IfTest"/></h2>
+<pre><code>class IfTest 
+{
+    public static void main(String[] args) 
+    {
+        /*
+        需求1：根据用户的给定的数值，显示该数值对应的星期。如：2，星期二。
+        思路；
+            1，咋获取这个数值呢？来源有很多，不确定，只要是不确定的数据。都用变量存储。
+                只要操作该变量即可。
+            2，数值不确定，如何显示对应的星期呢？那就需要对该数值进行判断。
+            3，咋显示呢？通过输出语句就可以显示在屏幕上。
+
+
+        步骤：
+        1，定义变量。记录数据。
+        2，通过判断结构语句if对该变量进行判断。
+        3，根据不同的条件，通过输出语句显示不同的结果。
+        */
+
+        //1，定义变量。记录数据。
+        int week = 9;
+
+        //2，通过判断结构语句if对该变量进行判断。
+        if(week == 1)        
+            //3，根据不同的条件，通过输出语句显示不同的结果。
+            System.out.println(week+&quot;对应的是星期一&quot;);        
+        else if(week == 2)        
+            System.out.println(week+&quot;对应的是星期二&quot;);        
+        else if(week == 3)
+            System.out.println(week+&quot;对应的是星期三&quot;);        
+        else if(week == 4)        
+            System.out.println(week+&quot;对应的是星期四&quot;);        
+        else if(week == 5)        
+            System.out.println(week+&quot;对应的是星期五&quot;);        
+        else if(week == 6)        
+            System.out.println(week+&quot;对应的是星期六&quot;);        
+        else if(week == 7)
+            System.out.println(week+&quot;对应的是星期日&quot;);
+        else
+            System.out.println(week+&quot;没有对应的星期&quot;);
+
+
+        /*
+
+        需求2：根据用户的给定月份数据，显示该月份在哪个季节。
+        3,4,5    春季
+        6,7,8    夏季
+        9,10,11    秋季
+        12,1,2    冬季
+        思路；
+
+        步骤：
+
+        填代码。
+
+
+        */
+
+    }
+}
+</code></pre><h2 id="11-operatedemo4-top-a-name-operatedemo4-">11. <a href="#top">OperateDemo4</a><a name="OperateDemo4"/></h2>
+<pre><code>class OperateDemo4 
+{
+    public static void main(String[] args) 
+    {
+
+
+        System.out.println(2*8);
+    }
+}
+</code></pre><h2 id="12-operatedemo5-top-a-name-operatedemo5-">12. <a href="#top">OperateDemo5</a><a name="OperateDemo5"/></h2>
+<pre><code>class OperateDemo5 
+{
+    public static void main(String[] args) 
+    {
+
+        //三元运算符，格式：(条件表达式)?表达式1：表达式2；
+
+        int x = 1,y;
+
+        y = x&gt;1?100:200;
+
+        System.out.println(&quot;y=&quot;+y);
+
+
+
+    }
+}
+</code></pre><h2 id="13-operatetest-top-a-name-operatetest-">13. <a href="#top">OperateTest</a><a name="OperateTest"/></h2>
+<pre><code>class OperateTest 
+{
+    public static void main(String[] args) 
+    {
+
+        //需求1,最有效率运算2乘以8.通过位移运算。
+        System.out.println(2&lt;&lt;3);
+
+        //需求2,对两个整数变量的值进行互换(不需要第三方变量)
+        int a = 3, b = 7;
+        /*
+        a = b;a = 7;
+        b = a;b = 7;
+        错误。
+        */
+
+        /*
+        //通过第三方变量的形式进行置换。
+        int temp = a;
+        a = b;
+        b = temp;
+        */
+        /*
+        //通过和的形式。有个弊端，两个数据较大，可能会超出int范围。
+        a = a + b;//a = 3 + 7;
+        b = a - b;//b = 3 + 7 - 7； b = 3;
+        a = a - b;//a = 3 + 7 - 3;  a = 7;
+        */
+
+        //技巧。异或。
+        a = a ^ b;// a = 3 ^ 7;
+        b = a ^ b;// b = 3 ^ 7 ^ 7;
+        a = a ^ b;// a = 3 ^ 7 ^ 3;
+
+        System.out.println(&quot;a=&quot;+a+&quot;,b=&quot;+b);
+
+
+        //需求3：对给定的整数26，获取其十六进制的表现实行。
+
+
+        //需求4：三个数，想知道最大的是哪个？
+
+        int x=4,y=8,z=2;
+
+        System.out.println(&quot;max=&quot;);
+
+
+    }
+}
+</code></pre><h2 id="14-switchdemo-top-a-name-switchdemo-">14. <a href="#top">SwitchDemo</a><a name="SwitchDemo"/></h2>
+<pre><code>class SwitchDemo 
+{
+    public static void main(String[] args) 
+    {
+
+        /*
+        switch(表达式)
+        {
+            case 取值1:
+                执行语句；
+                break；
+            case 取值2:
+                执行语句；
+                break；
+            …...
+            default:
+                执行语句；
+                break；
+        }
+
+        */
+
+        int x = 5;
+
+        /*
+
+        switch语句特点：
+        1，答案的书写没有顺序。
+        2，匹配的答案被执行，一直执行到break结束或者执行到switch语句结束。
+        */
+        switch(x){//byte,short,int,char  5.0 enum  String
+            case 5:
+                System.out.println(&quot;a&quot;);
+                //break;
+            default:
+                System.out.println(&quot;c&quot;);
+                //break;    
+            //1，定义答案：
+
+            case 3:
+                System.out.println(&quot;b&quot;);
+                //break;
+
+        }
+
+        System.out.println(&quot;Hello World!&quot;);
+    }
+}
+</code></pre><h2 id="15-switchtest-top-a-name-switchtest-">15. <a href="#top">SwitchTest</a><a name="SwitchTest"/></h2>
+<pre><code>class SwitchTest 
+{
+    public static void main(String[] args) 
+    {
+        //需求1：根据用户的给定的数值，显示该数值对应的星期。如：2，星期二。
+        int week = 9;
+
+        switch(week)
+        {
+            case 1:
+                System.out.println(week+&quot;对应的是星期一&quot;);
+                break;
+            case 2:
+                System.out.println(week+&quot;对应的是星期二&quot;);
+                break;
+            case 3:
+                System.out.println(week+&quot;对应的是星期三&quot;);
+                break;
+            case 4:
+                System.out.println(week+&quot;对应的是星期四&quot;);
+                break;
+            case 5:
+                System.out.println(week+&quot;对应的是星期五&quot;);
+                break;
+            case 6:
+                System.out.println(week+&quot;对应的是星期六&quot;);
+                break;
+            case 7:
+                System.out.println(week+&quot;对应的是星期日&quot;);
+                break;
+            default:
+                System.out.println(week+&quot;没有对应的星期&quot;);
+                break;
+
+        }
+        System.out.println(&quot;Hello World!&quot;);
+
+        /*
+        switch和if的区别？
+
+        if可以用于判断数值，也可以判断区间，
+        只要运算结果是boolean类型，都可以进行判断。
+
+        switch用于对固定的几个值，进行判断。判断的值的类型有限。
+
+
+        */
+
+        /*
+        需求:根据用户的给定月份数据，显示该月份在哪个季节。
+        3,4,5    春季
+        6,7,8    夏季
+        9,10,11    秋季
+        12,1,2    冬季
+        用switch完成。
+        */
+
+    }
+}
+</code></pre><h2 id="16-whiledemo-top-a-name-whiledemo-">16. <a href="#top">WhileDemo</a><a name="WhileDemo"/></h2>
+<pre><code>class WhileDemo 
+{
+    public static void main(String[] args) 
+    {
+
+        /*
+        循环结构。循环语句什么时候用呢？
+        当对某些语句需要执行很多次时，就使用循环结构。
+        */
+        int x = 1;
+        while(x&lt;3)//;
+        {
+            System.out.println(&quot;x=&quot;+x);
+            ++x;
+        }
+
+        System.out.println(&quot;Hello World!&quot;);
+    }
+}
+</code></pre><h2 id="17-whiletest-top-a-name-whiletest-">17. <a href="#top">WhileTest</a><a name="WhileTest"/></h2>
+<pre><code>class WhileTest 
+{
+    public static void main(String[] args) 
+    {
+        /*
+        while语句练习：
+
+        需求1：显示1-10.
+
+        int x = 1;
+        while(x&lt;11)
+        {
+            System.out.println(x);
+            x++;
+        }
+
+        */
+
+
+        /*
+
+        需求2：运算1-10的和。
+        思路：
+        1+2+3+4....
+         3+3
+          6+4
+        每次重复的都是和+下一个数。
+        和是确定的吗？不确定。需要变量。
+        下一个数是确定的吗？不确定，需要变量。
+        和+下一个数在重复，说明需要执行多次，用循环。
+        下一个数，是有规律的。自增。
+
+        步骤；
+        1，定义变量。一个记录和，一个记录下一个数。
+        2，需要循环结构。
+        3，循环中需要进行和+下一个数的运算。并让下一个数自增。
+
+
+        */
+        //1，定义变量。一个记录和，一个记录下一个数。
+        int i = 1;
+        int sum = 0;
+        //2，需要循环结构。
+        while(i&lt;=10)
+        {
+            //3，循环中需要进行和+下一个数的运算。并让下一个数自增。
+            sum = sum + i;
+            i++;
+        }
+        System.out.println(&quot;sum=&quot;+sum);
+
+
+
+        /*
+        需求；获取1-100之间，6的倍数的个数。
+
+        */
+
+    }
+}
+</code></pre><h2 id="18-test-top-a-name-test-">18. <a href="#top">Test</a><a name="Test"/></h2>
+<pre><code>class Test 
+{
+    public static void main(String[] args) 
+    {
+
+
+        /*
+
+        需求2：根据用户的给定月份数据，显示该月份在哪个季节。
+        3,4,5    春季
+        6,7,8    夏季
+        9,10,11    秋季
+        12,1,2    冬季
+        思路；
+        1，咋获取数据呢？关我什么事，我只要关注变量。
+        2，对这个数据进行判断。
+
+
+        步骤：
+            1，定义变量。
+            2，定义if语句判断。
+
+        填代码。
+        if(x==3 || x==4 || x==5)
+            System.out.println(x+&quot;是春天&quot;);
+        else if(x==6 || x==7 || x==8)
+            System.out.println(x+&quot;是夏天&quot;);
+        else if(x==9 || x==10 || x==11)
+            System.out.println(x+&quot;是秋天&quot;);
+        else if(x==12 || x==1|| x==2)
+            System.out.println(x+&quot;是冬天&quot;);
+        else 
+            System.out.println(x+&quot;没有对应的季节&quot;);
+
+
+        if(x&gt;12 || x&lt;1)
+            System.out.println(x+&quot;没有对应的季节&quot;);
+        else if(x&gt;=3 &amp;&amp; x&lt;=5)
+            System.out.println(x+&quot;是春天&quot;);
+        else if(x&gt;=6 &amp;&amp; x&lt;=8)
+            System.out.println(x+&quot;是夏天&quot;);
+        else if(x&gt;=9 &amp;&amp; x&lt;=11)
+            System.out.println(x+&quot;是秋天&quot;);
+        else
+            System.out.println(x+&quot;是冬天&quot;);
+        */
+
+
+        /*
+
+        //需求3：对给定的整数26，获取其十六进制的表现形式。★★★★
+        思路；
+        1，啥是十六进制，数据的一种表现形式，好处在于可以表现形式更短。
+            原理：将二进制中4位为一个十六进制位。
+        2，哦，原理就是对给定的整数进行二进制的每4位的获取。
+        3，咋获取每4位呢？其实就是获取四位中的1，可以通过&amp;位运算的方式完成。
+        4，而且想要获取下四位，可以通过对原数据进行无符号右移的方式。
+
+
+
+        步骤：
+        1，定义变量记录该整数。
+        2，对改变量进行&amp;运算 既然是获取四位，就&amp;四个1，二进制四个1就是十进制的15.
+        3，对原数据进行无符号右移四位。
+        */
+        int num = 26;
+        //&amp;15.获取最低四位。
+        int n1 = num &amp; 15;
+        System.out.println(&quot;n1=&quot;+(char)(n1-10+&#39;a&#39;));
+        //对num进行右移。
+        num = num &gt;&gt;&gt; 4;
+        //在进行&amp;15.
+        int n2 = num &amp; 15;
+        System.out.println(&quot;n2=&quot;+n2);
+      //          97  98   99   100  101  102 
+      //&#39;0&#39;-&#39;9&#39; &#39;a&#39; &#39;b&#39; &#39;c&#39;  &#39;d&#39;  &#39;e&#39;   &#39;f&#39;
+      //0 -  9  10  11  12   13   14    15    
+
+
+
+
+        /*
+        //需求4：三个数，想知道最大的是哪个？
+
+        int a = 3, b = 4, c = 5;
+
+        int tempMax = a&gt;b?a:b;
+
+        int max = tempMax&gt;c?tempMax:c;
+
+        */
+
+
+        /*
+        需求:根据用户的给定月份数据，显示该月份在哪个季节。
+        3,4,5    春季
+        6,7,8    夏季
+        9,10,11    秋季
+        12,1,2    冬季
+        用switch完成。
+
+        switch(x)
+        {
+            case 3:
+            case 4:
+            case 5:
+                System.out.println(x+&quot;是春天&quot;);
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println(x+&quot;是夏天&quot;);
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println(x+&quot;是秋天&quot;);
+                break;
+            case 12:
+            case 1:
+            case 2:
+                System.out.println(x+&quot;是冬天&quot;);
+                break;
+            default:
+                System.out.println(x+&quot;没有对应的季节&quot;);
+                break;
+        }
+
+        */
+
+
+        /*
+        需求：要求在屏幕上显示下列内容。★★★★★
+        大圈套小圈的思想。for嵌套循环。
+        54321
+        5432
+        543
+        54
+        5
+
+        */
+        System.out.println(&quot;------------------------&quot;);
+        for ( int x=1; x&lt;=5 ;x++ )
+        {
+            for (int y=5; y&gt;=x  ; y--)
+            {
+                System.out.print(y);
+            }
+            System.out.println();
+        }
+
+
+        /*
+        //九九乘法表★★★★★
+        1*1=1 
+        1*2=2 2*2=4
+        1*3=3 2*3=6 3*3=9
+        */
+
+        System.out.println(&quot;------------------------&quot;);
+        for(int x=1;x&lt;=9; x++)
+        {
+            for(int y=1; y&lt;=x; y++)
+            {
+                System.out.print(y+&quot;*&quot;+x+&quot;=&quot;+y*x+&quot;\t&quot;);//  \t :制表符  \n
+            }
+            System.out.println();
+        }
+
+
+/*        
+第一题
+int x = 1,y=1;
+
+if(x++==2 &amp; ++y==2)
+{
+    x =7;
+}
+System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y);x=2,y=2
+---------------------------------------------------
+第二题
+int x = 1,y = 1;
+
+if(x++==2 &amp;&amp; ++y==2)
+{
+    x =7;
+}
+System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y);x=2,y=1;
+---------------------------------------------------
+第三题
+int x = 1,y = 1;
+if(x++==1 | ++y==1)
+{
+    x =7;
+}
+System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y);x=7,y=2
+---------------------------------------------------
+第四题
+int x = 1,y = 1;
+if(x++==1 || ++y==1)
+{
+    x =7;
+}
+System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y);x=7,y=1;
+
+
+---------------------------------------------------
+第五题
+boolean b = true;
+
+if(b==false)  //如果写成if(b=false)有结果吗？如果有，结果是？
+    System.out.println(&quot;a&quot;);
+else if(b)
+    System.out.println(&quot;b&quot;);
+else if(!b)
+    System.out.println(&quot;c&quot;);
+else
+    System.out.println(&quot;d&quot;);
+
+
+---------------------------------------------------
+
+第六题
+int x = 2,y=3;
+
+switch(x)
+{
+    default:
+        y++;
+    case 3:
+        y++;
+    case 4:
+        y++;
+}
+
+System.out.println(&quot;y=&quot;+y);//6
+
+
+        */
+
+    }
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

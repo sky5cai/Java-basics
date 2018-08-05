@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="d17string_stringbuffer">d17String_StringBuffer</h1>
+<h2 id="-">导语：</h2>
+<blockquote>
+<p>想到在写<br><a name="top"/></p>
+<ol>
+<li><a href="#StringDemo">StringDemo</a></li><li><a href="#StringDemo2">StringDemo2</a></li><li><a href="#StringTest">StringTest</a></li><li><a href="#StringTest2_1">StringTest2_1</a></li><li><a href="#StringTest2_2">StringTest2_2</a></li><li><a href="#StringTest2_3">StringTest2_3</a></li><li><a href="#StringBufferDemo">StringBufferDemo</a></li><li><a href="#StringBufferTest">StringBufferTest</a></li><li><a href="#StringBufferTest2">StringBufferTest2</a></li><li><a href="#StringBuilderDemo">StringBuilderDemo</a></li><li><a href="#Person">Person</a></li><li><a href="#PersonDemo">PersonDemo</a></li><li><a href="#StringTest_1">StringTest_1</a></li><li><a href="#StringTest_2">StringTest_2</a></li><li><a href="#StringTest_3">StringTest_3</a></li><li><a href="#WrapperDemo">WrapperDemo</a></li><li><a href="#WrapperDemo2">WrapperDemo2</a></li><li><a href="#WrapperTest">WrapperTest</a></li></ol>
+</blockquote>
+<h2 id="1-stringdemo-top-a-name-stringdemo-">1. <a href="#top">StringDemo</a><a name="StringDemo"/></h2>
+<pre><code>package cn.itcast.api.string;
+
+public class StringDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        //定义一个字符串。
+        String str = &quot;abcd&quot;;  
+//        str = &quot;haha&quot;;
+        System.out.println(&quot;str=&quot;+str);
+
+
+        //---------------
+        System.out.println(&quot;-------多个引用指向同一个字符串--------&quot;);
+        String s1 = &quot;itcast&quot;;
+        String s2 = &quot;itcast&quot;;
+        System.out.println(s1==s2);
+
+        System.out.println(&quot;-------两个内容相同，创建方式不同的字符串,面试题--------&quot;);
+        String s3 = &quot;abc&quot;;
+        String s4 = new String(&quot;abc&quot;);
+
+        //s3和s4有什么不同呢？
+        /*
+         * s3创建，在内存中只有一个对象。
+         * 
+         * s4创建，在内存中有两个对象。
+         */
+
+        System.out.println(s3==s4);//false
+//        因为String复写了equals方法，
+//        建立字符串自己的判断相同的依据。通过字符串对象中的内容来判断的。
+        System.out.println(s3.equals(s4));//true,
+
+    }
+
+}
+</code></pre><h2 id="2-stringdemo2-top-a-name-stringdemo2-">2. <a href="#top">StringDemo2</a><a name="StringDemo2"/></h2>
+<pre><code>package cn.itcast.api.string;
+
+public class StringDemo2 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        /*
+         * &quot;abcde&quot;
+         * 
+         * 1，字符串是一个对象，那么它的方法必然时围绕操作这个对象的数据而定义的。
+         * 2，你认为字符串中有哪些功能呢？
+         *     2.1 有多少个字符?
+         *         int length()
+         * 
+         *     2.2 字符的位置。
+         *         int indexOf(ch,fromIndex);
+         * 
+         *     2.3 获取指定位置上的字符。
+         *         char charAt(int)
+         * 
+         *  2.4 获取部分字符串。
+         *      String substring(int start,int end);
+         *  
+         * 
+         * 
+         */
+        String str = &quot;abada&quot;;
+//        System.out.println(&quot;length=&quot;+str.length());
+        int len = str.length();
+        System.out.println(&quot;len=&quot;+len);
+
+        //------a字母出现的位置------
+        int index = str.indexOf(&#39;a&#39;);//获取的是a字符第一次出现的位置。
+        System.out.println(&quot;index=&quot;+index);
+        //------第二个a字母出现的位置------
+
+        int index1 = str.indexOf(&#39;a&#39;,index+1);
+        System.out.println(&quot;index1=&quot;+index1);
+        //------第三个a字母出现的位置------
+        int index2 = str.indexOf(&#39;a&#39;,index1+1);
+        System.out.println(&quot;index2=&quot;+index2);
+
+        str = &quot;sdfghjkl;wertyuiop[sdfghjkla;&quot;;
+        int index3 = str.lastIndexOf(&#39;m&#39;);//如果要找的字符不存在，-1
+        System.out.println(&quot;index3=&quot;+index3);
+
+        //----------获取指定位置上字符。---------------
+        str = &quot;itcast&quot;;
+        char ch = str.charAt(3);//不存在角标会发生StringIndexOutOfBoundsException
+        System.out.println(&quot;ch=&quot;+ch);
+
+        //------------获取部分字符串----------------------
+        String s = str.substring(2, 4);//包含头，不包含尾。
+        System.out.println(&quot;s=&quot;+s);
+
+    }
+
+}
+</code></pre><h2 id="3-stringtest-top-a-name-stringtest-">3. <a href="#top">StringTest</a><a name="StringTest"/></h2>
+<pre><code>package cn.itcast.api.string;
+
+public class StringTest {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * String方法查找练习。
+         * 1，字符串是否以指定字符串开头。结尾同理。
+         *         boolean startsWith(string)
+         *         boolean endsWith(string)
+         * 
+         * 2，字符串中是否包含另一个字符串。
+         *         boolean contains(string);
+         *         int indexOf(string)//如果返回-1，表示不存在。
+         * 
+         * 3，字符串中另一个字符串出现的位置。
+         *         int indexOf(string)
+         * 4，将字符串中指定的字符串替换成另一个字符串。
+         *         String replace(oldstring , newstring)
+         * 
+         * 5，字符串如何比较大小?
+         * 
+         * 6，将字符串转成一个字符数组。或者字节数组。
+         *         toCharArray()
+         *         getBytes()
+         * 7，将字母字符串转成大写的字母字符串。
+         *         toUpperCase()
+         *         toLowerCase();
+         * 8，将字符串按照指定的方式分解成多个字符串, &quot;lisi,wangwu,zhaoliu&quot;获取三个姓名。
+         *         String[] split(string);
+         * 
+         */
+
+        //1
+        String str = &quot;StringDemo.java&quot;;
+
+        boolean b1 = str.startsWith(&quot;Demo&quot;);//false
+        //2
+        boolean b2 = str.contains(&quot;Demo&quot;);//CharSequence x = &quot;Demo&quot;;//true
+        //4
+        String s = str.replace(&quot;haha&quot;, &quot;Test&quot;);//没有被替换内容时，结果是原串儿。
+        System.out.println(&quot;s=&quot;+s);
+        //6
+        char[] chs = str.toCharArray();
+        byte[] bytes = str.getBytes();
+        //7
+        String upperString = str.toUpperCase();
+
+        //8
+        str = &quot;lisi,wangwu,zhaoliu&quot;;
+        String[] names = str.split(&quot;,&quot;);
+        for (int i = 0; i &lt; names.length; i++) {
+            System.out.println(names[i]);
+        }
+
+        //5,字符串如何比较大小?
+        int result = &quot;ab&quot;.compareTo(&quot;ab&quot;);//只要想让对象具备比较大小的功能只需实现Comparable接口。
+        System.out.println(&quot;result:&quot;+result);
+
+    }
+
+}
+</code></pre><h2 id="4-stringtest2_1-top-a-name-stringtest2_1-">4. <a href="#top">StringTest2_1</a><a name="StringTest2_1"/></h2>
+<pre><code>package cn.itcast.api.string;
+
+import java.util.Arrays;
+
+public class StringTest2_1 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * 案例一：字符串数组
+         * [&quot;abc&quot;,&quot;nba&quot;,&quot;cctv&quot;,&quot;itcast&quot;]
+         * 要求从小到大排序。
+         * 
+         */
+        String[] strs = {&quot;abc&quot;,&quot;nba&quot;,&quot;cctv&quot;,&quot;itcast&quot;};
+        printArray(strs);
+        sortString(strs);
+        printArray(strs);
+
+
+    }
+
+
+
+    /**
+     * 字符串数组
+     * 思路：
+     * 1，曾经玩过int[]排序，选择，冒泡。
+     * 2，字符串排序同理。
+     * 3，for嵌套循环。
+     * 4，循环中进行元素的大小比较，满足条件位置置换。
+     * @param strs
+     */
+    public static void sortString(String[] strs) {
+
+        for (int i = 0; i &lt; strs.length -1 ; i++) {
+            for (int j = i + 1; j &lt; strs.length; j++) {
+                if(strs[i].compareTo(strs[j])&gt;0){//对象比较用方法。compareTo。
+                    swap(strs,i,j);
+
+                }
+            }
+        }
+
+//        Arrays.sort(strs);
+
+    }
+    /*
+     * 数组元素位置置换。
+     */
+    private static void swap(String[] strs, int i, int j) {
+        String temp = strs[i];
+        strs[i] = strs[j];
+        strs[j] = temp;
+
+    }
+    /*
+     * 打印字符串数组。
+     */
+    private static void printArray(String[] strs) {
+        for (int i = 0; i &lt; strs.length; i++) {
+            System.out.print(strs[i]+&quot; &quot;);
+        }
+        System.out.println();
+    }
+}
+</code></pre><h2 id="5-stringtest2_2-top-a-name-stringtest2_2-">5. <a href="#top">StringTest2_2</a><a name="StringTest2_2"/></h2>
+<pre><code>package cn.itcast.api.string;
+
+public class StringTest2_2 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * 
+         * 案例二：
+         * &quot;witcasteritcasttyuiitcastodfghjitcast&quot;有几个itcast
+         * 
+         * 思路：
+         * 1，无非就是在一个字符串中查找另一个字符串。indexOf。
+         * 2，查找到第一次出现的指定字符串后，如何查找第二个呢？
+         * 3，无需在从头开始，只要从第一次出现的位置+要找的字符串的长度的位置开始向后查找下一个第一次出现的位置即可。
+         * 4，当返回的位置是-1时，查找结束。
+         */
+        String str = &quot;witcasteritcasttyuiitcastodfghjitcast&quot;;
+        String key = &quot;itcast&quot;;
+
+        int count = getKeyCount(str,key);
+        System.out.println(&quot;count=&quot;+count);
+        /*
+        int x = str.indexOf(key,0);//从头开始找。
+        System.out.println(&quot;x=&quot;+x);
+
+        int y = str.indexOf(key,x+key.length());//从指定起始位开始找。
+        System.out.println(&quot;y=&quot;+y);
+
+        int z = str.indexOf(key,y+key.length());//从指定起始位开始找。
+        System.out.println(&quot;z=&quot;+z);
+
+        int a = str.indexOf(key,z+key.length());//从指定起始位开始找。
+        System.out.println(&quot;a=&quot;+a);
+
+        int b = str.indexOf(key,a+key.length());//从指定起始位开始找。
+        System.out.println(&quot;b=&quot;+b);
+        */
+    }
+
+    /**
+     * 获取key在str中出现次数。
+     * @param str
+     * @param key
+     * @return
+     */
+    public static int getKeyCount(String str, String key) {
+
+        //1,定义变量。记录每一次找到的key的位置。
+        int index = 0;
+        //2,定义变量，记录出现的次数。
+        int count = 0;
+
+        //3,定义循环。只要索引到的位置不是-1，继续查找。
+        while((index = str.indexOf(key,index))!=-1){
+
+            //每循环一次，就要明确下一次查找的起始位置。
+            index = index + key.length();
+
+            //每查找一次，count自增。
+            count++;
+        }
+        return count;
+    }
+
+}
+</code></pre><h2 id="6-stringtest2_3-top-a-name-stringtest2_3-">6. <a href="#top">StringTest2_3</a><a name="StringTest2_3"/></h2>
+<pre><code>package cn.itcast.api.string;
+
+public class StringTest2_3 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        /*
+         * 
+         * 
+         * 案例三： &quot;itcast_sh&quot;要求，将该字符串按照长度由长到短打印出来。 itcast_sh itcast_s tcast_sh
+         */
+
+        String str = &quot;itcast&quot;;
+        printStringByLength(str);
+
+    }
+
+    public static void printStringByLength(String str) {
+
+        // 1，通过分析，发现是for嵌套循环。
+        for (int i = 0; i &lt; str.length(); i++) {
+
+            for (int start = 0, end = str.length() - i; end &lt;= str.length(); start++, end++) {
+
+                //根据start，end截取字符串。
+                String temp = str.substring(start, end);
+                System.out.println(temp);
+             } 
+
+        }
+
+    }
+
+}
+</code></pre><h2 id="7-stringbufferdemo-top-a-name-stringbufferdemo-">7. <a href="#top">StringBufferDemo</a><a name="StringBufferDemo"/></h2>
+<pre><code>package cn.itcast.api.stringbuffer;
+
+public class StringBufferDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        /*
+         * StringBuffer:
+         * 1，是一个字符串缓冲区，其实就是一个容器。
+         * 2，长度是可变，任意类型都行。注意：是将任意数据都转成字符串进行存储。
+         * 3，容器对象提供很多对容器中数据的操作功能，比如：添加，删除，查找，修改。
+         * 4，必须所有的数据最终变成一个字符串。
+         * 和数组最大的不同就是：数组存储完可以单独操作每一个元素，每一个元素都是独立的。
+         * 字符串缓冲区，所有存储的元素都被转成字符串，而且最后拼成了一个大的字符串。
+         * 
+         * 可变长度数组的原理：新建数组，并复制数组元素到新数组中。
+         */
+
+        //1,创建一个字符串缓冲区对象。用于存储数据。
+        StringBuffer sb = new StringBuffer();
+
+        //2,添加数据。不断的添加数据后，要对缓冲区的最后的数据进行操作，必须转成字符串才可以。
+        String str = sb.append(true).append(&quot;hehe&quot;).toString();
+//        sb.append(&quot;haha&quot;);
+
+//        sb.insert(2, &quot;it&quot;);//插入
+
+//        sb.delete(1, 4);//删除
+
+//        sb.replace(1, 4, &quot;cast&quot;);
+//        sb.setLength(2); 
+        sb.replace(1, 4, &quot;dfedf&quot;);
+        System.out.println(sb);
+
+
+//        String s = &quot;a&quot;+5+&#39;c&#39;;//原理就是以下这句
+//        s = new StringBuffer().append(&quot;a&quot;).append(5).append(&#39;c&#39;).toString();
+
+
+
+    }
+
+}
+</code></pre><h2 id="8-stringbuffertest-top-a-name-stringbuffertest-">8. <a href="#top">StringBufferTest</a><a name="StringBufferTest"/></h2>
+<pre><code>package cn.itcast.api.stringbuffer;
+
+public class StringBufferTest {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * int[] arr = {34,12,89,68};
+         * 将一个int[]中元素转成字符串  格式 [34,12,89,68]
+         */
+        int[] arr = {34,12,89,68};
+        String str = toString_2(arr);
+        System.out.println(str);
+    }
+
+    /**
+     * 缓冲区的应用：无论多少数据，什么类型都不重要，只要最终变成字符串就可以StringBuffer这个容器。
+     * @param arr
+     * @return
+     */
+    public static String toString_2(int[] arr) {
+        //1,创建缓冲区。
+        StringBuffer sb = new StringBuffer();
+
+        sb.append(&quot;[&quot;);
+        for (int i = 0; i &lt; arr.length; i++) {
+            if(i!=arr.length-1){
+                sb.append(arr[i]+&quot;,&quot;);
+            }else{
+                sb.append(arr[i]+&quot;]&quot;);
+            }
+        }
+
+
+        return sb.toString();
+    }
+
+    public static String toString(int[] arr) {
+
+        //用字符串连接。
+        String str = &quot;[&quot;;
+        for (int i = 0; i &lt; arr.length; i++) {
+            if(i!=arr.length-1){
+                str+=arr[i]+&quot;,&quot;;
+            }else{
+                str+=arr[i]+&quot;]&quot;;
+            }
+        }
+        return str;
+    }
+
+}
+</code></pre><h2 id="9-stringbuffertest2-top-a-name-stringbuffertest2-">9. <a href="#top">StringBufferTest2</a><a name="StringBufferTest2"/></h2>
+<pre><code>package cn.itcast.api.stringbuffer;
+
+public class StringBufferTest2 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        String s1 = &quot;hello&quot;;
+        String s2 = &quot;java&quot;;
+        show(s1,s2);
+        System.out.println(s1+&quot;,&quot;+s2);
+        System.out.println(&quot;-----------------------&quot;);
+
+        StringBuffer sb1 = new StringBuffer(&quot;hello&quot;);
+        StringBuffer sb2 = new StringBuffer(&quot;java&quot;);
+        show(sb1,sb2);
+        System.out.println(sb1+&quot;,&quot;+sb2);
+    }
+    public static void show(String s1, String s2) {
+
+        s2.replace(&#39;a&#39;, &#39;o&#39;);
+        s1 = s2;
+    }
+    public static void show(StringBuffer sb1, StringBuffer sb2) {
+        sb1.append(sb2);
+        sb1 = sb2;
+    }
+
+
+}
+</code></pre><h2 id="10-stringbuilderdemo-top-a-name-stringbuilderdemo-">10. <a href="#top">StringBuilderDemo</a><a name="StringBuilderDemo"/></h2>
+<pre><code>package cn.itcast.api.stringbuffer;
+
+public class StringBuilderDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * StringBuilder和StringBuffer的区别。
+         * StringBuilder:非同步的。单线程访问效率高。
+         * StringBuffer：同步的，多线程访问安全。
+         * 
+         */
+
+    }
+}
+/*
+synchronized append();
+
+synchronized delete();
+
+synchronized insert();
+
+*/
+</code></pre><h2 id="11-person-top-a-name-person-">11. <a href="#top">Person</a><a name="Person"/></h2>
+<pre><code>package cn.itcast.comparedemo;
+
+public class Person implements Comparable {
+
+    private String name;
+    private int age;
+
+    public Person() {
+        super();
+    }
+    public Person(String name, int age) {
+        super();
+        this.name = name;
+        this.age = age;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+
+
+    /**
+     * 建立了Person对象判断是否相同的依据。只要是同姓名同年龄就是同一个人
+     * @param obj
+     * @return
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj)
+            return true;
+
+        if(!(obj instanceof Person)){
+            throw new ClassCastException(&quot;类型错误&quot;);
+        }
+        Person p = (Person)obj;
+
+        return this.name.equals(p.name) &amp;&amp; this.age == p.age;
+    }
+    /**
+     * 比较年龄大小的方法。
+     */
+
+
+    @Override
+    public String toString() {
+        return &quot;Person [name=&quot; + name + &quot;, age=&quot; + age + &quot;]&quot;;
+    }
+    @Override
+    public int compareTo(Object o) {
+
+        if(!(o instanceof Person)){
+            throw new ClassCastException(&quot;类型错误&quot;);
+        }
+
+        Person p = (Person)o;
+        /*
+        if(this.age &gt; p.age)
+            return 1;
+        if(this.age &lt; p.age)
+            return -1;
+        return 0;*/
+        return this.age - p.age;
+
+    }
+
+
+}
+</code></pre><h2 id="12-persondemo-top-a-name-persondemo-">12. <a href="#top">PersonDemo</a><a name="PersonDemo"/></h2>
+<pre><code>package cn.itcast.comparedemo;
+
+public class PersonDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        Person p1 = new Person(&quot;lisi&quot;, 20);
+        Person p2 = new Person(&quot;wangcai&quot;, 23);
+
+        System.out.println(p1.compareTo(p2));
+
+    }
+
+}
+</code></pre><h2 id="13-stringtest_1-top-a-name-stringtest_1-">13. <a href="#top">StringTest_1</a><a name="StringTest_1"/></h2>
+<pre><code>package cn.itcast.api.a.string.test;
+
+public class StringTest_1 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        String s1 = &quot;asdfitcastghjfghjk&quot;;
+        String s2 = &quot;xcitcastvbnm&quot;;
+
+        String maxSubString = getMaxSubstring(s2, s1);
+        System.out.println(&quot;maxSubstring:&quot; + maxSubString);
+    }
+
+    /*
+     * 作业1：获取两个字符串的最大相同子串。 &quot;asdfitcastghjfghjk&quot; &quot;xcitcastvbnm&quot; 思路：
+     * 1，先明确两个字符串的长短，在长串中判断短串是否存在。 2，存在，已找到，说明短串就是最大的相同的。
+     * 不存在，就将短串按照长度递减的方式，获取短串中的子串并到长串中判断。 3，一旦存在，便结束查找。
+     */
+    public static String getMaxSubstring(String s1, String s2) {
+
+        String max, min;
+        // 明确哪个是长串哪个是短串。
+        max = (s1.length() &gt; s2.length()) ? s1 : s2;
+        min = max.equals(s1) ? s2 : s1;
+
+        // 验证max和min
+        // System.out.println(&quot;max=&quot;+max);
+        // System.out.println(&quot;min=&quot;+min);
+
+        for (int i = 0; i &lt; min.length(); i++) {
+            for (int start = 0, end = min.length() - i; end &lt;= min.length(); start++, end++) {
+                String temp = min.substring(start, end);
+
+                if(max.contains(temp)){
+                    return temp;
+                }
+            }
+        }
+
+        return null;
+    }
+
+}
+</code></pre><h2 id="14-stringtest_2-top-a-name-stringtest_2-">14. <a href="#top">StringTest_2</a><a name="StringTest_2"/></h2>
+<pre><code>package cn.itcast.api.a.string.test;
+
+import java.util.Arrays;
+
+public class StringTest_2 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        String str = &quot;cfdasbv&quot;;
+        str = sortStringByChar(str);
+        System.out.println(&quot;str=&quot;+str);
+    }
+    /*
+    作业2：对字符串中字符进行自然顺序排序
+    &quot;cfdasbv&quot;---&gt;&quot;abcdfsv&quot;
+    思路：
+    1，排序我熟，但是都是对数组排序。
+    2，数组中的元素在哪里呢？在字符串中，好吧，把字符串转成数组。
+    3，对数组排序。
+    4，将排序后数组转成字符串。
+    */
+
+    public static String sortStringByChar(String str) {
+        //1,将字符串转成数组。转成字符数组。
+        char[] chs = getArray(str);
+        //2,对数组排序。
+        sort(chs);
+        //3,将排序后的数组转成字符串。
+        return new String(chs);
+    }
+    /*
+     * 对数组排序。
+     */
+    private static void sort(char[] chs) {
+        Arrays.sort(chs);
+    }
+    /*
+     * 将字符串转成字符数组。
+     * @param str
+     * @return
+     */
+    private static char[] getArray(String str) {
+
+        return str.toCharArray();
+    }
+
+}
+</code></pre><h2 id="15-stringtest_3-top-a-name-stringtest_3-">15. <a href="#top">StringTest_3</a><a name="StringTest_3"/></h2>
+<pre><code> package cn.itcast.api.a.string.test;
+
+public class StringTest_3 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        /*
+         * 作业3：String类的trim()，
+         * 1，写代码演示该方法的使用。demo 
+         * 2，trim什么时候用 ？用户名，文本框输入，获取用户文本时。 
+         * 3，模拟一个和trim功能一样的函数。参阅源码。
+         */
+
+        String str = &quot;    itca   st    &quot;;
+
+        String s1 = str.trim();
+//        String s1 = myTrim(str);
+
+        System.out.println(&quot;-&quot; + s1 + &quot;-&quot;);
+    }
+
+    /**
+     * 模拟trim功能。
+     */
+    public static String myTrim(String str) {
+
+        // 1,定义两个变量。一个记录头的位置，一个记录尾的位置。
+        int start = 0;
+        int end = str.length() - 1;
+
+        // 2,获取头部非空白的位置。
+        while (start &lt;= end &amp;&amp; str.charAt(start) == &#39; &#39;) {
+            start++;
+        }
+        // 3,获取尾部非空白的位置。
+        while (start &lt;= end &amp;&amp; str.charAt(end) == &#39; &#39;) {
+            end--;
+        }
+
+        // 4,根据获取头和尾非空格的位置。截取字符串。
+        return str.substring(start, end + 1);
+
+    }
+}
+</code></pre><h2 id="16-wrapperdemo-top-a-name-wrapperdemo-">16. <a href="#top">WrapperDemo</a><a name="WrapperDemo"/></h2>
+<pre><code>package cn.itcast.api.b.wrapper;
+
+public class WrapperDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        /*
+         * 场景：通过文本框获取用户输入的数字数据，可是得到的都是字符串。 如果想要对字符串中的数字进行运算，必须要将字符串转成数字。
+         * Java中提供了相应的解决的对象。 基本数据类型对象包装类：java将基本数据类型值封装成了对象。
+         * 封装成对象有什么好处？因为可以提供更多的操作基本数值的功能。 byte Byte short Short int Integer long
+         * Long float Float double Double boolean Boolean char Character
+         */
+
+        // 学习一下Integer。
+        /*
+         * 基本数据类型对象包装类特点： 1，用于在基本数据和字符串之间进行转换。★★★★ int parseInt(string); byte
+         * parseByte(string); boolean parseBoolean(string); xxx
+         * parseXxx(string); 只有Character没有解析方法。
+         */
+
+        // System.out.println(Integer.MAX_VALUE);
+        // System.out.println(Integer.toBinaryString(-6));//将十进制转成二进制或
+        // System.out.println(Integer.toHexString(-6));//将十进制转成十六进制或
+        // System.out.println(Integer.toOctalString(-6));//将十进制转成八进制或
+
+        // 1，字符串---&gt;基本数值。 基本数值 (字符串);演示Integer int (string);
+        System.out.println(Integer.parseInt(&quot;123&quot;) + 2);// NumberFormatException:
+        System.out.println(Integer.parseInt(&quot;a1&quot;, 16));// 可以将其他进制转成十进制。
+        // 2，基本数值----&gt;字符串呢？34+&quot;&quot; String.valueOf(34); Integer.toString(int);
+        System.out.println(34 + 5);
+
+        // 3,基本数值----&gt;包装对象
+        Integer i = new Integer(4);
+        Integer ii = new Integer(&quot;4&quot;);
+        Integer iii = Integer.valueOf(4);
+
+        // 包装对象----&gt;基本数值
+        int num = i.intValue();
+
+    }
+
+}
+</code></pre><h2 id="17-wrapperdemo2-top-a-name-wrapperdemo2-">17. <a href="#top">WrapperDemo2</a><a name="WrapperDemo2"/></h2>
+<pre><code>package cn.itcast.api.b.wrapper;
+
+public class WrapperDemo2 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+//        int i = 4;
+//        Integer i = new Integer(4);
+//        JDK1.5以后，有了一个包装类的新特性。目的简化书写，自动装箱，
+        Integer i = 4;//自动装箱。Integer i = Integer.valueOf(4);
+        i = i + 5;//原理;等号右边：将i对象转成基本数值   i.intValue() + 5;//自动拆箱。加法运算后，再次装箱。
+        //i = Integer.valueOf(i.intValue()+5);
+
+
+
+        Integer a = new Integer(3);
+        Integer b = new Integer(3);
+        System.out.println(a==b);//false
+        System.out.println(a.equals(b));//true
+
+        System.out.println(&quot;---------------------&quot;);
+        Integer x = 128;
+        Integer y = 128;
+        //在jdk1.5自动装箱时，如果数值在byte范围之内，不会新创建对象空间而是使用原来已有的空间。
+        System.out.println(x==y);
+        System.out.println(x.equals(y));
+
+
+    }
+
+}
+</code></pre><h2 id="18-wrappertest-top-a-name-wrappertest-">18. <a href="#top">WrapperTest</a><a name="WrapperTest"/></h2>
+<pre><code>package cn.itcast.api.b.wrapper;
+
+import java.util.Arrays;
+
+public class WrapperTest {
+
+    private static final String SPACE = &quot; &quot;;
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * 练习：【面试题】： &quot;23 9 -4 18 100 7&quot; 要求对这串数字按照从小到大排序，生成一个数值有序的字符串。 思路：
+         * 1，只有排序会，排序需要数组，数组中就要有元素。
+         * 2，元素在哪里？在字符串里，怎么取出来呢？要获取字符串中的内容，是不是需要String对象。
+         * 3，从字符串获取到数值后存储到一个int数组中。因为要排序。 4，将排完序的数组变成字符串。
+         */
+
+        String numsString = &quot;23 9 -4 18 100 7&quot;;
+        numsString = sortNumberString(numsString);
+        System.out.println(&quot;nums=&quot; + numsString);
+    }
+
+    public static String sortNumberString(String numsString) {
+        // 1,获取字符串中的数字。怎么获取？通过空格进行indexOf的索引，找到其位置，substring截取。看上去就哦了。
+        // 这个方法好麻烦，这些数值之间的分割符都是 空格。通过空格对字符串分离，分出来的都是数字内容的字符串。
+        // 一个字符串通过分割变成多个字符串。split();
+        String[] strs = numsString.split(SPACE);
+
+        // 2,不能直接对字符串进行大小排序，因为 字符串23 比 字符串9要小，是错误的，必须转成整数值才可以比较。
+        // 将字符串数组转成int数组。
+        int[] nums = parseIntArray(strs);
+
+        // 3,对数组排序。
+        Arrays.sort(nums);
+
+        // 4,将数组转成字符串。
+        return toString(nums);
+    }
+
+    private static String toString(int[] nums) {
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i &lt; nums.length; i++) {
+            if(i!=nums.length-1){
+                sb.append(nums[i]+&quot; &quot;);
+            }else{
+                sb.append(nums[i]);
+            }
+        }
+
+        return sb.toString();
+    }
+
+    // 将字符串数组转成int数组。
+    private static int[] parseIntArray(String[] strs) {
+        // 1,定义一个int数组。
+        int[] arr = new int[strs.length];
+
+        // 2,遍历字符串数组，把元素转成int存储到arr中。
+        for (int i = 0; i &lt; strs.length; i++) {
+
+            arr[i] = Integer.parseInt(strs[i]);
+        }
+        return arr;
+    }
+
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

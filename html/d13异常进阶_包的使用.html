@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="-_-">异常进阶_包的使用</h1>
+<h2 id="-">导语:</h2>
+<blockquote>
+<p>想到在写</p>
+</blockquote>
+<ol>
+<li><a href="#ExceptionDemo9">finally语句的使用，应用场景</a></li><li><a href="#ExceptionDemo10">try catch finally 的几种结合方式</a></li><li><a href="#ExceptionDemo11">异常在覆盖时的覆盖特点</a></li><li><a href="#JarDemo">JarDemo</a></li><li><a href="#PackageDemo">PackageDemo</a></li></ol>
+<h2 id="1-finally-top-a-name-exceptiondemo9-">1. <a href="#top">finally语句的使用，应用场景</a><a name="ExceptionDemo9"/></h2>
+<pre><code>/*
+需求：有一些特定的代码无论异常是否发生，都需要执行。
+因为异常会引发程序跳转，导致有写语句执行不到。无法满足这个需求。
+异常捕获处理时java提供解决方案。
+try catch finally
+finally就是解决这个问题的，这个代码块中存放的代码都是一定会被执行的。
+
+
+应用场景；
+
+
+定义一个功能往数据库中添加数据。
+
+void add(Data data)throws NoAddException
+{
+    //1,连接数据库。
+    try{
+    //2,添加数据。//添加数据时发生了异常情况。throw new SQLException();程序跳转，就执行不到断开连接。
+                //而断开连接必须要执行，因为不执行，连接资源在浪费。
+                //无论是否发生问题，都需要执行断开连接的动作，从而释放资源。
+    }catch(SQLException e)
+    {
+        //解决数据库的问题。
+        //同时将问题告诉调用者。
+        throw new NoAddException();
+    }
+    finally
+    {
+        //3,断开连接。
+    }
+
+}
+
+总结：finally到底什么时候用？
+只要程序中使用到了具体的资源(数据库连接，IO资源，网络连接socket等)
+需要释放，都必须定义在finally中。你在定义程序，只要问题发生与否，
+指定程序都需要执行时，就定义finally中。
+
+
+
+*/
+
+class NoShowException extends Exception
+{
+    NoShowException(String message)
+    {
+        super(message);
+    }
+}
+
+class Demo
+{
+    void show(int num)throws NoShowException
+    {
+        if(num&lt;0)
+            throw new NoShowException(num+&quot;,数值是非法的&quot;);
+        System.out.println(&quot;show .....&quot;+num);
+    }
+}
+
+class ExceptionDemo9
+{
+    public static void main(String[] args)
+    {
+        /*
+        Demo d  = new Demo();
+        //因为调用到了声明异常的show方法，所以调用者要给处理方式，要么继续声明，要么捕获。
+        try
+        {
+            d.show(-5);
+        }
+        catch (NoShowException ex)
+        {
+            System.out.println(ex.toString());//打印是异常名称+异常信息。
+
+            //如果异常发生，处理完毕后，希望功能结束。
+//            return ;
+
+            //注意：有一种情况发生，finally也不执行。
+            System.exit(0);//退出Jvm。
+        }
+        finally
+        {
+            System.out.println(&quot;hello&quot;);
+        }
+        System.out.println(&quot;over&quot;);
+        */
+
+        Test t = new Test();
+        int num = t.show(-4);
+        System.out.println(&quot;num=&quot;+num);
+
+
+    }
+}
+
+
+class Test
+{
+    int show(int num)
+    {
+
+        try{
+            if(num&lt;0)
+                throw new Exception();
+            return 4;
+        }catch(Exception e)
+        {
+            System.out.println(e.toString());
+            return 200;
+        }
+        finally
+        {
+            System.out.println(&quot;finally run&quot;);
+            return 100;
+        }
+    }
+}
+</code></pre><h2 id="2-try-catch-finally-top-a-name-exceptiondemo10-">2. <a href="#top">try catch finally 的几种结合方式</a><a name="ExceptionDemo10"/></h2>
+<pre><code>
+/*
+try catch finally 组合方式：
+
+1，
+try catch : 对代码进行异常检测，并对检测的异常传递给catch处理。
+            异常捕获处理。
+void show()//不用throws 
+{
+    try{
+    throw new Exception();
+    }catch(Exception e)
+    {
+
+    }
+}
+
+2，
+try finally : 对代码进行异常检测，检测到异常后因为没有catch，所以一样会被默认jvm抛出。
+            异常是没有捕获处理的。但是功能所开启资源需要进行关闭，所有finally。
+            只为关闭资源。
+
+void show()//需要throws 
+{
+    try{
+    throw new Exception();
+    }finally
+    {
+
+    }
+}
+
+3，
+try catch finally
+检测异常，并传递给catch处理，并定义资源释放。
+
+4，try catch1 catch2 catch3......
+
+*/
+
+
+
+
+
+class ExceptionDemo10 
+{
+    public static void main(String[] args) 
+    {
+        System.out.println(&quot;Hello World!&quot;);
+    }
+}
+</code></pre><h2 id="3-top-a-name-exceptiondemo11-">3. <a href="#top">异常在覆盖时的覆盖特点</a><a name="ExceptionDemo11"/></h2>
+<pre><code>/*
+异常在继承或者实现中的使用细节：★★★★★
+1,子类覆盖父类方法时，如果父类的方法声明异常，子类只能声明父类异常或者该异常的子类，或者不声明。
+2,当父类方法声明多个异常时，子类覆盖时只能声明多个异常的子集。
+3,当被覆盖的方法没有异常声明时，子类覆盖时时无法声明异常的。
+    举例：父类存在这种情况，接口也有这种情况，
+    问题：接口中没有声明异常，而实现的子类覆盖方法时发生了异常，怎么办？
+        　无法进行throws声明，只能catch的捕获。万一问题处理不了呢？catch中继续throw抛出，但是只能将异常转换成RuntimeException子类抛出。
+
+    Interface Inter
+    {
+        public void show();
+    }
+    class Demo implement Inter
+    {
+        public void show()
+        {
+            try{
+                throw new Exception();
+            }catch(Exception e)
+            {
+                code...;
+                throw new RuntimeException(&quot;&quot;);// 告知调用者问题所在。
+            }
+        }
+    }
+
+
+Exception
+    |--AException
+        |--AAException
+    |--BException
+*/
+class AException extends Exception
+{
+}
+class BException extends Exception
+{
+}
+class AAException extends AException
+{
+}
+
+
+class Fu
+{
+    void show()
+    {
+
+    }
+}
+/*
+class Tool
+{
+    void method(Fu f)//Fu f = new Zi();
+    {
+        try
+        {
+            f.show();
+        }
+        catch (AException ex)//AException ex = new AAException();
+        {
+        }
+    }
+}
+Tool t = new Tool();
+//t.method(new Fu());
+t.method(new Zi());
+*/
+
+class Zi extends Fu
+{
+    void show()throws RuntimeException
+    {
+
+    }
+}
+
+
+class ExceptionDemo11 
+{
+    public static void main(String[] args) 
+    {
+        Zi z = new Zi();
+        try{
+        z.show();
+        }catch(RuntimeException e)
+        {}
+    }
+}
+</code></pre><h2 id="4-jardemo-top-a-name-jardemo-">4. <a href="#top">JarDemo</a><a name="JarDemo"/></h2>
+<pre><code>
+/*
+Jar包，java中的压缩包。
+
+直接将jar导入到classpath路径中即可。
+*/
+package pack;
+class JarDemo
+{
+    public static void main(String[] args) 
+    {
+        System.out.println(&quot;Hello jar!&quot;);
+    }
+}
+//    day13/pack/JarDemo.class  --jar--&gt; day13/haha.jar/pack/JarDemo.class
+</code></pre><h2 id="5-packagedemo-top-a-name-packagedemo-">5. <a href="#top">PackageDemo</a><a name="PackageDemo"/></h2>
+<pre><code>package mypack;//包名中的所有的字母都小写。
+
+/*
+对于多个类为了便于管理(类的同名情况),所以java提供了一个解决方案。
+包机制：落实到操作系统上，就是文件夹。对Java的文件进行分文件夹管理。
+
+包的作用：
+    1，对类文件进行管理。
+    2，给类文件提供了名称空间。
+
+包的定义：使用关键字 package。
+
+对带有package定义的java文件进行指定类文件位置的编译方式。
+javac -d 目录 源文件
+
+如果目录选择的不是当前目录。想要访问包中类。
+通过设置classpath。  set classpath=包所在的父目录
+
+
+-------------
+包与包之间访问：
+PackageDemo.java:25: 错误: 找不到符号
+                DemoA d = new DemoA();
+                ^
+  符号:   类 DemoA
+  位置: 类 PackageDemo
+PackageDemo.java:25: 错误: 找不到符号
+                DemoA d = new DemoA();
+                              ^
+  符号:   类 DemoA
+  位置: 类 PackageDemo
+2 个错误
+
+原因：类名写错。有了包的类，类名：包名.类名，这才是类的全名称。
+解决：使用DemoA，必须写packa.DemoA
+
+
+==============
+PackageDemo.java:46: 错误: 程序包packa不存在
+                packa.DemoA d = new packa.DemoA();//
+                     ^
+PackageDemo.java:46: 错误: 程序包packa不存在
+                packa.DemoA d = new packa.DemoA();//
+                                         ^
+2 个错误
+原因；packa这个包没有找到，在当前目录下。
+解决：应该告诉jvm这个程序包的位置。 set classpath。
+
+
+===============
+PackageDemo.java:55: 错误: DemoA在packa中不是公共的; 无法从外部程序包中对其进
+访问
+                packa.DemoA d = new packa.DemoA();//
+                     ^
+PackageDemo.java:55: 错误: DemoA在packa中不是公共的; 无法从外部程序包中对其进
+访问
+                packa.DemoA d = new packa.DemoA();//
+                                         ^
+2 个错误
+原因：DemoA这个类在packa包中权限不够。
+解决：提升DemoA权限。提升到public。
+
+
+==============
+PackageDemo.java:71: 错误: show()在DemoA中不是公共的; 无法从外部程序包中对其进
+访问
+                d.show();
+                 ^
+1 个错误
+
+原因：show方法的权限不够。
+解决：show用public修饰。
+
+
+总结：
+包与包之间的类在访问时，被访问的类以及成员都必须public修饰。
+
+注意：被public修饰的类或者接口，所属的java文件名必须和类或者接口名称一致。
+
+=========================================
+
+包与包之间继承。父类可以给其他包中的子类提供一个特殊的权限 protected。只有继承为子类后，
+就可以访问的权限。
+
+            public       protected      default       private
+一个类中      ok            ok            ok                ok
+一个包中      ok            ok            ok                
+子类中        ok            ok          
+不同包中      ok
+
+包与包之间访问只有两种权限可以用，public protected(该权限只能给不同包中的子类使用)。
+
+
+================================================
+
+包的出现，导致类的名称过长书写不方便，咋办？
+可以通过指定的关键字解决：import ：导入。
+import作用简化类名书写，省略包名。
+
+特殊情况一：
+
+packa\packaa\DemoAA.class
+     \DemoA.class
+import packa.*;//明确类使用的类所属的包是packa。不会导入packa中子包中的类。
+如果要使用DemoAA。
+import packa.packaa.*;
+new DemoAA();
+特殊情况二：不同包中有了相同名称的类。使用该类时必须指定包名。
+
+packa\Demo.class
+packb\Demo.class
+
+import packa.Demo;
+import packb.Demo;
+
+new packa.Demo();
+
+
+*/
+import packa.DemoA;//import packa.*;
+
+
+
+class PackageDemo 
+{
+    public static void main(String[] args) 
+    {
+//        packa.DemoA d = new packa.DemoA();//
+        DemoA d = new DemoA();
+        d.show();
+
+//        packfu.DemoFu d1 = new packfu.DemoFu();
+//        d1.showFu();
+        System.out.println(&quot;Hello package!&quot;);
+    }
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

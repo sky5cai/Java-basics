@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="d21map_system-">d21Map_System类</h1>
+<h2 id="-">导语：</h2>
+<blockquote>
+<p>日后可总结：<br>Map常见功能。</p>
+</blockquote>
+<pre><code>1. 存储。v put(k,v);
+2. 获取。v get(k);
+3. 移除。v remove(k);
+4. Set&lt;k&gt; keySet();
+5. Set&lt;Map.Entry&lt;k,v&gt;&gt; entrySet();
+6. Collection&lt;v&gt; values();
+</code></pre><pre><code>Map
+    |--Hashtable：数据结构：哈希表。是同步的，不允许null作为键和值。被hashMap替代。
+        |--Properties：属性集，键和值都是字符串，而且可以结合流进行键值的操作。等到了IO流，你会更清楚。
+    |--HashMap：数据结构：哈希表。不是同步的，允许null作为键和值。
+        |--LinkedHashMap：基于链表+哈希表。可以保证map集合有序（存入和取出的顺序一致）。
+    |--TreeMap：数据结构：二叉树。不是同步的。可以对map集合中的键进行排序。
+</code></pre><p><a name="top"/></p>
+<ol>
+<li><a href="#MapDemo">MapDemo</a></li><li><a href="#MapDemo2">MapDemo2</a></li><li><a href="#HashMapTest">HashMapTest</a></li><li><a href="#TreeMapTest">TreeMapTest</a></li><li><a href="#ComparatorByName">ComparatorByName</a></li><li><a href="#MapTest">MapTest</a></li><li><a href="#ParamDemo">ParamDemo</a></li><li><a href="#StaticImportDemo">StaticImportDemo</a></li><li><a href="#MathDemo">MathDemo</a></li><li><a href="#SystemDemo">SystemDemo</a></li><li><a href="#Student">Student</a></li></ol>
+<h2 id="-mapdemo-top-a-name-mapdemo-"><a href="#top">MapDemo</a><a name="MapDemo"/></h2>
+<pre><code>package cn.itcast.api.a.map;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * 存储中英文星期。
+         * 使用map集合。
+         */
+        Map&lt;String,String&gt; map = new HashMap&lt;String,String&gt;();
+
+
+        //添加元素。
+        System.out.println(map.put(&quot;星期一&quot;, &quot;Monday&quot;));
+//        System.out.println(map.put(&quot;星期一&quot;, &quot;Mon&quot;));//如果键相同，值覆盖。并put方法会返回旧值。如果没有旧值就null。
+        //....
+        map.put(&quot;星期日&quot;, &quot;Sunday&quot;);
+
+
+        //通过给定键获取值。
+        String value = map.get(&quot;星期二&quot;);//如果键 不存在，返回null，通过此判断键的是否存在。
+        System.out.println(&quot;value=&quot;+value);
+
+        //删除元素。根据键删除。
+        String s = map.remove(&quot;星期一&quot;);//获取给定键对应的值，并将该键值对从map集合删除。
+        System.out.println(&quot;s=&quot;+s);
+
+
+        System.out.println(map);
+    }
+
+}
+</code></pre><h2 id="-mapdemo2-top-a-name-mapdemo2-"><a href="#top">MapDemo2</a><a name="MapDemo2"/></h2>
+<pre><code>package cn.itcast.api.a.map;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+public class MapDemo2 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        Map&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
+
+        map.put(&quot;星期一&quot;, &quot;Monday&quot;);
+        map.put(&quot;星期日&quot;, &quot;Sunday&quot;);
+
+        System.out.println(&quot;------------keySet方法的获取---------------&quot;);
+//        System.out.println(map.get(&quot;星期一&quot;));
+        //怎么获取到所有的键呢？既然是所有的键，应该是一个集合，而且是一个单列集合。
+        //list还是set呢？应该是set，因为map集合中键需要保证唯一性。
+        //找到一个方法   Set&lt;k&gt; keySet();获取map集合中的键的set集合。
+        Set&lt;String&gt; keySet = map.keySet();
+        for(Iterator&lt;String&gt; it= keySet.iterator(); it.hasNext() ; ){
+            String key = it.next();
+            String value = map.get(key);//通过键获取对应的值。
+            System.out.println(key+&quot;::&quot;+value);
+        }
+        //使用foreach循环，进行遍历。
+        for(String key : keySet){
+            System.out.println(key+&quot;:::::&quot;+map.get(key));
+        }
+
+        System.out.println(&quot;-----------entrySet方法获取----------------&quot;);
+
+        /*
+         * Set entrySet():将map集合中映射关系存储到了Set集合中.
+         * 映射关系：其实就是指键和值的对应关系。其实就是夫妻的结婚证。
+         * 映射关系是什么类型的呢？  Map.Entry
+         */
+        Set&lt;Map.Entry&lt;String,String&gt;&gt; entrySet = map.entrySet();
+        Iterator&lt;Map.Entry&lt;String, String&gt;&gt; it = entrySet.iterator();
+        //遍历Set中的映射关系对象。
+        while(it.hasNext()){
+            Map.Entry&lt;String, String&gt; me = it.next();//取到了映射关系对象。
+            //获取键。
+            String key = me.getKey();
+            //获取值。
+            String value = me.getValue();
+            System.out.println(key+&quot;-----&quot;+value);
+        }
+
+        /*
+         * 总结：map集合没有迭代器，取出元素的方式：将map集合转成单列结合，在使用单列集合的迭代器就可以了。
+         * map集合也不能直接被foreach循环遍历。
+         */
+        for(Map.Entry&lt;String,String&gt; me : map.entrySet()){
+            String key = me.getKey();
+            //获取值。
+            String value = me.getValue();
+            System.out.println(key+&quot;--------&quot;+value);
+        }
+
+
+        System.out.println(&quot;-----------获取所有值的方法 values()----------------&quot;);
+        /*
+         * 获取所有的值，因为值不需要保证唯一性。所以返回类型时Collection。
+         * 姓名--归属地。对应关系，获取所有的归属地。values();
+         */
+
+        //所有的英文星期。
+        Collection&lt;String&gt; values = map.values();
+        for(String value : values){
+            System.out.println(&quot;value:&quot;+value);
+        }
+    }
+}
+
+//interface MyMap{
+//    public static interface MyEntry{}//内部接口。
+//}
+</code></pre><h2 id="-hashmaptest-top-a-name-hashmaptest-"><a href="#top">HashMapTest</a><a name="HashMapTest"/></h2>
+<pre><code>package cn.itcast.api.b.map.subclass;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import cn.itcast.domain.Student;
+
+public class HashMapTest {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * 练习一：
+         * 学生对象(姓名，年龄)都有自己的归属地，既然有对应关系。
+         * 将学生对象和归属地存储到map集合中。
+         * 注意：同姓名同年龄视为重复的键。
+         */
+
+        //1,创建hashmap集合对象。
+        Map&lt;Student,String&gt; map = new HashMap&lt;Student,String&gt;();
+
+        //2,添加元素。
+        map.put(new Student(&quot;lisi&quot;,28), &quot;上海&quot;);
+        map.put(new Student(&quot;wangwu&quot;,22), &quot;北京&quot;);
+        map.put(new Student(&quot;zhaoliu&quot;,24), &quot;成都&quot;);
+        map.put(new Student(&quot;zhouqi&quot;,25), &quot;广州&quot;);
+        map.put(new Student(&quot;wangwu&quot;,22), &quot;南京&quot;);
+
+        //3,取出元素。keySet  entrySet
+//        Set&lt;Student&gt; keySet = map.keySet();
+//        for(Student key : keySet){}
+        for(Student key : map.keySet()){
+            String value = map.get(key);
+
+            System.out.println(key.toString()+&quot;.....&quot;+value);
+        }
+
+    }
+
+}
+</code></pre><h2 id="-treemaptest-top-a-name-treemaptest-"><a href="#top">TreeMapTest</a><a name="TreeMapTest"/></h2>
+<pre><code>package cn.itcast.api.b.map.subclass;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+import cn.itcast.api.c.comparator.ComparatorByName;
+import cn.itcast.domain.Student;
+
+public class TreeMapTest {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        /*
+         * 练习二： 学生对象(姓名，年龄)都有自己的归属地，既然有对应关系。 将学生对象和归属地存储到map集合中。
+         * 注意：同姓名同年龄视为重复的键。 按照学生的年龄进行从小到大的排序。 TreeMap。
+         * 
+         * 如果要对学生按照姓名排序呢？
+         */
+
+        // 1,创建TreeMap集合对象。
+        Map&lt;Student, String&gt; map = new TreeMap&lt;Student, String&gt;(new ComparatorByName());
+
+        // 2,添加元素。
+        map.put(new Student(&quot;lisi&quot;, 28), &quot;上海&quot;);
+        map.put(new Student(&quot;wangwu&quot;, 22), &quot;北京&quot;);
+        map.put(new Student(&quot;zhaoliu&quot;, 24), &quot;成都&quot;);
+        map.put(new Student(&quot;zhouqi&quot;, 25), &quot;广州&quot;);
+        map.put(new Student(&quot;wangwu&quot;, 22), &quot;南京&quot;);
+
+        //3,取出所有元素，entrySet()
+        for(Map.Entry&lt;Student, String&gt; me : map.entrySet()){
+
+            Student key = me.getKey();
+            String value = me.getValue();
+
+            System.out.println(key+&quot;::&quot;+value);
+
+        }
+
+    }
+
+}
+</code></pre><h2 id="-comparatorbyname-top-a-name-comparatorbyname-"><a href="#top">ComparatorByName</a><a name="ComparatorByName"/></h2>
+<pre><code>package cn.itcast.api.c.comparator;
+
+import java.util.Comparator;
+
+import cn.itcast.domain.Student;
+
+public class ComparatorByName implements Comparator&lt;Student&gt; {
+
+    @Override
+    public int compare(Student o1, Student o2) {
+        int temp = o1.getName().compareTo(o2.getName());
+        return temp==0?o1.getAge() - o2.getAge() : temp;
+    }
+
+}
+</code></pre><h2 id="-maptest-top-a-name-maptest-"><a href="#top">MapTest</a><a name="MapTest"/></h2>
+<pre><code>package cn.itcast.api.d.test;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+public class MapTest {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        /*
+         * 练习：
+         * &quot;werertrtyuifgkiryuiop&quot;,获取字符串中每一个字母出现的次数。
+         * 要求返回结果个格式是  a(1)b(2)d(4)......;
+         * 思路：
+         * 1，获取到字符串中的每一个字母。
+         * 2，用字母取查表，如果查到了该字母对应的次数，就将这个次数+1后重新存回表中。
+         *     如果没有查到呢？将该字母和1存到表中。
+         * 3，每一字母都查完表后，表中记录的就是所有字母出现的次数。
+         * 
+         * 字母和次数之间存在对应关系，而且字母是唯一性的，所以可以使用map集合做表进行查询。
+         * 通过结果发现 字母有顺序的，所以可以通过map集合中的treemap作为表。
+         * 
+         */
+
+        String str = &quot;awaa+acr=ebarct,btydui[efgkiryuiop&quot;;
+        str = getCharCount(str);
+        System.out.println(str);
+    }
+
+    /** 
+     * 获取字符串中的字母出现次数。
+     * 
+     * @param str
+     * @return 返回一个每一个字母对应次数的字符串 格式  char1(count)char2(count).....;
+     */
+    public static String getCharCount(String str) {
+
+        //1，将字符串转成字符数组。
+        char[] chs = str.toCharArray();
+
+        //2，定义表。treemap.
+        TreeMap&lt;Character, Integer&gt; map = new TreeMap&lt;Character, Integer&gt;();
+
+        //3，遍历字符数组。
+        for (int i = 0; i &lt; chs.length; i++) {
+
+            //判断必须是字母。
+            if(!(chs[i]&gt;=&#39;a&#39; &amp;&amp; chs[i]&lt;=&#39;z&#39; || chs[i]&gt;=&#39;A&#39; &amp;&amp; chs[i]&lt;=&#39;Z&#39;)){
+                continue;
+            }
+
+            //4，将遍历到的字母作为键去查map这个表。获取对应的次数。
+            Integer value = map.get(chs[i]);
+
+            //5，有可能要查询的字母在表中不存在对应的次数，需要判断。
+            //如果返回是null，说明字母没有对应的次数。就将这个字母和1存储到表中。
+            if(value == null){
+
+                //将字母和1存储。
+                map.put(chs[i],1);
+            }else{
+
+                //否则，说明有对应的次数对次数自增。将字母和新的次数存储到表中。
+                value++;
+                map.put(chs[i],value);
+            }
+            /*
+             //两个if判断，选择哪个都行。
+            int count = 0;
+            if(value!=null){
+                count = value;//用count记录次数。
+            }
+            count++;//自增。
+            map.put(chs[i], count);
+            */
+        }
+
+        //将map集合中的键值转成   格式是  a(1)b(2)d(4)......
+
+
+        return mapToString(map);
+    }
+
+    /*
+     * 将map集合中的键值转成   格式是  a(1)b(2)d(4)......
+     * map中有很多数据，无论是多少个，什么类型，最终都变成字符串。
+     * StringBuffer 这个容器就符合这个需求。如果是单线程，建议使用StringBuilder。
+     * 
+     */
+    private static String mapToString(Map&lt;Character, Integer&gt; map) {
+        //1，明确容器。
+        StringBuilder sb = new StringBuilder();
+
+        //2,遍历map集合。
+        for(Character key  : map.keySet()){
+            Integer value = map.get(key);
+
+            sb.append(key+&quot;(&quot;+value+&quot;)&quot;);
+        }
+        return sb.toString();
+    }
+}
+</code></pre><h2 id="-paramdemo-top-a-name-paramdemo-"><a href="#top">ParamDemo</a><a name="ParamDemo"/></h2>
+<pre><code>package cn.itcast.api.e.jdk5;
+
+public class ParamDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+//        int[] arr = {34,12,89};
+//        int sum = add(arr);
+//        System.out.println(&quot;sum=&quot;+sum);
+
+//        int[] arr1 = {23,11,44,55,66};//先创建数组，再将这个数组作为实参传递给add方法。
+//        int sum1 = add(arr1);
+//        System.out.println(&quot;sum1=&quot;+sum1);
+
+        //jdk1.5以后。出现了简化操作。... 用在参数上，称之为可变参数。
+        //同样是代表数组，但是在调用这个带有可变参数的函数时，不用创建数组(这就是简单之处)，直接
+        //将数组中的元素作为实际参数进行传递，其实编译成的class文件，将这些实参先封装到一个数组中，在进行传递。
+        //这些动作编译器在生产class时，都帮你完成了。
+        int sum = add(34,12,89);
+        System.out.println(&quot;sum=&quot;+sum);
+
+        int sum1 = add(23,11,44,55,66);
+        System.out.println(&quot;sum1=&quot;+sum1);
+
+        //注意事项：记录可变参数一定要定义在参数列表最后。
+        //public static int add(int a,int...  arr)
+    }
+
+    public static int add(int...  arr){// 数组参数的简化表现形式。 ... 代表很多int类型数据。
+        int sum = 0;
+        for (int i = 0; i &lt; arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum;
+    }
+    /*
+    // 求多个整数的和。
+    public static int add(int[] arr){
+        int sum = 0;
+        for (int i = 0; i &lt; arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum;
+    }
+    */
+    // 求两个整数的和。
+    public static int add(int a, int b) {
+        return a + b;
+    }
+    // 求三个整数的和。
+    public static int add(int a,int b,int c){
+        return a + b + c;
+    }
+
+}
+</code></pre><h2 id="-staticimportdemo-top-a-name-staticimportdemo-"><a href="#top">StaticImportDemo</a><a name="StaticImportDemo"/></h2>
+<pre><code>package cn.itcast.api.e.jdk5;
+
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static java.util.Collections.*;//静态导入，导入是指定的类中的静态成员。
+import static java.lang.System.*;
+public class StaticImportDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+
+        max(list);
+        min(list);
+
+        out.println(&quot;hello itcast&quot;);
+
+    }
+
+}
+</code></pre><h2 id="-mathdemo-top-a-name-mathdemo-"><a href="#top">MathDemo</a><a name="MathDemo"/></h2>
+<pre><code>package cn.itcast.api.f.otherapi;
+
+import java.util.Random;
+
+public class MathDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        /*
+         * Math数序运算。方法都是静态的。
+         * Math.PI
+         */
+
+//        Math.abs(-4);
+
+        double d1 = Math.ceil(-12.34); //获取参数右边的整数   //11 12floor 12.34  ceil13  14  15
+        double d2 = Math.floor(12.34);//获取参数左边的整数。
+        double d3 = Math.round(12.54);//四舍五入。
+//        System.out.println(&quot;d1=&quot;+d1);//13   
+//        System.out.println(&quot;d2=&quot;+d2);//12
+//        System.out.println(&quot;d3=&quot;+d3);
+
+//        System.out.println(Math.pow(10,3));
+
+        Random r = new Random();
+        for(int x=0; x&lt;10; x++){
+//            int d = (int)(Math.random()*6 + 1);
+//            double d = Math.ceil(Math.random()*6);
+
+            int num  = r.nextInt(6)+1;
+            System.out.println(num);
+        }
+
+
+
+
+    }
+
+}
+</code></pre><h2 id="-systemdemo-top-a-name-systemdemo-"><a href="#top">SystemDemo</a><a name="SystemDemo"/></h2>
+<pre><code>package cn.itcast.api.f.otherapi;
+
+import java.util.Properties;
+import java.util.Set;
+
+public class SystemDemo {
+
+    private static final String LINE_SEPARATOR = System.getProperty(&quot;line.separator&quot;);
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * System:
+         * 1，不需要实例化，都是静态的属性和方法。
+         * 2，out对应标准输出流(显示器)，int属性对应的是键盘。
+         * 演示一些System类中的方法。
+         * currentTimeMilles:获取当前时间。可以用于计算程序运行时间只要将开始时间和结束时间相减即可。
+         */
+
+        long time = System.currentTimeMillis();
+        System.out.println(time);//毫秒值。1382691495296
+
+        //演示getProperties()获取系统属性集。
+        Properties prop = System.getProperties();
+
+        //获取系统属性集中的信息，遍历Properties集合。使用map的方法没问题，但是map有泛型取出时要强转。
+        //Properties有没有提供自身获取数据的方法呢？
+        //获取键集合。
+//        Set&lt;String&gt; keySet = prop.stringPropertyNames();
+//        for(String key : keySet){
+//            String value = prop.getProperty(key);//通过键获取值。
+//            System.out.println(key+&quot;::::&quot;+value);
+//        }
+
+        //获取指定信息，比如：操作系统。
+        String osname =System.getProperty(&quot;os.name&quot;);
+        System.out.println(osname);
+
+        //获取系统中的行分隔符。这样该程序在移植时，很方便。不同的系统，获取该系统上行分隔符
+        System.out.println(&quot;hello&quot;+LINE_SEPARATOR+&quot;itcast&quot;);
+
+
+    }
+
+}
+</code></pre><h2 id="-student-top-a-name-student-"><a href="#top">Student</a><a name="Student"/></h2>
+<pre><code>package cn.itcast.domain;
+
+public class Student implements Comparable&lt;Student&gt; {
+
+    private String name;
+    private int age;
+
+    public Student() {
+        super();
+    }
+
+    public Student(String name, int age) {
+        super();
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+
+
+
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + age;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Student other = (Student) obj;
+        if (age != other.age)
+            return false;
+        if (name == null) {
+            if (other.name != null)
+                return false;
+        } else if (!name.equals(other.name))
+            return false;
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;Student [name=&quot; + name + &quot;, age=&quot; + age + &quot;]&quot;;
+    }
+
+    @Override
+    public int compareTo(Student o) {
+
+        int temp = this.age - o.age;
+
+        return temp==0?this.name.compareTo(o.name):temp;
+    }
+
+
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

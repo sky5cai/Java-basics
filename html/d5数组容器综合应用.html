@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="d5-">d5数组容器综合应用</h1>
+<h2 id="-">导语：</h2>
+<blockquote>
+<p>想写在写</p>
+</blockquote>
+<p><a name="top"/></p>
+<ol>
+<li><a href="#ArrayTest3">将数组转成字符串</a></li><li><a href="#ArrayTest4">查表法，星期示例</a></li><li><a href="#ArrayTest5">十六进制转换，解决了顺序反的问题。使用的数组</a></li><li><a href="#ArrayTest6">十六进制转换，解决了去零问题</a></li><li><a href="#ArrayTest7">十六进制转换，使用了查表法</a></li><li><a href="#ArrayTest8"> 三种进制转换，通用版。综合练习。★★★★★</a></li><li><a href="#ArrayTest9">选择和冒泡排序</a></li><li><a href="#ArrayTest10">普通查找和二分查找</a></li><li><a href="#Array2Demo"> 二维数组演示，要画图</a></li><li><a href="#Array2Demo2">二维数组的求和</a></li><li><a href="#Test">数组的反转。有序数组的插入点</a></li></ol>
+<h2 id="1-top-a-name-arraytest3-">1. <a href="#top">将数组转成字符串</a><a name="ArrayTest3"/></h2>
+<pre><code>
+class ArrayTest3 
+{
+    public static void main(String[] args) 
+    {
+
+        int[] arr = {34,12,56,90};
+        String str = toString(arr);
+        System.out.println(str);
+    }
+
+    /*
+    需求1：定义功能，将{34,12,67}数组中的元素转成字符串  &quot;[34,12,67]&quot;
+    明确1：结果？字符串。
+    明确2：参数？数组。
+
+    思路：
+    简单的方式就是利用了字符串和任何数据相加都是相连接。
+    */
+
+    public static String toString(int[] arr)
+    {
+        //1,定义字符串变量。
+        String temp = &quot;[&quot;;
+        //2,遍历数组。将每一个数组的元素和字符串相连接。
+        for(int x = 0; x &lt; arr.length; x++)
+        {
+            //判断，不是最后一个元素，后面连接逗号，是最后一个元素，后面不连接逗号。
+            if(x!=arr.length-1)
+                temp = temp + arr[x] + &quot;,&quot;;
+            else
+                temp = temp + arr[x] + &quot;]&quot;;
+        }
+
+
+        //3，将连接后的字符串返回。哦耶！
+        return temp;
+
+    }
+
+}
+</code></pre><h2 id="2-top-a-name-arraytest4-">2. <a href="#top">查表法，星期示例</a><a name="ArrayTest4"/></h2>
+<pre><code>class ArrayTest4 
+{
+    public static void main(String[] args) 
+    {
+
+    }
+
+    /*
+    数组使用的核心思想：
+
+    容器特点：1，固定长度，2，元素都有索引。
+
+    什么时候使用容器呢？数据多了，必须先进行存储。然后进行操作。
+
+    对于数组容器什么时候用呢？数据多，个数确定，而且有对应关系。
+    在分析需求时，
+    1，需求中的数据是否有对应的有序编号？
+    2，需求中的数据是否需要有序的编号？
+    如果有，就用数组存储。
+
+    例1：一组数：34  89  12  78  45 要对他们进行操作。需要编号，操作更容易。
+
+    例2：根据用户输入的数据，显示对应的星期。
+    思路：
+    1，星期有多个，个数固定。
+    2，星期对应的有序编号。有序的编号就可以作为索引。
+    所以可以使用数组这种结构进行存储。
+    */
+
+    /*
+    定义一个功能。根据给定的数据获取对应的星期。
+
+    查表法：数据之间存在对应关系。通过关系中一方查询另一方。当对应关系存在，但没有一方是有序编号时，使用另一个容器 map。
+    */
+    public static String getWeek(int num)
+    {
+        if(num&gt;7 || num&lt;1)
+            return num+&quot;没有对应的星期&quot;;//throw new RuntimeExcpetion(num+&quot;没有对应的星期&quot;);
+
+        //1,定义一个数组，存储固定的星期数。这个称之为一个存储了对应关系的表。
+        String[] weeks = {&quot;&quot;,&quot;星期一&quot;,&quot;星期二&quot;,&quot;星期三&quot;,&quot;星期四&quot;,&quot;星期五&quot;,&quot;星期六&quot;,&quot;星期日&quot;};
+            //其实就是根据制定的索引在查表。
+        return weeks[num];
+
+    }
+}
+</code></pre><h2 id="3-top-a-name-arraytest5-">3. <a href="#top">十六进制转换，解决了顺序反的问题。使用的数组</a><a name="ArrayTest5"/></h2>
+<pre><code>class ArrayTest5 
+{
+    public static void main(String[] args) 
+    {
+        int num = 60;
+
+        String str_hex = toHex(num);
+        System.out.println(str_hex);
+
+
+    }
+
+    /*
+    需求：十进制--&gt;十六进制。
+    &amp;15  &gt;&gt;&gt;4  循环  
+
+    遇到问题：
+    1，顺序反了。2，去除多余的0.
+
+    解决方式：
+    1，每运算出一位，不要打印，先存储。需要容器。
+    */
+    public static String toHex(int num)
+    {
+
+        //1,定义容器。存储的是字符，长度为8.一个整数最多8个16进制位。
+        char[] chs = new char[8];
+        //2,定义一个用于操作数组的索引。
+        int index = chs.length-1;
+
+        for(int x=0; x&lt;8; x++)
+        {
+            int temp = num &amp; 15;
+
+            if(temp &gt; 9)
+                chs[index] = ((char)(temp-10+&#39;A&#39;));
+
+            else
+                chs[index] = ((char)(temp+&#39;0&#39;));
+
+            index--;
+
+            num = num &gt;&gt;&gt; 4;
+        }
+
+        /*//4,遍历数组。
+        for(int x=0; x&lt;chs.length; x++)
+        {
+            System.out.print(chs[x]+&quot;,&quot;);
+        }
+        */
+
+        return &quot;0x&quot;+toString(chs);
+    }
+
+    //定义一个功能，将字符数组转成字符串。
+    public static String toString(char[] arr)
+    {
+        String temp = &quot;&quot;;
+        for(int x=0; x&lt;arr.length; x++)
+        {
+            temp = temp + arr[x];
+        }
+        return temp;
+    }
+
+}
+</code></pre><h2 id="4-top-a-name-arraytest6-">4. <a href="#top">十六进制转换，解决了去零问题</a><a name="ArrayTest6"/></h2>
+<pre><code>class ArrayTest6 
+{
+    public static void main(String[] args) 
+    {
+        int num = 60;
+
+        String str_hex = toHex(num);
+        System.out.println(str_hex);
+
+
+    }
+
+    /*
+    需求：十进制--&gt;十六进制。
+    &amp;15  &gt;&gt;&gt;4  循环  
+
+    遇到问题：
+    1，顺序反了。2，去除多余的0.
+
+    解决方式：
+    1，每运算出一位，不要打印，先存储。需要容器。
+
+    2,去除零？需要转换的数据会不断的右移，如果右移后剩余的二进制都是0，也就是没有有效位，
+    就不需要进行&amp;运算了。也就是不需要在往数组中存储了。
+
+    */
+    public static String toHex(int num)
+    {
+
+        //1,定义容器。存储的是字符，长度为8.一个整数最多8个16进制位。
+        char[] chs = new char[8];
+        //2,定义一个用于操作数组的索引。
+        int index = chs.length;
+
+        while(num!=0)
+        {
+            int temp = num &amp; 15;
+
+            if(temp &gt; 9)
+                chs[--index] = ((char)(temp-10+&#39;A&#39;));
+            else
+                chs[--index] = ((char)(temp+&#39;0&#39;));
+
+            num = num &gt;&gt;&gt; 4;
+        }
+        System.out.println(&quot;index=&quot;+index);
+        return &quot;0x&quot;+toString(chs,index);
+    }
+
+    //定义一个功能，将字符数组转成字符串。
+    public static String toString(char[] arr,int index)
+    {
+        String temp = &quot;&quot;;
+        for(int x=index; x&lt;arr.length; x++)
+        {
+            temp = temp + arr[x];
+        }
+        return temp;
+    }
+
+}
+</code></pre><h2 id="5-top-a-name-arraytest7-">5. <a href="#top">十六进制转换，使用了查表法</a><a name="ArrayTest7"/></h2>
+<pre><code>class ArrayTest7 
+{
+    public static void main(String[] args) 
+    {
+        int num = 26;
+        String str_hex = toHex(num);
+        System.out.println(&quot;hex:&quot;+str_hex);
+    }
+
+    /*
+    需求；十进制--&gt;十六进制，终结版。
+    思路：
+    十进制转成十六进制的每一位都是十六进制元素中的某一个。
+    十六进制的元素有很多固定个数。而且还有对应的编号。
+    所以可以使用传说中的 查表法！
+
+    */
+
+    public static String toHex(int num)
+    {
+        //1,建立表。
+        char[] chs = {&#39;0&#39;,&#39;1&#39;,&#39;2&#39;,&#39;3&#39;
+                    ,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;7&#39;
+                    ,&#39;8&#39;,&#39;9&#39;,&#39;A&#39;,&#39;B&#39;
+                    ,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;,&#39;F&#39;};
+
+        //2,创建临时容器。
+        char[] arr = new char[8];
+
+        //3,创建操作临时容器的角标。
+        int index = arr.length;
+
+        //4,通过循环对num进行&amp; &gt;&gt;等运算。
+        while(num!=0)
+        {
+            //5,对num进行&amp;运算。
+            int temp = num &amp; 15;
+
+            //6,根据&amp;运算后的结果作为角标查表，获取对应的字符。并将字符存储到临时容器中。
+            arr[--index] = chs[temp];
+
+            //7,对num进行右移。
+            num = num &gt;&gt;&gt; 4;
+        }
+
+        return &quot;0x&quot;+toString(arr,index);
+    }
+    //定义一个功能，将字符数组转成字符串。
+    public static String toString(char[] arr,int index)
+    {
+        String temp = &quot;&quot;;
+        for(int x=index; x&lt;arr.length; x++)
+        {
+            temp = temp + arr[x];
+        }
+        return temp;
+    }
+}
+</code></pre><h2 id="6-top-a-name-arraytest8-">6. <a href="#top"> 三种进制转换，通用版。综合练习。★★★★★</a><a name="ArrayTest8"/></h2>
+<pre><code>class ArrayTest8 
+{
+    public static void main(String[] args) 
+    {
+        int num = 60;
+        String str_bin = toBinary(num);
+        String str_oct = toOctal(num);
+        String str_hex = toHex(num);
+        System.out.println(&quot;bin:&quot;+str_bin);
+        System.out.println(&quot;oct:&quot;+str_oct);
+        System.out.println(&quot;hex:&quot;+str_hex);
+        //Java已经提供的功能。
+        System.out.println(Integer.toBinaryString(60));
+        System.out.println(Integer.toOctalString(60));
+        System.out.println(Integer.toHexString(60));
+    }
+
+
+    /*
+    十进制--&gt;十六进制。
+    */
+    public static String toHex(int num)
+    {
+        return &quot;0x&quot;+trans(num,15,4);
+    }
+
+
+    /*
+    十进制--&gt;二进制。
+    */
+    public static String toBinary(int num)
+    {
+        return trans(num,1,1);
+    }
+
+    /*
+    十进制--&gt;八进制。
+    */
+    public static String toOctal(int num)
+    {
+        return &quot;0&quot;+trans(num,7,3);
+    }
+
+    //用于进制转换。
+    public static String trans(int num,int base,int offset)
+    {
+
+        if(num==0)
+            return &quot;0&quot;;
+        //1,建立表。
+        char[] chs = {&#39;0&#39;,&#39;1&#39;,&#39;2&#39;,&#39;3&#39;
+                    ,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;7&#39;
+                    ,&#39;8&#39;,&#39;9&#39;,&#39;A&#39;,&#39;B&#39;
+                    ,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;,&#39;F&#39;};
+
+        //2,创建临时容器。
+        char[] arr = new char[32];
+
+        //3,创建操作临时容器的角标。
+        int index = arr.length;
+
+        //4,通过循环对num进行&amp; &gt;&gt;等运算。
+        while(num!=0)
+        {
+            //5,对num进行&amp;运算。
+            int temp = num &amp; base;
+
+            //6,根据&amp;运算后的结果作为角标查表，获取对应的字符。并将字符存储到临时容器中。
+            arr[--index] = chs[temp];
+
+            //7,对num进行右移。
+            num = num &gt;&gt;&gt; offset;
+        }
+
+        return toString(arr,index);
+    }
+    //定义一个功能，将字符数组转成字符串。
+    public static String toString(char[] arr,int index)
+    {
+        String temp = &quot;&quot;;
+        for(int x=index; x&lt;arr.length; x++)
+        {
+            temp = temp + arr[x];
+        }
+        return temp;
+    }
+}
+</code></pre><h2 id="7-top-a-name-arraytest9-">7. <a href="#top">选择和冒泡排序</a><a name="ArrayTest9"/></h2>
+<pre><code>import java.util.Arrays;
+class ArrayTest9 
+{
+    public static void main(String[] args) 
+    {
+        int[] arr = {12,9,23,77,6,34};
+
+        printArray(arr);
+        //selectSort(arr);
+//        bubbleSort(arr);
+//        Arrays.sort(arr);//开发时用这个。
+        printArray(arr);
+
+    }
+
+    //打印数组的方法。
+    public static void printArray(int[] arr)
+    {
+        for(int x=0; x&lt;arr.length; x++)
+        {
+            if(x!=arr.length-1)
+                System.out.print(arr[x]+&quot;,&quot;);
+            else
+                System.out.println(arr[x]);
+        }
+    }
+
+    /*
+    数组的排序。
+    选择排序。
+    */
+    public static void selectSort(int[] arr)
+    {
+        for(int x=0 ;x&lt;arr.length-1; x++)
+        {
+            for(int y=x+1; y&lt;arr.length; y++)
+            {
+                if(arr[x]&gt;arr[y])
+                {
+//                    int temp = arr[x];
+//                    arr[x] = arr[y];
+//                    arr[y] = temp;
+                    swap(arr,x,y);
+                }
+            }
+        }
+    }
+
+    /*
+    冒泡排序。
+    */
+    public static void bubbleSort(int[] arr)
+    {
+        for(int x=0; x&lt;arr.length-1; x++)
+        {
+            for(int y=0; y&lt;arr.length-1-x; y++)
+            {
+                if(arr[y]&gt;arr[y+1])
+                {
+//                    int temp = arr[y];
+//                    arr[y] = arr[y+1];
+//                    arr[y+1] = temp;
+                    swap(arr,y,y+1);
+                }
+            }
+        }
+    }
+
+    //发现排序方法，位置置换代码重复，进行抽取。
+    public static void swap(int[] arr,int a,int b)
+    {
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+}
+</code></pre><h2 id="8-top-a-name-arraytest10-">8. <a href="#top">普通查找和二分查找</a><a name="ArrayTest10"/></h2>
+<pre><code>class ArrayTest10 
+{
+
+
+
+    public static void main(String[] args) 
+    {
+        int[] arr = {9,12,15,24,36,41,59,68};
+
+        int index = binarySearch(arr,45);
+        System.out.println(&quot;index=&quot;+index);
+
+
+    }
+    //二分查找。前提：数组必须是有序的。
+    /*
+    思路：
+    1，通过角标先获取中间角标上元素。
+    2，让该元素和要找的数据比较。
+    3，如果要找的数大了，缩小范围，要找的范围应该是 中间的角标+1---尾角标。
+        如果要找的数小了，要找的范围 头角标---中间角标-1；
+    4，不断如此重复，就可以找到元素对应的角标。
+    */
+
+    public static int binarySearch(int[] arr,int key)
+    {
+        //1,定义三个变量，记录头角标，尾角标，中间角标。
+        int max,min,mid;
+        min = 0;
+        max = arr.length-1;
+        mid = (max+min)&gt;&gt;1;
+
+        while(arr[mid]!=key)
+        {
+            if(key&gt;arr[mid])
+                min = mid + 1;
+            else if(key&lt;arr[mid])
+                max = mid - 1;
+
+            //判断元素是否存在。
+            if(max&lt;min)
+                return -1;
+
+            mid = (max+min)&gt;&gt;1;
+        }
+
+        return mid;
+    }
+
+    public static int binarySearch(int[] arr,int key)
+    {
+        //1,定义三个变量，记录头角标，尾角标，中间角标。
+        int max,min,mid;
+        min = 0;
+        max = arr.length-1;
+
+        while(min&lt;=max)
+        {
+            mid = (min+max)&gt;&gt;1;
+
+            if(key&gt;arr[mid])
+                min = mid + 1;
+            else if(key&lt;arr[mid])
+                max = mid - 1;
+            else
+                return mid;
+        }
+        return -1;
+    }
+
+
+
+
+
+
+    //查找。
+    /*
+    需求；查找一个元素在数组中的第一次出现的位置。
+    */
+    public static int searchKey(int[] arr,int key)
+    {
+        //遍历查找。
+        for(int x=0; x&lt;arr.length; x++)
+        {
+            if(arr[x]==key)
+                return x;
+        }
+        return -1;//-1,代表的是角标不存在的情况。
+    }
+}
+</code></pre><h2 id="9-top-a-name-array2demo-">9. <a href="#top"> 二维数组演示，要画图</a><a name="Array2Demo"/></h2>
+<pre><code>class Array2Demo 
+{
+    public static void main(String[] args) 
+    {
+        //二维数组。
+        /*
+        int[][] arr = new int[3][2];
+
+        System.out.println(arr);// [[I@e6f7d2//二维数组实体。
+        System.out.println(arr[0]);//[I@3e0ebb//一维数组实体。
+        System.out.println(arr[0][0]);//0 一维数组中的元素。
+        */
+        //
+        int[][] array = new int[3][];//明确了二维数组的长度，没有明确具体的一维数组。
+        System.out.println(array);//[[I@3e0ebb
+        System.out.println(array[0]);//null
+        System.out.println(array[0][0]);//NullPointerException
+
+    }
+}
+</code></pre><h2 id="10-top-a-name-array2demo2-">10. <a href="#top">二维数组的求和</a><a name="Array2Demo2"/></h2>
+<pre><code>class Array2Demo2 
+{
+    public static void main(String[] args) 
+    {
+
+        /*
+        二维数组的另一种定义方式。
+        */
+        int[][] arr = {{23,17,11},{88,11,33,90},{11,78,34}};
+
+        //求和。
+        int sum = 0;
+        for(int x=0; x&lt;arr.length; x++)//遍历二维数组
+        {
+            for(int y=0; y&lt;arr[x].length; y++)
+            {
+                sum+=arr[x][y];
+            }
+        }
+
+
+        System.out.println(&quot;sum=&quot;+sum);
+    }
+}
+</code></pre><h2 id="11-top-a-name-test-">11. <a href="#top">数组的反转。有序数组的插入点</a><a name="Test"/></h2>
+<pre><code>/*
+前五天，阶段要点：
+
+path classpath配置
+
+常见的编译错误提示。以及解决办法。
+
+-------
+
+++
+
+
+&amp;，&amp;&amp;的区别。
+
+
+位运算 &amp; &gt;&gt;&gt;
+
+
+循环嵌套。相关练习，一定要写思路。
+
+
+函数的两个明确。
+
+
+数组，查表法的应用。
+
+数组的常见的应用和操作编程题一定要练。
+
+
+画图：
+
+1，函数调用的执行流程。
+2，数组在内存中的分布。
+3，理解题，栈，堆的特点。
+
+阶段综合练习：进制转换。
+
+
+
+
+
+
+*/
+
+import java.util.Arrays;
+class Test 
+{
+    public static void main(String[] args) 
+    {
+
+        int[] arr = {9,13,17,22,31,46,58,77};
+
+        int index = binarySearch(arr,7);
+        int index2 = Arrays.binarySearch(arr,7);
+        System.out.println(&quot;index=&quot;+index);
+        System.out.println(&quot;index2=&quot;+index2);
+
+
+    }
+
+    /*
+    对一个给定的数组进行反转。
+    {23,14,88,5} -&gt;
+    {5,88,14,23}
+    */
+    public static void reverse(int[] arr)
+    {
+        for(int start=0,end=arr.length-1; start&lt;end; start++,end--)
+        {
+            swap(arr,start,end);
+        }
+    }
+
+    public static void swap(int[] arr,int a,int b)
+    {
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+
+
+
+    /*
+    思考题！
+    需求：如果往有序的数组中插入一个元素并继续保证有序，问如何获取该位置？
+    思路：
+    1，既然是有序的数组，而且是找位置，必须要想到 二分查找法。
+
+    */
+    public static int binarySearch(int[] arr,int key)
+    {
+        int max,min,mid;
+        min = 0;
+        max = arr.length-1;
+
+        while(min&lt;=max)
+        {
+            mid = (min+max)&gt;&gt;1;
+
+            if(key&gt;arr[mid])
+                min = mid + 1;
+            else if(key&lt;arr[mid])
+                max = mid - 1;
+            else
+                return mid;
+        }
+        return -(1+min);
+    }
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

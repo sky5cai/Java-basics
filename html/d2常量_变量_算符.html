@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="d2-_-_-">d2常量<em>变量</em>算符</h1>
+<h2 id="-">导语：</h2>
+<blockquote>
+<p>想写在写</p>
+</blockquote>
+<p><a name="top"/></p>
+<ol>
+<li><a href="#Demo">Demo</a></li><li><a href="#Demo2">Demo2</a></li><li><a href="#OperateDemo">OperateDemo</a></li><li><a href="#OperateDemo2">OperateDemo2</a></li><li><a href="#OperateDemo3">OperateDemo3</a></li><li><a href="#Test">Test</a></li><li><a href="#VarDemo">VarDemo</a></li><li><a href="#VarDemo2">VarDemo2</a></li></ol>
+<h2 id="1-demo-top-a-name-demo-">1. <a href="#top">Demo</a><a name="Demo"/></h2>
+<pre><code>/**
+
+@author
+@version
+*/
+/*
+关键字：赋予了特殊含义的单词。
+标识符：在程序中定义的一些名称。
+        比如 类名。
+        a-z 0-9 _ $
+        数字不可以开头，不可以使用关键字。
+注释：注解说明解释程序的文字。
+    作用：1，对程序进行说明。
+          2，调试程序。
+
+    注意：多行注释中不要嵌套多行注释。
+*/
+
+class Demo  //这是我定义的//第一个小程序。
+{
+    public static void main(String[] args) 
+    {
+        //System.out.println(&quot;Hello World!&quot;)
+        System.out.println(&quot;Hello World!&quot;);
+    }
+}
+
+/*
+类 演示
+{
+    公共 静态 无返回值 主方法(字符串[] 参数)
+    {
+        系统.输出.打印换行();
+    }
+}
+*/
+</code></pre><h2 id="2-demo2-top-a-name-demo2-">2. <a href="#top">Demo2</a><a name="Demo2"/></h2>
+<pre><code>/*
+需求：写一个helloworld程序，将hello world字样显示屏幕上。
+
+思路：
+    1，找个编译器。
+    2，用java语言，写个程序。
+    3，这个程序需要运行，并具备显示的功能。
+
+步骤：
+    1，定义一个类，通过class完成。
+    2，要让这个类运行，需要主方法。
+    3，显示功能可以通过输出语句实现。
+
+代码：
+
+测试。javac java 
+*/
+
+//1,用class定义类。
+class Demo2
+{
+    //2,类中定义主方法。
+    public static void main(String[] args)
+    {
+        //3,主方法中定义输出语句。
+        System.out.println(&quot;hello world&quot;);
+
+        1  &#39;你&#39; &quot;ab&quot;   &quot;&quot; &#39;!&#39; 
+    }
+
+}
+</code></pre><h2 id="3-operatedemo-top-a-name-operatedemo-">3. <a href="#top">OperateDemo</a><a name="OperateDemo"/></h2>
+<pre><code>class OperateDemo 
+{
+    public static void main(String[] args) 
+    {
+
+        /*
+
+        + - * / %(取余数)
+        */
+        int x = 2810;
+        System.out.println(x/1000);
+        System.out.println(2%-5);  
+
+
+        /*
+        ++:自增。对原有的数据进行+1
+
+        int a = 3;
+        a++;//++a;//a = a+1;  ++运算单独存在时，放左放右是没有区别的。
+        System.out.println(&quot;a=&quot;+a);
+        */
+
+        int a = 3, b;
+        //b = ++a;
+        b = a++;
+
+        System.out.println(&quot;a=&quot;+a+&quot;,b=&quot;+b);
+
+
+        System.out.println(&quot;5+5=&quot;+(5+5));
+
+
+    }
+}
+</code></pre><h2 id="4-operatedemo2-top-a-name-operatedemo2-">4. <a href="#top">OperateDemo2</a><a name="OperateDemo2"/></h2>
+<pre><code>class OperateDemo2 
+{
+    public static void main(String[] args) 
+    {
+
+        /*
+        赋值运算符。
+        =  +=   -=  *=  /=   %=  
+        */
+        //int x,y,z;
+        //x=y=z=3;
+
+        int a = 3;//右边赋给左边。
+
+        a+=4;//将左右两边的和赋给左边。 a = a + 4;
+
+
+        short s = 4;
+        //s = s + 5;//编译失败。
+        s+=5;//编译通过，会做自动转换。
+
+        System.out.println(&quot;Hello World!&quot;);
+    }
+}
+</code></pre><h2 id="5-operatedemo3-top-a-name-operatedemo3-">5. <a href="#top">OperateDemo3</a><a name="OperateDemo3"/></h2>
+<pre><code>class OperateDemo3 
+{
+    public static void main(String[] args) 
+    {
+
+        /*
+        比较运算符。运算完的结果要么true，要么false。
+        */
+        System.out.println(3!=4);
+
+
+
+        /*
+        逻辑运算符。用来连接boolean型表达式的。
+        &amp; : 与
+        | ：或
+        ^ : 异或。
+        ！：非。
+
+        &amp;&amp; 短路与 || 短路或
+        */
+
+        int x = 7;
+
+        //x&gt;2 &amp; x&lt;5
+        //x&lt;2 | x&gt;5
+        /*
+        &amp; ：两边都为true，结果是true。否则为false。
+            两边只要有一个false。结果必然是false。
+        */
+        true  &amp;  true = true;        
+        true  &amp; false = false;
+        false &amp;  true = false;
+        false &amp; false = false;
+
+
+        /*
+        | ：两边都为false，结果是false。否则为true。
+            两边只要有一个true。结果必然是true。
+
+        */
+        true  |  true = true;        
+        true  | false = true;
+        false |  true = true;
+        false | false = false;
+
+        /*
+        ^ : 异或。
+            两边相同为false。两边不同为true。
+        */
+        true  ^  true = false;        
+        true  ^ false = true;
+        false ^  true = true;
+        false ^ false = false;
+
+        !true = false;
+
+
+
+        int y = 1;
+
+        y&gt;3 &amp; y&lt;6
+        y&gt;3 &amp;&amp; y&lt;6
+
+        /*
+        &amp;和&amp;&amp;的区别：
+        &amp;：两边都参与运算。
+        &amp;&amp;：当左边为false。右边不参与运算。
+
+        |和 ||
+        | ：两边都参与运算。
+        || ：当左边为true，右边不参与运算。
+        */
+
+    }
+}
+</code></pre><h2 id="6-test-top-a-name-test-">6. <a href="#top">Test</a><a name="Test"/></h2>
+<pre><code>class Test 
+{
+    public static void main(String[] args) 
+    {
+
+        int a = 3, b;
+        b = (a++)+(++a)+(a++)*2+a+(++a); 
+           // 3     5     5*2   6    7
+
+
+        System.out.println(&quot;a=&quot;+a+&quot;,b=&quot;+b);//a=7,b=31
+
+        int i = 3;
+        i = i++;
+        /*
+        temp = i;
+        i = i + 1;
+        i = temp;
+        */
+        System.out.println(&quot;i=&quot;+i);
+    }
+}
+</code></pre><h2 id="7-vardemo-top-a-name-vardemo-">7. <a href="#top">VarDemo</a><a name="VarDemo"/></h2>
+<pre><code>class VarDemo 
+{
+    public static void main(String[] args) 
+    {
+
+        //数据类型    变量名  =  初始化值；
+        byte b = 6;
+
+        short s = 4;
+
+        int i = 7;
+
+        long l = 12345678900l;//对于过大的数，加l
+
+        float f = 2.3f;//小数后加f可以表示单精度存储。
+
+        double d = 3.4;
+
+        char c = &#39;a&#39;;
+
+        boolean bo = true;//bo = false;
+
+
+
+
+        System.out.println(&quot;Hello World!&quot;);
+    }
+}
+</code></pre><h2 id="8-vardemo2-top-a-name-vardemo2-">8. <a href="#top">VarDemo2</a><a name="VarDemo2"/></h2>
+<pre><code>class VarDemo2 
+{
+    public static void main(String[] args) 
+    {
+        /*
+        byte b = 4;
+        int x = 3;
+        x = x + b;//b就自动类型提升。
+        System.out.println(&quot;x=&quot;+x);
+        */
+
+
+        /*
+        byte b = 3;
+        b = (byte)(b + 1000);//强制转换。
+        System.out.println(&quot;b=&quot;+b);
+        */
+
+        char ch = 97;
+        System.out.println(&quot;ch=&quot;+ch);
+
+        char ch2 = &#39;a&#39;;
+        System.out.println(&quot;ch2=&quot;+(char)(ch2+1));
+
+
+    }
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

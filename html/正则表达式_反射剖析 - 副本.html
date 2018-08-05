@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+	margin: 0 0px;
+	padding: 0px 0px;
+	white-space: nowrap;
+	border: 1px solid #eaeaea;
+	border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="-_-">正则表达式_反射剖析</h1>
+<h2 id="-">导语</h2>
+<blockquote>
+<p><del>~</del>~</p>
+</blockquote>
+<p><a name="top"/></p>
+<p>正则表达式</p>
+<ol>
+<li><a href="#RegexDemo_1">RegexDemo_1</a></li><li><a href="#RegexDemo">RegexDemo</a></li><li><a href="#StringDemo">StringDemo</a></li><li><a href="#PatternDemo">PatternDemo</a></li><li><a href="#RegexFunctionDemo">RegexFunctionDemo</a></li><li><a href="#NetSpider">NetSpider</a></li><li><a href="#RegexTest">RegexTest</a></li><li><a href="#Person">Person</a></li></ol>
+<p>反射剖析</p>
+<ol>
+<li><a href="#Reflect_GetClassDemo">Reflect_GetClassDemo</a></li><li><a href="#Reflect_GetConstructor">Reflect_GetConstructor</a></li><li><a href="#Reflect_GetField">Reflect_GetField</a></li><li><a href="#Reflect_GetMethod">Reflect_GetMethod</a></li><li><a href="#KeyByUSB">KeyByUSB</a></li><li><a href="#MouseByUSB">MouseByUSB</a></li><li><a href="#NoteBook">NoteBook</a></li><li><a href="#NoteBookMain">NoteBookMain</a></li><li><a href="#USB">USB</a></li></ol>
+<p>爬虫原理</p>
+<ol>
+<li><a href="#NetSpider">NetSpider</a></li></ol>
+<p>正则表达式</p>
+<h2 id="-regexdemo-top-a-name-regexdemo_1-"><a href="#top">RegexDemo</a><a name="RegexDemo_1"/></h2>
+<pre><code>package cn.itcast.regex;
+
+public class RegexDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        /*
+         * 对QQ号进行校验。
+         * 要求：5-15位， 0不可以开头。必须都是数字。
+         */
+
+        String qq = &quot;1234567890123456&quot;;
+//        boolean b = checkQQ(qq);
+//        System.out.println(qq+&quot;:&quot;+b);
+        boolean b = qq.matches(&quot;[1-9][0-9]{4,14}&quot;);
+        System.out.println(qq+&quot;:&quot;+b);
+    }
+
+    public static boolean checkQQ(String qq) {
+        boolean flag = false;
+        int len = qq.length();
+        if(len&gt;=5 &amp;&amp; len&lt;=15){
+            if(!qq.startsWith(&quot;0&quot;)){
+                try{
+                Long num = Long.parseLong(qq);
+                flag = true;
+                }catch(NumberFormatException e){
+                    System.out.println(&quot;出现非法数字&quot;);
+                }
+
+            }
+
+        }
+
+
+        return flag;
+    }
+
+}
+</code></pre><h2 id="-regexdemo-top-a-name-regexdemo-"><a href="#top">RegexDemo</a><a name="RegexDemo"/></h2>
+<pre><code>package cn.itcast.regex;
+
+public class RegexDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        String str = &quot;booooook&quot;;
+
+        boolean b = str.matches(&quot;bo{2,}k&quot;);  
+        System.out.println(str+&quot;:&quot;+b);
+
+    }
+
+}
+</code></pre><h2 id="-stringdemo-top-a-name-stringdemo-"><a href="#top">StringDemo</a><a name="StringDemo"/></h2>
+<pre><code>package cn.itcast.regex.demo;
+
+public class StringDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        // 需求：对QQ号码进行校验。
+        // 要求：必须5~15位，0不可以开头 ，必须全是数字。
+
+        String qq = &quot;1&quot;;
+        char ch = qq.charAt(0);
+
+
+        boolean b = qq.matches(&quot;[1-9]\\d+&quot;);  
+        System.out.println(qq+&quot;::::&quot;+b);
+
+        //这样功能，可以完成qq号的校验，但是有点麻烦。
+//        boolean b = checkQQ(qq);
+//        System.out.println(qq + &quot;:&quot; + b);
+    }
+
+    // 对QQ号码进行校验。
+    public static boolean checkQQ(String qq) {
+
+        // 1,获取qq的长度，判断是5~15位。
+        int len = qq.length();
+        if (len &gt;= 5 &amp;&amp; len &lt;= 15) {
+
+            // 2,是否是0开头。
+            if (!qq.startsWith(&quot;0&quot;)) {
+
+                try {
+                    Long.parseLong(qq);
+
+                    return true;
+                } catch (NumberFormatException e) {
+//                    System.out.println(&quot;非法数值&quot;);
+                }
+
+            }
+
+        }
+
+        return false;
+    }
+
+}
+</code></pre><h2 id="-patterndemo-top-a-name-patterndemo-"><a href="#top">PatternDemo</a><a name="PatternDemo"/></h2>
+<pre><code>package cn.itcast.regex.function;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class PatternDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        //演示正则表达式的获取功能。
+
+        //需求：获取字符串中由三个字母组成的单词。
+        //da jia zhu yi le,ming tian bu fang jia,over!
+
+
+        String str = &quot;da jia zhu yi le,ming tian bu fang jia,over!&quot;;
+        System.out.println(str);
+        //定义规则。
+        String regex = &quot;\\b[a-z]{3}\\b&quot;;
+
+        //1,将正则字符串编译成正则对象。
+        Pattern p = Pattern.compile(regex);
+
+        //2,将正则对象和字符串相关联，并获取匹配器。
+        Matcher m = p.matcher(str);
+
+        //3,使用find的方法
+//        System.out.println(m.find());
+//        System.out.println(str.substring(m.start(),m.end()));
+//        System.out.println(m.group());
+        while(m.find()){
+            System.out.println(m.group());
+        }
+
+    }
+}
+</code></pre><h2 id="-regexfunctiondemo-top-a-name-regexfunctiondemo-"><a href="#top">RegexFunctionDemo</a><a name="RegexFunctionDemo"/></h2>
+<pre><code>package cn.itcast.regex.function;
+
+public class RegexFunctionDemo {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        //演示匹配。
+//        matchesDemo();  
+
+        //演示切割。
+//        splitDemo();
+
+        //演示替换。
+//        replaceAllDemo();
+
+
+
+    }
+
+    private static void replaceAllDemo() {
+
+//        String str = &quot;qwer######tyuio########psdfg&quot;;
+//        //将#替换成@
+//        str = str.replaceAll(&quot;#+&quot;, &quot;@&quot;);
+
+//        String str = &quot;qwer######tyuio&amp;&amp;&amp;&amp;&amp;&amp;&amp;psdfg&quot;;
+//        //将将叠词替换成@
+//        str = str.replaceAll(&quot;(.)\\1+&quot;, &quot;@&quot;);
+
+//        String str = &quot;qwer######tyuio&amp;&amp;&amp;&amp;&amp;&amp;&amp;psdfg&quot;;
+//        //将将叠词替换成其中的一个  多个###### 用#替换。
+//        //当在第二个参数中使用第一个正则参数中的组时，可以使用$编号来完成组的调用。\\1只能使用在正则表达式中。
+//        str = str.replaceAll(&quot;(.)\\1+&quot;, &quot;$1&quot;);
+
+//        String str = &quot;q芳龄:20wer18600001111tyui99009877op[sdf666677778888999990000ghjkl;&quot;;
+//        //将论坛帖子的联系方式数组都替换 ***
+//        str = str.replaceAll(&quot;\\d{5,}&quot;, &quot;***&quot;);
+
+//        String str = &quot;q芳龄:20wer18600001111tyui99009877op[sdf666677778888999990000ghjkl;&quot;;
+//        //将论坛帖子的联系方式数组都替换 ***
+//        str = str.replaceAll(&quot;\\d{5,}&quot;, &quot;***&quot;);
+
+        String str = &quot;18600001111&quot;;
+        //将电话中的中间四位替换成****;
+        str = str.replaceAll(&quot;(\\d{3})(\\d{4})(\\d{4})&quot;, &quot;$1****$3&quot;);
+
+        System.out.println(str);
+
+
+    }
+
+    private static void splitDemo() {
+
+//        String str = &quot;zhangsan,lisi,wangwu&quot;;
+//        String str_regex = &quot;,&quot;;
+
+//        String str = &quot;zhangsan.lisi.wangwu&quot;;
+//        String str_regex = &quot;\\.&quot;;
+
+
+//        String str = &quot;zhangsan        lisi     wangwu&quot;;
+//        String str_regex = &quot; +&quot;;
+
+        //按照叠词进行切割。叠词就是后者和前者一致。前者还是任意，必须后者在复用前者的内容。
+        //必须在正则表达式中进行复用：将需要复用的内容进行封装，然后调用这个封装即可。
+        //正则的复用用的是 () 来封装的,虽然没有名字，但是正则在使用()进行封装时，自动的给这些
+        //小括号进行了编号，从1开始,称之为正则表达式中的组。通过组的编号就可以调用指定的组，进行复用。
+        String str = &quot;zhangsan#######lisi@@@@@@@@@@wangwu&quot;;
+        String str_regex = &quot;(.)\\1+&quot;;
+
+        //(A)(B)(C)(D)\\1\\3\\2\\4   
+        //  ((A)(B(C))) \\1((A)(B(C))) \\2(A) \\3 (B(C))\\4 (C)   组嵌套，技巧：从左起数有几个左括号就是几组。
+
+        String[] arr = str.split(str_regex);
+//        System.out.println(arr.length);
+        for(String s : arr){
+            System.out.println(s);
+        }
+
+    }
+
+    private static void matchesDemo() {
+        //正则的匹配的功能。
+        //校验手机号码。
+        String number = &quot;18600001111&quot;;
+        //规则。
+        String number_regex = &quot;1[358]\\d{9}&quot;;
+
+        System.out.println(number + &quot;:&quot;+ number.matches(number_regex));
+    }
+
+}
+</code></pre><h2 id="-netspider-top-a-name-netspider-"><a href="#top">NetSpider</a><a name="NetSpider"/></h2>
+<pre><code>package cn.itcast.regex.netspider;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class NetSpider {
+
+    /**
+     * @param args
+     * @throws IOException
+     */
+    public static void main(String[] args) throws IOException {
+
+        /*
+         * 网络爬虫：到网络中通过指定规则获取数据的程序。
+         * 
+         * 爬指定文件中的数据： 思路； 1，读取文件。 2，对读到的字符串进行规则匹配。只要符合规则就获取。
+         */
+        // 定义规则。
+        String regex = &quot;\\w+@\\w+(\\.\\w+)+&quot;;// 1@1.1
+        // List&lt;String&gt; list = getMailByLoacl(regex);
+        List&lt;String&gt; list = getMailByNet(regex);
+        for (String mail : list) {
+            System.out.println(mail);
+        }
+    }
+
+    public static List&lt;String&gt; getMailByNet(String regex) throws IOException {
+
+        String str_url = &quot;http://bbs.tianya.cn/post-enterprise-401802-5.shtml&quot;;
+        // 1,将其封装成的URL对象。
+        URL url = new URL(str_url);
+
+        // 2,打开连接。
+        URLConnection conn = url.openConnection();
+
+        // 3,获取读取流。
+        InputStream in = conn.getInputStream();
+
+        // 4,读取操作。
+        BufferedReader bufr = new BufferedReader(new InputStreamReader(in));
+
+        String line = null;
+
+        // 获取功能。
+
+        Pattern p = Pattern.compile(regex);
+
+        List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+
+        while ((line = bufr.readLine()) != null) {
+
+            // System.out.println(line);
+            Matcher m = p.matcher(line);
+            while (m.find()) {
+                list.add(m.group());
+            }
+        }
+
+        bufr.close();
+
+        return list;
+
+    }
+
+    public static List&lt;String&gt; getMailByLoacl(String regex) throws IOException {
+        // 1,读取文件。
+        BufferedReader bufr = new BufferedReader(new FileReader(&quot;mail.html&quot;));
+
+        String line = null;
+
+        // 获取功能。
+
+        Pattern p = Pattern.compile(regex);
+
+        List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+
+        while ((line = bufr.readLine()) != null) {
+
+            // System.out.println(line);
+            Matcher m = p.matcher(line);
+            while (m.find()) {
+                list.add(m.group());
+            }
+        }
+
+        bufr.close();
+
+        return list;
+    }
+
+}
+</code></pre><h2 id="-regextest-top-a-name-regextest-"><a href="#top">RegexTest</a><a name="RegexTest"/></h2>
+<pre><code>package cn.itcast.regex.test;
+
+import java.util.Arrays;
+
+public class RegexTest {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+
+        test_3();
+
+    }
+
+    /*
+     * 练习一：
+     * 我我.....我我.我....我.要.要要.....要.要学....学...学学....学.学编..编....编..编.编.程程.程.....程.程程
+     * 还原成：我要学编程。
+     * 思路：
+     * 可以使用正则表达式的替换功能。
+     * 发现其中有叠词，还有一些 . 
+     * 
+     * 
+     */
+    public static void test_1(){
+        String str = &quot;我我.....我我.我....我.要.要要.....要.要学....学...学学....学.学编..编....编..编.编.程程.程.....程.程程&quot;;
+        //1,先将 . 去掉。
+        str = str.replaceAll(&quot;\\.+&quot;, &quot;&quot;);
+        System.out.println(str);
+
+        //2,用叠词中的一个替换叠词。
+        str = str.replaceAll(&quot;(.)\\1+&quot;, &quot;$1&quot;);
+        System.out.println(str);
+    }
+
+    /*
+     * 练习二：
+     * 127.0.0.1  3.3.3.3     192.168.104.23  10.10.10.10
+     * 要求按照ip地址的分类进行从小到大的排序。
+     * 
+     * 
+     */
+    public static void test_2(){
+        String str_ips = &quot;127.0.0.1  3.3.3.3     192.168.104.23  10.10.10.10&quot;;
+
+        /*
+         * 应该先让这些ip地址的每一段的位数都是3位，这样才可以通过字符串自然排序。
+         * 不足3位用0补，每一段要补的0的个数也不一致。咋补呢？
+         * 
+         * 干脆，按照每一段最大的的补零数去补，保证每一个段至少有三位，
+         * 然后每一段只取最后三位。
+         * 
+         * 替换。
+         */
+        //1,先每一段都补两个0.
+        str_ips = str_ips.replaceAll(&quot;(\\d+)&quot;, &quot;00$1&quot;);
+        System.out.println(str_ips);
+        //00127.000.000.001  003.003.003.003     00192.00168.00104.0023  0010.0010.0010.0010
+
+        //2,只保留三位。
+        str_ips = str_ips.replaceAll(&quot;0*(\\d{3})&quot;, &quot;$1&quot;);
+        System.out.println(str_ips);
+        //127.000.000.001  003.003.003.003     192.168.104.023  010.010.010.010
+
+
+        String[] ips = str_ips.split(&quot; +&quot;);
+
+        Arrays.sort(ips);//按照字符串的自然顺序。排序的结果不是对的，因为ip的每一段位数是不一致的。
+
+        for(String ip : ips){
+            System.out.println(ip.replaceAll(&quot;0*(\\d+)&quot;, &quot;$1&quot;));
+        }
+
+    }
+
+    /*
+     * 练习三:校验电子邮件地址 E-mail。
+     * 
+     */
+    public static void test_3(){
+
+        String mail = &quot;abc12@sina.com.cn&quot;;
+
+        String regex = &quot;[a-zA-Z_0-9]+@[a-zA-Z0-9]+(\\.[a-zA-Z]+){1,3}&quot;;
+
+        regex = &quot;\\w+@\\w+(\\.\\w+)+&quot;;//1@1.1  宽泛的匹配。
+
+        System.out.println(mail+&quot;:&quot;+mail.matches(regex));
+
+    }
+
+
+
+
+
+
+
+
+
+
+}
+</code></pre><h2 id="-person-top-a-name-person-"><a href="#top">Person</a><a name="Person"/></h2>
+<pre><code>package cn.itcast.domain;
+
+public class Person {
+
+    private String name;
+    private int age;
+    public Person() {
+        super();
+        System.out.println(&quot;person run&quot;);
+    }
+    public Person(String name, int age) {
+        super();
+        this.name = name;
+        this.age = age;
+    }
+
+
+    public void show(String name,int age){
+
+        System.out.println(&quot;show run...name=&quot;+name+&quot;,age=&quot;+age);
+    }
+
+    public static void staticShow(){
+        System.out.println(&quot;static show run&quot;);
+    }
+
+    @Override
+    public String toString() {
+        return &quot;Person [name=&quot; + name + &quot;, age=&quot; + age + &quot;]&quot;;
+    }
+
+
+
+
+}
+</code></pre><p>反射剖析</p>
+<h2 id="-reflect_getclassdemo-top-a-name-reflect_getclassdemo-"><a href="#top">Reflect_GetClassDemo</a><a name="Reflect_GetClassDemo"/></h2>
+<pre><code>package cn.itcast.reflect.demo;
+
+import cn.itcast.domain.Person;
+
+public class Reflect_GetClassDemo {
+
+    /**
+     * @param args
+     * @throws ClassNotFoundException 
+     * @throws IllegalAccessException 
+     * @throws InstantiationException 
+     */
+    public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        /*
+         * 要想获取字节码文件中的成员，必须要先获取字节码文件对象。
+         * 获取字节码文件对象的方式：
+         * 1，通过Object类中的getClass方法。
+         * 虽然通用，但是前提必须有指定类，并对该类进行对象的创建，才可以调用getClass方法。
+         * 2，使用的任意数据类的一个静态成员class，所有的数据类型都具备的一个属性。
+         * 好处：不用new对象。但是，还需要使用具体的类。
+         * 3，使用Class类中的forName方法。通过给定类名来获取对应的字节码文件对象。
+         * 这种方式很爽，只要知道类的名字就可以了。获取对应的字节码文件直接由forName方法自动完成。
+         * 这就是反射技术使用的获取字节码文件对象的方式。
+         */
+
+        getClass_3();
+    }
+
+    public static void getClass_3() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        String className = &quot;cn.itcast.domain.Person&quot;;
+
+        /*
+         * 1，通过给定的类名称，加载对应的字节码文件，并封装成字节码文件对象Class.
+         */
+        Class clazz = Class.forName(className);
+//        System.out.println(clazz);
+
+        //通过newInstance()就可以创建字节码对象所表示的类的实例。
+        /*
+         * 2，通过new创建给定的类的实例。
+         * 3，调用该类的构造函数。
+         * 通常被反射的类都会有提供空参数的构造函数。
+         * 没有对应的构造函数，会报InstantiationException
+         * 如果有提供，但是权限不够，会报IllegalAccessException
+         * 
+         */
+        Object obj = clazz.newInstance();
+
+
+        /* Person p = new Person();
+         * 1，加载Person类，并将Person类封装成字节码文件对象。
+         * 2，通过new创建Person对象。
+         * 3，调用构造函数对对象初始化。
+         */
+        System.out.println(obj);
+
+    }
+
+    public static void getClass_2() {
+
+        Class clazz = Person.class;
+    }
+
+    public static void getClass_1() {
+
+        Person p1 = new Person();
+        Person p2 = new Person();
+        Class clazz1 = p1.getClass();
+        Class clazz2 = p2.getClass();
+        System.out.println(clazz1 == clazz2);//true
+
+//        System.out.println(clazz1.getName());//获取类的名字。
+    }
+}
+</code></pre><h2 id="-reflect_getconstructor-top-a-name-reflect_getconstructor-"><a href="#top">Reflect_GetConstructor</a><a name="Reflect_GetConstructor"/></h2>
+<pre><code>package cn.itcast.reflect.demo;
+
+import java.lang.reflect.Constructor;
+
+public class Reflect_GetConstructor {
+
+    /**
+     * @param args
+     * @throws Exception 
+     */
+    public static void main(String[] args) throws Exception {
+        /*
+         * 如果要通过指定的构造函数初始化对象怎么办呢？
+         * 思路：
+         * 1，获取字节码文件对象。
+         * 2，再获取给定的构造函数。
+         * 3，通过构造函数初始化对象。
+         * 
+         */
+
+        getConstructorDemo();
+    }
+
+    public static void getConstructorDemo() throws Exception {
+
+        String className = &quot;cn.itcast.domain.Person&quot;;
+        Class clazz = Class.forName(className);
+
+        //获取指定的构造器。获取Person类中两个参数string,int的构造函数。
+        Constructor cons = clazz.getConstructor(String.class,int.class);
+
+        //有了构造器对象后，通过构造器对象来初始化给类对象。
+        Object obj = cons.newInstance(&quot;wangwu&quot;,23);
+        //Person p = new Person(&quot;lisi&quot;,21);
+
+
+        System.out.println(obj);
+
+    }
+
+}
+</code></pre><h2 id="-reflect_getfield-top-a-name-reflect_getfield-"><a href="#top">Reflect_GetField</a><a name="Reflect_GetField"/></h2>
+<pre><code>package cn.itcast.reflect.demo;
+
+import java.lang.reflect.Field;
+
+public class Reflect_GetField {
+
+    /**
+     * @param args
+     * @throws Exception 
+     */
+    public static void main(String[] args) throws Exception {
+        /*
+         * 获取字段。
+         */
+        getFieldDemo();
+    }
+
+    public static void getFieldDemo() throws Exception {
+
+        String className = &quot;cn.itcast.domain.Person&quot;;
+        Class clazz = Class.forName(className);
+
+        String fieldName = &quot;age&quot;;
+
+        //获取age字段对象。
+//        Field field = clazz.getField(fieldName);//获取是公共的字段。
+        Field field = clazz.getDeclaredField(fieldName);
+
+//        getXXX:获取都是类中公共的成员。
+//        getDeclaredXXX:获取本类中已有的成员。
+//        System.out.println(field);
+
+        //对其进行值的设置，必须先有对象。
+        Object obj = clazz.newInstance();
+
+
+        //通过查找父类AccessiableObject的方法。setAccessiable(true);
+        field.setAccessible(true);//取消权限检查，暴力访问。一般不访问私有。
+        field.set(obj, 30);//IllegalAccessException:age字段是私有的。
+
+        System.out.println(field.get(obj));
+    }
+
+}
+</code></pre><h2 id="-reflect_getmethod-top-a-name-reflect_getmethod-"><a href="#top">Reflect_GetMethod</a><a name="Reflect_GetMethod"/></h2>
+<pre><code>package cn.itcast.reflect.demo;
+
+import java.lang.reflect.Method;
+
+public class Reflect_GetMethod {
+
+    /**
+     * @param args
+     * @throws Exception 
+     */
+    public static void main(String[] args) throws Exception {
+
+
+        /*
+         * 获取方法。
+         */
+
+        getMethodDemo2();
+    }
+
+    public static void getMethodDemo2() throws Exception {
+
+        String className = &quot;cn.itcast.domain.Person&quot;;
+        Class clazz = Class.forName(className);
+        String methodName = &quot;staticShow&quot;;
+
+        Method method = clazz.getMethod(methodName, null);
+        method.invoke(null, null);
+    }
+
+    public static void getMethodDemo() throws Exception {
+
+        String className = &quot;cn.itcast.domain.Person&quot;;
+        Class clazz = Class.forName(className);
+
+        String methodName = &quot;show&quot;;
+
+        Method method = clazz.getMethod(methodName, String.class,int.class);
+        Object obj = clazz.newInstance();
+        method.invoke(obj, &quot;wangcai&quot;,20);
+    }
+
+
+
+}
+</code></pre><h2 id="-keybyusb-top-a-name-keybyusb-"><a href="#top">KeyByUSB</a><a name="KeyByUSB"/></h2>
+<pre><code>package cn.itcast.reflect.test;
+
+public class KeyByUSB implements USB {
+
+    @Override
+    public void open() {
+        System.out.println(&quot;key open&quot;);
+
+    }
+
+    @Override
+    public void close() {
+        System.out.println(&quot;key close&quot;);
+
+    }
+
+}
+</code></pre><h2 id="-mousebyusb-top-a-name-mousebyusb-"><a href="#top">MouseByUSB</a><a name="MouseByUSB"/></h2>
+<pre><code>package cn.itcast.reflect.test;
+
+public class MouseByUSB implements USB {
+
+    @Override
+    public void open() {
+        System.out.println(&quot;mouse open&quot;);
+    }
+
+    @Override
+    public void close() {
+        System.out.println(&quot;mouse close&quot;);
+
+    }
+
+}
+</code></pre><h2 id="-notebook-top-a-name-notebook-"><a href="#top">NoteBook</a><a name="NoteBook"/></h2>
+<pre><code>package cn.itcast.reflect.test;
+
+public class NoteBook {
+
+    /**
+     * 运行
+     */
+    public void run(){
+        System.out.println(&quot;notebook run&quot;);
+    }
+
+    /**
+     * 使用usb的设备。
+     */
+    public void useUSB(USB usb){//多态
+        if(usb!=null){
+            usb.open();
+            usb.close();
+        }
+    }
+}
+</code></pre><h2 id="-notebookmain-top-a-name-notebookmain-"><a href="#top">NoteBookMain</a><a name="NoteBookMain"/></h2>
+<pre><code>package cn.itcast.reflect.test;
+
+import java.io.File;
+import java.io.FileReader;
+import java.util.Properties;
+
+public class NoteBookMain {
+
+    /**
+     * @param args
+     * @throws Exception 
+     */
+    public static void main(String[] args) throws Exception {
+        /*
+         * 案例一：
+         *     阶段一：笔记电脑运行。NoteBook run();
+         *     阶段二：想要使用一些外围设备，比如鼠标，键盘......
+         *             为了提高了笔记本的扩展性，应该降低这些设备和笔记本的耦合性。
+         *             需要接口。
+         *             只需要在设计之初，定义一个接口。而且笔记本在使用这个接口。
+         * 
+         *    后期有了usb的设备后，需要不断的new对象才可以用。每一次都要修改代码。
+         *
+         *    能不能不修改这代码。就可以使用后期的设备呢？
+         *    设备不明确的，而前期还要对其进行对象的建立。需要反射技术。
+         *    对外提供一个配置文件。
+         */
+
+        NoteBook book = new NoteBook();
+        book.run();
+//        book.useUSB(null);
+//        book.useUSB(new MouseByUSB());
+
+        //通过反射的方法重新设计应用程序，以提高更好的扩展性。
+
+        File configFile = new File(&quot;tempfile\\usb.properties&quot;);
+        if(!configFile.exists()){
+            configFile.createNewFile();
+        }
+
+        //2,读取配置文件。
+        FileReader fr = new FileReader(configFile);
+
+        //3,为了获取其中的键值信息方便，建立Properties。
+        Properties prop = new Properties();
+        prop.load(fr);
+
+        for(int x = 1; x&lt;=prop.size(); x++){
+
+            String className = prop.getProperty(&quot;usb&quot;+x);
+            //反射。
+            Class clazz = Class.forName(className);
+
+            USB usb = (USB)clazz.newInstance();
+
+            book.useUSB(usb);
+
+        }
+
+
+        fr.close();
+    }
+
+}
+</code></pre><h2 id="-usb-top-a-name-usb-"><a href="#top">USB</a><a name="USB"/></h2>
+<pre><code>package cn.itcast.reflect.test;
+
+public interface USB {
+
+    /**
+     * 开启。
+     * 
+     */
+    void open();
+
+    /**
+     * 关闭。
+     */
+    void close();
+}
+</code></pre><p>爬虫原理</p>
+<h2 id="-netspider-top-a-name-netspider-"><a href="#top">NetSpider</a><a name="NetSpider"/></h2>
+<pre><code>package cn.itcast.netspider;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class NetSpider {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+
+        /*
+         * 网络爬虫：其实就是一个应用程序，获取网络中的指定信息(符合指定规则的信息)。
+         * 
+         * 网络中的邮件地址。
+         * 
+         */
+        File file = new File(&quot;tempfile\\mail.html&quot;);
+        String regex = &quot;\\w+@\\w+(\\.\\w+)+&quot;;
+
+//        List&lt;String&gt; list = getMails(file,regex);
+        String str_url = &quot;http://bbs.tianya.cn/post-enterprise-401802-2.shtml&quot;;
+
+        //http://tieba.baidu.com/p/2088202080 备选。
+
+        List&lt;String&gt; list = getMailsByNet(str_url, regex);
+        for(String mail : list){
+            System.out.println(&quot;List:&quot;+mail);
+        }
+    }
+    //基于网络。
+    public static List&lt;String&gt; getMailsByNet(String str_url,String regex) throws IOException{
+
+        List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+
+        //1,将str_url封装成URL对象。
+        URL url = new URL(str_url);
+
+        //2,打开连接。
+        URLConnection conn = url.openConnection();
+
+        //3,获取读取流。
+        InputStream in = conn.getInputStream();
+        BufferedReader bufIn = new BufferedReader(new InputStreamReader(in));
+
+        //4,将正则表达式编译成对象。
+        Pattern p = Pattern.compile(regex);
+
+        String line = null;
+        while((line=bufIn.readLine())!=null){
+
+            Matcher m = p.matcher(line);
+
+            while(m.find()){
+                list.add(m.group());
+
+            }
+
+        }
+
+        bufIn.close();
+
+        return list;
+    }
+
+    //基于本地文件。
+    public static List&lt;String&gt; getMails(File file, String regex) throws IOException {
+
+
+        List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+        //1,读取文件
+        BufferedReader bufr = new BufferedReader(new FileReader(file));
+
+        //2,将正则规则编译成对象。
+        Pattern p = Pattern.compile(regex);
+
+        String line = null;
+        while((line=bufr.readLine())!=null){
+
+            Matcher m = p.matcher(line);
+
+            while(m.find()){
+                list.add(m.group());
+            }
+
+        }
+
+
+
+        bufr.close();
+
+        return list;
+    }
+
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

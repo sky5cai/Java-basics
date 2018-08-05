@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="io-">IO文件切割合并-对象的序列化</h1>
+<h2 id="-">导语：</h2>
+<blockquote>
+<p>可以说整个下午都在玩伊苏7，挺好玩的，现在也没心情打代码，先把代码弄成mk格式的html</p>
+</blockquote>
+<p><a name="top"/></p>
+<ol>
+<li><a href="#Person">实现了Serializable接口。详细描述了该接口的作用和序列号的作用</a></li><li><a href="#ReaderPartConfigDemo">读取配置文件信息的原始方法，也是Properties load方法的原理</a></li><li><a href="#SplitFileTest">切割文件，并用Properties存储碎片文件信息</a></li><li><a href="#MergeFileTest">很恐怖的合并程序</a></li><li><a href="#MergeFileTest2">对恐怖程序进行优化，使用了集合</a></li><li><a href="#MergerFileTest3">使用序列流SequenceInputStream，并使用了解析配置文件的信息</a></li><li><a href="#AppCountTest">应用程序计数器，记录试用次数</a></li><li><a href="#ropertiesDemo">Properties集合的基本使用，从流中加载数据，并数据持久化</a></li><li><a href="#ObjectStreamDemo">对象序列化和反序列化</a></li></ol>
+<h2 id="-serializable-top-a-name-person-"><a href="#top">实现了Serializable接口。详细描述了该接口的作用和序列号的作用</a><a name="Person"/></h2>
+<pre><code>package cn.itcast.domain;
+
+import java.io.Serializable;
+
+/*
+ * 序列化接口的作用：没有方法，不需要覆盖，是一个标记接口为了启动一个序列化功能。
+ * 唯一作用，给每一个需要序列化的类都分配一个序列版本号。
+ * 这个版本号和该类相关联。
+ * 这个版本号有什么用呢？
+ * 在序列化时，会将这个序列号也异同保存到文件中。
+ * 在反序列化会读取这个序列化和本类的序列化进行匹配，如果不匹配会抛出异常。java.io.InvalidClassException
+ * 哦，原来是用于验证的。
+ * 
+ * 那我们在序列化时，显示定义吗？
+ * 
+ * 
+ */
+
+
+public class Person implements Serializable /*标记接口，用于启动类的序列化功能*/{
+
+
+    private static final long serialVersionUID = 1234567L;
+    private static String name;// 静态数据是不会被序列化。
+    private transient/*瞬态*/ int age;//对于一个非静态的数据也不想序列化咋办？需要一个关键字来修饰。transient
+
+    public Person(String name, int age) {
+        super();
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;Person [name=&quot; + name + &quot;, age=&quot; + age + &quot;]&quot;;
+    }
+
+
+}
+</code></pre><h2 id="-properties-load-top-a-name-readerpartconfigdemo-"><a href="#top">读取配置文件信息的原始方法，也是Properties load方法的原理</a><a name="ReaderPartConfigDemo"/></h2>
+<pre><code>package cn.itcast.io.a.splitfile;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class ReaderPartConfigDemo {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+        //解析partConfig文件中的信息。
+
+        File configFile = new File(&quot;E:\\PartFiles\\7.partconfig&quot;);
+        readPathConfig(configFile);
+
+    }
+
+    public static void readPathConfig(File configFile) throws IOException {
+
+        /*
+         * 配置文件规律，只要读取一行文本，按照 = 对文本进行切割即可。
+         */
+        BufferedReader bufr = new BufferedReader(new FileReader(configFile));
+
+        String line = null;
+        while((line=bufr.readLine())!=null){
+            String[] arr = line.split(&quot;=&quot;);
+            System.out.println(arr[0]+&quot;:::::&quot;+arr[1]);
+            //map.put(arr[0],arr[1]);
+        }
+        /*
+         *  发现配置文件信息很多，需要进行存储。
+         *  用哪个容器呢？个数不确定，就使用集合。
+         *  发现信息中存在对应关系，使用Map集合。
+         *  发现一点配置文件中的信息都是字符串，这些信息不在内存中而是在硬盘上。
+         *  map中和io技术集合的集合对象： Properties，它里面存储的键值都是字符串，通常这个集合就用于配置文件的操作。
+         *  
+         */
+
+
+        bufr.close();
+
+
+    }
+
+}
+</code></pre><h2 id="-properties-top-a-name-splitfiletest-"><a href="#top">切割文件，并用Properties存储碎片文件信息</a><a name="SplitFileTest"/></h2>
+<pre><code>package cn.itcast.io.a.splitfile;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class SplitFileTest {
+
+    private static final int BUFFER_SIZE = 1048576;//1024*1024
+    private static final String LINE_SEPARATOR = System.getProperty(&quot;line.separator&quot;);
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+//        练习：将一个媒体文件切割成多个碎片。
+        /*
+         * 思路：
+         * 1，读取源文件，将源文件的数据分别复制到多个文件中。
+         * 2，切割方式有两种：按照碎片个数切，要么按照指定大小切。
+         * 3，一个输入流对应多个输出流。
+         * 4，每一个碎片都需要编号，顺序不要错。
+         * 
+         */
+
+        File srcFile = new File(&quot;E:\\1.mp3&quot;);
+        File partsDir = new File(&quot;E:\\PartFiles&quot;);
+        splitFile(srcFile,partsDir);
+
+    }
+
+    /**
+     * 切割文件。
+     * @param srcFile
+     * @param partsDir
+     * @throws IOException 
+     */
+    public static void splitFile(File srcFile, File partsDir) throws IOException {
+
+        //健壮性的判断。
+        if(!(srcFile.exists() &amp;&amp; srcFile.isFile())){
+            throw new RuntimeException(&quot;源文件不是正确的文件或者不存在&quot;);
+        }
+
+        if(!partsDir.exists()){
+            partsDir.mkdirs();
+        }
+
+        //1，使用字节流读取流和源文件关联。
+        FileInputStream fis = new FileInputStream(srcFile);
+
+        //2，明确目的。目的输出流有多个，只创建引用。
+        FileOutputStream fos = null;
+
+        //3，定义缓冲区。1M.
+        byte[] buf = new byte[BUFFER_SIZE];//1M
+
+        //4，频繁读写操作。
+        int len = 0;
+        int count = 1;//碎片文件的编号。
+        while((len=fis.read(buf))!=-1){
+            //创建输出流对象。只要满足了缓冲区大小，碎片数据确定，直接往碎片文件中写数据 。
+            //碎片文件存储到partsDir中，名称为编号+part扩展名。
+            fos = new FileOutputStream(new File(partsDir,(count++)+&quot;.part&quot;)); 
+            //将缓冲区中的数据写入到碎片文件中。
+            fos.write(buf,0,len);
+            //直接关闭输出流。
+            fos.close();
+        }
+
+        /*
+         * 将源文件以及切割的一些信息也保存起来随着碎片文件一起发送。
+         * 信息；
+         * 1，源文件的名称（文件类型）
+         * 2，切割的碎片的个数。
+         * 将这些信息单独封装到一个文件中。
+         * 还要一个输出流完成此动作。
+         */
+        String filename = srcFile.getName();
+        int partCount = count;
+
+        //创建一个输出流。
+        fos = new FileOutputStream(new File(partsDir,count+&quot;.properties&quot;));
+        //创建一个属性集。
+        Properties prop = new Properties();
+        //将配置信息存储到属性集中。
+        prop.setProperty(&quot;filename&quot;, srcFile.getName());
+        prop.setProperty(&quot;partcount&quot;, Integer.toString(partCount));
+
+        //将属性集中的信息持久化。
+        prop.store(fos, &quot;part file info&quot;);
+
+//        fos.write((&quot;filename=&quot;+filename+LINE_SEPARATOR).getBytes());
+//        fos.write((&quot;partcount=&quot;+Integer.toString(partCount)).getBytes());
+        fos.close();
+        fis.close();
+    }
+
+
+}
+</code></pre><h2 id="-top-a-name-mergefiletest-"><a href="#top">很恐怖的合并程序</a><a name="MergeFileTest"/></h2>
+<pre><code>package cn.itcast.io.b.mergefile;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class MergeFileTest {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+        //合并碎片文件。
+        /*
+         * 思路:
+         * 1，碎片文件有很多，每一个碎片都需要和读取流关联。
+         * 2，每一个读取流读取到的数据都需要通过一个输出流写入到一个文件中。
+         * 3，原理：多个源---&gt;一个目的地。
+         * 
+         * 
+         * 如下代码的问题：
+         * 碎片过多，会产生很多的输入流对象，这是正常的，不正常在于，面对每一个输入流对象去操作。
+         * 当流对象过多时，必须先存储起来。面的流对象的容器操作更容易。
+         * 1，需要容器。
+         * 2，将流对象和碎片文件关联后存储到容器中。
+         * 3，遍历容器获取其中的流对象，在进行频繁的读写操作。
+         * 4，即使关流也是遍历容器对每一个流对象进行close的调用。
+         * 参阅MergeFileTest2.java
+         */
+
+        FileInputStream fis1 = new FileInputStream(&quot;E:\\PartFiles\\1.part&quot;);
+        FileInputStream fis2 = new FileInputStream(&quot;E:\\PartFiles\\2.part&quot;);
+        FileInputStream fis3 = new FileInputStream(&quot;E:\\PartFiles\\3.part&quot;);
+        FileInputStream fis4 = new FileInputStream(&quot;E:\\PartFiles\\4.part&quot;);
+        FileInputStream fis5 = new FileInputStream(&quot;E:\\PartFiles\\5.part&quot;);
+        FileInputStream fis6 = new FileInputStream(&quot;E:\\PartFiles\\6.part&quot;);
+
+
+        FileOutputStream fos = new FileOutputStream(&quot;E:\\PartFiles\\0.mp3&quot;);
+
+        byte[] buf = new byte[1024*1024];
+
+        int len1 = fis1.read(buf);
+        fos.write(buf,0,len1);
+        int len2 = fis2.read(buf);
+        fos.write(buf,0,len2);
+        int len3 = fis3.read(buf);
+        fos.write(buf,0,len3);
+        int len4 = fis4.read(buf);
+        fos.write(buf,0,len4);
+        int len5 = fis5.read(buf);
+        fos.write(buf,0,len5);
+        int len6 = fis6.read(buf);
+        fos.write(buf,0,len6);
+
+
+        fos.close();
+        fis1.close();
+        fis2.close();
+        fis3.close();
+        fis4.close();
+        fis5.close();
+        fis6.close();
+    }
+
+}
+</code></pre><h2 id="-top-a-name-mergefiletest2-"><a href="#top">对恐怖程序进行优化，使用了集合</a><a name="MergeFileTest2"/></h2>
+<pre><code>package cn.itcast.io.b.mergefile;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MergeFileTest2 {
+
+    /**
+     * @param args
+     * @throws IOException
+     */
+    public static void main(String[] args) throws IOException {
+        // 合并碎片文件。
+        /*
+         * 思路: 1，碎片文件有很多，每一个碎片都需要和读取流关联。 2，每一个读取流读取到的数据都需要通过一个输出流写入到一个文件中。
+         * 3，原理：多个源---&gt;一个目的地。
+         * 
+         * 
+         * 如下代码的问题： 碎片过多，会产生很多的输入流对象，这是正常的，不正常在于，面对每一个输入流对象去操作。
+         * 当流对象过多时，必须先存储起来。面的流对象的容器操作更容易。 1，需要容器。 2，将流对象和碎片文件关联后存储到容器中。
+         * 3，遍历容器获取其中的流对象，在进行频繁的读写操作。 4，即使关流也是遍历容器对每一个流对象进行close的调用。
+         * 参阅MergeFileTest2.java
+         */
+
+        List&lt;FileInputStream&gt; list = new ArrayList&lt;FileInputStream&gt;();
+
+        for (int i = 1; i &lt; 7; i++) {
+            list.add(new FileInputStream(&quot;E:\\PartFiles\\&quot; + i + &quot;.part&quot;));
+        }
+
+        FileOutputStream fos = new FileOutputStream(&quot;E:\\PartFiles\\00.mp3&quot;);
+
+        byte[] buf = new byte[1024 * 1024];
+        // 遍历集合，获取流对象。
+        for (FileInputStream fis : list) {
+
+            int len = fis.read(buf);
+            fos.write(buf, 0, len);
+        }
+
+        fos.close();
+        // 关闭所有流对象。
+        for (FileInputStream fis : list) {
+
+            fis.close();
+        }
+    }
+
+}
+/*
+class MyMergeStream{
+    MyMergeStream(List&lt;? extends InputStream&gt; list){
+
+    }
+
+    public void close(){
+        for (InputStream fis : list) {
+
+            fis.close();
+        }
+    }
+}
+*/
+</code></pre><h2 id="-sequenceinputstream-top-a-name-mergerfiletest3-"><a href="#top">使用序列流SequenceInputStream，并使用了解析配置文件的信息</a><a name="MergerFileTest3"/></h2>
+<pre><code>package cn.itcast.io.b.mergefile;
+
+import java.io.File;
+import java.io.FileFilter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.SequenceInputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.Properties;
+
+public class MergerFileTest3 {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+
+        File partsDir = new File(&quot;E:\\PartFiles&quot;);
+
+        mergerFile(partsDir);
+    }
+
+    public static void mergerFile(File partsDir) throws IOException {
+
+        /*
+         * 虽然合并成功，问题如下：
+         * 1，如何明确碎片的个数，来确定循环的次数，以明确要有多少个输入流对象。
+         * 2，如何知道合并的文件的类型。
+         * 解决方案：应该先读取配置文件。
+         */
+        //1,获取配置文件。
+        File configFile = getConfigFile(partsDir);
+
+        //2,获取配置文件信息容器。获取配置信息的属性集。
+        Properties prop = getProperties(configFile);
+
+        //3,将属性集对象传递合并方法中。
+        merge(partsDir,prop);
+    }
+
+
+    //根据配置文件获取配置信息属性集。
+    private static Properties getProperties(File configFile) throws IOException {
+        FileInputStream fis = null;
+        Properties prop = new Properties();
+        try{
+            //读取流和配置文件相关联。
+            fis = new FileInputStream(configFile);
+            //将流中的数据加载的集合中。
+            prop.load(fis);
+        }finally{
+            if(fis!=null){
+                try{
+                fis.close();
+                }catch(IOException e){
+                    //写日志，记录异常信息。便于维护。
+                }
+            }
+        }
+        return prop;
+    }
+
+
+    //根据碎片目录获取配置文件对象。
+    private static File getConfigFile(File partsDir) {
+
+        if(!(partsDir.exists() &amp;&amp;partsDir.isDirectory())){
+            throw new RuntimeException(partsDir.toString()+&quot;,不是有效目录&quot;);
+        }
+
+        //1,判断碎片文件目录中是否存在properties文件。使用过滤器完成。
+        File[] files = partsDir.listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+
+                return pathname.getName().endsWith(&quot;.properties&quot;);
+            }
+        });
+
+        if(files.length!=1){
+            throw new RuntimeException(&quot;properties扩展名的文件不存在，或不唯一&quot;);
+        }
+
+
+        File configFile = files[0];
+        return configFile;
+    }
+
+
+
+    private static void merge(File partsDir,Properties prop) throws FileNotFoundException,
+            IOException {
+
+        //获取属性集中的信息。
+         String filename = prop.getProperty(&quot;filename&quot;);
+         int partCount = Integer.parseInt(prop.getProperty(&quot;partcount&quot;));
+
+
+
+        //使用io包中的SequenceInputStream，对碎片文件进行合并，将多个读取流合并成一个读取流。
+        List&lt;FileInputStream&gt; list = new ArrayList&lt;FileInputStream&gt;();
+
+        for (int i = 1; i &lt; partCount; i++) {
+            list.add(new FileInputStream(new File(partsDir, i + &quot;.part&quot;)));
+        }
+
+        //怎么获取枚举对象呢？List自身是无法获取枚举Enumeration对象的，考虑到Collections中去找。
+        Enumeration&lt;FileInputStream&gt; en = Collections.enumeration(list);
+
+        //源。
+        SequenceInputStream sis = new SequenceInputStream(en);
+
+        //目的。
+        FileOutputStream fos = new FileOutputStream(new File(partsDir,filename));
+
+        //不断的读写。
+        byte[] buf = new byte[4096];
+        int len = 0;
+        while((len=sis.read(buf))!=-1){
+            fos.write(buf,0,len);
+        }
+
+        fos.close();
+        sis.close();
+    }
+
+}
+</code></pre><h2 id="-top-a-name-appcounttest-"><a href="#top">应用程序计数器，记录试用次数</a><a name="AppCountTest"/></h2>
+<pre><code>package cn.itcast.io.c.properties;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class AppCountTest {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+        /*
+         * 练习:定义功能记录程序运行次数，满足试用次数后，给出提示：试用次数已到，请注册。
+         * 
+         * 思路：
+         * 1，需要计数器。这个软件使用一次计数一次。每使用一次，就进行计数累计。
+         * 2，计数器是程序中的一个变量，程序启动计数器计数，可是程序结束这个计数器就消失了。
+         * 下次启动会重新进行计数，原来计数的值没有保留下来。咋办?
+         * 3，让这个计数器持久化。存储到文件中，为了标识数据可读性，数据起个名字。出现键值对。
+         * 而且还是一个持久化的键值对，Properties集合正好符合这个要求。
+         * 
+         */
+
+        if(isStop()){
+            System.out.println(&quot;试用次数已到，请注册&quot;);
+            return;
+        }
+        runcode();
+
+
+    }
+
+    private static boolean isStop() throws IOException {
+
+        //1,配置文件。
+        File configFile = new File(&quot;tempfile\\app.properties&quot;);
+        if(!configFile.exists()){//如果配置文件不存在，就创建。
+            configFile.createNewFile();
+        }
+
+        //2,创建属性集。
+        Properties prop = new Properties();
+
+        //3,定义读取流和配置文件关联。
+        FileInputStream fis = new FileInputStream(configFile);
+
+        //4,将流关联的数据读取到属性集中。
+        prop.load(fis);
+
+        //5,通过属性集的指定键count，获取具体的次数。
+        String value = prop.getProperty(&quot;count&quot;);
+        int count = 0;
+        //6, 对value进行判断，如果存在就对其自增。
+        if(value!=null){
+            count = Integer.parseInt(value);
+            if(count&gt;=5){
+                return true;
+            }
+
+        }
+        count++;//对其值进行自增。
+        //7,将自增后的值和指定的键重新存储到属性集中，键相同，值覆盖。
+        prop.setProperty(&quot;count&quot;, Integer.toString(count));
+
+        //8,将属性集存储到配置文件中。对配置文件中的信息进行更新。
+        FileOutputStream fos = new FileOutputStream(configFile);
+        prop.store(fos, &quot;app run count&quot;);
+
+        //9,关闭资源。
+        fos.close();
+        fis.close();
+
+
+
+        return false;
+    }
+
+    //程序主体。
+    public static void runcode(){
+        System.out.println(&quot;程序运行....play&quot;);
+    }
+}
+</code></pre><h2 id="-properties-top-a-name-ropertiesdemo-"><a href="#top">Properties集合的基本使用，从流中加载数据，并数据持久化</a><a name="ropertiesDemo"/></h2>
+<pre><code>package cn.itcast.io.c.properties;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.Set;
+
+public class PropertiesDemo {
+
+    /**
+     * @param args
+     * @throws IOException
+     */
+    public static void main(String[] args) throws IOException {
+        // Properties集合的使用。
+
+        // methodDemo_1();
+//        methodDemo_2();
+        methodDemo_3();
+
+    }
+
+    /*
+     * 保存到流中的方法(持久化)
+     */
+    public static void methodDemo_3() throws IOException {
+
+        Properties prop = new Properties();
+
+        // 添加数据。
+        prop.setProperty(&quot;zhangsan&quot;, &quot;39&quot;);
+        prop.setProperty(&quot;lisi&quot;, &quot;29&quot;);
+
+        //想要把数据保存到文件中，需要输出流。
+        FileWriter fw = new FileWriter(&quot;info.properties&quot;);
+
+        //使用store方法。
+        prop.store(fw, &quot;info&quot;);
+
+        fw.close();
+
+
+    }
+
+    /*
+     * 演示从流中加载，。
+     */
+    public static void methodDemo_2() throws IOException {
+
+        File configFile = new File(&quot;E:\\PartFiles\\7.partconfig&quot;);
+        FileReader fr = new FileReader(configFile);
+
+        Properties prop = new Properties();
+        // 使用Properties集合的load方法，就可以将流中的数据加载集合中。原理;ReaderPartConfigDemo.java
+        // 中的readPathConfig();
+        prop.load(fr);
+
+        System.out.println(prop);
+
+        fr.close();
+    }
+
+    // 1,基本使用，存和取。
+    public static void methodDemo_1() {
+
+        // 创建一个Properites集合。
+        Properties prop = new Properties();
+
+        // 添加数据。
+        prop.setProperty(&quot;zhangsan&quot;, &quot;39&quot;);
+        prop.setProperty(&quot;lisi&quot;, &quot;29&quot;);
+
+        // 获取数据。一个。
+        // String value = prop.getProperty(&quot;lisi&quot;);
+        // System.out.println(&quot;value=&quot;+value);
+
+        // 全部取出。map--set--iterator
+        Set&lt;String&gt; set = prop.stringPropertyNames();
+        // System.out.println(&quot;-- listing properties --&quot;);
+        for (String name : set) {
+            String value = prop.getProperty(name);
+            System.out.println(name + &quot;:&quot; + value);
+        }
+
+        // prop.list(System.out);
+    }
+
+}
+</code></pre><h2 id="-top-a-name-objectstreamdemo-"><a href="#top">对象序列化和反序列化</a><a name="ObjectStreamDemo"/></h2>
+<pre><code>package cn.itcast.io.d.objectstream;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+import cn.itcast.domain.Person;
+
+public class ObjectStreamDemo {
+
+    /**
+     * @param args
+     * @throws IOException 
+     * @throws ClassNotFoundException 
+     */
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        //需求：想要将封装了数据的对象进行持久化。当写入的对象很多对象会按照顺序排列，也称之为对象的序列化。
+        //1,应该先有对象。Person name age。
+        //2,往硬盘写数据，进行持久化，需要io技术。输出流。FileOutputStream。
+        //3,在字节输出流中按照名称规律在api找到一个子类 ObjectOutputStream
+        //4,在基础流对象上使用额外功能。
+
+//        writeObj();
+
+
+
+        //需求：读取已有的对象文件，并获取对象中的数据。
+        //通过阅读ObjectOutputStream对象的文档，发现有一个对应的对象ObjectInputStream可以用于读区存储对象的文件
+        //对象的反序列化。
+        readObj();
+
+    }
+
+    public static void readObj() throws IOException, ClassNotFoundException {
+
+        FileInputStream fis = new FileInputStream(&quot;tempfile\\obj.object&quot;);
+        ObjectInputStream ois = new ObjectInputStream(fis);
+
+        Object obj = ois.readObject();
+
+        System.out.println(obj.toString());
+
+    }
+
+    public static void writeObj() throws IOException {
+        Person p = new Person(&quot;lisi&quot;,20);
+        FileOutputStream fos = new FileOutputStream(&quot;tempfile\\obj.object&quot;);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(p);
+
+        oos.close();
+
+    }
+
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

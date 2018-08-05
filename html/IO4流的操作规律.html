@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="-_-">编码解码_流的操作规律</h1>
+<h2 id="-">导语：</h2>
+<blockquote>
+<p>经过这几次的练习，算是有点熟悉了eclipse了吧，加油，继续完成，如果没有实力去实习的话，那就将学习发挥到极致</p>
+</blockquote>
+<p><a name="top" /></p>
+<ol>
+<li><a href="#CutStringTest">对字符串按照字节数截取(默认码表)</a></li><li><a href="#EncodingDemo">字节数组--解码(new String(byte[]))--&gt;字符串</a></li><li><a href="#LianTongTest">联通的gbk编码二进制启动了utf-8的码表来解析这个数据</a></li><li><a href="#BufferedStreamDemo">BufferedReader  ：readLine(); BufferedWriter</a></li><li><a href="#MyBufferedReader">自定义一个字符流缓冲区。 用于缓冲字符数据，从而提高操作效率</a></li><li><a href="#MyBufferedReaderDemo">验证自定义的缓冲区</a></li><li><a href="#KeyDataToFileTest">需求：将键盘录入的数据存储到文件中</a></li><li><a href="#ReadKeyDemo">获取了键盘录入的输入流对象。可以不用关闭</a></li><li><a href="#ReadKeyDemo2">读取键盘录入的字节输入流</a></li><li><a href="#Test5">获取一篇文章中 &quot;传智播客&quot; 出现的次数</a></li></ol>
+<h2 id="-top-a-name-cutstringtest-"><a href="#top">对字符串按照字节数截取(默认码表)</a><a name="CutStringTest"/></h2>
+<pre><code>package cn.itcast.io.a.encoding;
+
+import java.io.UnsupportedEncodingException;
+
+public class CutStringTest {
+
+    /**
+     * @param args
+     * @throws UnsupportedEncodingException 
+     */
+    public static void main(String[] args) throws UnsupportedEncodingException {
+
+        /*
+        1，对字符串按照字节数截取(默认码表)，&quot;abc你好&quot; 有5个字符，有7个字节。
+        按照3个字节截取 abc ，按照四个字节截取 abc和你字的一半，如果出现中文一半舍弃。
+        请定义一个功能解决这个问题。
+        你好的gbk：-60 -29 -70 -61
+        思路：
+        1，一个中文gbk两个字节，都是负数。
+        2，在截取时，先看最后一位是负数吗？不是，直接截取就哦了。
+            如果是，不要直接舍弃，最好在看一下该负数之前连续出现了几个负数。
+        3，因为中文两个字节，出现的负数个数是偶数，不需要舍弃的，是奇数，就舍弃最后一个。哦耶。
+
+        */
+
+        String str = &quot;abc你好cd谢谢&quot;;
+
+        str = &quot;abc琲琲cd琲琲&quot;;
+
+        byte[] buf = str.getBytes(&quot;GBK&quot;);
+        for (int i = 0; i &lt; buf.length; i++) {
+            String s = cutString(str,i+1);
+            System.out.println(str+&quot;,截取&quot;+(i+1)+&quot;个结果是:&quot;+s);
+
+        }
+    }
+
+    public static String cutString(String str,int len) throws UnsupportedEncodingException {
+
+        //1,将字符串编码成字节数组。
+        byte[] buf = str.getBytes(&quot;GBK&quot;);
+        int count = 0;
+        //2,对数组进行遍历。从截取位开始遍历。往回遍历。
+        for(int i = len - 1; i &gt;=0 ; i--){
+            //判断最后截取位上是否是负数
+            if(buf[i]&lt;0){
+                count++;
+            }else{
+                break;
+            }
+        }
+        //判断奇偶数。
+        if(count%2==0){
+            return new String(buf,0,len);
+        }else{
+            return new String(buf,0,len-1);//舍弃最后一个。
+        }
+
+    }
+
+}
+</code></pre><h2 id="-new-string-byte-top-a-name-encodingdemo-"><a href="#top">字节数组--解码(new String(byte[]))--&gt;字符串</a><a name="EncodingDemo"/></h2>
+<pre><code>package cn.itcast.io.a.encoding;
+
+import java.io.UnsupportedEncodingException;
+
+public class EncodingDemo {
+
+    /**
+     * @param args
+     * @throws UnsupportedEncodingException 
+     */
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        /*
+        字符串：String  字节数组：byte[]
+        字符串--编码(getBytes())--&gt;字节数组
+        字节数组--解码(new String(byte[]))--&gt;字符串
+
+
+        &quot;你好&quot;：
+        GBK编码 -60 -29 -70 -61
+        UTF-8编码：-28 -67 -96 -27 -91 -67
+
+        */
+
+        String str = &quot;你好&quot;;
+
+        //对字符串编码。---&gt;字节数组。
+        byte[] buf1 = str.getBytes(&quot;utf-8&quot;);
+
+//        for(byte b : buf1){
+//            System.out.print(b);
+//        }
+
+        //对字节数组解码 。---&gt;字符串。
+        String s1 = new String(buf1,&quot;utf-8&quot;);
+        System.out.println(s1);
+
+    }
+
+}
+</code></pre><h2 id="-gbk-utf-8-top-a-name-liantongtest-"><a href="#top">联通的gbk编码二进制启动了utf-8的码表来解析这个数据</a><a name="LianTongTest"/></h2>
+<pre><code>package cn.itcast.io.a.encoding;
+
+public class LianTongTest {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        String str = &quot;联通&quot;;
+        /*
+        11000001
+        10101010
+        11001101
+        10101000
+        联通的gbk编码二进制正好符合了utf-8的编码规律。所以记事本在解析这段二进制时，
+        就启动了utf-8的码表来解析这个数据。出现乱码。
+
+        */
+
+        byte[] buf = str.getBytes();
+        for(byte b : buf){
+            System.out.println(Integer.toBinaryString(b&amp;255));
+        }
+
+    }
+
+}
+</code></pre><h2 id="-bufferedreader-readline-bufferedwriter-top-a-name-bufferedstreamdemo-"><a href="#top">BufferedReader  ：readLine(); BufferedWriter</a><a name="BufferedStreamDemo"/></h2>
+<pre><code>package cn.itcast.io.b.buffer;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class BufferedStreamDemo {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+
+        /*
+         * BufferedReader  ：readLine(); BufferedWriter
+         */
+
+        BufferedReader bufr = new BufferedReader(new FileReader(&quot;Test25.java&quot;));
+
+        String line = null;
+        while((line=bufr.readLine())!=null){
+            System.out.println(line);
+        }
+
+        bufr.close();
+    }
+
+}
+</code></pre><h2 id="-top-a-name-mybufferedreader-"><a href="#top">自定义一个字符流缓冲区。 用于缓冲字符数据，从而提高操作效率</a><a name="MyBufferedReader"/></h2>
+<pre><code>package cn.itcast.io.b.buffer;
+
+import java.io.IOException;
+import java.io.Reader;
+
+/**
+ * 自定义一个字符流缓冲区。 用于缓冲字符数据，从而提高操作效率。 
+ * 并提供了更多操作缓冲区数据的方法。 需要使用具体的流对象来完成数据的获取。
+ * 
+ * 分析： 缓冲区应该具备什么? 1，必须要有数组。 2，需要对数组进行操作，对数组操作一定要有角标。
+ * 
+ * @author Teaching
+ * 
+ */
+public class MyBufferedReader {
+
+    private Reader r;
+
+    // 定义一个字符数组,作为缓冲区。
+    private char[] buf = new char[1024];
+    // 定义了一个索引，用于操作数组中的元素。
+    private int index = 0;
+    // 定义了一个变量，用于记录读取字符的个数。
+    private int count = 0;
+
+    // 需要一初始化就具备一个流对象。
+    public MyBufferedReader(Reader r) {// 可以对Reader的所有子类进行高效读取。
+        this.r = r;
+    }
+
+    /**
+     * 提供一个可以从缓冲区中读取一个字符的方法。
+     * 高效方法。
+     * @throws IOException 
+     * 
+     */
+    public int read() throws IOException {
+
+        /*
+         * 1，需要先通过流对象从底层设备上获取一定数据的数据到缓冲区数组中。 使用流对象read(char[]);
+         */
+        //如果count记录字符个数的变量为0，说明缓冲区已经没有字符数据。
+        if(count==0){
+            //需要从设备上获取一定数量的数据存储到缓冲区中，并用count记录存储字符的个数。
+            count = r.read(buf);
+            //每取一次新的数据，就需要将角标归0.
+            index = 0;
+        }
+        //如果count小于0，说明到-1，没有数据了，程序直接返回-1.
+        if(count&lt;0){
+            return -1;
+        }
+        //从缓冲区中取出一个字符。
+        char ch = buf[index];
+        //角标自增。
+        index ++;
+        //计数器要自减。
+        count --;
+
+        return ch;
+    }
+
+    /**
+     *  基于高效的read方法，建立一个一次可以读取一行的数据的方法。
+     *  将行终止符前的数据转成字符串返回。
+     * @return
+     * @throws IOException 
+     */
+    public String readLine() throws IOException{
+
+        /*
+         * 思路；
+         * 
+         * 从缓冲区中一次获取一个字符，并将这个字符存储到临时容器中。
+         * 每获取一个字符都要进行判断，只要不是行终止符都进行存储。
+         * 一旦读取到行终止符，就将临时容器中的数据转成字符串返回。
+         * 
+         */
+        //1,定义一个临时容器。
+        StringBuilder sb = new StringBuilder();
+
+        //2,调用本类中的read方法，从缓冲区中读取一个字符，存储到临时容器中。
+        //存的时候要注意：必须判断，如果是行终止符就不要存储了。就将临时容器中的
+        //字符转成字符串返回。
+
+        int ch = 0;
+        while((ch=this.read())!=-1){
+            if(ch==&#39;\r&#39;){
+                continue;
+            }
+
+            if(ch==&#39;\n&#39;){
+                return sb.toString();
+            }
+
+            sb.append((char)ch);//将读取到的字符数字转成char类型，存储到sb中。
+
+        }
+
+        //万一文本中最后以后没有行终止符，判断一下sb中是否有内容，如果有则返回。
+        if(sb.length()!=0){
+            return sb.toString();
+        }
+
+
+        return null;
+
+    }
+
+
+    // 关闭流资源。
+    public void close() throws IOException {
+        // 其实内部就是关闭具体的流。
+        r.close();
+    }
+
+}
+</code></pre><h2 id="-top-a-name-mybufferedreaderdemo-"><a href="#top">验证自定义的缓冲区</a><a name="MyBufferedReaderDemo"/></h2>
+<pre><code>package cn.itcast.io.b.buffer;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class MyBufferedReaderDemo {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+        //验证自定义的缓冲区。
+        MyBufferedReader myBufr = new MyBufferedReader(new FileReader(&quot;tempfile\\1.txt&quot;));
+
+        String line = null;
+
+        while((line=myBufr.readLine())!=null){
+            System.out.println(line);
+        }
+
+        myBufr.close();
+    }
+
+}
+</code></pre><h2 id="-top-a-name-keydatatofiletest-"><a href="#top">需求：将键盘录入的数据存储到文件中</a><a name="KeyDataToFileTest"/></h2>
+<pre><code>package cn.itcast.io.c.readkey;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class KeyDataToFileTest {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+        // 需求：将键盘录入的数据存储到文件中。
+        /*
+         * 1，键盘录入。
+         * 2，目的是文件。
+         * 3，这个示例中既要用到输入流，也要用到输出流。
+         * 而且操作的数据都是文本数据，可以使用字符流。
+         * 而且目的是文件可以使用操作文件的字符输出流。
+         */
+
+        //键盘录入。
+        BufferedReader bufr = new BufferedReader(new InputStreamReader(System.in));
+        //目的是文件。
+//        FileWriter fw = new FileWriter(&quot;tempfile\\key.txt&quot;);
+//        BufferedWriter bufw = new BufferedWriter(fw);
+        BufferedWriter bufw = new BufferedWriter(new FileWriter(&quot;tempfile\\key.txt&quot;));
+
+        String line = null;
+        while((line=bufr.readLine())!=null){
+            if(&quot;over&quot;.equals(line)){
+                break;
+            }
+            bufw.write(line);
+            bufw.newLine();
+            bufw.flush();
+        }
+
+        bufw.close();
+    }
+
+}
+</code></pre><h2 id="-top-a-name-readkeydemo-"><a href="#top">获取了键盘录入的输入流对象。可以不用关闭</a><a name="ReadKeyDemo"/></h2>
+<pre><code>package cn.itcast.io.c.readkey;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+public class ReadKeyDemo {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+
+
+        /*
+         * 思路：
+         * 1，将数据存储到的文件，没有问题的。
+         * 2，怎么获取数据来源呢？键盘录入怎么弄呢？
+         * 键盘录入是输入，系统中应该具备的一部分。
+         * 在System类找到了标准输入流 属性 in。
+         * System.in 对应的类型是InputStream。字节输入流。
+         */
+        //获取了键盘录入的输入流对象。可以不用关闭。
+        InputStream in = System.in;
+
+//        System.out.println((int)&#39;\r&#39;);//13
+//        System.out.println((int)&#39;\n&#39;);//10
+
+//        int ch = in.read();
+//        System.out.println(ch);
+//        int ch1 = in.read();
+//        System.out.println(ch1);
+//        int ch2 = in.read();
+//        System.out.println(ch2);
+//        int ch3 = in.read();
+//        System.out.println(ch3);
+
+
+
+
+    }
+
+}
+</code></pre><h2 id="-top-a-name-readkeydemo2-"><a href="#top">读取键盘录入的字节输入流</a><a name="ReadKeyDemo2"/></h2>
+<pre><code>package cn.itcast.io.c.readkey;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+public class ReadKeyDemo2 {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+        //读取的数据更多。
+        /*
+         * 读取一个字节先不要操作，将其存储起来，转成一个字符串。
+         * 
+         * 能不能一次就读取一行字符串呢？readLine();
+         * 可是readLine()是BufferedReader方法。
+         * BufferedReader使用时必须接收字符流对象。
+         * 键盘录入是字节流。要是将字节流转成字符流是不是就哦了呢？咋转呢？
+         * 字节流---桥梁InputStreamReader---&gt;字符流
+         * 
+         */
+        // //读取键盘录入的字节输入流。
+        // InputStream in = System.in;
+        // //通过桥梁，将字节输入流转成字符输入流。
+        // InputStreamReader isr = new InputStreamReader(in);
+        // //对字符流进行效率提高，而且使用缓冲区对象的特有方法readLine();
+        // BufferedReader bufr = new BufferedReader(isr);
+
+        //记住：以后但凡提到了键盘录入就写这句，一行一行的读取，除非要对读取每一个字节操作。
+        BufferedReader bufr = new BufferedReader(new InputStreamReader(System.in));
+
+        String line = null;
+        while((line=bufr.readLine())!=null){//键盘录入记住定义结束标记。强制结束。
+
+            if(&quot;over&quot;.equals(line)){
+                break;
+            }
+            System.out.println(line);
+
+        }
+
+
+
+    }
+
+}
+</code></pre><h2 id="-top-a-name-test5-"><a href="#top">获取一篇文章中 &quot;传智播客&quot; 出现的次数</a><a name="Test5"/></h2>
+<pre><code>package cn.itcast.io.test;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Test5 {
+
+    /**
+     * @param args
+     * @throws IOException 
+     */
+    public static void main(String[] args) throws IOException {
+//        5，获取一篇文章中 &quot;传智播客&quot; 出现的次数。
+        /*
+         * 思路：
+         * 1，读取这篇文章中的每一行。
+         * 2，对每一个计算 关键字符串的次数。
+         * 3，对每一行的进行累加。
+         */
+
+        File file = new File(&quot;Test25.java&quot;);
+        String key = &quot;设备&quot;;
+        int count = getKeyCount(file,key);
+        System.out.println(key+&quot;::&quot;+count);
+    }
+
+    public static int getKeyCount(File file, String key) throws IOException {
+
+        int count = 0;
+
+        BufferedReader bufr = null;
+        try{
+            bufr = new BufferedReader(new FileReader(file));
+            String line = null;
+            while((line=bufr.readLine())!=null){
+                count += getKeyCountInLine(line,key);
+            }
+        }finally{
+            if(bufr!=null){
+                try{
+                    bufr.close();
+                }catch(IOException e){
+                    throw new RuntimeException();
+                }
+            }
+        }
+
+        return count;
+    }
+
+    private static int getKeyCountInLine(String line, String key) {
+
+        int count = 0;
+        int index = 0;
+
+        while((index=line.indexOf(key, index))!=-1){
+            index = index + key.length();
+            count++;
+        }
+
+        return count;
+    }
+
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

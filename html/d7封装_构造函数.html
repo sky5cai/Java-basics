@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="d7-_-">d7封装_构造函数</h1>
+<h2 id="-">导语：</h2>
+<blockquote>
+<p>想到在写</p>
+</blockquote>
+<p><a name="top"/></p>
+<ol>
+<li><a href="#CarDemo">介绍匿名对象。1，简化书写，2，使用场景</a></li><li><a href="#CarDemo2">对象调用的封装提高复用性，匿名对象作为实参传递</a></li><li><a href="#class_excise"> 基本数据类型参数传递和引用数据类型参数传递</a></li><li><a href="#PersonDemo">封装的表现和好处，以及私有的使用</a></li><li><a href="#PersonDemo2">构造函数的定义，调用，作用，默认构造函数的体系，构造函数细节。和一般函数的区别</a></li><li><a href="#PersonDemo3">构造函数间的调用，this(),this到底代表哪个对象</a></li><li><a href="#PersonDemo4">this的另一个用法，区分成员变量和局部变量同名的情况，以及this关键字的应用</a></li><li><a href="#PersonDemo5">静态关键字static的特点。以及应用。两个问题。需要大家自己找答案解决</a></li></ol>
+<h2 id="1-1-2-top-a-name-cardemo-">1. <a href="#top">介绍匿名对象。1，简化书写，2，使用场景</a><a name="CarDemo"/></h2>
+<pre><code>class Car
+{
+    //描述属性。颜色，轮胎数。
+    String color;
+    int number;
+
+    //描述行为。
+    void run()
+    {
+        System.out.println(color+&quot;:&quot;+number);
+    }
+}
+
+class CarDemo
+{
+    //定义主函数。为了让程序运行起来。
+    public static void main(String[] args)
+    {
+        /*
+        //创建Car.class类的对象。
+        Car c = new Car();//类类型变量一定指向对象。
+        //调用对象的成员。
+        c.color = &quot;red&quot;;
+        c.number = 4;
+        c.run();
+        */
+
+//        Car c = new Car();
+//        c.run();
+        //简化成这样的写法。所以匿名对象就是为了简化书写。
+//        new Car().run();//这个对象有名字吗？没有，是的。这就是传说中的匿名对象。
+
+        /*
+        记住：凡是简化的，通常都有局限。
+        匿名对象有局限吗?
+        */
+        new Car().color = &quot;red&quot;;//执行完对象就变成了垃圾。
+        new Car().number = 4;
+        new Car().run();
+
+        /*
+        那匿名对象有什么用呢？为了简化书写。
+        使用场景：当对象对方法进行调用时，而且只调用一次时，可以简化成匿名对象来书写。
+         Car c = new Car();c.run(); ---&gt; new Car().run();
+
+
+        Car c = new Car();
+        c.color = &quot;blue&quot;;
+        c.run();
+        c.run();
+        c.run();
+        是不可以简化成一下书写的。因为对象不同。
+        new Car().color = &quot;blue&quot;;
+        new Car().run();
+        new Car().run();
+        new Car().run();
+        记住：当对象需要调用多次成员时，不可以简化成匿名对象调用。
+        */
+
+
+    }
+}
+</code></pre><h2 id="2-top-a-name-cardemo2-">2. <a href="#top">对象调用的封装提高复用性，匿名对象作为实参传递</a><a name="CarDemo2"/></h2>
+<pre><code>class Car
+{
+    //描述属性。颜色，轮胎数。
+    String color;
+    int number;
+
+    //描述行为。
+    void run()
+    {
+        System.out.println(color+&quot;:&quot;+number);
+    }
+}
+
+
+class  CarDemo2
+{
+    public static void main(String[] args) 
+    {
+        /*
+        Car c = new Car();
+        c.color = &quot;red&quot;;
+        c.number = 4;
+        c.run();
+
+        Car c1 = new Car();
+        c1.color = &quot;red&quot;;
+        c1.number = 4;
+        c1.run();
+        */
+
+        //以上代码的复用性有点差。只有对象不同，而调用的成员和赋值都相同。
+        //可以进行抽取。定义一个功能。将重复代码封装。
+
+        /*
+        封装功能后，在使用，就简单了。
+        */
+        Car c = new Car();
+        Car c1 = new Car();
+        show(new Car());//简化成 show(new Car());//把匿名对象作为实际参数进行传递。
+
+    }
+    //功能结果是什么呢？没有具体值。所以是void。
+    //功能的未知部分是什么呢？对象不明确。可以将其定义成参数。
+    public static void show(Car cc)
+    {
+        cc.color = &quot;red&quot;;
+        cc.number = 4;
+        cc.run();
+    }
+}
+</code></pre><h2 id="3-top-a-name-class_excise-">3. <a href="#top"> 基本数据类型参数传递和引用数据类型参数传递</a><a name="class_excise"/></h2>
+<pre><code>//课上练习：不要编译运行，求图，求真相！
+class Demo
+{
+    public static void main(String[] args)
+    {
+        int x = 4;
+        show(x);
+        System.out.println(&quot;x=&quot;+x);
+    }
+    public static void/*int*/ show(int x)
+    {
+        x = 5;
+        //return x;
+    }
+}
+
+class Demo 
+{
+    int x ;
+    public static void main(String[] args) 
+    {
+
+        Demo d = new Demo();
+        d.x = 5;
+        show(d);//show(new Demo());
+        System.out.println(&quot;x=&quot;+d.x);
+    }
+    public static void show(Demo d)
+    {
+        d.x = 6;
+    }
+}
+</code></pre><h2 id="4-top-a-name-persondemo-">4. <a href="#top">封装的表现和好处，以及私有的使用</a><a name="PersonDemo"/></h2>
+<pre><code>
+/*
+封装：
+表现：
+1，函数就是一个最基本封装体。
+2，类其实也是一个封装体。
+
+从以上两点得出结论：
+好处：
+1，提高了代码的复用性。
+2，隐藏了实现细节，还要对外提供可以访问的方式。便于调用者的使用。这是核心之一，也可以理解为就是封装的概念。
+3，提高了安全性。
+它也是面向对象思想的特征之一。
+共有三个特征：封装，继承，多态。
+
+
+举例：机箱。隐藏了办卡设备的细节，对外提供了插口以及开关等访问内部细节的方式。
+
+*/
+
+//描述人。Person
+//属性：年龄。
+//行为：说话：说出自己的年龄。
+
+
+
+
+
+/*
+总结：
+类中不需要对外提供的内容都私有化，包括属性和行为。
+
+selectSort(int[] arr)
+{
+    swap(
+}
+
+bubbleSort(int[] arr)
+{
+    swap(
+}
+
+private swap(int[] arr,int a,int  b)
+{
+
+}
+
+重点：以后再描述事物，属性都私有化，并提供setXxx getXxx方法对其进行访问。
+
+*/
+
+class Person
+{
+    //属性：
+    private int age;//age就是被修饰为了private私有。也就是被隐藏了。这就是封装的一种体现。
+    //行为：
+    void speak()
+    {
+        System.out.println(&quot;age=&quot;+age);
+    }
+
+    /*
+    年龄已被私有，错误的值无法赋值，可是正确的值也赋值不了，不行。
+    咋办，按照之前所学习的封装的原理，隐藏后，还需要提供访问方式。
+    通过方法的方式，让其他程序访问到，就可以了。更重要的是可以在方法中加入逻辑判断。
+
+    记住：对变量的访问操作有两个动作：赋值(设置 set)，取值(获取 get)
+    所以，对私有的变量访问的方式就是 set变量  get变量--&gt; setAge  getAge
+    */
+    //定义对age赋值的方法。
+    void setAge(int a)
+    {
+        //加入逻辑判断。
+        if(a&gt;0 &amp;&amp; a&lt;130)
+            age = a;
+        else
+//            System.out.println(&quot;对不起，您的年龄数值 &quot;+a+&quot; 是非法的。&quot;);
+//            throw new RuntimeException(&quot;对不起，您的年龄数值 &quot;+a+&quot; 是非法的。&quot;);//异常！一旦出现，程序结束。需要修正代码。
+    }
+
+    //定义一个获取age值的方法。
+    int getAge()
+    {
+        return age;
+    }
+
+}
+
+class PersonDemo
+{
+    public static void main(String[] args)
+    {
+        //测试Person.class。
+        //创建对象。
+        Person p = new Person();
+
+        /*
+        赋值-20是可以的，因为age属性是int类型，但是确不符合现实生活中的事物。
+        怎么解决这个问题呢？
+        不让它访问就哦了。怎么在代码上实现呢？需要使用一个Java中的关键字也是一个修饰符 private(私有，权限修饰符)
+        记住：私有仅仅是封装的体现形式而已。
+
+        */
+//        p.age = -20;//age不能在person类以外的程序中直接访问了。
+
+        //演示对age设置和获取方法的体现。
+        p.setAge(-20);
+        int a = p.getAge();
+        System.out.println(&quot;a=&quot;+a);
+//        p.speak();
+    }
+}
+</code></pre><h2 id="5-top-a-name-persondemo2-">5. <a href="#top">构造函数的定义，调用，作用，默认构造函数的体系，构造函数细节。和一般函数的区别</a><a name="PersonDemo2"/></h2>
+<pre><code>/*
+需求：为了描述事物更准确，发现事物对应的很多对象一创建时，
+就有了，一些初始化的数据。在类中该如何完成的。
+
+通过Java中的另一个小技术完成：就是构造函数。对象本身就是构造出来，
+构造时，需要做一些动作这些应该定义在函数内。
+
+构造函数（Constructor）有什么用？可以对对象创建进行初始化。
+
+构造函数怎么在代码中体现呢？
+1，没有返回值类型。因为构造对象，创建完就结束，需要结果。void也不要写，因为要有区别与一般函数。
+2，构造函数名称和类名一致。
+3，没有具体的返回值。
+接下来，按照以上三点，在Person类中定义一个构造函数。
+对象一创建就具备了姓名。
+
+
+发现了问题？
+没有学习构造函数时，对象也创建出来了。那么该对象是否有被构造呢？或者说是否有调用构造函数呢？
+
+是的。必须调用！
+那么类中那个构造函数是什么呢？
+
+class Person
+{
+    //Person(){}//默认的空参数构造函数。
+}
+
+main()
+{
+    Person p = new Person();//这就已经调用了Person类中的空参数的构造函数。
+                            //类中有定义该构造函数吗？有的。只要定义一个类，
+                            //该类中默认就有一个空参数的构造函数，是编译器编译时添加到class文件中。
+                            //注意：如果在类中自定义了构造函数，那么默认的空参数构造函数编译器就不添加了。
+                            //原理：没有定义对象的初始化过程，编译器会添加一个默认的初始化过程。
+                            //      如果定义了指定的对象初始化过程，默认的就不添加了。
+}
+
+
+
+
+构造函数的细节：
+1，一个类中可以有多个构造函数，它们的存在是以重载的形式体现的。
+2，构造函数中也是有return语句的，用于结束初始化动作的。
+3，构造函数是否能被private修饰呢？能，作用：其他程序无法创建该类的对象。
+class Person
+{
+    private Person(){}
+}
+
+
+main()
+{
+    Person p = new Person();//创建对象无法初始化。
+}
+
+构造函数和一般函数的区别？
+1，写法不一样。不重要。
+2，运行上有差别，对象一创建就会调用对应的构造函数。
+    一般方法是对象创建后，才会调用所需的一般函数。
+问：有了构造函数初始化姓名，那么还需要setName方法吗？
+需要，因为对象创建后，如果需要对数据进行修改，可以通过set完成。
+3，构造函数在对象创建时，仅调用一次(初始化动作只做一次，而且先执行)。一般方法可以被对象调用多次。
+
+class Person
+{
+    //Person(){}
+    void Person(){}//这是一般函数。但不要这些书写，因为一般函数名称有规范。
+}
+
+main()
+{
+    Person p = new Person();
+}
+
+
+*/
+
+class Person
+{
+    //属性：姓名，年龄。
+    private String name;
+    private int age;
+    //一初始化，既没有姓名，又没有年龄。
+    Person()
+    {
+
+    }
+//    Person(int a)
+//    {
+//        if(a&lt;0)
+//            return;
+//        age = a;
+//    }
+
+
+    //定义构造函数，对象一创建就具备姓名。
+    Person(String n)
+    {
+        //将接收到的值赋值给对象的name
+        name = n;
+    }
+
+    //一初始化既有姓名，又有年龄。
+    Person(String n,int a)
+    {
+        name = n;
+        age = a;
+
+    }
+
+    //行为。
+    public void speak()
+    {
+        System.out.println(&quot;name=&quot;+name+&quot;,age=&quot;+age);
+    }
+}
+
+
+class PersonDemo2 
+{
+    public static void main(String[] args) 
+    {
+
+        Person p1 = new Person();
+
+//        Person p = new Person(&quot;lisi&quot;);//对象创建时，必须会调用对应的构造函数，因为对象需要初始化。
+
+//        Person p2 = new Person(&quot;wangwu&quot;,23);
+
+    }
+}
+</code></pre><h2 id="6-this-this-top-a-name-persondemo3-">6. <a href="#top">构造函数间的调用，this(&quot;/&gt;,this到底代表哪个对象</a><a name="PersonDemo3"/></h2>
+<pre><code>
+/*
+当构造函数之间进行互相调用时，该如何解决呢？
+
+构造函数是对象初始化时调用的。
+给哪个对象初始化呢？通过this关键字来记录住对象的地址。并通过this来明确被初始化的对象。
+
+在构造函数中调用其他构造函数的格式： this(实参列表);就会调用对应的构造函数。
+
+小节：
+this到底代表什么呢？★★★★★
+this就代表对象，代表哪个对象呢？哪个对象调用了this所在函数，this就代表哪个对象。
+
+
+*/
+class Person
+{
+    private String name;
+    private int age;
+    Person()
+    {
+
+    }
+    //初始化姓名。
+    private Person(String n)
+    {
+
+        name = n;
+    }
+    //初始化姓名和年龄。既然有初始化姓名的动作。直接调用就可以了。
+    Person(String n,int a)
+    {
+
+        this(n);//调用一个字符串参数的构造函数。注意：调用其他构造函数的语句，
+                //必须定义在构造函数的第一行。原因：初始化动作要先执行。
+//        name = n;
+        age = a;
+    }
+
+
+}
+
+class PersonDemo3 
+{
+    public static void main(String[] args) 
+    {
+        Person p = new Person(&quot;lisi&quot;,20);
+        Person p1 = new Person(&quot;lisi1&quot;,21);
+    }
+}
+</code></pre><h2 id="7-this-this-top-a-name-persondemo4-">7. <a href="#top">this的另一个用法，区分成员变量和局部变量同名的情况，以及this关键字的应用</a><a name="PersonDemo4"/></h2>
+<pre><code>
+/*
+this关键字的另一个作用：
+可以用this标识哪个变量是成员变量。这个标识可以省略不写。
+但是，当局部变量和成员变量同名时，必须用this.来标识成员变量。
+
+
+*/
+class Person
+{
+    private String name;
+    private int age;
+
+    Person(String name,int age)
+    {
+        this.name = name;
+        this.age = age;
+    }
+    public void speak()
+    {
+        String name = &quot;haha&quot;;
+        System.out.println(&quot;name=&quot;+this.name+&quot;,age=&quot;+this.age);
+    }
+    public void method()
+    {
+        this.speak();//this可以省略。
+    }
+
+    //课上练习,定义功能，判断两个人是否是同龄人。
+    //1,明确结果，boolean 2,明确未知内容，1个，Person类型。
+    public boolean equalsAge(Person pp)
+    {
+        /*
+        if(pp.age == this.age)//当函数中使用到了调用该函数的对象时，用this表示这个对象。
+            return true;
+        return false;
+        */
+//        return (pp.age == this.age)?true:false;
+        return pp.age == this.age;
+    }
+}
+
+class PersonDemo4 
+{
+    public static void main(String[] args) 
+    {
+        Person p = new Person(&quot;lisi&quot;,20);
+        p.speak();
+        Person p1 = new Person(&quot;xiaoming&quot;,24);
+        p1.speak();
+    }
+}
+</code></pre><h2 id="8-static-top-a-name-persondemo5-">8. <a href="#top">静态关键字static的特点。以及应用。两个问题。需要大家自己找答案解决</a><a name="PersonDemo5"/></h2>
+<pre><code>
+/*
+静态关键字的特点：
+1，静态成员优先于对象存在，被对象共享。
+2，静态成员可以直接类名调用，多一个调用方式。
+3，静态成员所属于类，所以它是随着类的加载而加载，随着类的消失而消失。
+
+
+
+*/
+
+
+class Person
+{
+    //属性：国籍。如果这个程序只限中国人使用，国籍都是中国。
+    //如果每一个对象中都存储一份中国，不是不行，只是内存浪费。能不能实现这个中国数据的对象共享呢？
+    //可以的，通过Java中的一个关键字就可以完成。static。这是一个成员修饰符。
+    static String country = &quot;中国&quot;;//显示初始化。这个country的值就不在对象存储了。被对象共享了。
+    String name;
+    public static void show()
+    {
+        System.out.println(Person.country);
+//        System.out.println(name);
+    }
+}
+
+/*
+
+静态变量和成员变量的区别？
+
+什么时候定义静态变量。什么时候函数需要用静态修饰？
+
+
+
+
+*/
+
+
+class PersonDemo5 
+{
+    public static void main(String[] args) 
+    {
+//        Person p1 = new Person();        
+//        Person p2 = new Person();
+//        System.out.println(p1.country);
+        System.out.println(Person.country);//共享数据在对象之前就已经存在了。可以有另一种调用方式。可以直接被类名调用。
+                                            // 静态的成员所属的是类。
+
+        Person.show();
+
+    }
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

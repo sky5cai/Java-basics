@@ -1,0 +1,2391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="d14to16-">d14to16多线程的原理与使用</h1>
+<h2 id="-">导语：</h2>
+<blockquote>
+<p>想到在写</p>
+</blockquote>
+<p><a name="top"/></p>
+<ol>
+<li><a href="#ThreadDemo">通过代码了解只有主线程在执行时的弊端继承Thread类</a></li><li><a href="#ThreadDemo2">创建线程的第二种方式实现Runnable接口</a></li><li><a href="#ThreadDemo3">线程的安全问题分析原因</a></li><li><a href="#ThreadTest">银行存款的练习</a></li><li><a href="#ThreadDemo4">同步函数的体现，和同步代码块的区别</a></li><li><a href="#ThreadDemo5">验证静态同步函数使用的锁时 类名.class</a></li><li><a href="#ThreadDemo6">单例懒汉式被并发访问的解决方案</a></li><li><a href="#ThreadDemo7">死锁在售票中的体现</a></li><li><a href="#DeadLockTest">简单的死锁程序</a></li><li><a href="#ThreadDemo8">生产者消费者，发生的问题</a></li><li><a href="#ThreadDemo9">生产者消费者，加入了等待唤醒机制，监视器方法说明</a></li><li><a href="#ThreadDemo10">多生产多消费，发生的问题，解决办法</a></li><li><a href="#ThreadDemo11">多生产多消费，通过JDK1.5解决问题。Lock Condition接口的使用</a></li><li><a href="#ThreadDemo12">Condition案例中的范例，带注释</a></li><li><a href="#ThreadTest2_1">妖的问题与解决。线程安全问题</a></li><li><a href="#ThreadTest2_2">数据间隔问题与解决。等待唤醒机制</a></li><li><a href="#ThreadTest2_3">代码重构问题与解决。同步函数</a></li><li><a href="#ThreadTest2_4">JDK1.5升级问题与解决。Lock&amp;Condition</a></li><li><a href="#StopThreadDemo">停止线程示例。演示了循环结束标记和interrupt方法</a></li><li><a href="#JoinThreadDemo">演示了join方法的特点</a></li><li><a href="#ThreadTest">线程的匿名内部类体现以及面试题</a></li></ol>
+<h2 id="1-thread-top-a-name-threaddemo-">1. <a href="#top">通过代码了解只有主线程在执行时的弊端继承Thread类</a><a name="ThreadDemo"/></h2>
+<pre><code>
+
+/*
+通过代码来演示之前和之后的区别。
+
+在之前的代码中，jvm启动后，必然有一个执行路径(线程)从main方法开始的。一直执行到main方法结束。
+这个线程在java中称之为主线程。
+
+当主线程在这个程序中执行时，如果遇到了循环而导致在指定为停留时间过长，
+无法执行下面的程序。
+可不可以实现一个主线程负责执行其中一个循环，由另一个线程负责其他代码的执行。
+实现多部分代码同时执行。
+这就是多线程技术可以解决的问题。
+
+该如何创建线程呢？
+
+通过API中的英文Thread的搜索，查到Thread类。
+通过阅读Thread类中的描述。
+
+创建线程有两种方式：
+1，继承Thread类。★★★★★
+    1.1 定义一个类继承Thread。
+    1.2 重写run方法。
+    1.3 创建子类对象，就是创建线程对象。
+    1.4 调用start方法，开启线程并让线程执行，同时还会告诉jvm去调用run方法。
+
+为什么要这么做？
+继承Thread类：因为Thread类描述线程事物，具备线程应该有功能。
+那为什么不只讲创建Thread类的对象呢？
+Thread t1 = new Thread();
+t1.start();//这么做没有错，但是该start调用的时Thread类中的run方法，
+而这个run方法没有做什么事情，更重要的是这个run方法中并没有定义我们需要让线程执行的代码。
+
+创建线程的目的是什么？是为了建立单独的执行路径，让多部分代码实现同时执行。
+也就是说线程创建并执行需要给定的代码(线程的任务)。
+对于之前所讲的主线程，它的任务定义在main函数中。
+自定义线程需要执行的任务都定义在run方法中。
+Thread类中的run方法内部的任务并不是我们所需要，只要重写这个run方法，
+既然Thread类已经定义了线程任务的位置，只要在位置中定义任务代码即可。
+所以进行了重写run方法动作。
+
+
+多线程执行时，在栈内存中，其实每一个执行线程都有一片自己所属的栈内存空间。
+进行方法的压栈和弹栈。
+
+当执行线程的任务结束了，线程自动在栈内存中释放了。
+但是当所有的执行线程都结束了，那么进程就结束了。
+
+
+//获取线程名称：
+Thread：currentThread()获取当前线程对象。怎么名称呢?getName();
+Thread.currentThread().getName();
+
+主线程的名称： main
+自定义的线程： Thread-1  线程多个时，数字顺延。Thread-2......
+*/
+
+class Demo extends Thread
+{
+    private String name;
+    Demo(String name)
+    {
+        this.name = name;    
+    }
+    public void run()
+    {
+        int[] arr = new int[3];
+        System.out.println(arr[4]);
+        for(int x=1; x&lt;=20; x++)
+        {
+            System.out.println(&quot;name=&quot;+name+&quot;...&quot;+Thread.currentThread().getName()+&quot;...&quot;+x);
+        }
+    }
+}
+
+
+class  ThreadDemo
+{
+    public static void main(String[] args) 
+    {
+        //创建了两个线程对象。
+        Demo d1 = new Demo(&quot;小强&quot;);
+        Demo d2 = new Demo(&quot;旺财&quot;);
+        d2.start();//将d2这个线程开启。
+        d1.run();//由主线程负责。
+
+        /*
+        面试题：线程对象调用 run方法和调用start方法区别？
+        调用run方法不开启线程。仅是对象调用方法。
+        调用start开启线程，并让jvm调用run方法在开启的线程中执行。
+        */
+    }
+}
+</code></pre><h2 id="2-runnable-top-a-name-threaddemo2-">2. <a href="#top">创建线程的第二种方式实现Runnable接口</a><a name="ThreadDemo2"/></h2>
+<pre><code>
+
+/*
+创建线程的第二种方式。实现Runnable接口。
+1，定义类实现Runnable接口：避免了继承Thread类的单继承局限性。
+2，覆盖接口中的run方法。将线程任务代码定义到run方法中。
+3，创建Thread类的对象：只有创建Thread类的对象才可以创建线程。
+4，将Runnable接口的子类对象作为参数传递给Thread类的构造函数。
+    因为线程已被封装到Runnable接口的run方法中，而这个run方法所属于Runnable接口的子类对象，
+    所以将这个子类对象作为参数传递给Thread的构造函数，这样，线程对象创建时就可以明确要运行的线程的任务。
+5，调用Thread类的start方法开启线程。
+
+
+第二种方式实现Runnable接口避免了单继承的局限性，所以较为常用。
+实现Runnable接口的方式，更加的符合面向对象，线程分为两部分，一部分线程对象，一部分线程任务。
+继承Thread类：线程对象和线程任务耦合在一起。一旦创建Thread类的子类对象，既是线程对象，有又有线程任务。
+实现runnable接口：将线程任务单独分离出来封装成对象，类型就是Runnable接口类型。
+Runnable接口对线程对象和线程任务进行解耦。
+
+面试题：创建线程的两种方式以及区别。  
+
+
+//通过源码的形式讲解了一下将runnable接口的子类对象作为参数传递给Thread构造函数的原因。
+class Thread{
+
+    private Runnable target;
+
+    Thread(Runnable target)
+    {
+        this.target = target;
+    }
+    public void run() {
+        if (target != null) {
+            target.run();
+        }
+    }
+    public void start()
+    {
+        run();
+    }
+}
+
+Runnable d = new Demo();
+Thread t = new Thread(d);
+t.start();
+
+*/
+
+class Demo implements Runnable
+{
+    private String name;
+    Demo(String name)
+    {
+        this.name = name;
+    }
+    //覆盖了接口Runnable中的run方法。
+    public void run()
+    {
+        for(int x=1; x&lt;=20; x++)
+        {
+            System.out.println(&quot;name=&quot;+name+&quot;...&quot;+Thread.currentThread().getName()+&quot;...&quot;+x);
+        }
+    }
+}
+
+class ThreadDemo2 
+{
+    public static void main(String[] args) 
+    {
+        //创建Runnable子类的对象。注意它并不是线程对象。
+        Demo d = new Demo(&quot;Demo&quot;);
+        //创建Thread类的对象，将Runnable接口的子类对象作为参数传递给Thread类的构造函数。
+        Thread t1 = new Thread(d);
+        Thread t2 = new Thread(d);
+        //将线程启动。
+        t1.start();
+        t2.start();
+
+        System.out.println(Thread.currentThread().getName()+&quot;-----&gt;&quot;);
+
+
+    }
+}
+</code></pre><h2 id="3-top-a-name-threaddemo3-">3. <a href="#top">线程的安全问题分析原因</a><a name="ThreadDemo3"/></h2>
+<pre><code>
+/*
+案例：售票的例子。
+
+售票的动作需要同时执行，所以使用多线程技术。
+
+
+发生了线程安全问题：出现了错误的数据。0 -1 -2 
+
+问题产生的原因；
+1，线程任务中在操作共享的数据。
+2，线程任务操作共享数据的代码有多条(运算有多个)。
+
+解决思路：
+只要让一个线程在执行线程任务时将多条操作共享数据的代码执行完，
+在执行过程中，不要让其他线程参与运算。就哦了。
+
+代码体现呢？
+Java中解决此问题通过代码块来完成的。
+这个代码块：同步代码块 synchronized
+格式：
+synchronized(对象)
+{
+    //需要被同步的代码。
+}
+
+同步好处：
+解决多线程安全问题。
+
+同步弊端：
+降低了程序的性能。
+
+
+同步前提：
+必须保证多个线程在同步中使用的是同一个锁。
+解决了什么问题?
+当多线程安全问题发生时，加入了同步后，
+问题依旧，就要通过这个同步的前提来判断同步是否写正确。
+
+
+*/
+
+class Ticket implements Runnable
+{
+    //1,描述票的数量。
+    private int tickets = 100;
+    //2,售票的动作，这个动作需要被多线程执行，那就是线程任务代码。需要定义run方法中。
+    //线程任务中通常都有循环结构。
+    private Object obj = new Object();
+    public void run()
+    {
+        while(true)
+        {
+            synchronized(obj)
+            {
+                if(tickets&gt;0)
+                {
+                    //要让线程在这里稍停，模拟问题的发生。sleep  看到了0 -1 -2 错误的数据，这就是传说中的多线程安全问题。
+                    try{Thread.sleep(1);}catch(InterruptedException e){/*未写处理方式，后面讲*/}
+
+                    System.out.println(Thread.currentThread().getName()+&quot;.....&quot;+tickets--);//打印线程名称。
+                }
+            }
+        }
+    }
+}
+class ThreadDemo3 
+{
+    public static void main(String[] args) 
+    {
+        //1,创建Runnable接口的子类对象。
+        Ticket t = new Ticket();
+
+        //2,创建四个线程对象。并将Runnable接口的子类对象作为参数传递给Thread的构造函数。
+        Thread t1 = new Thread(t);
+        Thread t2 = new Thread(t);
+        Thread t3 = new Thread(t);
+        Thread t4 = new Thread(t);
+
+        //3,开启四个线程。
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+    }
+}
+</code></pre><h2 id="4-top-a-name-threadtest-">4. <a href="#top">银行存款的练习</a><a name="ThreadTest"/></h2>
+<pre><code>
+//两个客户到一个银行去存钱，每个客户一次存100，存3次。
+//问题：该程序是否有安全问题，如果有，写出分析过程，并定义解决方案。
+
+/*
+
+发现运行结果：
+sum=200
+sum=300
+sum=400
+sum=200
+sum=500
+sum=600
+
+打印错乱，不关心，但是发现数值错误，没有100.
+运行了几次发现有对的。
+sum=100
+sum=300
+sum=400
+sum=200
+sum=500
+sum=600
+
+说明多线程的随机性造成了安全问题发生。
+哪的问题啊？
+1，既然是多线程的问题，必须问题发生在线程任务内。
+2，任务代码中是否有共性数据呢？有的，b对象的中的sum。
+3，是否有对sum进行多次运算呢？有！
+
+加同步就搞定。
+*/
+
+//描述银行。
+class Bank
+{
+    private int sum;
+    private Object obj = new Object();
+    public void add(int num)
+    {    
+        synchronized(obj)
+        {
+            sum = sum + num;
+            System.out.println(&quot;sum=&quot;+sum);//每存一次，看到银行金额变化。
+        }
+    }
+}
+class Consumer implements Runnable
+{
+    private Bank b = new Bank();
+    public void run()
+    {
+        for(int x=0 ; x&lt;3; x++)
+        {
+            b.add(100);//一次存100.循环3次，
+        }
+    }
+}
+class ThreadTest
+{
+    public static void main(String[] args)
+    {
+        Consumer c = new Consumer();
+        Thread t1 = new Thread(c);
+        Thread t2 = new Thread(c);
+        t1.start();
+        t2.start();
+
+    }
+}
+</code></pre><h2 id="5-top-a-name-threaddemo4-">5. <a href="#top">同步函数的体现，和同步代码块的区别</a><a name="ThreadDemo4"/></h2>
+<pre><code>/*
+同步的另一种体现形式：同步函数。
+
+同步函数使用的锁是哪个？
+经过分析：大概猜的是this，因为函数必须被对象调用。
+
+验证：
+写一个同步代码块，写一个同步函数，如果同步代码块中的锁对象和同步函数中的锁对象是同一个，
+就同步了，就没有错误的数据了。如果不是同一个锁对象，就不同步出现错误数据。
+
+让两个线程，一个线程在同步代码块中执行，一个线程在同步函数中执行。
+
+总结：同步函数使用的锁时this。
+
+同步函数和同步代码块有什么区别吗？
+
+同步函数使用的锁是固定的this。当线程任务只需要一个同步时完全可以使用同步函数。
+同步代码块使用的锁可以是任意对象。当线程任务中需要多个同步时，必须通过锁来区分，这时必须使用同步代码块。
+同步代码块较为常用。
+
+
+
+*/
+
+class Ticket implements Runnable
+{
+    private int tickets = 100;
+    private Object obj = new Object();
+    boolean flag = true;
+    public void run()
+    {
+        if(flag){
+            while(true){
+                synchronized(this){
+                    if(tickets&gt;0){
+                        try{Thread.sleep(10);}catch(InterruptedException e){}
+                        System.out.println(Thread.currentThread().getName()+&quot;...obj...&quot;+tickets--);//打印线程名称。
+                    }
+                }
+            }
+        }
+        else{
+            while(true){
+                this.sale();
+            }
+        }
+    }
+
+    public synchronized void sale()//同步函数,使用的锁对象 this。
+    {
+        if(tickets&gt;0)
+        {
+            try{Thread.sleep(10);}catch(InterruptedException e){}
+            System.out.println(Thread.currentThread().getName()+&quot;...sale...&quot;+tickets--);//打印线程名称。
+        }
+    }
+}
+class ThreadDemo4 
+{
+    public static void main(String[] args) 
+    {
+        Ticket t = new Ticket();
+
+        Thread t1 = new Thread(t);
+        Thread t2 = new Thread(t);
+
+        t1.start();
+        try{Thread.sleep(10);}catch(InterruptedException e){}
+        //切换标记,之前，让主线程停一会，这时就只有一个t1线程在，它就会执行同步代码块。
+        t.flag = false;
+
+        t2.start();
+    }
+}
+</code></pre><h2 id="6-class-top-a-name-threaddemo5-">6. <a href="#top">验证静态同步函数使用的锁时 类名.class</a><a name="ThreadDemo5"/></h2>
+<pre><code>
+
+/*
+static 同步函数，使用的锁不是this，而是字节码文件对象, 类名.class   
+*/
+class Ticket implements Runnable
+{
+    private static int tickets = 100;
+    private Object obj = new Object();
+    boolean flag = true;
+    public void run()
+    {
+        if(flag){
+            while(true){
+                synchronized(Ticket.class){
+                    if(tickets&gt;0){
+                        try{Thread.sleep(10);}catch(InterruptedException e){}
+                        System.out.println(Thread.currentThread().getName()+&quot;...obj...&quot;+tickets--);//打印线程名称。
+                    }
+                }
+            }
+        }
+        else{
+            while(true){
+                this.sale();
+            }
+        }
+    }
+
+    public static synchronized void sale()//
+    {
+        if(tickets&gt;0)
+        {
+            try{Thread.sleep(10);}catch(InterruptedException e){}
+            System.out.println(Thread.currentThread().getName()+&quot;...sale...&quot;+tickets--);//打印线程名称。
+        }
+    }
+}
+class ThreadDemo5 
+{
+    public static void main(String[] args) 
+    {
+        Ticket t = new Ticket();
+
+        Thread t1 = new Thread(t);
+        Thread t2 = new Thread(t);
+
+        t1.start();
+        try{Thread.sleep(10);}catch(InterruptedException e){}
+        //切换标记,之前，让主线程停一会，这时就只有一个t1线程在，它就会执行同步代码块。
+        t.flag = false;
+
+        t2.start();
+    }
+}
+</code></pre><h2 id="7-top-a-name-threaddemo6-">7. <a href="#top">单例懒汉式被并发访问的解决方案</a><a name="ThreadDemo6"/></h2>
+<pre><code>
+//饿汉式。  多线程并发饿汉式没问题。
+class Single
+{
+    private static final Single s = new Single();
+
+    private Single(){}
+
+    public static Single getInstance()
+    {
+        return s;
+    }
+}
+
+//懒汉式。
+class Single
+{
+    private static  Single s = null;
+
+    private Single(){}
+
+    /*
+    并发访问会有安全隐患，所以加入同步机制解决安全问题。
+    但是，同步的出现降低了效率。
+    可以通过双重判断的方式，解决效率问题，减少判断锁的次数。
+
+    */
+    public static  Single getInstance()
+    {
+        if(s==null)
+        {
+            synchronized(Single.class)
+            {
+                if(s==null)
+        //            --&gt;0 --&gt;1
+                    s = new Single();
+            }
+        }
+        return s;
+    }
+}
+
+
+
+class Demo implements Runnable
+{
+    public void run()
+    {
+        Single.getInstance();
+    }
+}
+
+
+class ThreadDemo6 
+{
+    public static void main(String[] args) 
+    {
+        System.out.println(&quot;Hello World!&quot;);
+    }
+}
+</code></pre><h2 id="8-top-a-name-threaddemo7-">8. <a href="#top">死锁在售票中的体现</a><a name="ThreadDemo7"/></h2>
+<pre><code>/*
+同步的另一个弊端：
+
+情况之一：当线程任务中出现了多个同步(多个锁)时，如果同步中嵌套了其他的同步。
+这时容易引发一种现象：死锁。
+这种情况能避免就避免掉。
+
+//Thread-0
+synchronized(obj1)
+{
+    --&gt;thread-0  obj1
+    synchronized(obj2)
+    {
+
+    }
+
+}
+//Thread-1
+synchronized(obj2)
+{
+    Thread-1 obj2
+    synchronized(obj1)
+    {
+
+    }
+
+}
+
+
+*/
+
+
+class Ticket implements Runnable
+{
+    private  int tickets = 200;
+    private Object obj = new Object();
+    boolean flag = true;
+    public void run()
+    {
+        if(flag){
+            while(true){
+                synchronized(obj){
+                    sale();//this lock;
+                }
+            }
+        }
+        else{
+            while(true){
+                this.sale();
+            }
+        }
+    }
+
+    public  synchronized void sale()//this lock
+    {
+        synchronized(obj)//obj lock
+        {
+            if(tickets&gt;0)
+            {
+                try{Thread.sleep(10);}catch(InterruptedException e){}
+                System.out.println(Thread.currentThread().getName()+&quot;...sale...&quot;+tickets--);//打印线程名称。
+            }
+        }
+    }
+}
+class ThreadDemo7 
+{
+    public static void main(String[] args) 
+    {
+        Ticket t = new Ticket();
+
+        Thread t1 = new Thread(t);
+        Thread t2 = new Thread(t);
+
+        t1.start();
+        try{Thread.sleep(10);}catch(InterruptedException e){}
+        //切换标记,之前，让主线程停一会，这时就只有一个t1线程在，它就会执行同步代码块。
+        t.flag = false;
+
+        t2.start();
+    }
+}
+</code></pre><h2 id="9-top-a-name-deadlocktest-">9. <a href="#top">简单的死锁程序</a><a name="DeadLockTest"/></h2>
+<pre><code>
+
+class Test implements Runnable
+{
+    private boolean flag;
+    Test(boolean flag)
+    {
+        this.flag = flag;
+    }
+
+    public void run()
+    {
+        if(flag)
+        {
+            while(true)
+            {
+                synchronized(MyLock.LOCKA)
+                {
+                    System.out.println(Thread.currentThread().getName()+&quot;...if......locka&quot;);
+                    synchronized(MyLock.LOCKB)
+                    {
+                        System.out.println(Thread.currentThread().getName()+&quot;...if......lockb&quot;);
+                    }
+                }
+            }
+        }
+        else
+        {
+            while(true)
+            {
+                synchronized(MyLock.LOCKB)
+                {
+                    System.out.println(Thread.currentThread().getName()+&quot;...else......lockb&quot;);
+                    synchronized(MyLock.LOCKA)
+                    {
+                        System.out.println(Thread.currentThread().getName()+&quot;...else......locka&quot;);
+                    }
+                }
+            }
+        }
+    }
+}
+//定义一个用于存储锁对象类。
+class MyLock
+{
+    public static final Object LOCKA = new Object();
+    public static final Object LOCKB = new Object();
+}
+
+class DeadLockTest 
+{
+    public static void main(String[] args) 
+    {
+        //创建两个线程任务。
+        Test t1 = new Test(true);
+        Test t2 = new Test(false);
+
+        Thread t11 = new Thread(t1);
+        Thread t22 = new Thread(t2);
+        t11.start();
+        t22.start();
+
+    }
+}
+</code></pre><h2 id="10-top-a-name-threaddemo8-">10. <a href="#top">生产者消费者，发生的问题</a><a name="ThreadDemo8"/></h2>
+<pre><code>
+/*
+多线程中最为常见的应用案例：
+生产者消费者问题。
+生产和消费同时执行，需要多线程。
+但是执行的任务却不相同，处理的资源确实相同的：线程间的通信。
+
+1，描述一下资源。
+2，描述生产者，因为具备着自己的任务。
+3，描述消费者，因为具备着自己的任务。
+
+
+问题1：数据错误：已经被生产很早期的商品，才被消费到。
+出现线程安全问题，加入了同步解决。使用同步函数。
+问题已解决：不会在消费到之前很早期的商品。
+
+问题2：发现了连续生产却没有消费，同时对同一个商品进行多次消费。
+希望的结果应该是生产一个商品，就被消费掉。生产下一个商品。
+搞清楚几个问题？
+生产者什么时候生产呢？消费者什么时候应该消费呢？
+当盘子中没有面包时，就生产，如果有了面包，就不要生产。
+当盘子中已有面包时，就消费，如果没有面包，就不要消费。
+
+
+
+*/
+
+//1,描述资源。属性：商品名称和编号，  行为：对商品名称赋值，获取商品。
+class Resource
+{
+    private String name;
+    private int count = 1;
+
+    //1,提供设置的方法。
+    public synchronized void set(String name)
+    {
+        //给成员变量赋值并加上编号。
+        this.name = name + count;
+        //编号自增。
+        count++;
+        //打印生产了哪个商品。
+        System.out.println(Thread.currentThread().getName()+&quot;......生产者....&quot;+this.name);
+    }
+    public synchronized void out()
+    {
+        System.out.println(Thread.currentThread().getName()+&quot;....消费者....&quot;+this.name);
+    }
+}
+
+//2,描述生产者。
+class Producer implements Runnable
+{
+    private Resource r ;
+    // 生产者一初始化就要有资源，需要将资源传递到构造函数中。
+    Producer(Resource r)
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        while(true)
+        {
+            r.set(&quot;面包&quot;);
+        }
+    }
+}
+
+//3,描述消费者。
+class Consumer implements Runnable
+{
+    private Resource r ;
+    // 消费者一初始化就要有资源，需要将资源传递到构造函数中。
+    Consumer(Resource r)
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        while(true)
+        {
+            r.out();
+        }
+    }
+}
+
+
+
+
+class ThreadDemo8
+{
+    public static void main(String[] args) 
+    {
+        //1,创建资源对象。
+        Resource r = new Resource();
+
+        //2,创建线程任务。
+        Producer pro = new Producer(r);
+        Consumer con = new Consumer(r);
+
+        //3,创建线程。
+        Thread t1 = new Thread(pro);
+        Thread t2 = new Thread(con);
+
+        t1.start();
+        t2.start();
+    }
+}
+</code></pre><h2 id="11-top-a-name-threaddemo9-">11. <a href="#top">生产者消费者，加入了等待唤醒机制，监视器方法说明</a><a name="ThreadDemo9"/></h2>
+<pre><code>
+/*
+多线程中最为常见的应用案例：
+生产者消费者问题。
+生产和消费同时执行，需要多线程。
+但是执行的任务却不相同，处理的资源确实相同的：线程间的通信。
+
+1，描述一下资源。
+2，描述生产者，因为具备着自己的任务。
+3，描述消费者，因为具备着自己的任务。
+
+
+问题1：数据错误：已经被生产很早期的商品，才被消费到。
+出现线程安全问题，加入了同步解决。使用同步函数。
+问题已解决：不会在消费到之前很早期的商品。
+
+问题2：发现了连续生产却没有消费，同时对同一个商品进行多次消费。
+希望的结果应该是生产一个商品，就被消费掉。生产下一个商品。
+搞清楚几个问题？
+生产者什么时候生产呢？消费者什么时候应该消费呢？
+当盘子中没有面包时，就生产，如果有了面包，就不要生产。
+当盘子中已有面包时，就消费，如果没有面包，就不要消费。
+
+生产者生产了商品后应该告诉消费者来消费。这时的生产者应该处于等待状态。
+消费者消费了商品后，应该告诉生产者，这时消费者处于等待状态。
+
+等待：wait();
+告诉：notify();//唤醒
+
+问题解决：实现生产一个消费一个。
+
+=====================
+等待/唤醒机制。
+wait(): 会让线程处于等待状态，其实就是将线程临时存储到了线程池中。
+notify():会唤醒线程池中任意一个等待的线程。
+notifyAll():会唤醒线程池中所有的等待线程。
+
+记住：这些方法必须使用在同步中，因为必须要标识wait，notify等方法所属的锁。
+同一个锁上的notify，只能唤醒该锁上的被wait的线程。
+
+为什么这些方法定义在Object类中呢？
+因为这些方法必须标识所属的锁，而锁可以是任意对象，任意对象可以调用的方法必然时Object类中的方法。
+
+举例：小朋友抓人游戏。
+
+
+
+*/
+
+//1,描述资源。属性：商品名称和编号，  行为：对商品名称赋值，获取商品。
+class Resource
+{
+    private String name;
+    private int count = 1;
+
+    //定义标记。
+    private boolean flag = false;
+
+    //1,提供设置的方法。
+    public synchronized void set(String name)
+    {
+
+        if(flag)
+            try{this.wait();}catch(InterruptedException e){}
+        //给成员变量赋值并加上编号。
+        this.name = name + count;
+        //编号自增。
+        count++;
+        //打印生产了哪个商品。
+        System.out.println(Thread.currentThread().getName()+&quot;......生产者....&quot;+this.name);
+
+        //将标记改为true。
+        flag = true;
+        //唤醒消费者。
+        this.notify();
+    }
+    public synchronized void out()
+    {
+        if(!flag)
+            try{this.wait();}catch(InterruptedException e){}
+        System.out.println(Thread.currentThread().getName()+&quot;....消费者....&quot;+this.name);
+        //将标记该为false。
+        flag = false;
+        //唤醒生产者。
+        this.notify();
+    }
+}
+
+//2,描述生产者。
+class Producer implements Runnable
+{
+    private Resource r ;
+    // 生产者一初始化就要有资源，需要将资源传递到构造函数中。
+    Producer(Resource r)
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        while(true)
+        {
+            r.set(&quot;面包&quot;);
+        }
+    }
+}
+
+//3,描述消费者。
+class Consumer implements Runnable
+{
+    private Resource r ;
+    // 消费者一初始化就要有资源，需要将资源传递到构造函数中。
+    Consumer(Resource r)
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        while(true)
+        {
+            r.out();
+        }
+    }
+}
+
+
+
+
+class ThreadDemo9
+{
+    public static void main(String[] args) 
+    {
+        //1,创建资源对象。
+        Resource r = new Resource();
+
+        //2,创建线程任务。
+        Producer pro = new Producer(r);
+        Consumer con = new Consumer(r);
+
+        //3,创建线程。
+        Thread t1 = new Thread(pro);
+        Thread t2 = new Thread(con);
+
+        t1.start();
+        t2.start();
+    }
+}
+</code></pre><h2 id="12-top-a-name-threaddemo10-">12. <a href="#top">多生产多消费，发生的问题，解决办法</a><a name="ThreadDemo10"/></h2>
+<pre><code>
+/*
+多生产多消费。
+问题1；生产了商品没有被消费，同一个商品被消费多次。
+Thread-0......生产者....面包2499//没有被消费。
+Thread-1......生产者....面包2500
+Thread-3....消费者....面包2500
+
+被唤醒的线程没有判断标记，造成问题1的产生。
+解决：只要让被唤醒的线程必须判断标记就可以了。将if判断标记的方式改为while判断标记。记住：多生产多消费，必须时while判断条件。
+
+
+问题2：发现while判断后，死锁了。
+原因：生产方唤醒了线程池中生产方的线程。本方唤醒了本方。
+解决：希望本方要唤醒对方，没有对应的方法，所以只能唤醒所有。
+
+
+其实还有一些遗憾的，效率低了。
+*/
+
+class Resource
+{
+    private String name;
+    private int count = 1;
+
+    //定义标记。
+    private boolean flag = false;
+
+    //1,提供设置的方法。
+    public synchronized void set(String name)//   
+    {
+
+        while(flag)
+            try{this.wait();}catch(InterruptedException e){}// t1等  t2等
+        //给成员变量赋值并加上编号。
+        this.name = name + count;//商品1  商品2  商品3
+        //编号自增。
+        count++;//2 3  4
+        //打印生产了哪个商品。
+        System.out.println(Thread.currentThread().getName()+&quot;......生产者....&quot;+this.name);//生产 商品1  生产商品2  生产商品3
+
+        //将标记改为true。
+        flag = true;
+        //唤醒消费者。
+        this.notifyAll();
+    }
+    public synchronized void out()// 
+    {
+        while(!flag)
+            try{this.wait();}catch(InterruptedException e){}//t3等  //t4等
+        System.out.println(Thread.currentThread().getName()+&quot;....消费者....&quot;+this.name);//消费 商品1
+        //将标记该为false。
+        flag = false;
+        //唤醒生产者。
+        this.notifyAll();
+    }
+}
+
+//2,描述生产者。
+class Producer implements Runnable
+{
+    private Resource r ;
+    // 生产者一初始化就要有资源，需要将资源传递到构造函数中。
+    Producer(Resource r)
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        while(true)
+        {
+            r.set(&quot;面包&quot;);
+        }
+    }
+}
+
+//3,描述消费者。
+class Consumer implements Runnable
+{
+    private Resource r ;
+    // 消费者一初始化就要有资源，需要将资源传递到构造函数中。
+    Consumer(Resource r)
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        while(true)
+        {
+            r.out();
+        }
+    }
+}
+
+
+
+
+class ThreadDemo10
+{
+    public static void main(String[] args) 
+    {
+        //1,创建资源对象。
+        Resource r = new Resource();
+
+        //2,创建线程任务。
+        Producer pro = new Producer(r);
+        Consumer con = new Consumer(r);
+
+        //3,创建线程。
+        Thread t1 = new Thread(pro);
+        Thread t2 = new Thread(pro);
+        Thread t3 = new Thread(con);
+        Thread t4 = new Thread(con);
+
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+    }
+}
+</code></pre><h2 id="13-jdk1-5-lock-condition-top-a-name-threaddemo11-">13. <a href="#top">多生产多消费，通过JDK1.5解决问题。Lock Condition接口的使用</a><a name="ThreadDemo11"/></h2>
+<pre><code>
+/*
+jdk1.5以后提供多生产多消费的解决方案。
+
+在java.util.concurrent.locks 软件包中提供相应的解决方案
+Lock接口：比同步更厉害，有更多操作。lock():获取锁  unlock():释放锁;
+        提供了一个更加面对对象的锁，在该锁中提供了更多的显示的锁操作。
+        替代同步。
+
+升级到JDK1.5,先把同步改成 Lock。
+
+已经将旧锁替换成新锁，那么锁上的监视器方法(wait，notify，notifyAll)也应该替换成新锁的监视器方法。
+而jdk1.5中将这些原有的监视器方法封装到了一个Condition对象中。
+想要获取监视器方法，需要先获取Condition对象。
+
+Condition对象的出现其实就是替代了Object中的监视器方法。
+await();
+signal();
+signalAll();
+
+将所有的监视器方法替换成了Condition。
+功能和ThreadDemo10.java老程序的功能一样，仅仅是用新的对象。改了写法而已。
+但是问题依旧；效率还是低。
+
+希望本方可以唤醒对方中的一个。
+老程序中可以通过两个锁嵌套完成，但是容易引发死锁。
+
+新程序中，就可以解决这个问题，只用一个锁，
+可以在一个锁上加上多个监视器对象。
+
+
+*/
+import java.util.concurrent.locks.*;
+
+class Resource
+{
+    private String name;
+    private int count = 1;
+
+    //定义一个锁对象。
+    private final Lock lock = new ReentrantLock();
+    //获取锁上的Condition对象。为了解决本方唤醒对方的问题。可以一个锁创建两个监视器对象。
+
+    private Condition produce = lock.newCondition();//负责生产。
+    private Condition consume = lock.newCondition();//负责消费。
+
+    //定义标记。
+    private boolean flag = false;
+
+    //1,提供设置的方法。
+    public  void set(String name)//   
+    {
+        //获取锁。
+        lock.lock();
+        try{
+
+            while(flag)
+                try{produce.await();}catch(InterruptedException e){}// t1等  t2等
+            this.name = name + count;//商品1  商品2  商品3
+            count++;//2 3  4
+            System.out.println(Thread.currentThread().getName()+&quot;......生产者....&quot;+this.name);//生产 商品1  生产商品2  生产商品3
+
+            //将标记改为true。
+            flag = true;
+            //执行的消费者的唤醒。唤醒一个消费者就哦了。
+            consume.signal();
+        }finally{
+
+            lock.unlock();//一定要执行。
+        }
+    }
+    public  void out()// 
+    {
+
+        lock.lock();
+        try{
+        while(!flag)
+            try{consume.await();}catch(InterruptedException e){}//t3等  //t4等
+        System.out.println(Thread.currentThread().getName()+&quot;....消费者....&quot;+this.name);//消费 商品1
+        //将标记该为false。
+        flag = false;
+        //
+        produce.signal();
+        }
+        finally{
+            lock.unlock();
+        }
+    }
+}
+
+//2,描述生产者。
+class Producer implements Runnable
+{
+    private Resource r ;
+    // 生产者一初始化就要有资源，需要将资源传递到构造函数中。
+    Producer(Resource r)
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        while(true)
+        {
+            r.set(&quot;面包&quot;);
+        }
+    }
+}
+
+//3,描述消费者。
+class Consumer implements Runnable
+{
+    private Resource r ;
+    // 消费者一初始化就要有资源，需要将资源传递到构造函数中。
+    Consumer(Resource r)
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        while(true)
+        {
+            r.out();
+        }
+    }
+}
+
+
+
+
+class ThreadDemo11
+{
+    public static void main(String[] args) 
+    {
+        //1,创建资源对象。
+        Resource r = new Resource();
+
+        //2,创建线程任务。
+        Producer pro = new Producer(r);
+        Consumer con = new Consumer(r);
+
+        //3,创建线程。
+        Thread t1 = new Thread(pro);
+        Thread t2 = new Thread(pro);
+        Thread t3 = new Thread(con);
+        Thread t4 = new Thread(con);
+
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+    }
+}
+</code></pre><h2 id="14-condition-top-a-name-threaddemo12-">14. <a href="#top">Condition案例中的范例，带注释</a><a name="ThreadDemo12"/></h2>
+<pre><code>class BoundedBuffer {
+   final Lock lock = new ReentrantLock();//锁
+   final Condition notFull  = lock.newCondition(); //生产
+   final Condition notEmpty = lock.newCondition(); //消费
+
+   final Object[] items = new Object[100];//存储商品的容器。
+   int putptr/*生产者使用的角标*/, takeptr/*消费者使用的角标*/, count/*计数器*/;
+
+    /*生产者使用的方法，往数组中存储商品*/
+   public void put(Object x) throws InterruptedException {
+     lock.lock();
+     try {
+       while (count == items.length) //判断计数器是否已到数组长度。满了。
+         notFull.await();//生产就等待。
+
+       items[putptr] = x; //按照角标将商品存储到数组中
+
+       if (++putptr == items.length) //如果存储的角标到了数组的长度，就将角标归零。
+            putptr = 0;
+       ++count;//计数器自增。
+       notEmpty.signal();//唤醒一个消费者
+     } finally {
+       lock.unlock();
+     }
+   }
+
+   public Object take() throws InterruptedException {
+     lock.lock();
+     try {
+       while (count == 0) //如果计数器为0，说明没有商品，消费者等待。
+         notEmpty.await();
+       Object x = items[takeptr]; //从数组中通过消费者角标获取商品。
+
+       if (++takeptr == items.length) //如果消费的角标等于了数组的长度，将角标归零。
+           takeptr = 0;
+       --count;//计数器自减。
+       notFull.signal();//唤醒生产者。
+       return x;
+     } finally {
+       lock.unlock();
+     }
+   } 
+ }
+</code></pre><h2 id="15-top-a-name-threadtest2_1-">15. <a href="#top">妖的问题与解决。线程安全问题</a><a name="ThreadTest2_1"/></h2>
+<pre><code>
+/*
+需求：
+资源有姓名和性别。
+两个线程，
+    一个负责给姓名和性别赋值，
+    一个负责获取姓名和性别的值。
+
+参阅ThreadTest2.java文件
+
+要求1，运行一下，解决程序的 &quot;妖&quot;的问题。
+    分析过程：
+    加入同步，必须保证同一个锁，解决妖的问题。
+
+要求2，实现正确数据的间隔输出 如 
+张飞--男
+rose--女女女
+张飞--男 
+rose--女女女
+
+要求3，对代码进行重构。
+    将name，sex私有化，资源类提供对其访问的方法。
+
+要求4，将程序改成JDK1.5的Lock Condition接口。
+
+*/
+
+
+//描述资源。
+class Resource
+{
+    String name;
+    String sex;
+}
+//赋值线程任务
+class Input implements Runnable
+{
+    private Resource r;
+//    private Object obj = new Object();
+    Input(Resource r)//任务一初始化就必须有要处理的资源。
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        int x = 0;
+        while(true)
+        {
+            synchronized(r)
+            {
+                if(x==0)
+                {
+                    r.name = &quot;张飞&quot;;
+                    r.sex = &quot;男&quot;;
+                }
+                else
+                {
+                    r.name = &quot;rose&quot;;
+                    r.sex = &quot;女女女女&quot;;
+                }
+            }
+            x = (x+1)%2;//实现切换。
+        }
+    }
+}
+//获取值线程任务
+class Output implements Runnable
+{
+    private Resource r ;
+//    private Object obj = new Object();
+    Output(Resource r)
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        while(true)
+        {
+            synchronized(r)
+            {
+                System.out.println(r.name+&quot;.....&quot;+r.sex);
+            }
+        }
+    }
+}
+
+class ThreadTest2
+{
+    public static void main(String[] args)
+    {
+        Resource r = new Resource();
+        Input in = new Input(r);
+        Output out = new Output(r);
+        Thread t1 = new Thread(in);
+        Thread t2 = new Thread(out);
+        t1.start();
+        t2.start();
+
+    }
+}
+</code></pre><h2 id="16-top-a-name-threadtest2_2-">16. <a href="#top">数据间隔问题与解决。等待唤醒机制</a><a name="ThreadTest2_2"/></h2>
+<pre><code>/*
+需求：
+资源有姓名和性别。
+两个线程，
+    一个负责给姓名和性别赋值，
+    一个负责获取姓名和性别的值。
+
+参阅ThreadTest2.java文件
+
+要求1，运行一下，解决程序的 &quot;妖&quot;的问题。
+    分析过程：
+    加入同步，必须保证同一个锁，解决妖的问题。
+
+要求2，实现正确数据的间隔输出 如 
+张飞--男
+rose--女女女
+张飞--男 
+rose--女女女
+使用等待唤醒机制。
+wait(),notify(),notifyAll();
+
+对于等待都需要判断，定义条件。
+
+
+要求3，对代码进行重构。
+    将name，sex私有化，资源类提供对其访问的方法。
+
+要求4，将程序改成JDK1.5的Lock Condition接口。
+
+*/
+
+//描述资源。
+class Resource
+{
+    String name;
+    String sex;
+    //定义标记，
+    boolean flag = false;
+
+}
+//赋值线程任务
+class Input implements Runnable
+{
+    private Resource r;
+//    private Object obj = new Object();
+    Input(Resource r)//任务一初始化就必须有要处理的资源。
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        int x = 0;
+        while(true)
+        {
+            synchronized(r)
+            {
+                if(r.flag)
+                    try{r.wait();}catch(InterruptedException e){}
+                if(x==0)
+                {
+                    r.name = &quot;张飞&quot;;
+                    r.sex = &quot;男&quot;;
+                }
+                else
+                {
+                    r.name = &quot;rose&quot;;
+                    r.sex = &quot;女女女女&quot;;
+                }
+
+                r.flag = true;
+                r.notify();
+            }
+            x = (x+1)%2;//实现切换。
+        }
+    }
+}
+//获取值线程任务
+class Output implements Runnable
+{
+    private Resource r ;
+//    private Object obj = new Object();
+    Output(Resource r)
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        while(true)
+        {
+            synchronized(r)
+            {
+                if(!r.flag)
+                    try{r.wait();}catch(InterruptedException e){}
+                System.out.println(r.name+&quot;.....&quot;+r.sex);
+                r.flag = false;
+                r.notify();
+            }
+        }
+    }
+}
+
+class ThreadTest2_2
+{
+    public static void main(String[] args)
+    {
+        Resource r = new Resource();
+        Input in = new Input(r);
+        Output out = new Output(r);
+        Thread t1 = new Thread(in);
+        Thread t2 = new Thread(out);
+        t1.start();
+        t2.start();
+
+    }
+}
+</code></pre><h2 id="17-top-a-name-threadtest2_3-">17. <a href="#top">代码重构问题与解决。同步函数</a><a name="ThreadTest2_3"/></h2>
+<pre><code>/*
+需求：
+资源有姓名和性别。
+两个线程，
+    一个负责给姓名和性别赋值，
+    一个负责获取姓名和性别的值。
+
+参阅ThreadTest2.java文件
+
+要求1，运行一下，解决程序的 &quot;妖&quot;的问题。
+    分析过程：
+    加入同步，必须保证同一个锁，解决妖的问题。
+
+要求2，实现正确数据的间隔输出 如 
+张飞--男
+rose--女女女
+张飞--男 
+rose--女女女
+使用等待唤醒机制。
+wait(),notify(),notifyAll();
+
+对于等待都需要判断，定义条件。
+
+
+要求3，对代码进行重构。
+    将name，sex私有化，资源类提供对其访问的方法。
+
+要求4，将程序改成JDK1.5的Lock Condition接口。
+Lock替换了 同步函数或者同步代码块。
+
+Condition替代了 监视器方法，将监视器方法从锁上分离出来，单独封装成Condition对象。
+*/
+
+//描述资源。
+class Resource
+{
+    private String name;
+    private String sex;
+    //定义标记，
+    private boolean flag = false;
+
+    //赋值功能。
+    public synchronized void set(String name,String sex)
+    {
+        if(flag)
+            try{this.wait();}catch(InterruptedException e){}
+        this.name = name;
+        this.sex = sex;
+        flag = true;
+        this.notify();
+    }
+
+    //获取值。
+    public synchronized void out()
+    {
+        if(!flag)
+            try{this.wait();}catch(InterruptedException e){}
+        System.out.println(name+&quot;------&quot;+sex);
+        flag = false;
+        this.notify();
+    }
+
+}
+//赋值线程任务
+class Input implements Runnable
+{
+    private Resource r;
+    Input(Resource r)//任务一初始化就必须有要处理的资源。
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        int x = 0;
+        while(true)
+        {
+            if(x==0)
+            {
+                r.set(&quot;张飞&quot;,&quot;男&quot;);
+            }
+            else
+            {
+                r.set(&quot;rose&quot;,&quot;女女女女&quot;);
+            }
+            x = (x+1)%2;//实现切换。
+        }
+    }
+}
+//获取值线程任务
+class Output implements Runnable
+{
+    private Resource r ;
+    Output(Resource r)
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        while(true)
+        {
+                r.out();
+        }
+    }
+}
+
+class ThreadTest2_3
+{
+    public static void main(String[] args)
+    {
+        Resource r = new Resource();
+        Input in = new Input(r);
+        Output out = new Output(r);
+        Thread t1 = new Thread(in);
+        Thread t2 = new Thread(out);
+        t1.start();
+        t2.start();
+
+    }
+}
+</code></pre><h2 id="18-jdk1-5-lock-condition-top-a-name-threadtest2_4-">18. <a href="#top">JDK1.5升级问题与解决。Lock&amp;Condition</a><a name="ThreadTest2_4"/></h2>
+<pre><code>/*
+需求：
+资源有姓名和性别。
+两个线程，
+    一个负责给姓名和性别赋值，
+    一个负责获取姓名和性别的值。
+
+参阅ThreadTest2.java文件
+
+要求1，运行一下，解决程序的 &quot;妖&quot;的问题。
+    分析过程：
+    加入同步，必须保证同一个锁，解决妖的问题。
+
+要求2，实现正确数据的间隔输出 如 
+张飞--男
+rose--女女女
+张飞--男 
+rose--女女女
+使用等待唤醒机制。
+wait(),notify(),notifyAll();
+
+对于等待都需要判断，定义条件。
+
+
+要求3，对代码进行重构。
+    将name，sex私有化，资源类提供对其访问的方法。
+
+要求4，将程序改成JDK1.5的Lock Condition接口。
+Lock替换了 同步函数或者同步代码块。
+
+Condition替代了 监视器方法，将监视器方法从锁上分离出来，单独封装成Condition对象。
+
+*/
+import java.util.concurrent.locks.*;
+//描述资源。
+class Resource
+{
+    private String name;
+    private String sex;
+    //定义标记，
+    private boolean flag = false;
+
+    //先创建锁对象。
+    private final Lock lock = new ReentrantLock();
+
+    //通过锁对象获取监视器对象。
+    private Condition con = lock.newCondition();
+
+    //赋值功能。
+    public  void set(String name,String sex)
+    {
+        lock.lock();
+        try{
+            if(flag)
+                try{con.await();}catch(InterruptedException e){}
+            this.name = name;
+            this.sex = sex;
+            flag = true;
+            con.signal();
+        }finally{
+            lock.unlock();
+        }
+    }
+
+    //获取值。
+    public  void out()
+    {
+        lock.lock();
+        try{
+            if(!flag)
+                try{con.await();}catch(InterruptedException e){}
+            System.out.println(name+&quot;------&quot;+sex);
+            flag = false;
+            con.signal();
+        }finally{
+            lock.unlock();
+        }
+    }
+
+}
+//赋值线程任务
+class Input implements Runnable
+{
+    private Resource r;
+    Input(Resource r)//任务一初始化就必须有要处理的资源。
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        int x = 0;
+        while(true)
+        {
+            if(x==0)
+            {
+                r.set(&quot;张飞&quot;,&quot;男&quot;);
+            }
+            else
+            {
+                r.set(&quot;rose&quot;,&quot;女女女女&quot;);
+            }
+            x = (x+1)%2;//实现切换。
+        }
+    }
+}
+//获取值线程任务
+class Output implements Runnable
+{
+    private Resource r ;
+    Output(Resource r)
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        while(true)
+        {
+                r.out();
+        }
+    }
+}
+
+class ThreadTest2_4
+{
+    public static void main(String[] args)
+    {
+        Resource r = new Resource();
+        Input in = new Input(r);
+        Output out = new Output(r);
+        Thread t1 = new Thread(in);
+        Thread t2 = new Thread(out);
+        t1.start();
+        t2.start();
+
+    }
+}
+</code></pre><h2 id="19-interrupt-top-a-name-stopthreaddemo-">19. <a href="#top">停止线程示例。演示了循环结束标记和interrupt方法</a><a name="StopThreadDemo"/></h2>
+<pre><code>
+
+//演示停止线程。
+class Demo implements Runnable
+{
+    private boolean flag = true;
+    public synchronized void run()
+    {
+        while(flag)
+        {
+            try
+            {
+                wait();//t1  t2
+            }
+            catch (InterruptedException e)
+            {
+                System.out.println(Thread.currentThread().toString()+&quot;.....&quot;+e.toString());
+                changeFlag();
+            }
+
+            System.out.println(Thread.currentThread().getName()+&quot;-----&gt;&quot;);
+        }
+    }
+    //对标记的修改方法。
+    public void changeFlag()
+    {
+        flag = false;
+    }
+}
+
+
+class StopThreadDemo 
+{
+    public static void main(String[] args) 
+    {
+        Demo d = new Demo();
+
+        Thread t1 = new Thread(d,&quot;旺财&quot;);
+        Thread t2 = new Thread(d,&quot;小强&quot;);
+        t1.start();
+        //将t2标记为后台线程，守护线程。
+//        t2.setDaemon(true);
+        t2.start();
+
+        int x = 0;
+        while(true)
+        {
+            if(++x == 50)//条件满足。
+            {
+//                d.changeFlag();//改变线程任务代码的标记，让其他线程也结束。
+                //对t1线程对象进行中断状态的清除，强制让其恢复到运行状态。
+                t1.interrupt();
+                //对t2线程对象进行中断状态的清除，强制让其恢复到运行状态。
+                t2.interrupt();
+
+                break;//跳出循环，主线程可以结束。
+            }
+            System.out.println(&quot;main--------&gt;&quot;+x);
+        }
+
+        System.out.println(&quot;over&quot;);
+    }
+}
+</code></pre><h2 id="20-join-top-a-name-jointhreaddemo-">20. <a href="#top">演示了join方法的特点</a><a name="JoinThreadDemo"/></h2>
+<pre><code>
+class Demo implements Runnable
+{
+
+    public void run()
+    {
+        for(int x=1; x&lt;=40; x++)
+        {
+            System.out.println(Thread.currentThread().getName()+&quot;------&gt;&quot;+x);
+            Thread.yield();//线程临时暂停。将执行权释放，让其他线程有机会获取执行权。
+        }
+    }
+
+}
+
+class JoinThreadDemo 
+{
+    public static void main(String[] args) 
+    {
+        Demo d = new Demo();
+        Thread t1 = new Thread(d);
+        Thread t2 = new Thread(d);
+
+        t1.start();
+        t2.start();
+        //主线程执行到这里，知道t1要加入执行，主线程释放了执行权，
+        //执行资格并处于冻结状态，什么时候恢复呢？等t1线程执行完。
+//        try{t1.join();}catch(InterruptedException e){}//用于临时加入一个运算的线程。让该线程运算完，程序才会继续执行。
+
+        for(int x=1; x&lt;=50; x++)
+        {
+            System.out.println(&quot;main----------&gt;&quot;+x);
+        }
+        System.out.println(&quot;over&quot;);
+    }
+}
+</code></pre><h2 id="21-top-a-name-threadtest-">21. <a href="#top">线程的匿名内部类体现以及面试题</a><a name="ThreadTest"/></h2>
+<pre><code>
+class ThreadTest 
+{
+    public static void main(String[] args) 
+    {
+        /*
+        new Thread(){
+            public void run(){
+                for(int x=0; x&lt;40; x++)
+                {
+                    System.out.println(Thread.currentThread().getName()+&quot;...X....&quot;+x);
+                }
+            }
+        }.start();
+
+        Runnable r= new Runnable(){
+            public void run(){
+                for(int x=0; x&lt;40; x++)
+                {
+                    System.out.println(Thread.currentThread().getName()+&quot;...Y....&quot;+x);
+                }
+            }
+        };
+        new Thread(r).start();
+
+        for(int x=0; x&lt;40; x++)
+        {
+            System.out.println(Thread.currentThread().getName()+&quot;...Z....&quot;+x);
+        }
+
+        System.out.println(&quot;Hello World!&quot;);
+        */
+        //面试题：
+        new Thread(new Runnable()
+        {
+            public void run()
+            {
+                System.out.println(&quot;runnable run&quot;);
+            }
+        }){
+            public void run()
+            {
+                System.out.println(&quot;subthread run&quot;);//执行。
+            }
+        }.start();
+    }
+}
+/*
+class Thread 
+{
+    private Runnable r;
+    Thread(Runnable r)
+    {
+        this.r = r;
+    }
+    public void run()
+    {
+        if(r!=null)
+        {
+            r.run();
+        }
+    }
+    public void start()
+    {
+        run();
+    }
+}
+class SubThread extends Thread
+{
+    public void run()
+    {
+        System.out.println(&quot;subthread run&quot;);
+    }
+}
+
+Runnable r = new Runnable()
+{
+    public void run()
+    {
+        System.out.println(&quot;runnable run&quot;);
+    }
+}
+SubThread t = new SubThread(r);
+t.start();
+*/
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

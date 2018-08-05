@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="d8-_-_-">d8静态<em>单例</em>继承</h1>
+<h2 id="-">导语：</h2>
+<blockquote>
+<p>想到在写</p>
+</blockquote>
+<p><a name="top"/></p>
+<ol>
+<li><a href="#PersonDemo">静态方法的由来，以及什么时候使用。静态使用注意事项</a></li><li><a href="#MainDemo">介绍主函数的组成以及传参</a></li><li><a href="#CircleDemo">静态变量，什么时候用？成员变量和局部变量的区别</a></li><li><a href="#StaticCodeDemo">静态代码块</a></li><li><a href="#ConstructorCodeDemo">构造代码块和局部代码块</a></li><li><a href="#duixiang">对象的加载步骤。★★★★★</a></li><li><a href="#DemoDemo">画图练习。其中一个 超级无敌面试题(要自己画 bt)。★★★★★</a></li><li><a href="#SingleDemo">单例设计模式两种体现，★★★★★★</a></li><li><a href="#SingleTest">单例模式的应用，超人</a></li><li><a href="#ExtendsDemo">继承的使用。单继承和多继承的区别</a></li></ol>
+<h2 id="1-top-a-name-persondemo-">1. <a href="#top">静态方法的由来，以及什么时候使用。静态使用注意事项</a><a name="PersonDemo"/></h2>
+<pre><code>
+
+/*
+静态方法使用注意事项：
+1，静态方法不能访问非静态的成员。
+    但是非静态可以访问静态成员的。
+    说明：静态的弊端在于访问出现局限性。好处是可以直接被类名调用。
+
+2，静态方法中不允许出现this，super关键字。
+
+
+为什么不行呢?
+原理揭秘：
+1，静态是随着类的加载就加载了。也是随着类的消失而消失了。
+2，静态优先于对象存在，被对象共享。
+3，因为静态先存在于内存中无法访问后来的对象的中的数据，所以静态无法访问非静态。
+而且内部无法书写this。因为这时对象有可能不存在，this没有任何指向。
+
+
+
+
+
+*/
+
+class Person
+{
+    private String name;
+    private int age;
+
+    Person(String name,int age)
+    {
+        this.name = name;
+        this.age = age;
+    }
+    public void speak()
+    {
+        System.out.println(&quot;name=&quot;+this.name+&quot;,age=&quot;+this.age);
+        sleep();
+    }
+
+    //定义一个睡觉功能。
+    public static void sleep()
+    {
+//        System.out.println(name);
+        System.out.println(&quot;睡觉zzzZZZZ&quot;);
+    }
+}
+
+class PersonDemo 
+{
+    public static void main(String[] args) 
+    {
+
+
+//        Person p = new Person(&quot;lisi&quot;,20);
+//        p.speak();
+        /*
+        创建对象就是为了产生实例，并进行数据的封装。
+        而调用功能时，确没有用到这些对象中封装的数据。
+        该对象的创建有意义吗？虽然可以编译并运行，但是在堆内存中空间较为浪费。
+
+        不建议创建对象。那该怎么调用呢？java中的解决方案就是 使用 static关键字，这是一个成员修饰符。
+        被静态static修饰的方法除了可以被对象调用外，还可以被类名调用。
+        静态看上去很美，是不是所有的方法都静态呢？不行！
+
+        那么什么时候需要将方法定义成静态的呢？
+        定义功能时，如果功能不需要访问类中定义的成员变量(非静态)时，该功能就需要静态修饰。
+
+        */
+//        p.sleep();
+        Person.sleep();
+
+    }
+}
+</code></pre><h2 id="2-top-a-name-maindemo-">2. <a href="#top">介绍主函数的组成以及传参</a><a name="MainDemo"/></h2>
+<pre><code>/*
+静态的主函数：
+public static void main(String[] args) 
+
+public : 权限最大。
+static ：不需要对象。直接用给定的类名就可以访问该函数了。
+void   : 不需要返回值。
+main   : 函数名，该名称是固定的。
+(String[] args) : 主函数的参数列表：字符串属性类型的参数。
+args   :  arguments :参数。该名称就是一个变量名。
+
+*/
+
+class MainDemo 
+{
+    public static void main(String[] args) 
+    {
+        System.out.println(args);//[Ljava.lang.String;@1afae45//根据这个结果，说明jvm传递了一个字符串类型的数组实体。
+        System.out.println(args.length);//0,得出结论 jvm传递的是 new String[0];
+
+        for (int i = 0; i&lt;args.length ;i++ )
+        {
+            System.out.println(args[i]);
+        }
+    }
+
+    void show()
+    {
+        System.out.println(&quot;show run&quot;);
+    }
+}
+</code></pre><h2 id="3-top-a-name-circledemo-">3. <a href="#top">静态变量，什么时候用？成员变量和局部变量的区别</a><a name="CircleDemo"/></h2>
+<pre><code>/*
+静态变量：
+
+什么时候定义静态变量呢？
+当该成员变量的值，每一个对象都一致时，就对该成员变量进行静态修饰。
+
+静态变量和成员变量的区别：
+1，所属范围不同。
+静态变量所属于类，成员变量所属对象。
+静态变量也称为：类变量；成员变量也称为实例变量。
+
+2，调用不同。
+静态变量可以被对象和类调用(一般都用类名调用)
+成员变量只能被对象调用。
+
+3，加载时期不同。
+静态变量随着类的加载而加载。
+成员变量随着对象的加载而加载。
+
+4，内存存储区域不同。
+静态变量存储在方法区中。
+成员变量存储在堆内存中。
+
+
+
+
+*/
+
+class Circle
+{
+    private double radius;//圆的半径。
+    private static double pi = 3.14;//每一个圆对象中都存储一份，有点浪费内存空间。实现对象的共享。加入静态关键字修饰。
+    Circle(double radius)
+    {
+        this.radius = radius;
+    }
+    //获取圆的面积。
+    double getArea()
+    {
+        return radius*radius*pi;
+    }
+    static void show()
+    {
+        System.out.println(&quot;circle show run..&quot;+pi);
+    }
+}
+class CircleDemo 
+{
+    public static void main(String[] args) 
+    {
+        Circle c = new Circle(3);
+
+    }
+}
+</code></pre><h2 id="4-top-a-name-staticcodedemo-">4. <a href="#top">静态代码块</a><a name="StaticCodeDemo"/></h2>
+<pre><code>
+/*
+需求：类一加载，需要做一些动作。不一定需要对象。
+学习目标：必须了解加载的顺序。
+静态代码块：
+    特点：随着类的加载而执行,仅执行一次。
+    作用：给类进行初始化。
+*/
+
+class Demo
+{
+    static int x = 9;//静态变量有两次初始化。 一次默认初始化，一次显示初始化。
+    {
+        System.out.println(&quot;i am gouzao code~&quot;);    
+    }
+    Demo(){
+        System.out.println(&quot;i am demo()&quot;);
+        }
+
+    static //静态代码块。在静态变量显示初始化以后在执行。
+    {
+        System.out.println(&quot;类加载就执行的部...&quot;+x);
+    }
+    static void show()
+    {
+        System.out.println(&quot;show run&quot;);
+    }
+}    
+
+class StaticCodeDemo 
+{
+    public static void main(String[] args) 
+    {
+
+        new Demo().show();
+    }
+}
+</code></pre><h2 id="5-top-a-name-constructorcodedemo-">5. <a href="#top">构造代码块和局部代码块</a><a name="ConstructorCodeDemo"/></h2>
+<pre><code>/*
+构造代码块：用于给所有的对象初始化。很少用并很少见。
+
+*/
+
+class Demo
+{
+    int x = 4;//成员变量 1，默认初始化，2，显示初始化。
+    {// 构造代码块。只要创建对象就会被调用。给所有对象初始化，构造函数只给对应的对象针对性的初始化。
+        //这里面可以定义不同构造函数的共性代码。
+        System.out.println(&quot;code run...&quot;+x);
+//        System.out.println(&quot;-----&gt;hahah&quot;);
+    }
+
+    Demo()
+    {
+        System.out.println(&quot;demo run&quot;);
+    }
+    Demo(int x)
+    {
+        System.out.println(&quot;demo run....&quot;+x);
+//        System.out.println(&quot;-----&gt;hahah&quot;);
+    }
+
+
+}
+
+class ConstructorCodeDemo 
+{
+    public static void main(String[] args) 
+    {
+        new Demo();
+        new Demo(5);
+
+
+        {//局部代码块,作用：就可以控制局部变量的生命周期。
+            int x = 5;
+            System.out.println(&quot; 局部代码块...&quot;+x);
+        }
+
+        System.out.println(&quot; over...&quot;);
+    }
+}
+</code></pre><h2 id="6-top-a-name-duixiang-">6. <a href="#top">对象的加载步骤。★★★★★</a><a name="duixiang"/></h2>
+<pre><code>/*
+构造代码块：用于给所有的对象初始化。很少用并很少见。
+
+*/
+
+class Demo
+{
+    int x = 4;//成员变量 1，默认初始化，2，显示初始化。
+    {// 构造代码块。只要创建对象就会被调用。给所有对象初始化，构造函数只给对应的对象针对性的初始化。
+        //这里面可以定义不同构造函数的共性代码。
+        System.out.println(&quot;code run...&quot;+x);
+//        System.out.println(&quot;-----&gt;hahah&quot;);
+    }
+
+    Demo()
+    {
+        System.out.println(&quot;demo run&quot;);
+    }
+    Demo(int x)
+    {
+        System.out.println(&quot;demo run....&quot;+x);
+//        System.out.println(&quot;-----&gt;hahah&quot;);
+    }
+
+
+}
+
+class ConstructorCodeDemo 
+{
+    public static void main(String[] args) 
+    {
+        new Demo();
+        new Demo(5);
+
+
+        {//局部代码块,作用：就可以控制局部变量的生命周期。
+            int x = 5;
+            System.out.println(&quot; 局部代码块...&quot;+x);
+        }
+
+        System.out.println(&quot; over...&quot;);
+    }
+}
+</code></pre><h2 id="7-bt-top-a-name-demodemo-">7. <a href="#top">画图练习。其中一个 超级无敌面试题(要自己画 bt&quot;/&gt;。★★★★★</a><a name="DemoDemo"/></h2>
+<pre><code>class Demo
+{
+    private static Demo d = new Demo();
+    Demo()
+    {
+        System.out.println(&quot;demo run&quot;);
+    }
+}
+class DemoDemo
+{
+    public static void main(String[] args) 
+    {
+//        try{
+//        new Demo();
+//        }catch(Throwable t)
+//        {
+//            System.out.println(t.toString());
+//        }
+
+    }
+}
+
+
+//画图。
+class Test
+{
+    static int x;
+    static int y = 1;
+    //static Test t = new Test();
+    static 
+    {
+        System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y);
+    }
+    Test()
+    {
+        x++;
+    }
+}
+
+
+
+
+class TestTest
+{
+    public static void main(String[] args)
+    {
+        new Test();
+    }
+}
+
+/*
+
+
+public class Demo2 {
+
+    public static int k = 0;
+    public static Demo2 t1 = new Demo2(&quot;t1&quot;);
+    public static Demo2 t2 = new Demo2(&quot;t2&quot;);
+    public static int i = print(&quot;i&quot;);
+    public static int j = print(&quot;j&quot;);
+    public static int n = 99;
+
+    {
+        print(&quot;constructor code&quot;);
+    }
+
+    static {
+        print(&quot;static code&quot;);
+    }
+
+    public static int print(String s) {
+        System.out.println(&quot;i=&quot;+i +&quot;   &quot;+s+ &quot;  k=&quot; + k + &quot;  n=&quot; + n + &quot;   j=&quot; + j);
+        ++i;
+        ++k;
+        ++n;
+        return i;
+    }
+
+    public Demo2(String string) {
+
+        print(string);
+    }
+
+    public static void main(String[] args) {
+        Demo2 d=new Demo2(&quot;T&quot;);
+    }
+
+}
+*/
+</code></pre><h2 id="8-top-a-name-singledemo-">8. <a href="#top">单例设计模式两种体现，★★★★★★</a><a name="SingleDemo"/></h2>
+<pre><code>/*
+设计模式：解决某一类问题行之有效的解决办法(思想)。
+单例(Singleton)设计模式：
+学习设计模式必须先弄清楚它是解决什么问题的。
+单例是解决什么问题的呢？
+可以保证一个类的对象唯一性。
+
+场景：比如多个程序都要使用一个配置文件中的数据，而且要实现数据共享和交换。
+        必须要将多个数据封装到一个对象中。而且多个程序操作的是同一个对象。
+        那也就是说必须保证这个配置文件对象的唯一性。
+
+怎么能保证对象的唯一性呢？
+1，一个类只要提供了构造函数，就可以产生多个对象。
+    完全无法保证唯一。
+既然数量不可控，干脆，不让其他程序建立对象。
+
+2，不让其他程序创建，对象何在？
+    干脆，自己在本类中创建一个对象，这样好处是什么，可控。
+
+3，创建完成后，是不是要给其他程序提供访问的方式。
+
+
+怎么实现这个步骤呢？
+1，怎么就能不其他程序创建对象呢？
+    直接私有化构造函数，不让其他程序创建的对象初始化。
+
+2，直接在本类中new一个本类对象。
+
+3，定义一个功能，其他程序可以通过这个功能获取到本类的对象。
+
+哦耶。
+
+*/
+//代码体现。
+//饿汉式
+class Single
+{
+    //2,创建一个本类对象。
+    private static /*final*/ Single s = new Single();
+
+    //1,私有化构造函数。
+    private Single(){}
+
+    //3,定义一个方法返回这个对象。
+    public static Single getInstance()
+    {
+        return s;
+    }
+}
+//懒汉式
+//单例的延迟加载方式。面试最多的是懒汉式。
+class Single2
+{
+    private static Single2 s2 = null;
+
+    private Single2(){}
+
+    public static Single2 getInstance()
+    {
+        if(s2==null)
+            s2 = new Single2();
+        return s2;
+    }
+}
+
+//练习：将两种方式的内存图画出来。
+
+class  SingleDemo
+{
+    public static void main(String[] args) 
+    {
+        //要想获取Single的对象。调用getInstance方法。既然无法通过对象调用，只能用类名调用，所以这个方法必须是static。
+        Single ss = Single.getInstance();
+        Single ss2 = Single.getInstance();
+
+
+//        Single ss = Single.s;//这种方式是可以实现，加入访问来获取就是为了对对象可控。
+//        Single ss2 = Single.s;
+    }
+}
+</code></pre><h2 id="9-top-a-name-singletest-">9. <a href="#top">单例模式的应用，超人</a><a name="SingleTest"/></h2>
+<pre><code>
+//描述超人。
+class SuperMan
+{
+    private String name;
+    private static SuperMan man = new SuperMan(&quot;克拉克&quot;);
+    private SuperMan(String name)
+    {
+        this.name = name;    
+    }
+    public static SuperMan getInstance()
+    {
+        return man;
+    }
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+    public String getName()
+    {
+        return this.name;
+    }
+    public void fly()
+    {
+        System.out.println(this.name +&quot;..fly&quot;);
+    }
+}
+
+class SingleTest 
+{
+    public static void main(String[] args) 
+    {
+        //超人对象应该是唯一的。保证superMan的唯一性。可使用单例模式解决。
+//        SuperMan man = new SuperMan(&quot;克拉克&quot;);
+        SuperMan man1 = SuperMan.getInstance();
+        SuperMan man2 = SuperMan.getInstance();
+        man1.setName(&quot;英雄&quot;);
+        man2.fly();
+    }
+}
+</code></pre><h2 id="10-top-a-name-extendsdemo-">10. <a href="#top">继承的使用。单继承和多继承的区别</a><a name="ExtendsDemo"/></h2>
+<pre><code>/*
+//描述学生。
+class Student 
+{
+    //属性。
+    String name;
+    int age;
+
+    //行为。
+    void study()
+    {
+        System.out.println(&quot;good good study&quot;);
+    }
+}
+
+//描述工人。
+class Worker
+{
+    //属性。
+    String name;
+    int age;
+
+    //行为
+    void work()
+    {
+        System.out.println(&quot;hard work&quot;);
+    }
+}
+*/
+
+/*
+为了提高复用，只建立一份代码。
+一个类只要和另一个类产生关系就可以了
+关系：继承。
+发现了获取到所需内容的同时也获取到不该具备的内容。
+为什么？
+发现原来这个两个类之间根本就不存在继承关系。
+
+
+怎么解决呢？
+找到学生和工人的共性类型。将需要提供复用的代码进行抽取。
+定义到一个共性类型的类中。
+Person name age。
+
+怎么在代码体现中让学生和Person产生关系呢？
+只要通过关键字 extends(继承) 就哦了。 
+
+*/
+
+class Person
+{
+    String name;
+    int age;
+
+}
+
+class Student extends Person//学生继承了Person 学生就是子类 Person就是父类(基类，超类)
+{
+    void study()
+    {
+        System.out.println(&quot;good good study&quot;);
+    }
+}
+class Worker extends Person
+{
+    void work()
+    {
+        System.out.println(&quot;hard work&quot;);
+    }
+}
+/*
+面向对象 另一个特征：继承。
+好处：提高了代码的复用性。让类与类产生了关系，给另一个特征 多态 提供了前提。
+
+什么时候定义继承？
+必须保证类与类之间有所属(is a)关系。 xxx是zzz中的一种。
+苹果是水果中一种。狗是犬科中一种。
+
+
+在Java中继承的体现：
+Java允许单继承。不直接支持多继承，将多继承进行其他方式的体现。
+单继承：一个子类只能有一个父类。
+多继承：一个子类可以有多个父类。
+
+
+看上起，多继承很厉害！为什么。
+class Fu1
+{
+    void show1()
+    {}
+}
+class Fu2
+{
+    void show2()
+    {}
+}
+//多继承。
+class Zi extends Fu1,Fu2
+{
+
+}
+
+Zi z = new Zi();
+z.show1();
+z.show2();
+//问题随之而来
+万一多个父类具备了相同的功能呢？
+class Fu1
+{
+    void show()
+    {
+        sop(&quot;fu1 show run&quot;);
+    }
+}
+class Fu2
+{
+    void show()
+    {    
+        sop(&quot;fu2 show run&quot;);
+    }
+}
+//多继承。
+class Zi extends Fu1,Fu2
+{
+
+}
+
+Zi z = new Zi();
+z.show();//调用就会产生不确定性。所以java保留的多继承的好处，改良它的弊端。用多实现来体现，即将学到。
+
+--------------
+java还支持多重继承。
+class A
+{}
+class B extends A
+{}
+class C extends B
+{}
+
+形成继承体系。
+学习继承体系时，应该参阅顶层的类中的内容。
+了解这个体系的基本功能。
+
+使用这个体系功能，需要创建最子类的对象。
+
+看顶层，建底层。
+
+*/
+
+
+class ExtendsDemo 
+{
+    public static void main(String[] args) 
+    {
+        Student stu = new Student();
+        stu.name = &quot;xiaoqiang&quot;;
+        stu.age = 12;
+        stu.study();
+
+    }
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="d6-">d6面向对象入门</h1>
+<h2 id="-">导语：</h2>
+<blockquote>
+<p>想到在写</p>
+</blockquote>
+<p><a name="top"/></p>
+<ol>
+<li><a href="#CarDemo">CarDemo</a></li><li><a href="#to_object">面向对象</a></li><li><a href="#before_five_day_review">前五天回顾</a></li></ol>
+<h2 id="1-cardemo-top-a-name-cardemo-">1. <a href="#top">CarDemo</a><a name="CarDemo"/></h2>
+<pre><code>/*
+将面向对象使用落实到代码上。
+
+描述小汽车。
+分析：
+    事物的属性：
+        颜色。
+        轮胎个数。
+    事物的行为(功能)：
+        运行。
+
+发现：事物其实就是由 属性和行为组成的。
+可以简单理解：属性就是数值，其实就是变量；行为就是功能，就是函数。
+小汽车
+{
+    颜色；
+    轮胎个数；
+    运行()
+    {
+
+    }
+}
+
+
+通过计算机语言Java来描述这个事物。
+Java描述事物是通过类来完成的。
+class Car
+{
+    String color;
+    int number;
+
+    void run()
+    {
+        System.out.println(color+&quot;::&quot;+number);
+    }
+}
+
+
+*/
+class Car//类的真正意义就是在描述事物。属性和行为统称为事物中的成员。
+        //成员分两种：成员属性(在代码中的体现：成员变量)和成员行为(代码体现：就是函数。)
+{
+    //事物的属性。
+    String color;
+    int number;
+
+    //事物的行为。
+    void run()
+    {
+        System.out.println(color+&quot;::&quot;+number);
+    }
+    //主函数没有定义，是可以定义的，就看该类需不需要独立运行。而该类不需要独立运行，所以没有写。
+}
+
+
+//把写好的代码测试一下。需要一个可以独立运行类。
+class CarDemo
+{
+    public static void main(String[] args)
+    {
+        //测试：Car类中的run方法。
+        //1,创建Car的对象。给对象起个名字。
+        Car c = new Car();//c是类类型的变量。c指向了一个具体的Car类型的对象。
+        //2,通过已有的对象调用该对象的功能。格式：对象.对象成员;
+        //3,可以该对象的属性赋值。
+        c.color = &quot;red&quot;;
+        c.number = 4;
+        c.run();
+
+
+        Car c1 = new Car();
+        c1.color = &quot;black&quot;;
+        c1.number = 3;
+        c1.run();//
+
+        /*
+        画图小练习。
+        Car c = new Car();
+        Car c1 = new Car();
+        c1.color = &quot;green&quot;;
+        c.number = 5;
+        c1.run();//结果是什么？
+        c = null;//有垃圾吗？
+
+
+        */
+    }
+}
+
+
+/*
+类与对象关系：
+类：对事物的描述。需要体现属性和行为。
+对象：该类事物创建的实例(实体)，通过该对象调用具有的属性和行为。
+
+成员变量和局部变量的区别：
+区别一：定义的位置不同。
+    成员变量定义在类中。
+    局部变量定义在方法中以及语句里。
+
+区别二：在内存中的位置不同。
+    成员变量存储在堆内存的对象中。
+    局部变量存储在栈内存的方法中。
+
+区别三：生命周期不同。
+    成员变量随着对象的出现而出现，随着对象的消失而消失。
+    局部变量随着的方法的运行而出现，随着方法的弹栈而消失。
+
+区别四：初始化不同。
+    成员变量因为在堆内存中，所有默认初始化值。
+    局部变量没有默认初始化值，必须初始化后才可以使用。
+
+
+
+*/
+</code></pre><h2 id="2-top-a-name-to_object-">2. <a href="#top">面向对象</a><a name="to_object"/></h2>
+<pre><code>
+通过  买电脑(组装机) 来理解面向过程和面向对象。
+
+面向过程：
+自己做这些事。按照步骤，通过这些过程完成。
+
+1，查信息(了解硬件行情)。
+2，查报价(电脑城询价)
+3，组装监督。
+4，扛回家。
+
+面向对象：
+以后买电脑：
+因为这些过程我都不了解。
+找一个懂行的人。
+这个人具备你所需要的功能。
+
+毕老师..(对象)
+{
+    1，查信息(了解硬件行情)。
+    2，查报价(电脑城询价)
+    3，组装监督。
+    4，扛回家。
+}
+
+毕老师.查信息。
+毕老师.查报价。
+毕老师.组装监督。
+
+
+差异(面向对象的好处：)★★★★★
+1，面向对象是一种更符合人们思考习惯的思想。
+2，面向过程中更多的体现的是执行者，面向对象中更多的体现是指挥者。
+    指挥对象做事情。
+3，面向对象将复杂的问题简单化了。
+
+在面向对象的世界中：万物皆对象。
+
+
+
+------------
+面试的时候：
+    阐述三个好处。
+    具体化。举例：其实面试官您就是按照面向对象的思想在思考问题。
+        面试官您本身就可以开发项目，但是项目有可能比较大，一个人开发周期长。
+        为了提高效率，需要有更多的具备者专业开发能力的人来帮助您做事情。
+        这个人就是您所需的对象，只要调用这些对象的开发功能就可以完成项目。
+        只要指挥他们做事情就可以了。
+
+
+
+-----------------------------------------------------
+面向对象如何应用到需求中。★★★★★
+在需求中尽量的去寻找对象。(从问题领域中抽取对象)
+最简单的思考访问：一般情况，名词表示的大多是对象。
+
+
+需求：将大象装进冰箱里。
+对象：大象，冰箱。
+
+分三步：
+1，打开冰箱门。
+2，将大象装进去。
+3，关上冰箱门。
+
+冰箱对象中：
+    打开功能。
+    关闭功能。
+    存储功能。
+大象
+{
+
+}
+
+冰箱//对冰箱事物的描述(说明)。
+{
+    打开(){}
+
+    关闭(){}
+
+    存储(大象){}
+}
+
+
+使用冰箱中的功能。
+1，创建冰箱的对象。
+冰箱 bingXiang = new 冰箱();//给对象起名字。
+
+2，调用冰箱的功能。    
+对象.功能();
+bingXiang.打开();
+bingXiang.存储(new 大象());
+bingXiang.关闭();
+
+
+
+总结：
+1，先按照名词提取问题领域中的对象。
+2，对对象进行描述，其实就是在明确对象中应该具备的属性和功能。
+3，通过new的方法就可以创建该事物的具体对象。
+4，通过该对象调用它以后的功能。
+
+################################
+#自己动手举出两个面向对象的例子#
+################################
+
+
+练习：
+
+人开门。
+人
+{
+    开门(门)
+    {
+        门.开();
+    }
+}
+
+门
+{
+    门轴;
+    弹簧;
+    开()
+    {
+        用到门轴;弹簧;
+    }
+}
+
+
+
+人刹车。
+
+
+毕老师用电脑上课。
+描述对象：
+老师
+{
+    姓名;
+    使用电脑(电脑)
+    {
+        电脑.开();
+        电脑.运行();
+
+    }
+    讲课()
+    {
+
+    }
+}
+
+电脑
+{
+    开(){}
+    运行(){}
+}
+
+老师 毕老师 = new 老师();
+毕老师.使用电脑(new 电脑());
+毕老师.讲课();
+
+
+----------------------------------------
+</code></pre><h2 id="3-top-a-name-before_five_day_review-">3. <a href="#top">前五天回顾</a><a name="before_five_day_review"/></h2>
+<pre><code>/*
+对前五天的知识点进行简单回顾。
+
+案例1：对数组操作，获取最大值。
+思路：
+1，一组数，要获取最大的，比较。
+2，怎么比较？按个比较。要获取数组中的每一个数据都要比较。
+3，比较完，记下来比较大的数据，并用这个较大的数据和下一个数据比较。
+    不断记录较大的值。
+4，如果所有的数据都比较完，那么最后记录的较大值就是最大值。
+
+步骤：
+1，需要一个类。
+2，这个类需要独立运行，必须有main方法。
+3，有一个数组。
+4，每一次较大的数据都有可能不同。变量。
+5，用数组的数据都获取出来。为了比较。遍历。
+6，在遍历过程中，需要比较，判断。
+7，每满足一次判断条件，就用变量记录较大的值。变量存储。
+
+*/
+
+//1，需要一个类。
+class ArrayDemo
+{
+    //2，这个类需要独立运行，必须有main方法。
+    public static void main(String[] args)
+    {
+        //3，有一个数组。
+        int[] arr = {23,17,88,42};
+
+        //4，每一次较大的数据都有可能不同。变量。
+        int maxValue = arr[0];//初始化为了数组中的任意一个元素。
+
+        //5，用数组的数据都获取出来。为了比较。遍历。for while
+        for(int i = 1; i &lt; arr.length; i++)
+        {
+            //6，在遍历过程中，需要比较，判断。if
+            //7，每满足一次判断条件，就用变量记录较大的值。变量存储。
+            if(arr[i] &gt; maxValue)
+            {
+                maxValue = arr[i];//只要遍历到的元素大于了maxValue中记录的较大的值，就用maxValue将该更大的值记录下来。
+            }
+        }
+
+        //8，一旦遍历结束，maxValue中存储的就是该数组的最大值。
+        // 为了显示出最大值。告诉使用者。输出语句。
+        System.out.println(&quot;arr最大值：&quot;+maxValue);
+
+    }
+}
+
+
+/*
+    int[] arr2 = {34,56,99,10};
+    案例2：又来了一个数组。还要获取最大值。复制代码并改变量名，怂！
+    既然代码不变，为什么不提高这段代码的重复使用呢？传说中 复用性。
+
+    怎么提高复用？将这部分代码变成一个整体，并给这个整体起个名字(目的为了便于使用这个整体)。
+    Java中代码变成一个整体，通过函数体现的。所以函数就是一个类中的功能。
+
+
+*/
+
+class ArrayDemo2
+{
+    public static void main(String[] args)
+    {
+        int[] arr = {34,56,99,10};
+
+        //获取最大值。需要一个功能。
+        int maxValue = getMaxValue(arr);
+        System.out.println(&quot;maxValue:&quot;+maxValue);
+
+        int[] arr2 = {23,17,88,42};
+        int maxValue2 = getMaxValue(arr2);
+        System.out.println(&quot;maxValue2:&quot;+maxValue2);
+
+    }
+
+    //需要getMaxValue功能，而这个功能目前是没有的。所以要自定义功能。提高了复用性。
+    public static int getMaxValue(int[] arr)
+    {
+        int maxValue = arr[0];//初始化为了数组中的任意一个元素。
+
+        //1，用数组的数据都获取出来。为了比较。遍历。for while
+        for(int i = 1; i &lt; arr.length; i++)
+        {
+            //2，在遍历过程中，需要比较，判断。if
+            //3，每满足一次判断条件，就用变量记录较大的值。变量存储。
+            if(arr[i] &gt; maxValue)
+            {
+                maxValue = arr[i];//只要遍历到的元素大于了maxValue中记录的较大的值，就用maxValue将该更大的值记录下来。
+            }
+        }
+
+        //4，一旦遍历结束，maxValue中存储的就是该数组的最大值。
+
+        //5,将该值返回。不要打印，因为不是该功能的职责。
+        return maxValue;
+    }
+}    
+
+
+/*
+案例3：继续升级，很多的类中都有数组，都需要获取其最值。
+怎么办？不要复制。
+将所需的功能，封装到指定的类中。
+
+*/
+class ArrayDemo3
+{
+    public static void main(String[] args)
+    {
+        int[] arr = {43,12,56,89};
+        //想要使用ArrayTool中的功能。需要先建立ArrayTool这个类应用程序的对象。通过new完成。
+        ArrayTool tool = new ArrayTool();
+        int maxValue = tool.getMaxValue(arr);//通过tool这个对象调用它的获取最大值的功能。
+        System.out.println(&quot;maxvalue:&quot;+maxValue);
+
+//Arrays.sort(arr);
+
+        //获取最小值。
+        int minValue = tool.getMinValue(arr);
+        System.out.println(&quot;min?Value:&quot;+minValue);
+    }
+
+}
+/*
+将操作的最大值功能单独封装到一个类中。
+这样使用这个功能只要找到功能所属的类就可以了。
+
+    ArrayTool tool = new ArrayTool();//这个就是对象。
+        int maxValue = tool.getMaxValue(arr);
+
+所有的功能都在对象中。只要找到了对象，就可以使用这些功能。而不需要关注功能的细节。
+
+*/
+class ArrayTool
+{
+    //获取最大值。
+    public /*static*/ int getMaxValue(int[] arr)
+    {
+        int maxValue = arr[0];
+
+        for(int i = 1; i &lt; arr.length; i++)
+        {
+            if(arr[i] &gt; maxValue)
+            {
+                maxValue = arr[i];
+            }
+        }
+        return maxValue;
+    }
+    //获取最小值。
+    public /*static*/ int getMinValue(int[] arr)
+    {
+        //code...
+        return 0;//仅为编译通过。
+    }
+
+    //二分查找。折半。
+    public /*static*/ int binarySearch(int[] arr,int key)
+    {
+        return 0;
+    }
+
+}
+
+/*
+之前是面向过程：就是不断的使用函数。
+现在将所有的功能进行封装。面对的是封装了功能的实体(对象),面向对象。
+
+面向对象基于面向过程。将过程进行对象的封装。
+
+只要找到了对象，就可以使用对象中的功能。
+
+结论：以后开发，先找对象以及对象的功能。
+如果没有，自己创建对象并将所需的功能定义到该对象中。
+
+
+
+*/
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
